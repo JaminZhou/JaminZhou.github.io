@@ -1,0 +1,86 @@
+*, :before, :after {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+input, select, button, textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+
+  font: inherit;
+  color: inherit;
+}
+
+#page{
+  opacity: 0;
+}
+
+div{
+  margin: 0 auto;
+}
+
+h1{
+  font-weight: normal;
+  font-family: 'maison_neuemedium', Helvetica, Arial, sans-serif; 
+  font-size: 29px;
+  margin-top: 18px;
+}
+p{
+  font-size: 14px;
+  line-height: 24px;
+}
+
+#location, #tagline{
+  margin-bottom: 18px;
+}
+a{
+  color: black;
+  padding-bottom: 0.25px;
+  border-bottom: 1px solid black;
+  text-decoration: none;
+}
+
+.linethru{
+  text-decoration: line-through;
+}
+
+html {
+    font-family: 'maison_neuebook', Helvetica, Arial, sans-serif; 
+
+  color: black;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+
+  overflow: hidden-x;
+
+  text-align: center;
+}
+
+  html {
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    font-family: 'maison_neuebook', Helvetica, Arial, sans-serif; 
+  }
+
+  html:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+  }
+
+  body {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 38rem;
+    font-family: 'maison_neuebook', Helvetica, Arial, sans-serif; 
+
+  }

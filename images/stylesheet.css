@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'maison_neuebook';
+    src: url('maisonneue-book-webfont.woff2') format('woff2'),
+         url('maisonneue-book-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+w
+@font-face {
+    font-family: 'maison_neuemedium';
+    src: url('maisonneue-medium-webfont.woff2') format('woff2'),
+         url('maisonneue-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
