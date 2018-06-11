@@ -1,97 +1,59 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Homes on Academic</title>
-    <link>//localhost:1313/home/</link>
-    <description>Recent content in Homes on Academic</description>
+    <title>Homes on 简历</title>
+    <link>http://localhost:1313/home/</link>
+    <description>Recent content in Homes on 简历</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>zh-cn</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0800</lastBuildDate>
     
-	<atom:link href="//localhost:1313/home/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/home/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>//localhost:1313/home/about/</link>
+      <link>http://localhost:1313/home/about/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>//localhost:1313/home/about/</guid>
-      <description>Biography Lena Smith is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet.</description>
+      <guid>http://localhost:1313/home/about/</guid>
+      <description>概要 从0开始架构开发Wonderland，Wonder，小白墙以及一些内部工具。Wonderland 为一个人独立开发完成。在壹晨仟阳担任iO</description>
     </item>
     
     <item>
-      <title>Selected Publications</title>
-      <link>//localhost:1313/home/publications_selected/</link>
+      <title>精品项目</title>
+      <link>http://localhost:1313/home/projects_selected/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>//localhost:1313/home/publications_selected/</guid>
+      <guid>http://localhost:1313/home/projects_selected/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Recent Publications</title>
-      <link>//localhost:1313/home/publications/</link>
+      <title>其他项目</title>
+      <link>http://localhost:1313/home/projects/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>//localhost:1313/home/publications/</guid>
+      <guid>http://localhost:1313/home/projects/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Recent &amp; Upcoming Talks</title>
-      <link>//localhost:1313/home/talks/</link>
+      <title>工作经历</title>
+      <link>http://localhost:1313/home/experence/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>//localhost:1313/home/talks/</guid>
-      <description></description>
+      <guid>http://localhost:1313/home/experence/</guid>
+      <description>2014年12月～2018年3月 杭州壹晨仟阳科技有限公司(Tomorning Tech) 核心创始团队成员 iOS高级工程师 2014年 6月～2014年8月</description>
     </item>
     
     <item>
-      <title>Recent Posts</title>
-      <link>//localhost:1313/home/posts/</link>
+      <title>联系</title>
+      <link>http://localhost:1313/home/contact/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>//localhost:1313/home/posts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Projects</title>
-      <link>//localhost:1313/home/projects/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
-      
-      <guid>//localhost:1313/home/projects/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Custom Section</title>
-      <link>//localhost:1313/home/teaching/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
-      
-      <guid>//localhost:1313/home/teaching/</guid>
-      <description>This is an example of using the custom widget to create your own homepage section.
-To remove this section, either delete content/home/teaching.md or edit the frontmatter of the file to deactivate the widget by setting active = false.</description>
-    </item>
-    
-    <item>
-      <title>Tags</title>
-      <link>//localhost:1313/home/tags/</link>
-      <pubDate>Wed, 20 Sep 2017 00:00:00 +0800</pubDate>
-      
-      <guid>//localhost:1313/home/tags/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Contact</title>
-      <link>//localhost:1313/home/contact/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
-      
-      <guid>//localhost:1313/home/contact/</guid>
+      <guid>http://localhost:1313/home/contact/</guid>
       <description></description>
     </item>
     
