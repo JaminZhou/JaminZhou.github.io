@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on 简历</title>
+    <link>http://localhost:1313/project/</link>
+    <description>Recent content in Projects on 简历</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Wed, 27 Apr 2016 00:03:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Wonderland</title>
+      <link>http://localhost:1313/project/wonderland/</link>
+      <pubDate>Wed, 27 Apr 2016 00:03:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/project/wonderland/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus.</description>
+    </item>
+    
+    <item>
+      <title>Wonder</title>
+      <link>http://localhost:1313/project/wonder/</link>
+      <pubDate>Wed, 27 Apr 2016 00:02:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/project/wonder/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus.</description>
+    </item>
+    
+    <item>
+      <title>Snow Effect</title>
+      <link>http://localhost:1313/project/snow-effect/</link>
+      <pubDate>Wed, 27 Apr 2016 00:01:10 +0800</pubDate>
+      
+      <guid>http://localhost:1313/project/snow-effect/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Line Animation Effect</title>
+      <link>http://localhost:1313/project/line-animation/</link>
+      <pubDate>Wed, 27 Apr 2016 00:01:09 +0800</pubDate>
+      
+      <guid>http://localhost:1313/project/line-animation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rainbow Effect</title>
+      <link>http://localhost:1313/project/rainbow-effect/</link>
+      <pubDate>Wed, 27 Apr 2016 00:01:08 +0800</pubDate>
+      
+      <guid>http://localhost:1313/project/rainbow-effect/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bubble Effect</title>
+      <link>http://localhost:1313/project/bubble-effect/</link>
+      <pubDate>Wed, 27 Apr 2016 00:01:07 +0800</pubDate>
+      
+      <guid>http://localhost:1313/project/bubble-effect/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>小白墙</title>
+      <link>http://localhost:1313/project/tinywhitewall/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/project/tinywhitewall/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus.</description>
+    </item>
+    
+  </channel>
+</rss>

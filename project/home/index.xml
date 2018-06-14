@@ -18,20 +18,11 @@
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
       <guid>http://localhost:1313/home/about/</guid>
-      <description>概要 从0开始架构开发Wonderland，Wonder，小白墙以及一些内部工具。Wonderland 为一个人独立开发完成。在壹晨仟阳担任iO</description>
+      <description>概要 WWDC2014 Student Scholarship 苹果全球开发者大会奖学金 中国仅3人获得 参与两个百万级下载量APP项目开发 App Store上有多款独立开发的APP上架，并有5W+下载量</description>
     </item>
     
     <item>
-      <title>精品项目</title>
-      <link>http://localhost:1313/home/projects_selected/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
-      
-      <guid>http://localhost:1313/home/projects_selected/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>其他项目</title>
+      <title>精选项目</title>
       <link>http://localhost:1313/home/projects/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
@@ -40,12 +31,30 @@
     </item>
     
     <item>
+      <title>其他项目</title>
+      <link>http://localhost:1313/home/other_projects/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/home/other_projects/</guid>
+      <description>Standford CS193P Developing iOS XX Apps with Swift 翻译 Developing iOS 11 Apps with Swift Developing iOS 10 Apps with Swift ZhouJiamin ZhouJiamin &amp;ndash; This app describes the Shaoxing features, food, celebrity, attractions It&amp;rsquo;s my WWDC2014 student scholarship App. It‘s an original version without any modification. iCube Pro iCube Pro &amp;ndash; 是一个魔方/飞叠杯的计时器在你</description>
+    </item>
+    
+    <item>
       <title>工作经历</title>
       <link>http://localhost:1313/home/experence/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
       <guid>http://localhost:1313/home/experence/</guid>
-      <description>2014年12月～2018年3月 杭州壹晨仟阳科技有限公司(Tomorning Tech) 核心创始团队成员 iOS高级工程师 2014年 6月～2014年8月</description>
+      <description>2014年12月～2018年3月 杭州壹晨仟阳科技有限公司(Tomorning Tech) iOS高级工程师 核心创始团队成员，iOS Team Leader &amp;amp; 首席开发 0架构开</description>
+    </item>
+    
+    <item>
+      <title>媒体报道</title>
+      <link>http://localhost:1313/home/reports/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/home/reports/</guid>
+      <description>三名学生开发者受邀参加WWDC 最小仅14岁 苹果的新王朝与旧时代：13位顶级开发者说WWDC17 苹果开发者大会上的中国极客：ARkit、硬件，</description>
     </item>
     
     <item>

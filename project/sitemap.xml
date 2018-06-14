@@ -5,6 +5,69 @@
     
     <url>
     
+      <loc>http://localhost:1313/project/wonderland/</loc>
+      <lastmod>2016-04-27T00:03:00+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://localhost:1313/project/wonder/</loc>
+      <lastmod>2016-04-27T00:02:00+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://localhost:1313/project/snow-effect/</loc>
+      <lastmod>2016-04-27T00:01:10+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://localhost:1313/project/line-animation/</loc>
+      <lastmod>2016-04-27T00:01:09+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://localhost:1313/project/rainbow-effect/</loc>
+      <lastmod>2016-04-27T00:01:08+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://localhost:1313/project/bubble-effect/</loc>
+      <lastmod>2016-04-27T00:01:07+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://localhost:1313/project/tinywhitewall/</loc>
+      <lastmod>2016-04-27T00:00:00+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>http://localhost:1313/categories/</loc>
       <priority>0</priority>
     </url>
@@ -14,7 +77,38 @@
     
     <url>
     
+      <loc>http://localhost:1313/tags/github/</loc>
+      <lastmod>2016-04-27T00:01:10+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://localhost:1313/tags/ios/</loc>
+      <lastmod>2016-04-27T00:03:00+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://localhost:1313/project/</loc>
+      <lastmod>2016-04-27T00:03:00+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>http://localhost:1313/tags/</loc>
+      <lastmod>2016-04-27T00:01:10+08:00</lastmod>
       <priority>0</priority>
     </url>
     
