@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rouse</title>
+  <meta name="description" content="Rouse is a Mac menu bar app that keeps your Mac awake with timed sessions, display sleep control, and battery protection.">
+  <style>
+    :root {
+      --bg: #f5f2ea;
+      --surface: #fffdfa;
+      --text: #1f1b16;
+      --muted: #6f6559;
+      --line: #ded3c6;
+      --accent: #b2562d;
+      --accent-soft: #f2e3d5;
+      --shadow: 0 20px 60px rgba(61, 39, 17, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, #fff4e7 0, transparent 36%),
+        linear-gradient(180deg, #f9f5ef 0%, var(--bg) 100%);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 56px 20px 80px;
+    }
+
+    .hero {
+      background: rgba(255, 253, 250, 0.84);
+      border: 1px solid rgba(178, 86, 45, 0.12);
+      border-radius: 28px;
+      padding: 40px 32px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(40px, 8vw, 72px);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 0;
+      font-size: 20px;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    a.button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      background: var(--text);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a.button.secondary {
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--text);
+    }
+
+    .features {
+      margin-top: 28px;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .features li {
+      background: rgba(255, 253, 250, 0.8);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px 20px;
+    }
+
+    .features strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 16px;
+    }
+
+    footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Mac Utility</div>
+      <h1>Rouse</h1>
+      <p class="lead">A lightweight menu bar app that keeps your Mac awake with timed sessions, display sleep control, and battery-aware protection.</p>
+    </section>
+
+    <section class="grid" aria-label="Quick links">
+      <article class="card">
+        <h2>Support</h2>
+        <p>Need help with setup, battery behavior, or timed sessions? Start here.</p>
+        <a class="button" href="/rouse/support/">Open support page</a>
+      </article>
+      <article class="card">
+        <h2>Privacy Policy</h2>
+        <p>Read how Rouse handles data, preferences, and support requests.</p>
+        <a class="button secondary" href="/rouse/privacy/">Read privacy policy</a>
+      </article>
+    </section>
+
+    <ul class="features" aria-label="Highlights">
+      <li>
+        <strong>Stay awake on demand</strong>
+        Start an indefinite session or choose a timed duration directly from the menu bar.
+      </li>
+      <li>
+        <strong>Keep the display awake too</strong>
+        Useful for presentations, dashboards, downloads, reading, and long-running tasks.
+      </li>
+      <li>
+        <strong>Battery-aware safety</strong>
+        Rouse can automatically turn itself off when battery drops below your chosen threshold.
+      </li>
+    </ul>
+
+    <footer>
+      Rouse support and policy pages for the Mac App Store release.
+    </footer>
+  </main>
+</body>
+</html>
