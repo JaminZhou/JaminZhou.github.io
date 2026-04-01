@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rouse Changelog</title>
+  <meta name="description" content="Release notes and version history for Rouse, the Mac app with quick menu bar wake controls and a calm dashboard.">
+  <link rel="canonical" href="https://jaminzhou.com/rouse/changelog/">
+  <link rel="icon" type="image/png" href="/project/img/icon-192.png">
+  <link rel="apple-touch-icon" type="image/png" href="/project/img/icon-192.png">
+  <meta property="og:site_name" content="Rouse">
+  <meta property="og:title" content="Rouse Changelog">
+  <meta property="og:description" content="Release notes and version history for Rouse on the Mac App Store.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jaminzhou.com/rouse/changelog/">
+  <meta property="og:image" content="https://jaminzhou.com/rouse/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rouse Changelog">
+  <meta name="twitter:description" content="Release notes and version history for Rouse on the Mac App Store.">
+  <meta name="twitter:image" content="https://jaminzhou.com/rouse/og-card.png">
+  <style>
+    :root {
+      --bg: #f6f1e9;
+      --surface: #fffdfa;
+      --surface-soft: rgba(255, 253, 250, 0.82);
+      --text: #211b14;
+      --muted: #6c6257;
+      --line: #dfd2c4;
+      --accent: #b2562d;
+      --accent-soft: rgba(178, 86, 45, 0.12);
+      --shadow: 0 20px 60px rgba(61, 39, 17, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, #fff3e5 0, transparent 34%),
+        linear-gradient(180deg, #faf6ef 0%, var(--bg) 100%);
+      line-height: 1.65;
+    }
+
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 20px 72px;
+    }
+
+    .panel {
+      background: var(--surface-soft);
+      border: 1px solid rgba(178, 86, 45, 0.12);
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .kicker {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    h1, h2 {
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(34px, 6vw, 56px);
+      line-height: 1;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+    }
+
+    p, li {
+      color: var(--muted);
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .meta {
+      margin-top: 10px;
+      color: #5f5549;
+      font-size: 14px;
+    }
+
+    .entry {
+      margin-top: 28px;
+      padding: 22px 24px;
+      border-radius: 20px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .entry-title {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .entry-meta {
+      margin: 8px 0 0;
+      font-size: 14px;
+    }
+
+    .links {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="panel">
+      <div class="kicker">Changelog</div>
+      <h1>Rouse Changelog</h1>
+      <p class="meta">Last updated: April 1, 2026</p>
+      <p>Release notes for the Mac App Store version of Rouse. This page keeps the public version history short and user-focused.</p>
+
+      <article class="entry">
+        <h2 class="entry-title">1.0.0</h2>
+        <p class="entry-meta">Initial Mac App Store release.</p>
+        <ul>
+          <li>Introduced quick menu bar wake controls and a calm dashboard for deeper control.</li>
+          <li>Added indefinite and timed wake sessions, display sleep control, battery protection, and launch at login.</li>
+          <li>Included timed session restore behavior after relaunch or system wake.</li>
+        </ul>
+      </article>
+
+      <div class="links">
+        <a href="/rouse/">Back to Rouse</a>
+        <a href="/rouse/support/">Support</a>
+        <a href="/rouse/privacy/">Privacy Policy</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

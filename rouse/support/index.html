@@ -4,7 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rouse Support</title>
-  <meta name="description" content="Support information for Rouse, the Mac app with quick menu bar wake controls and a calm dashboard for deeper control.">
+  <meta name="description" content="Support and troubleshooting for Rouse, the Mac app with quick menu bar wake controls, timed sessions, and battery-aware rules.">
+  <link rel="canonical" href="https://jaminzhou.com/rouse/support/">
+  <link rel="icon" type="image/png" href="/project/img/icon-192.png">
+  <link rel="apple-touch-icon" type="image/png" href="/project/img/icon-192.png">
+  <meta property="og:site_name" content="Rouse">
+  <meta property="og:title" content="Rouse Support">
+  <meta property="og:description" content="Support and troubleshooting for Rouse, including timed sessions, display sleep, battery protection, and App Store updates.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jaminzhou.com/rouse/support/">
+  <meta property="og:image" content="https://jaminzhou.com/rouse/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rouse Support">
+  <meta name="twitter:description" content="Support and troubleshooting for Rouse, including timed sessions, display sleep, battery protection, and App Store updates.">
+  <meta name="twitter:image" content="https://jaminzhou.com/rouse/og-card.png">
   <style>
     :root {
       --bg: #f7f3ec;
@@ -57,6 +72,14 @@
       letter-spacing: -0.03em;
     }
 
+    h3 {
+      margin-top: 20px;
+      margin-bottom: 8px;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
     h1 {
       margin: 0 0 10px;
       font-size: clamp(34px, 6vw, 56px);
@@ -106,6 +129,14 @@
       margin-top: 10px;
       color: #5f5549;
       font-size: 14px;
+    }
+
+    .troubleshooting {
+      margin-top: 10px;
+      padding: 20px;
+      border-radius: 20px;
+      background: var(--surface);
+      border: 1px solid var(--line);
     }
   </style>
 </head>
@@ -159,7 +190,26 @@
         <li>Where can I read the privacy policy? Visit <a href="/rouse/privacy/">the Rouse Privacy Policy</a>.</li>
       </ul>
 
+      <h2>Troubleshooting</h2>
+      <div class="troubleshooting">
+        <h3>Timed sessions</h3>
+        <p>If a session ends earlier than expected, first check whether battery protection turned it off at your chosen threshold. If it looks different after sleep or relaunch, compare the remaining time against the saved session state rather than the original start time.</p>
+
+        <h3>Display sleep</h3>
+        <p>Display sleep control is optional. If your Mac stays awake but the screen still dims or sleeps, confirm that display sleep prevention was enabled for that session.</p>
+
+        <h3>Battery protection</h3>
+        <p>Rouse can automatically stop an active session when battery drops below the threshold you selected. If that behavior feels too aggressive, raise the threshold only if you want earlier protection, or turn the setting off in Rouse Settings.</p>
+
+        <h3>Launch at login</h3>
+        <p>If Rouse is not available after logging in, open Rouse Settings and verify that Launch at login is still enabled. macOS may also require you to review login items if system settings changed.</p>
+
+        <h3>App Store updates</h3>
+        <p>If the Mac App Store still shows an older build, refresh the App Store Updates page and confirm that you are viewing the Mac App Store version of Rouse. Version history is also available on the <a href="/rouse/changelog/">Rouse changelog</a>.</p>
+      </div>
+
       <h2>Version history</h2>
+      <p>The public release history now lives on the <a href="/rouse/changelog/">Rouse changelog</a>.</p>
       <ul>
         <li>1.0.0 - Initial Mac App Store release.</li>
       </ul>
@@ -170,6 +220,8 @@
 
       <p style="margin-top: 28px;">
         <a href="/rouse/">Back to Rouse</a>
+        / <a href="/rouse/changelog/">Changelog</a>
+        / <a href="/rouse/privacy/">Privacy Policy</a>
       </p>
     </section>
   </main>

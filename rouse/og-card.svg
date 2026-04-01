@@ -1,0 +1,78 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="72" x2="1080" y2="594" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBF6EF"/>
+      <stop offset="1" stop-color="#F1E7DA"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="713" y1="106" x2="1034" y2="514" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFCF7"/>
+      <stop offset="1" stop-color="#F7EEE3"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="701" y1="190" x2="1015" y2="463" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D57548"/>
+      <stop offset="1" stop-color="#AE512B"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(148 80) rotate(34.4725) scale(432.969 266.654)">
+      <stop stop-color="#FFF2DF"/>
+      <stop offset="1" stop-color="#FFF2DF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="636" y="80" width="463" height="490" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="18"/>
+      <feGaussianBlur stdDeviation="24"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.239216 0 0 0 0 0.152941 0 0 0 0 0.0666667 0 0 0 0.12 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_1" result="shape"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" rx="40" fill="url(#bg)"/>
+  <rect width="1200" height="630" rx="40" fill="url(#glow)"/>
+  <circle cx="1064" cy="142" r="106" fill="#F8E8D7" fill-opacity="0.9"/>
+  <circle cx="1114" cy="527" r="90" fill="#F3DDC7" fill-opacity="0.78"/>
+
+  <rect x="92" y="92" width="96" height="34" rx="17" fill="#F2E2D3"/>
+  <text x="140" y="114" text-anchor="middle" fill="#B2562D" font-size="16" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700" letter-spacing="1.2">MAC UTILITY</text>
+
+  <text x="92" y="232" fill="#1F1B16" font-size="92" font-family="SF Pro Display, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="800" letter-spacing="-3">Rouse</text>
+  <text x="92" y="282" fill="#B2562D" font-size="32" font-family="SF Pro Display, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700">Stay Awake on Mac</text>
+  <text x="92" y="352" fill="#6F6559" font-size="31" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <tspan x="92" dy="0">Fast menu bar wake toggle.</tspan>
+    <tspan x="92" dy="42">Calm dashboard for richer control.</tspan>
+  </text>
+
+  <rect x="92" y="472" width="328" height="50" rx="25" fill="#1F1B16"/>
+  <text x="256" y="504" text-anchor="middle" fill="#FFFDF9" font-size="24" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700">Now on the Mac App Store</text>
+  <text x="92" y="565" fill="#7D7062" font-size="21" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="600">macOS 13+ - Timed sessions - Battery-aware rules</text>
+
+  <g filter="url(#shadow)">
+    <rect x="684" y="110" width="367" height="394" rx="36" fill="url(#panel)"/>
+    <rect x="713" y="139" width="309" height="42" rx="21" fill="#F6EDE3"/>
+    <circle cx="740" cy="160" r="6" fill="#D57448"/>
+    <circle cx="762" cy="160" r="6" fill="#E0A36E"/>
+    <circle cx="784" cy="160" r="6" fill="#D8C7B1"/>
+    <text x="1000" y="166" text-anchor="end" fill="#8D7F70" font-size="15" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700">Rouse</text>
+
+    <rect x="716" y="204" width="154" height="172" rx="28" fill="url(#accent)"/>
+    <text x="742" y="242" fill="#FFE9D9" font-size="16" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700">Wake Session</text>
+    <text x="742" y="301" fill="#FFFDF9" font-size="52" font-family="SF Pro Display, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="800">1:00</text>
+    <rect x="742" y="326" width="96" height="28" rx="14" fill="rgba(255,253,249,0.18)"/>
+    <text x="790" y="345" text-anchor="middle" fill="#FFF6EF" font-size="14" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700">Timed</text>
+
+    <rect x="886" y="204" width="136" height="82" rx="24" fill="#FBF6EF" stroke="#E4D5C4"/>
+    <text x="910" y="238" fill="#6F6559" font-size="15" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700">Menu Bar</text>
+    <rect x="909" y="252" width="84" height="12" rx="6" fill="#E7D6C3"/>
+    <rect x="972" y="248" width="18" height="18" rx="9" fill="#B2562D"/>
+
+    <rect x="886" y="294" width="136" height="82" rx="24" fill="#FBF6EF" stroke="#E4D5C4"/>
+    <text x="910" y="328" fill="#6F6559" font-size="15" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700">Battery Rule</text>
+    <text x="910" y="358" fill="#1F1B16" font-size="28" font-family="SF Pro Display, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="800">20%</text>
+
+    <rect x="716" y="392" width="306" height="84" rx="24" fill="#FFFCF7" stroke="#E4D5C4"/>
+    <text x="742" y="426" fill="#6F6559" font-size="16" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700">Dashboard</text>
+    <rect x="742" y="439" width="124" height="12" rx="6" fill="#DFC9B2"/>
+    <rect x="876" y="439" width="52" height="12" rx="6" fill="#EADBCB"/>
+    <rect x="742" y="459" width="210" height="10" rx="5" fill="#F0E4D6"/>
+  </g>
+</svg>

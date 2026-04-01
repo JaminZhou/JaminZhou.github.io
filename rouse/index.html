@@ -3,8 +3,47 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rouse</title>
+  <title>Rouse | Stay Awake on Mac</title>
   <meta name="description" content="Rouse gives your Mac quick menu bar wake controls and a calm dashboard for display sleep control, battery-aware rules, and richer status.">
+  <link rel="canonical" href="https://jaminzhou.com/rouse/">
+  <link rel="icon" type="image/png" href="/project/img/icon-192.png">
+  <link rel="apple-touch-icon" type="image/png" href="/project/img/icon-192.png">
+  <meta property="og:site_name" content="Rouse">
+  <meta property="og:title" content="Rouse | Stay Awake on Mac">
+  <meta property="og:description" content="Use the menu bar for the fastest wake toggle, then open a calm dashboard for richer status, display sleep control, and battery-aware rules.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jaminzhou.com/rouse/">
+  <meta property="og:image" content="https://jaminzhou.com/rouse/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rouse | Stay Awake on Mac">
+  <meta name="twitter:description" content="Use the menu bar for the fastest wake toggle, then open a calm dashboard for richer status, display sleep control, and battery-aware rules.">
+  <meta name="twitter:image" content="https://jaminzhou.com/rouse/og-card.png">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Rouse: Stay Awake",
+      "url": "https://jaminzhou.com/rouse/",
+      "description": "Use the menu bar for the fastest wake toggle, then open a calm dashboard for richer status, display sleep control, and battery-aware rules.",
+      "operatingSystem": "macOS",
+      "applicationCategory": "UtilitiesApplication",
+      "softwareVersion": "1.0.0",
+      "image": "https://jaminzhou.com/rouse/og-card.png",
+      "downloadUrl": "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12",
+      "softwareHelp": "https://jaminzhou.com/rouse/support/",
+      "subjectOf": {
+        "@type": "CreativeWork",
+        "name": "Rouse Privacy Policy",
+        "url": "https://jaminzhou.com/rouse/privacy/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12"
+      }
+    }
+  </script>
   <style>
     :root {
       --bg: #f5f2ea;
@@ -79,6 +118,25 @@
       background: rgba(255, 253, 250, 0.9);
       border: 1px solid rgba(178, 86, 45, 0.16);
       color: var(--text);
+    }
+
+    .facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .fact {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 253, 250, 0.92);
+      border: 1px solid rgba(178, 86, 45, 0.14);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
     }
 
     .grid {
@@ -160,13 +218,18 @@
       <h1>Rouse</h1>
       <p class="lead">Use the menu bar for the fastest wake toggle, then open a calm dashboard for richer status, display sleep control, and battery-aware rules.</p>
       <p class="status">Rouse is now available on the Mac App Store. This site hosts the official support and privacy pages for the public release.</p>
+      <div class="facts" aria-label="Release details">
+        <div class="fact">Now on the Mac App Store</div>
+        <div class="fact">macOS 13 Ventura or later</div>
+        <div class="fact">Current version: 1.0.0</div>
+      </div>
     </section>
 
     <section class="grid" aria-label="Quick links">
       <article class="card">
         <h2>Download</h2>
-        <p>Get Rouse from the Mac App Store.</p>
-        <a class="button" href="https://apps.apple.com/app/id6760773101" target="_blank" rel="noreferrer">Download on the Mac App Store</a>
+        <p>Get Rouse from the Mac App Store. Requires macOS 13 Ventura or later.</p>
+        <a class="button" href="https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12" target="_blank" rel="noreferrer">Download on the Mac App Store</a>
       </article>
       <article class="card">
         <h2>Support</h2>
@@ -177,6 +240,11 @@
         <h2>Privacy Policy</h2>
         <p>Read how Rouse handles data, preferences, and support requests.</p>
         <a class="button secondary" href="/rouse/privacy/">Read privacy policy</a>
+      </article>
+      <article class="card">
+        <h2>Changelog</h2>
+        <p>See the public release history, starting with the 1.0.0 launch.</p>
+        <a class="button secondary" href="/rouse/changelog/">Read changelog</a>
       </article>
     </section>
 
@@ -196,7 +264,7 @@
     </ul>
 
     <footer>
-      Rouse support and policy pages for the Mac App Store release.
+      Rouse support, privacy, and release notes for the Mac App Store release.
     </footer>
   </main>
 </body>
