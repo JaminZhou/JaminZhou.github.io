@@ -101,6 +101,13 @@
       color: var(--accent);
     }
 
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
     .cta {
       display: inline-flex;
       align-items: center;
@@ -111,6 +118,12 @@
       color: #fff;
       text-decoration: none;
       font-weight: 600;
+    }
+
+    .cta.secondary {
+      background: #f8efe5;
+      color: var(--text);
+      border: 1px solid #ead5be;
     }
 
     .note {
@@ -150,15 +163,19 @@
       <p>Rouse gives you quick menu bar wake controls, plus a calm dashboard for display sleep control, battery-aware rules, and richer status.</p>
 
       <p>
-        Need help? Contact
-        <a href="mailto:me@jaminzhou.com">me@jaminzhou.com</a>.
+        Need help? You can email
+        <a href="mailto:me@jaminzhou.com">me@jaminzhou.com</a>
+        or use the feedback form if you would rather not start with email.
       </p>
 
-      <p>
+      <div class="cta-row">
         <a class="cta" href="mailto:me@jaminzhou.com?subject=Rouse%20Support">Email support</a>
-      </p>
+        <a class="cta secondary" href="https://tally.so/r/jaW724" target="_blank" rel="noreferrer">Open feedback form</a>
+      </div>
 
-      <h2>Before you email</h2>
+      <p>The feedback form can be submitted anonymously, and it also gives you the option to leave an email for follow-up.</p>
+
+      <h2>Before you contact support</h2>
       <ul>
         <li>Rouse supports macOS 13 Ventura or later.</li>
         <li>Make sure you are checking the Mac App Store version of Rouse.</li>
