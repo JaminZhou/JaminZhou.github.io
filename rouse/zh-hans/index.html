@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rouse | Stay Awake on Mac</title>
-  <meta name="description" content="Rouse gives your Mac quick menu bar wake controls and a calm dashboard for display sleep control, battery-aware rules, and richer status.">
-  <link rel="canonical" href="https://jaminzhou.com/rouse/">
+  <title>Rouse | 让 Mac 保持唤醒</title>
+  <meta name="description" content="Rouse 为你的 Mac 提供菜单栏快速防休眠控制，以及一个用于显示器睡眠控制、电池保护规则和状态查看的简洁 Dashboard。">
+  <link rel="canonical" href="https://jaminzhou.com/rouse/zh-hans/">
   <link rel="alternate" hreflang="en" href="https://jaminzhou.com/rouse/">
   <link rel="alternate" hreflang="ja" href="https://jaminzhou.com/rouse/ja/">
   <link rel="alternate" hreflang="zh-Hans" href="https://jaminzhou.com/rouse/zh-hans/">
@@ -15,25 +15,25 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/rouse/favicon-32.png">
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/rouse/apple-touch-icon.png">
   <meta property="og:site_name" content="Rouse">
-  <meta property="og:title" content="Rouse | Stay Awake on Mac">
-  <meta property="og:description" content="Use the menu bar for the fastest wake toggle, then open a calm dashboard for richer status, display sleep control, and battery-aware rules.">
+  <meta property="og:title" content="Rouse | 让 Mac 保持唤醒">
+  <meta property="og:description" content="通过菜单栏快速切换防休眠，需要更多信息时再打开简洁的 Dashboard，查看状态、显示器睡眠控制和电池保护规则。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://jaminzhou.com/rouse/">
+  <meta property="og:url" content="https://jaminzhou.com/rouse/zh-hans/">
   <meta property="og:image" content="https://jaminzhou.com/rouse/og-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Rouse | Stay Awake on Mac">
-  <meta name="twitter:description" content="Use the menu bar for the fastest wake toggle, then open a calm dashboard for richer status, display sleep control, and battery-aware rules.">
+  <meta name="twitter:title" content="Rouse | 让 Mac 保持唤醒">
+  <meta name="twitter:description" content="通过菜单栏快速切换防休眠，需要更多信息时再打开简洁的 Dashboard，查看状态、显示器睡眠控制和电池保护规则。">
   <meta name="twitter:image" content="https://jaminzhou.com/rouse/og-card.png">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "Rouse: Stay Awake",
-      "url": "https://jaminzhou.com/rouse/",
-      "description": "Use the menu bar for the fastest wake toggle, then open a calm dashboard for richer status, display sleep control, and battery-aware rules.",
-      "inLanguage": "en",
+      "url": "https://jaminzhou.com/rouse/zh-hans/",
+      "description": "通过菜单栏快速切换防休眠，需要更多信息时再打开简洁的 Dashboard，查看状态、显示器睡眠控制和电池保护规则。",
+      "inLanguage": "zh-Hans",
       "operatingSystem": "macOS",
       "applicationCategory": "UtilitiesApplication",
       "softwareVersion": "1.2.0",
@@ -67,7 +67,7 @@
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", sans-serif;
       color: var(--text);
       background:
         radial-gradient(circle at top left, #fff4e7 0, transparent 36%),
@@ -79,15 +79,6 @@
       max-width: 880px;
       margin: 0 auto;
       padding: 56px 20px 80px;
-    }
-
-    .hero {
-      background: rgba(255, 253, 250, 0.84);
-      border: 1px solid rgba(178, 86, 45, 0.12);
-      border-radius: 28px;
-      padding: 40px 32px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
     }
 
     .locale-switch {
@@ -114,6 +105,15 @@
       background: var(--text);
       border-color: var(--text);
       color: #fff;
+    }
+
+    .hero {
+      background: rgba(255, 253, 250, 0.84);
+      border: 1px solid rgba(178, 86, 45, 0.12);
+      border-radius: 28px;
+      padding: 40px 32px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
     }
 
     .eyebrow {
@@ -216,6 +216,12 @@
       color: var(--text);
     }
 
+    .note {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
     .features {
       margin-top: 28px;
       padding: 0;
@@ -247,64 +253,66 @@
 <body>
   <main class="wrap">
     <nav class="locale-switch" aria-label="Languages">
-      <a class="locale-link" href="/rouse/" aria-current="page">English</a>
+      <a class="locale-link" href="/rouse/">English</a>
       <a class="locale-link" href="/rouse/ja/">日本語</a>
-      <a class="locale-link" href="/rouse/zh-hans/">简体中文</a>
+      <a class="locale-link" href="/rouse/zh-hans/" aria-current="page">简体中文</a>
       <a class="locale-link" href="/rouse/zh-hant/">繁體中文</a>
     </nav>
 
     <section class="hero">
-      <div class="eyebrow">Mac Utility</div>
+      <div class="eyebrow">Mac 工具</div>
       <h1>Rouse</h1>
-      <p class="lead">Use the menu bar for the fastest wake toggle, then open a calm dashboard for richer status, display sleep control, and battery-aware rules.</p>
-      <p class="status">Rouse is now available on the Mac App Store. This site hosts the official support and privacy pages for the public release.</p>
+      <p class="lead">通过菜单栏快速切换防休眠，需要更多信息时再打开简洁的 Dashboard，查看状态、显示器睡眠控制和电池保护规则。</p>
+      <p class="status">Rouse 现已上架 Mac App Store。本网站提供公开版本的支持与隐私信息。</p>
       <div class="facts" aria-label="Release details">
-        <div class="fact">Now on the Mac App Store</div>
-        <div class="fact">macOS 13 Ventura or later</div>
-        <div class="fact">Current version: 1.2.0</div>
+        <div class="fact">已上架 Mac App Store</div>
+        <div class="fact">需要 macOS 13 Ventura 或更高版本</div>
+        <div class="fact">当前版本：1.2.0</div>
       </div>
     </section>
 
     <section class="grid" aria-label="Quick links">
       <article class="card">
-        <h2>Download</h2>
-        <p>Get Rouse from the Mac App Store. Requires macOS 13 Ventura or later.</p>
-        <a class="button" href="https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12" target="_blank" rel="noreferrer">Download on the Mac App Store</a>
+        <h2>下载</h2>
+        <p>可从 Mac App Store 获取 Rouse。需要 macOS 13 Ventura 或更高版本。</p>
+        <a class="button" href="https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12" target="_blank" rel="noreferrer">前往 Mac App Store</a>
       </article>
       <article class="card">
-        <h2>Support</h2>
-        <p>Need help with setup, battery behavior, or timed sessions? Start here.</p>
-        <a class="button" href="/rouse/support/">Open support page</a>
+        <h2>支持</h2>
+        <p>如果你在设置、电池行为或定时会话方面遇到问题，可以先从这里查看。</p>
+        <a class="button" href="/rouse/support/">打开支持页面（英文）</a>
       </article>
       <article class="card">
-        <h2>Privacy Policy</h2>
-        <p>Read how Rouse handles data, preferences, and support requests.</p>
-        <a class="button secondary" href="/rouse/privacy/">Read privacy policy</a>
+        <h2>隐私政策</h2>
+        <p>了解 Rouse 如何处理数据、偏好设置和支持联系信息。</p>
+        <a class="button secondary" href="/rouse/privacy/">查看隐私政策（英文）</a>
       </article>
       <article class="card">
-        <h2>Changelog</h2>
-        <p>See the public release history, starting with the 1.0.0 launch.</p>
-        <a class="button secondary" href="/rouse/changelog/">Read changelog</a>
+        <h2>更新日志</h2>
+        <p>查看公开版本的发布历史。</p>
+        <a class="button secondary" href="/rouse/zh-hans/changelog/">查看更新日志</a>
       </article>
     </section>
 
+    <p class="note">支持页面和隐私政策目前仅提供英文版。</p>
+
     <ul class="features" aria-label="Highlights">
       <li>
-        <strong>Open the dashboard when you want more context</strong>
-        Check live status, start timed or open-ended sessions, and keep your most useful wake controls and rules in one place.
+        <strong>需要更多上下文时打开 Dashboard</strong>
+        你可以在一个地方查看实时状态、启动定时或不限时会话，并管理最常用的防休眠控制和规则。
       </li>
       <li>
-        <strong>Keep the menu bar as your shortcut</strong>
-        Use the menu bar for the fastest toggle, then return to the dashboard for richer status, presets, and rules.
+        <strong>把菜单栏保留为最快捷的入口</strong>
+        最快的切换仍然在菜单栏完成，而更丰富的状态、预设和规则可以在 Dashboard 中查看。
       </li>
       <li>
-        <strong>Protect battery automatically</strong>
-        Rouse can turn itself off when battery drops below your chosen threshold, so long sessions stay practical.
+        <strong>自动保护电池</strong>
+        当电量低于你设定的阈值时，Rouse 可以自动关闭，让长时间会话也更安心。
       </li>
     </ul>
 
     <footer>
-      Rouse support, privacy, and release notes for the Mac App Store release.
+      Rouse 的支持、隐私和 Mac App Store 发布说明。
     </footer>
   </main>
 </body>

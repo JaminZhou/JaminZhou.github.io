@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rouse | Stay Awake on Mac</title>
-  <meta name="description" content="Rouse gives your Mac quick menu bar wake controls and a calm dashboard for display sleep control, battery-aware rules, and richer status.">
-  <link rel="canonical" href="https://jaminzhou.com/rouse/">
+  <title>Rouse | Macをスリープさせない</title>
+  <meta name="description" content="Rouse は、メニューバーのすばやいスリープ防止操作と、ディスプレイ制御、バッテリー保護ルール、状態確認のための落ち着いたダッシュボードを Mac に提供します。">
+  <link rel="canonical" href="https://jaminzhou.com/rouse/ja/">
   <link rel="alternate" hreflang="en" href="https://jaminzhou.com/rouse/">
   <link rel="alternate" hreflang="ja" href="https://jaminzhou.com/rouse/ja/">
   <link rel="alternate" hreflang="zh-Hans" href="https://jaminzhou.com/rouse/zh-hans/">
@@ -15,25 +15,25 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/rouse/favicon-32.png">
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/rouse/apple-touch-icon.png">
   <meta property="og:site_name" content="Rouse">
-  <meta property="og:title" content="Rouse | Stay Awake on Mac">
-  <meta property="og:description" content="Use the menu bar for the fastest wake toggle, then open a calm dashboard for richer status, display sleep control, and battery-aware rules.">
+  <meta property="og:title" content="Rouse | Macをスリープさせない">
+  <meta property="og:description" content="メニューバーですばやくスリープ防止を切り替え、必要になったら落ち着いたダッシュボードで状態確認、ディスプレイ制御、バッテリー保護ルールをまとめて操作できます。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://jaminzhou.com/rouse/">
+  <meta property="og:url" content="https://jaminzhou.com/rouse/ja/">
   <meta property="og:image" content="https://jaminzhou.com/rouse/og-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Rouse | Stay Awake on Mac">
-  <meta name="twitter:description" content="Use the menu bar for the fastest wake toggle, then open a calm dashboard for richer status, display sleep control, and battery-aware rules.">
+  <meta name="twitter:title" content="Rouse | Macをスリープさせない">
+  <meta name="twitter:description" content="メニューバーですばやくスリープ防止を切り替え、必要になったら落ち着いたダッシュボードで状態確認、ディスプレイ制御、バッテリー保護ルールをまとめて操作できます。">
   <meta name="twitter:image" content="https://jaminzhou.com/rouse/og-card.png">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "Rouse: Stay Awake",
-      "url": "https://jaminzhou.com/rouse/",
-      "description": "Use the menu bar for the fastest wake toggle, then open a calm dashboard for richer status, display sleep control, and battery-aware rules.",
-      "inLanguage": "en",
+      "url": "https://jaminzhou.com/rouse/ja/",
+      "description": "メニューバーですばやくスリープ防止を切り替え、必要になったら落ち着いたダッシュボードで状態確認、ディスプレイ制御、バッテリー保護ルールをまとめて操作できます。",
+      "inLanguage": "ja",
       "operatingSystem": "macOS",
       "applicationCategory": "UtilitiesApplication",
       "softwareVersion": "1.2.0",
@@ -67,7 +67,7 @@
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Segoe UI", sans-serif;
       color: var(--text);
       background:
         radial-gradient(circle at top left, #fff4e7 0, transparent 36%),
@@ -79,15 +79,6 @@
       max-width: 880px;
       margin: 0 auto;
       padding: 56px 20px 80px;
-    }
-
-    .hero {
-      background: rgba(255, 253, 250, 0.84);
-      border: 1px solid rgba(178, 86, 45, 0.12);
-      border-radius: 28px;
-      padding: 40px 32px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
     }
 
     .locale-switch {
@@ -114,6 +105,15 @@
       background: var(--text);
       border-color: var(--text);
       color: #fff;
+    }
+
+    .hero {
+      background: rgba(255, 253, 250, 0.84);
+      border: 1px solid rgba(178, 86, 45, 0.12);
+      border-radius: 28px;
+      padding: 40px 32px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
     }
 
     .eyebrow {
@@ -216,6 +216,12 @@
       color: var(--text);
     }
 
+    .note {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
     .features {
       margin-top: 28px;
       padding: 0;
@@ -247,64 +253,66 @@
 <body>
   <main class="wrap">
     <nav class="locale-switch" aria-label="Languages">
-      <a class="locale-link" href="/rouse/" aria-current="page">English</a>
-      <a class="locale-link" href="/rouse/ja/">日本語</a>
+      <a class="locale-link" href="/rouse/">English</a>
+      <a class="locale-link" href="/rouse/ja/" aria-current="page">日本語</a>
       <a class="locale-link" href="/rouse/zh-hans/">简体中文</a>
       <a class="locale-link" href="/rouse/zh-hant/">繁體中文</a>
     </nav>
 
     <section class="hero">
-      <div class="eyebrow">Mac Utility</div>
+      <div class="eyebrow">Mac ユーティリティ</div>
       <h1>Rouse</h1>
-      <p class="lead">Use the menu bar for the fastest wake toggle, then open a calm dashboard for richer status, display sleep control, and battery-aware rules.</p>
-      <p class="status">Rouse is now available on the Mac App Store. This site hosts the official support and privacy pages for the public release.</p>
+      <p class="lead">メニューバーですばやくスリープ防止を切り替え、必要になったら落ち着いたダッシュボードで状態確認、ディスプレイ制御、バッテリー保護ルールをまとめて操作できます。</p>
+      <p class="status">Rouse は Mac App Store で配信中です。このサイトでは公開版のサポートとプライバシー情報を案内しています。</p>
       <div class="facts" aria-label="Release details">
-        <div class="fact">Now on the Mac App Store</div>
-        <div class="fact">macOS 13 Ventura or later</div>
-        <div class="fact">Current version: 1.2.0</div>
+        <div class="fact">Mac App Storeで配信中</div>
+        <div class="fact">macOS 13 Ventura 以降</div>
+        <div class="fact">現在のバージョン: 1.2.0</div>
       </div>
     </section>
 
     <section class="grid" aria-label="Quick links">
       <article class="card">
-        <h2>Download</h2>
-        <p>Get Rouse from the Mac App Store. Requires macOS 13 Ventura or later.</p>
-        <a class="button" href="https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12" target="_blank" rel="noreferrer">Download on the Mac App Store</a>
+        <h2>ダウンロード</h2>
+        <p>Mac App Store から Rouse を入手できます。macOS 13 Ventura 以降に対応しています。</p>
+        <a class="button" href="https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12" target="_blank" rel="noreferrer">Mac App Storeで見る</a>
       </article>
       <article class="card">
-        <h2>Support</h2>
-        <p>Need help with setup, battery behavior, or timed sessions? Start here.</p>
-        <a class="button" href="/rouse/support/">Open support page</a>
+        <h2>サポート</h2>
+        <p>セットアップ、バッテリー動作、時間指定セッションで困ったらここから確認できます。</p>
+        <a class="button" href="/rouse/support/">サポートページを見る（英語）</a>
       </article>
       <article class="card">
-        <h2>Privacy Policy</h2>
-        <p>Read how Rouse handles data, preferences, and support requests.</p>
-        <a class="button secondary" href="/rouse/privacy/">Read privacy policy</a>
+        <h2>プライバシーポリシー</h2>
+        <p>Rouse がデータ、設定、サポート連絡をどう扱うかを確認できます。</p>
+        <a class="button secondary" href="/rouse/privacy/">プライバシーポリシー（英語）</a>
       </article>
       <article class="card">
-        <h2>Changelog</h2>
-        <p>See the public release history, starting with the 1.0.0 launch.</p>
-        <a class="button secondary" href="/rouse/changelog/">Read changelog</a>
+        <h2>更新履歴</h2>
+        <p>公開版のリリース履歴を確認できます。</p>
+        <a class="button secondary" href="/rouse/ja/changelog/">更新履歴を見る</a>
       </article>
     </section>
 
+    <p class="note">サポートページとプライバシーポリシーは現在英語のみです。</p>
+
     <ul class="features" aria-label="Highlights">
       <li>
-        <strong>Open the dashboard when you want more context</strong>
-        Check live status, start timed or open-ended sessions, and keep your most useful wake controls and rules in one place.
+        <strong>必要なときに Dashboard を開く</strong>
+        ライブ状態の確認、時間指定や無期限のセッション開始、よく使うスリープ防止操作やルールの管理を 1 か所で行えます。
       </li>
       <li>
-        <strong>Keep the menu bar as your shortcut</strong>
-        Use the menu bar for the fastest toggle, then return to the dashboard for richer status, presets, and rules.
+        <strong>メニューバーを最短のショートカットとして使う</strong>
+        最速の切り替えはメニューバーで行い、より詳しい状態やプリセット、ルールは Dashboard で確認できます。
       </li>
       <li>
-        <strong>Protect battery automatically</strong>
-        Rouse can turn itself off when battery drops below your chosen threshold, so long sessions stay practical.
+        <strong>バッテリーを自動で保護する</strong>
+        バッテリー残量が選択したしきい値を下回ると、Rouse が自動でオフになり、長時間の利用でも扱いやすくなります。
       </li>
     </ul>
 
     <footer>
-      Rouse support, privacy, and release notes for the Mac App Store release.
+      Rouse のサポート、プライバシー、リリースノート。
     </footer>
   </main>
 </body>
