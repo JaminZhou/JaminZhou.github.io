@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rouse 隐私政策</title>
+  <meta name="description" content="Rouse 隐私政策，说明本地偏好设置、支持请求以及 Mac App Store 版本的数据处理方式。">
+  <link rel="canonical" href="https://jaminzhou.com/rouse/zh-hans/privacy/">
+  <link rel="alternate" hreflang="en" href="https://jaminzhou.com/rouse/privacy/">
+  <link rel="alternate" hreflang="ja" href="https://jaminzhou.com/rouse/ja/privacy/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://jaminzhou.com/rouse/zh-hans/privacy/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://jaminzhou.com/rouse/zh-hant/privacy/">
+  <link rel="alternate" hreflang="x-default" href="https://jaminzhou.com/rouse/privacy/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/rouse/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/rouse/favicon-32.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/rouse/apple-touch-icon.png">
+  <meta property="og:site_name" content="Rouse">
+  <meta property="og:title" content="Rouse 隐私政策">
+  <meta property="og:description" content="Rouse 隐私政策，说明本地偏好设置、支持请求以及 Mac App Store 版本的数据处理方式。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jaminzhou.com/rouse/zh-hans/privacy/">
+  <meta property="og:image" content="https://jaminzhou.com/rouse/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <style>
+    :root {
+      --bg: #f6f2ea;
+      --surface: #fffdfa;
+      --text: #211b14;
+      --muted: #6b6156;
+      --line: #dfd2c4;
+      --accent: #b2562d;
+      --shadow: 0 20px 60px rgba(61, 39, 17, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #faf6ef 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 20px 72px;
+    }
+
+    .locale-switch {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .locale-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(178, 86, 45, 0.16);
+      background: rgba(255, 253, 250, 0.92);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .locale-link[aria-current="page"] {
+      background: var(--text);
+      border-color: var(--text);
+      color: #fff;
+    }
+
+    .panel {
+      background: rgba(255, 253, 250, 0.92);
+      border: 1px solid rgba(178, 86, 45, 0.12);
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .kicker {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(178, 86, 45, 0.12);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    h1, h2 { letter-spacing: -0.03em; }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(34px, 6vw, 56px);
+      line-height: 1;
+    }
+
+    h2 {
+      margin-top: 28px;
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+
+    p, li { color: var(--muted); }
+
+    a { color: var(--accent); }
+
+    ul { padding-left: 20px; }
+
+    .meta {
+      margin-top: 10px;
+      color: #5f5549;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <nav class="locale-switch" aria-label="Languages">
+      <a class="locale-link" href="/rouse/privacy/">English</a>
+      <a class="locale-link" href="/rouse/ja/privacy/">日本語</a>
+      <a class="locale-link" href="/rouse/zh-hans/privacy/" aria-current="page">简体中文</a>
+      <a class="locale-link" href="/rouse/zh-hant/privacy/">繁體中文</a>
+    </nav>
+
+    <section class="panel">
+      <div class="kicker">隐私政策</div>
+      <h1>Rouse 隐私政策</h1>
+      <p class="meta">生效日期：2026 年 4 月 8 日</p>
+
+      <p>本隐私政策适用于 macOS 版 Rouse，包括 Mac App Store 版本。</p>
+
+      <h2>摘要</h2>
+      <p>Rouse 在你的 Mac 上本地运行。它提供菜单栏快速控制和更完整的 Dashboard，不需要账号、广告、分析或追踪 SDK。</p>
+
+      <h2>Rouse 不收集的信息</h2>
+      <ul>
+        <li>账号信息</li>
+        <li>广告标识符</li>
+        <li>第三方分析数据</li>
+        <li>位置信息</li>
+        <li>通讯录、照片图库、麦克风或摄像头数据</li>
+      </ul>
+
+      <h2>本地存储在你设备上的信息</h2>
+      <p>Rouse 会在你的 Mac 上本地存储应用偏好设置，以便应用按预期工作。根据你使用的功能，可能包括：</p>
+      <ul>
+        <li>你偏好的会话时长</li>
+        <li>是否启用显示器防睡眠</li>
+        <li>电池保护设置和阈值</li>
+        <li>登录时启动偏好</li>
+        <li>此 Mac 上是否解锁 Supporter 状态</li>
+      </ul>
+      <p>这些信息会留在你的设备上，应用不会将其发送给开发者。</p>
+
+      <h2>网络活动</h2>
+      <p>Mac App Store 版 Rouse 的核心防休眠功能在本地工作。使用菜单栏控制、打开 Dashboard、启动会话或管理规则时，不需要登录或远程账号。</p>
+      <p>如果你选择可选的支持购买，应用会使用 Apple 的 StoreKit 和 App Store 服务加载商品、处理购买并恢复之前的购买。</p>
+
+      <h2>支持请求</h2>
+      <p>如果你通过邮件联系支持，你选择发送的信息，例如邮箱地址和邮件内容，只会用于回复你的请求并改进支持质量。</p>
+      <p>如果你使用 Rouse 反馈表单，可以匿名提交，也可以选择留下邮箱以便后续回复。应用和支持网站也可能预填基本上下文，例如应用版本、构建号、macOS 版本、产品渠道以及你打开表单的位置。</p>
+
+      <h2>第三方服务</h2>
+      <p>如果你使用第三方邮件提供商或其他外部服务联系支持，你的信息也可能受该服务自身条款和隐私实践约束。当前反馈表单由 Tally 提供，因此表单提交也受 Tally 自身条款和隐私实践约束。</p>
+
+      <h2>儿童隐私</h2>
+      <p>Rouse 不面向儿童，应用也不会有意收集儿童的个人信息。</p>
+
+      <h2>本政策的变更</h2>
+      <p>本隐私政策可能会不时更新。任何更新都会发布在本页面，并标注修订后的生效日期。</p>
+
+      <h2>联系方式</h2>
+      <p>如果你对本隐私政策有疑问，请联系 <a href="mailto:me@jaminzhou.com">me@jaminzhou.com</a>。</p>
+
+      <p style="margin-top: 28px;">
+        <a href="/rouse/zh-hans/">返回 Rouse</a>
+        / <a href="/rouse/zh-hans/support/">支持</a>
+        / <a href="/rouse/zh-hans/changelog/">更新日志</a>
+      </p>
+    </section>
+  </main>
+</body>
+</html>

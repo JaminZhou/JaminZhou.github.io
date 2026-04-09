@@ -6,6 +6,11 @@
   <title>Rouse Support</title>
   <meta name="description" content="Support and troubleshooting for Rouse, the Mac app with quick menu bar wake controls, timed sessions, and battery-aware rules.">
   <link rel="canonical" href="https://jaminzhou.com/rouse/support/">
+  <link rel="alternate" hreflang="en" href="https://jaminzhou.com/rouse/support/">
+  <link rel="alternate" hreflang="ja" href="https://jaminzhou.com/rouse/ja/support/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://jaminzhou.com/rouse/zh-hans/support/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://jaminzhou.com/rouse/zh-hant/support/">
+  <link rel="alternate" hreflang="x-default" href="https://jaminzhou.com/rouse/support/">
   <link rel="icon" type="image/png" sizes="16x16" href="/rouse/favicon-16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/rouse/favicon-32.png">
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/rouse/apple-touch-icon.png">
@@ -54,6 +59,32 @@
       border-radius: 28px;
       padding: 32px;
       box-shadow: var(--shadow);
+    }
+
+    .locale-switch {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .locale-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(178, 86, 45, 0.16);
+      background: rgba(255, 253, 250, 0.92);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .locale-link[aria-current="page"] {
+      background: var(--text);
+      border-color: var(--text);
+      color: #fff;
     }
 
     .kicker {
@@ -156,6 +187,13 @@
 </head>
 <body>
   <main class="wrap">
+    <nav class="locale-switch" aria-label="Languages">
+      <a class="locale-link" href="/rouse/support/" aria-current="page">English</a>
+      <a class="locale-link" href="/rouse/ja/support/">日本語</a>
+      <a class="locale-link" href="/rouse/zh-hans/support/">简体中文</a>
+      <a class="locale-link" href="/rouse/zh-hant/support/">繁體中文</a>
+    </nav>
+
     <section class="panel">
       <div class="kicker">Support</div>
       <h1>Rouse Support</h1>
