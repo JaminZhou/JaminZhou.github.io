@@ -1,38 +1,699 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Jamin Zhou</title>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
   <meta http-equiv="Content-Language" content="en">
-  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-  <meta name="description" content="Jamin Zhou, indie developer and designer in Shanghai. Projects include Rouse for macOS.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jamin Zhou | Independent Software Studio</title>
+  <meta name="description" content="Jamin Zhou is an independent developer and designer in Shanghai, building thoughtful software including Rouse for macOS.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Jamin Zhou">
   <link rel="canonical" href="https://jaminzhou.com/">
-  
-  <!-- OG -->
-  <meta property="og:site_name" content="Jamin Zhou">   
-  <meta property="og:title" content="Jamin Zhou">   
-  <meta property="og:description" content="Jamin Zhou, indie developer and designer in Shanghai. Projects include Rouse for macOS.">
+
+  <meta property="og:site_name" content="Jamin Zhou">
+  <meta property="og:title" content="Jamin Zhou | Independent Software Studio">
+  <meta property="og:description" content="Independent developer and designer in Shanghai, building thoughtful software including Rouse for macOS.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jaminzhou.com/">
   <meta property="og:image" content="https://jaminzhou.com/images/photo_1.png">
-  
-  <link rel="stylesheet" href="images/animate.min.css">
-  <link rel="stylesheet" type="text/css" href="images/stylesheet.css">
-  <link rel="stylesheet" type="text/css" href="images/maison.css">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Jamin Zhou | Independent Software Studio">
+  <meta name="twitter:description" content="Independent developer and designer in Shanghai, building thoughtful software including Rouse for macOS.">
+  <meta name="twitter:image" content="https://jaminzhou.com/images/photo_1.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jamin Zhou",
+    "url": "https://jaminzhou.com/",
+    "image": "https://jaminzhou.com/images/photo_1.png",
+    "email": "mailto:me@jaminzhou.com",
+    "jobTitle": "Independent Developer and Designer",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Shanghai",
+      "addressCountry": "CN"
+    },
+    "sameAs": [
+      "https://github.com/JaminZhou",
+      "https://dribbble.com/JaminZhou",
+      "https://linkedin.com/in/jaminzhou",
+      "https://medium.com/@jaminzhou/",
+      "https://www.instagram.com/JaminZhou/"
+    ],
+    "makesOffer": {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "SoftwareApplication",
+        "name": "Rouse",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "macOS",
+        "url": "https://jaminzhou.com/rouse/"
+      }
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --ink: #251f18;
+      --muted: #76695b;
+      --paper: #f6efe4;
+      --panel: rgba(255, 250, 241, 0.82);
+      --panel-strong: #fffaf1;
+      --line: rgba(98, 72, 44, 0.18);
+      --shadow: 0 32px 80px rgba(67, 45, 24, 0.16);
+      --display: "Iowan Old Style", "Palatino", "Book Antiqua", serif;
+      --sans: "Avenir Next", "Gill Sans", "Trebuchet MS", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(184, 91, 52, 0.2), transparent 28rem),
+        radial-gradient(circle at 85% 10%, rgba(84, 104, 76, 0.18), transparent 26rem),
+        linear-gradient(135deg, #fbf3e7 0%, #f4e5d0 48%, #efe4d4 100%);
+      color: var(--ink);
+    }
+
+    body::before {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      content: "";
+      background-image:
+        linear-gradient(rgba(37, 31, 24, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37, 31, 24, 0.035) 1px, transparent 1px);
+      background-size: 34px 34px;
+      -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.8), transparent 78%);
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.8), transparent 78%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+
+    .topbar,
+    .hero,
+    .project-card,
+    .note-card {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      -webkit-backdrop-filter: blur(24px);
+      backdrop-filter: blur(24px);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 72px;
+      padding: 14px 16px;
+      border-radius: 999px;
+      animation: rise 700ms ease both;
+    }
+
+    .identity {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+      text-decoration: none;
+    }
+
+    .avatar {
+      width: 46px;
+      height: 46px;
+      border: 2px solid rgba(255, 250, 241, 0.9);
+      border-radius: 50%;
+      box-shadow: 0 10px 26px rgba(37, 31, 24, 0.16);
+      object-fit: cover;
+    }
+
+    .identity-copy {
+      display: block;
+      min-width: 0;
+    }
+
+    .identity-copy strong {
+      display: block;
+      font-size: 15px;
+      letter-spacing: 0.02em;
+    }
+
+    .eyebrow,
+    .card-label,
+    footer {
+      color: var(--muted);
+    }
+
+    .identity-copy span {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .nav a,
+    .pill,
+    .button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      text-decoration: none;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .nav a {
+      padding: 0 14px;
+      background: rgba(255, 250, 241, 0.54);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .nav a:hover,
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: rgba(184, 91, 52, 0.4);
+      background: rgba(255, 250, 241, 0.9);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+      gap: clamp(28px, 5vw, 72px);
+      margin-top: 28px;
+      padding: clamp(28px, 6vw, 72px);
+      border-radius: 48px;
+      overflow: hidden;
+      animation: rise 800ms 80ms ease both;
+    }
+
+    .hero-copy {
+      align-self: center;
+      z-index: 1;
+    }
+
+    .eyebrow,
+    .card-label {
+      margin: 0 0 18px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: var(--display);
+      font-weight: 500;
+      letter-spacing: -0.055em;
+    }
+
+    h1 {
+      max-width: 780px;
+      font-size: clamp(48px, 9vw, 118px);
+      line-height: 0.92;
+    }
+
+    .intro {
+      max-width: 640px;
+      margin: 28px 0 0;
+      color: #56483a;
+      font-size: clamp(18px, 2.4vw, 25px);
+      line-height: 1.5;
+    }
+
+    .hero-actions,
+    .link-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-actions {
+      margin-top: 34px;
+    }
+
+    .button {
+      padding: 0 18px;
+      background: var(--ink);
+      color: #fffaf1;
+      font-size: 15px;
+      font-weight: 750;
+    }
+
+    .button.secondary {
+      background: rgba(255, 250, 241, 0.62);
+      color: var(--ink);
+    }
+
+    .signal-panel {
+      position: relative;
+      min-height: 480px;
+      border-radius: 38px;
+      background:
+        linear-gradient(155deg, rgba(37, 31, 24, 0.94), rgba(65, 57, 47, 0.92)),
+        var(--ink);
+      color: #fff4df;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .signal-panel::before,
+    .signal-panel::after {
+      position: absolute;
+      content: "";
+      border-radius: 50%;
+      filter: blur(4px);
+      opacity: 0.86;
+    }
+
+    .signal-panel::before {
+      width: 280px;
+      height: 280px;
+      right: -86px;
+      top: -62px;
+      background: radial-gradient(circle, rgba(237, 150, 89, 0.74), transparent 68%);
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .signal-panel::after {
+      width: 210px;
+      height: 210px;
+      left: -72px;
+      bottom: -42px;
+      background: radial-gradient(circle, rgba(122, 151, 112, 0.72), transparent 70%);
+      animation: float 9s 600ms ease-in-out infinite reverse;
+    }
+
+    .signal-inner {
+      position: absolute;
+      inset: 20px;
+      display: grid;
+      align-content: space-between;
+      z-index: 1;
+      padding: 24px;
+      border: 1px solid rgba(255, 244, 223, 0.22);
+      border-radius: 28px;
+      background:
+        linear-gradient(rgba(255, 244, 223, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 244, 223, 0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .signal-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .status-dot {
+      display: inline-grid;
+      place-items: center;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #f6b56b;
+      color: var(--ink);
+      font-weight: 900;
+      box-shadow: 0 0 0 10px rgba(246, 181, 107, 0.13);
+    }
+
+    .signal-title {
+      max-width: 11ch;
+      margin-top: 120px;
+      font-family: var(--display);
+      font-size: clamp(42px, 6vw, 82px);
+      line-height: 0.9;
+      letter-spacing: -0.07em;
+    }
+
+    .signal-caption {
+      display: grid;
+      gap: 12px;
+      max-width: 320px;
+      color: rgba(255, 244, 223, 0.76);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      min-height: 32px;
+      padding: 0 11px;
+      border-color: rgba(255, 244, 223, 0.18);
+      background: rgba(255, 244, 223, 0.1);
+      color: #fff4df;
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .sections {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+      gap: 22px;
+      margin-top: 22px;
+    }
+
+    .project-card,
+    .note-card {
+      border-radius: 34px;
+      padding: clamp(24px, 4vw, 38px);
+      animation: rise 800ms 160ms ease both;
+    }
+
+    .project-card {
+      background:
+        linear-gradient(140deg, rgba(255, 250, 241, 0.94), rgba(245, 229, 208, 0.8)),
+        var(--panel-strong);
+    }
+
+    .project-card h2,
+    .note-card h2 {
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 0.98;
+    }
+
+    .project-card p,
+    .note-card p {
+      margin: 20px 0 0;
+      color: #5d5145;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .project-meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .metric {
+      min-height: 118px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 250, 241, 0.62);
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--ink);
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .note-card {
+      background:
+        linear-gradient(180deg, rgba(84, 104, 76, 0.13), rgba(56, 94, 114, 0.08)),
+        rgba(255, 250, 241, 0.78);
+    }
+
+    .link-grid {
+      margin-top: 28px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 250, 241, 0.58);
+      font-size: 14px;
+      font-weight: 750;
+      text-decoration: none;
+      transition: transform 180ms ease, background 180ms ease;
+    }
+
+    .text-link:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 250, 241, 0.94);
+    }
+
+    .identity:focus-visible,
+    .nav a:focus-visible,
+    .button:focus-visible,
+    .text-link:focus-visible,
+    footer a:focus-visible {
+      outline: 3px solid rgba(184, 91, 52, 0.36);
+      outline-offset: 4px;
+    }
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 32px;
+      padding: 0 8px;
+      font-size: 13px;
+      animation: rise 800ms 240ms ease both;
+    }
+
+    footer a {
+      color: var(--ink);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate3d(-14px, 16px, 0) scale(1.05);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .sections {
+        grid-template-columns: 1fr;
+      }
+
+      .signal-panel {
+        min-height: 420px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .shell {
+        width: min(100% - 28px, 1180px);
+        padding-top: 14px;
+      }
+
+      .topbar {
+        align-items: flex-start;
+        border-radius: 28px;
+        flex-direction: column;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding: 24px;
+        border-radius: 34px;
+      }
+
+      .hero-actions,
+      .link-grid {
+        flex-direction: column;
+      }
+
+      .button,
+      .text-link {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .project-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .signal-title {
+        margin-top: 84px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div id="page" class="animated fadeIn">
-    <img id="photo" src="images/photo_1.png" alt="photo" width="100" height="100" class="animated rollIn">
-    <h1 id="name" class="">Jamin Zhou</h1>
-    <p id="location">Shanghai, China</p>
-    <p id="tagline">WWDC2014 Student Scholarship.</p>
-    <p>
-      <a href="mailto:me@jaminzhou.com">me@jaminzhou.com</a>&nbsp;•&nbsp;<a href="https://jaminzhou.com/">@JaminZhou</a><br>
-      <a href="/rouse/">Rouse for macOS</a><br>
-    
-      <a href="https://dribbble.com/JaminZhou">Dribbble</a> •&nbsp;<a href="https://github.com/JaminZhou">GitHub</a> • <a href="https://linkedin.com/in/jaminzhou">LinkedIn</a><br>
+  <main class="shell">
+    <nav class="topbar" aria-label="Primary">
+      <a class="identity" href="/" aria-label="Jamin Zhou home">
+        <img class="avatar" src="/images/photo_1.png" alt="Portrait of Jamin Zhou" width="92" height="92">
+        <span class="identity-copy">
+          <strong>Jamin Zhou</strong>
+          <span>Shanghai, China</span>
+        </span>
+      </a>
+      <div class="nav">
+        <a href="/rouse/">Rouse</a>
+        <a href="https://github.com/JaminZhou">GitHub</a>
+        <a href="mailto:me@jaminzhou.com">Email</a>
+      </div>
+    </nav>
 
-      <a href="https://medium.com/@jaminzhou/">Medium</a> • <a href="https://www.instagram.com/JaminZhou/">Instagram</a><br>
-  </div>
+    <section class="hero" aria-labelledby="intro-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Independent software studio</p>
+        <h1 id="intro-title">Designing small tools with a calm center.</h1>
+        <p class="intro">
+          I am Jamin Zhou, an independent developer and designer in Shanghai. I build focused software for Mac users, where the interface tries to stay quiet until it can be genuinely useful.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="/rouse/">Explore Rouse</a>
+          <a class="button secondary" href="mailto:me@jaminzhou.com">Start a conversation</a>
+        </div>
+      </div>
+
+      <aside class="signal-panel" aria-label="Current focus">
+        <div class="signal-inner">
+          <div class="signal-top">
+            <span class="pill">Now shipping</span>
+            <span class="status-dot">1.2</span>
+          </div>
+          <div>
+            <div class="signal-title">Rouse for macOS</div>
+            <div class="signal-caption">
+              <p>Menu bar wake controls, a richer dashboard, display sleep control, and battery-aware rules.</p>
+              <div class="pills">
+                <span class="pill">macOS</span>
+                <span class="pill">Utility</span>
+                <span class="pill">Mac App Store</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="sections" aria-label="Work and links">
+      <article class="project-card">
+        <p class="card-label">Selected work</p>
+        <h2>Rouse keeps your Mac awake without turning the app into a cockpit.</h2>
+        <p>
+          Rouse started as a simple menu bar control and now includes timed sessions, display sleep handling, battery protection, localized App Store metadata, and support pages in English, Japanese, Simplified Chinese, and Traditional Chinese.
+        </p>
+        <div class="project-meta" aria-label="Rouse details">
+          <div class="metric">
+            <strong>1.2.0</strong>
+            <span>Current public release</span>
+          </div>
+          <div class="metric">
+            <strong>4</strong>
+            <span>Supported site locales</span>
+          </div>
+          <div class="metric">
+            <strong>13+</strong>
+            <span>macOS Ventura or later</span>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <a class="button" href="/rouse/">Open product page</a>
+          <a class="button secondary" href="/rouse/changelog/">Read changelog</a>
+        </div>
+      </article>
+
+      <aside class="note-card">
+        <p class="card-label">Elsewhere</p>
+        <h2>Notes, work, and little trails around the web.</h2>
+        <p>
+          I still keep this home page compact. If you want to talk about a product idea, design detail, or a bug that needs a careful eye, email is the best front door.
+        </p>
+        <div class="link-grid">
+          <a class="text-link" href="mailto:me@jaminzhou.com">me@jaminzhou.com</a>
+          <a class="text-link" href="https://dribbble.com/JaminZhou">Dribbble</a>
+          <a class="text-link" href="https://github.com/JaminZhou">GitHub</a>
+          <a class="text-link" href="https://linkedin.com/in/jaminzhou">LinkedIn</a>
+          <a class="text-link" href="https://medium.com/@jaminzhou/">Medium</a>
+          <a class="text-link" href="https://www.instagram.com/JaminZhou/">Instagram</a>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      <span>WWDC 2014 Student Scholarship alum. Building from Shanghai.</span>
+      <span><a href="/rouse/privacy/">Rouse privacy</a> / <a href="/rouse/support/">Rouse support</a></span>
+    </footer>
+  </main>
 </body>
 </html>
