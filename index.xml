@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JaminZhou Updates</title>
+    <link>https://jaminzhou.com/</link>
+    <description>Updates from JaminZhou, including the personal homepage and Rouse for macOS.</description>
+    <language>en</language>
+    <lastBuildDate>Wed, 15 Apr 2026 22:54:19 +0800</lastBuildDate>
+    <atom:link href="https://jaminzhou.com/index.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>JaminZhou | Independent Software Studio</title>
+      <link>https://jaminzhou.com/</link>
+      <guid isPermaLink="true">https://jaminzhou.com/</guid>
+      <pubDate>Wed, 15 Apr 2026 22:54:19 +0800</pubDate>
+      <description>Independent developer building thoughtful apps for Apple platforms including Rouse for macOS.</description>
+    </item>
+
+    <item>
+      <title>Rouse for macOS</title>
+      <link>https://jaminzhou.com/rouse/</link>
+      <guid isPermaLink="true">https://jaminzhou.com/rouse/</guid>
+      <pubDate>Wed, 15 Apr 2026 22:54:19 +0800</pubDate>
+      <description>Rouse is a calm menu bar app for keeping your Mac awake with battery-aware rules, timed sessions, and display sleep control.</description>
+    </item>
+
+    <item>
+      <title>Rouse Changelog</title>
+      <link>https://jaminzhou.com/rouse/changelog/</link>
+      <guid isPermaLink="true">https://jaminzhou.com/rouse/changelog/</guid>
+      <pubDate>Mon, 13 Apr 2026 09:13:11 +0800</pubDate>
+      <description>Release notes and version history for Rouse.</description>
+    </item>
+
+    <item>
+      <title>Rouse Support</title>
+      <link>https://jaminzhou.com/rouse/support/</link>
+      <guid isPermaLink="true">https://jaminzhou.com/rouse/support/</guid>
+      <pubDate>Fri, 10 Apr 2026 07:55:29 +0800</pubDate>
+      <description>Support resources, FAQs, and contact options for Rouse.</description>
+    </item>
+
+    <item>
+      <title>Rouse Privacy Policy</title>
+      <link>https://jaminzhou.com/rouse/privacy/</link>
+      <guid isPermaLink="true">https://jaminzhou.com/rouse/privacy/</guid>
+      <pubDate>Fri, 10 Apr 2026 07:55:29 +0800</pubDate>
+      <description>Privacy details for Rouse on macOS.</description>
+    </item>
+  </channel>
+</rss>
