@@ -188,7 +188,7 @@
 
       <h2>Quick commands</h2>
       <p>Add this function to your <code>~/.zshrc</code> or another shell profile:</p>
-      <pre><code>rouse() {
+      <pre><code>rouse-lid() {
   case "$1" in
     on)
       sudo pmset -a disablesleep 1
@@ -202,22 +202,22 @@
       pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
       ;;
     *)
-      echo "usage: rouse {on|off|status}"
+      echo "usage: rouse-lid {on|off|status}"
       return 1
       ;;
   esac
 }</code></pre>
 
-      <p>Reload your shell, then use <code>rouse on</code>, <code>rouse off</code>, and <code>rouse status</code>.</p>
+      <p>Reload your shell, then use <code>rouse-lid on</code>, <code>rouse-lid off</code>, and <code>rouse-lid status</code>.</p>
 
       <h2>What it actually does</h2>
       <ul>
-        <li><code>rouse on</code> runs <code>sudo pmset -a disablesleep 1</code>.</li>
-        <li><code>rouse off</code> restores normal sleep with <code>sudo pmset -a disablesleep 0</code>.</li>
-        <li><code>rouse status</code> prints the current <code>SleepDisabled</code> state in a readable format.</li>
+        <li><code>rouse-lid on</code> runs <code>sudo pmset -a disablesleep 1</code>.</li>
+        <li><code>rouse-lid off</code> restores normal sleep with <code>sudo pmset -a disablesleep 0</code>.</li>
+        <li><code>rouse-lid status</code> prints the current <code>SleepDisabled</code> state in a readable format.</li>
         <li>The intended use case here is MacBook lid-close sleep, not a generic desktop sleep toggle.</li>
       </ul>
-      <p>Because <code>disablesleep=1</code> blocks both idle sleep and lid-close sleep, the Mac will also stay awake when left untouched on the desktop. Run <code>rouse off</code> as soon as you are done.</p>
+      <p>Because <code>disablesleep=1</code> blocks both idle sleep and lid-close sleep, the Mac will also stay awake when left untouched on the desktop. Run <code>rouse-lid off</code> as soon as you are done.</p>
 
       <h2>Boundaries</h2>
       <ul>
@@ -225,18 +225,18 @@
         <li>It affects system sleep globally, not only lid-close sleep.</li>
         <li>It is separate from the Mac App Store version of Rouse.</li>
         <li>The Mac App Store build cannot include this path as a supported feature.</li>
-        <li>The setting persists across restarts. If you forget to run <code>rouse off</code>, your Mac will continue skipping idle sleep after reboot.</li>
-        <li>Prefer <code>rouse off</code> as soon as you are done.</li>
+        <li>The setting persists across restarts. If you forget to run <code>rouse-lid off</code>, your Mac will continue skipping idle sleep after reboot.</li>
+        <li>Prefer <code>rouse-lid off</code> as soon as you are done.</li>
       </ul>
 
       <h2>How to remove it</h2>
       <ul>
-        <li>If the current state still shows <code>SleepDisabled = 1</code>, run <code>rouse off</code> first. If you already removed the function, you can run <code>sudo pmset -a disablesleep 0</code> directly.</li>
-        <li>Remove the <code>rouse()</code> function from <code>~/.zshrc</code> or whichever shell profile you used, then reload your shell.</li>
+        <li>If the current state still shows <code>SleepDisabled = 1</code>, run <code>rouse-lid off</code> first. If you already removed the function, you can run <code>sudo pmset -a disablesleep 0</code> directly.</li>
+        <li>Remove the <code>rouse-lid()</code> function from <code>~/.zshrc</code> or whichever shell profile you used, then reload your shell.</li>
       </ul>
 
       <h2>About this page</h2>
-      <p>The Mac App Store version of Rouse stays within what the App Sandbox allows. This page documents the terminal-level workaround for advanced users who are comfortable changing system power settings. The <code>rouse</code> shell function shown on this page is a standalone helper that lives in your shell profile; it is not a command-line interface for the Mac App Store version of Rouse.</p>
+      <p>The Mac App Store version of Rouse stays within what the App Sandbox allows. This page documents the terminal-level workaround for advanced users who are comfortable changing system power settings. The <code>rouse-lid</code> shell function shown on this page is a standalone helper that lives in your shell profile; it is not a command-line interface for the Mac App Store version of Rouse.</p>
 
       <div class="links">
         <a href="/rouse/support/">Back to Support</a>

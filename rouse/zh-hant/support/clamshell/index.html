@@ -188,7 +188,7 @@
 
       <h2>快捷命令</h2>
       <p>把下面這段 function 加到你的 <code>~/.zshrc</code> 或其他 shell 設定裡：</p>
-      <pre><code>rouse() {
+      <pre><code>rouse-lid() {
   case "$1" in
     on)
       sudo pmset -a disablesleep 1
@@ -202,22 +202,22 @@
       pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
       ;;
     *)
-      echo "usage: rouse {on|off|status}"
+      echo "usage: rouse-lid {on|off|status}"
       return 1
       ;;
   esac
 }</code></pre>
 
-      <p>重新載入 shell 之後，就可以用 <code>rouse on</code>、<code>rouse off</code> 和 <code>rouse status</code>。</p>
+      <p>重新載入 shell 之後，就可以用 <code>rouse-lid on</code>、<code>rouse-lid off</code> 和 <code>rouse-lid status</code>。</p>
 
       <h2>它實際做了什麼</h2>
       <ul>
-        <li><code>rouse on</code> 會執行 <code>sudo pmset -a disablesleep 1</code>。</li>
-        <li><code>rouse off</code> 會用 <code>sudo pmset -a disablesleep 0</code> 恢復正常睡眠。</li>
-        <li><code>rouse status</code> 會用更易讀的格式印出目前的 <code>SleepDisabled</code> 狀態。</li>
+        <li><code>rouse-lid on</code> 會執行 <code>sudo pmset -a disablesleep 1</code>。</li>
+        <li><code>rouse-lid off</code> 會用 <code>sudo pmset -a disablesleep 0</code> 恢復正常睡眠。</li>
+        <li><code>rouse-lid status</code> 會用更易讀的格式印出目前的 <code>SleepDisabled</code> 狀態。</li>
         <li>這裡主要針對的是 MacBook 的合蓋休眠，不是泛用的桌面版睡眠開關。</li>
       </ul>
-      <p>因為 <code>disablesleep=1</code> 會同時阻止閒置睡眠和合蓋睡眠，所以 Mac 在桌面閒置時也會保持喚醒。用完後請盡快執行 <code>rouse off</code>。</p>
+      <p>因為 <code>disablesleep=1</code> 會同時阻止閒置睡眠和合蓋睡眠，所以 Mac 在桌面閒置時也會保持喚醒。用完後請盡快執行 <code>rouse-lid off</code>。</p>
 
       <h2>邊界</h2>
       <ul>
@@ -225,18 +225,18 @@
         <li>它影響的是整個系統的睡眠行為，不只是合蓋睡眠。</li>
         <li>它和 Mac App Store 版 Rouse 是分開的。</li>
         <li>Mac App Store 版不能把這條路徑作為受支援功能內建進去。</li>
-        <li>該設定重啟後仍保留。如果忘了執行 <code>rouse off</code>，你的 Mac 在重啟後仍會持續跳過閒置睡眠。</li>
-        <li>用完之後，最好盡快執行 <code>rouse off</code>。</li>
+        <li>該設定重啟後仍保留。如果忘了執行 <code>rouse-lid off</code>，你的 Mac 在重啟後仍會持續跳過閒置睡眠。</li>
+        <li>用完之後，最好盡快執行 <code>rouse-lid off</code>。</li>
       </ul>
 
       <h2>如何移除</h2>
       <ul>
-        <li>如果目前仍顯示 <code>SleepDisabled = 1</code>，先執行 <code>rouse off</code>；如果你已經刪掉了 function，也可以直接執行 <code>sudo pmset -a disablesleep 0</code>。</li>
-        <li>從 <code>~/.zshrc</code> 或你使用的 shell 設定裡刪掉 <code>rouse()</code>，然後重新載入 shell。</li>
+        <li>如果目前仍顯示 <code>SleepDisabled = 1</code>，先執行 <code>rouse-lid off</code>；如果你已經刪掉了 function，也可以直接執行 <code>sudo pmset -a disablesleep 0</code>。</li>
+        <li>從 <code>~/.zshrc</code> 或你使用的 shell 設定裡刪掉 <code>rouse-lid()</code>，然後重新載入 shell。</li>
       </ul>
 
       <h2>關於本頁</h2>
-      <p>Mac App Store 版 Rouse 專注在 App Sandbox 允許的範圍內。本頁面為熟悉系統電源設定修改的進階使用者提供終端層面的方案說明。本頁的 <code>rouse</code> shell function 只是放在你 shell profile 裡的獨立 helper，不是 Mac App Store 版 Rouse 的命令列介面。</p>
+      <p>Mac App Store 版 Rouse 專注在 App Sandbox 允許的範圍內。本頁面為熟悉系統電源設定修改的進階使用者提供終端層面的方案說明。本頁的 <code>rouse-lid</code> shell function 只是放在你 shell profile 裡的獨立 helper，不是 Mac App Store 版 Rouse 的命令列介面。</p>
 
       <div class="links">
         <a href="/rouse/zh-hant/support/">返回支援頁</a>
