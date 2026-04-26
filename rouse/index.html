@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rouse | Stay Awake on Mac</title>
-  <meta name="description" content="Rouse keeps your Mac awake for AI agents, long downloads, exports, and presentations, with a fast menu bar toggle and a calm dashboard for richer control.">
+  <meta name="description" content="Rouse keeps your Mac awake for AI agents, long downloads, exports, and presentations, with menu bar control, a calm dashboard, and the official rouse CLI.">
   <link rel="canonical" href="https://jaminzhou.com/rouse/">
   <link rel="alternate" hreflang="en" href="https://jaminzhou.com/rouse/">
   <link rel="alternate" hreflang="ja" href="https://jaminzhou.com/rouse/ja/">
@@ -16,7 +16,7 @@
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/rouse/apple-touch-icon.png">
   <meta property="og:site_name" content="Rouse">
   <meta property="og:title" content="Rouse | Stay Awake on Mac">
-  <meta property="og:description" content="Keep your Mac awake for AI agents, long downloads, exports, and presentations with a fast menu bar toggle and a calm dashboard.">
+  <meta property="og:description" content="Keep your Mac awake for AI agents, long downloads, exports, and presentations with menu bar control, a calm dashboard, and the official rouse CLI.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jaminzhou.com/rouse/">
   <meta property="og:image" content="https://jaminzhou.com/rouse/og-card.png">
@@ -24,7 +24,7 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Rouse | Stay Awake on Mac">
-  <meta name="twitter:description" content="Keep your Mac awake for AI agents, long downloads, exports, and presentations with a fast menu bar toggle and a calm dashboard.">
+  <meta name="twitter:description" content="Keep your Mac awake for AI agents, long downloads, exports, and presentations with menu bar control, a calm dashboard, and the official rouse CLI.">
   <meta name="twitter:image" content="https://jaminzhou.com/rouse/og-card.png">
   <script type="application/ld+json">
     {
@@ -32,11 +32,11 @@
       "@type": "SoftwareApplication",
       "name": "Rouse: Stay Awake",
       "url": "https://jaminzhou.com/rouse/",
-      "description": "Keep your Mac awake for AI agents, long downloads, exports, and presentations with a fast menu bar toggle and a calm dashboard.",
+      "description": "Keep your Mac awake for AI agents, long downloads, exports, and presentations with menu bar control, a calm dashboard, and the official rouse CLI.",
       "inLanguage": "en",
       "operatingSystem": "macOS",
       "applicationCategory": "UtilitiesApplication",
-      "softwareVersion": "1.6.0",
+      "softwareVersion": "1.7.0",
       "image": "https://jaminzhou.com/rouse/og-card.png",
       "downloadUrl": "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12",
       "softwareHelp": "https://jaminzhou.com/rouse/support/",
@@ -187,6 +187,9 @@
     }
 
     .card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: 22px;
@@ -203,6 +206,7 @@
     .card p {
       margin: 0 0 16px;
       color: var(--muted);
+      flex: 1;
     }
 
     a.button {
@@ -221,6 +225,14 @@
       background: transparent;
       border: 1px solid var(--line);
       color: var(--text);
+    }
+
+    .card .button {
+      margin-top: auto;
+      max-width: 100%;
+      justify-content: center;
+      white-space: normal;
+      line-height: 1.35;
     }
 
     .features {
@@ -263,12 +275,13 @@
     <section class="hero">
       <div class="eyebrow">Mac Utility</div>
       <h1>Rouse</h1>
-      <p class="lead">Keep your Mac awake for AI agents, long downloads, exports, and presentations, then open a calm dashboard for richer status and rules.</p>
-      <p class="status">Rouse is now available on the Mac App Store. This site hosts the official support and privacy pages for the public release.</p>
+      <p class="lead">Keep your Mac awake for AI agents, long downloads, exports, and presentations, then control sessions from the menu bar, Dashboard, Terminal, or scripts.</p>
+      <p class="status">Rouse is available on the Mac App Store. Version 1.7 adds the official <code>rouse</code> CLI for command line and automation workflows.</p>
       <div class="facts" aria-label="Release details">
         <div class="fact">Now on the Mac App Store</div>
         <div class="fact">macOS 13 Ventura or later</div>
-        <div class="fact">Current version: 1.6.0</div>
+        <div class="fact">Current version: 1.7.0</div>
+        <div class="fact">Official rouse CLI</div>
       </div>
       <div class="hero-actions">
         <a class="button" href="https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12" target="_blank" rel="noreferrer">Download on the Mac App Store</a>
@@ -280,12 +293,12 @@
       <article class="card">
         <h2>Download</h2>
         <p>Get Rouse from the Mac App Store. Requires macOS 13 Ventura or later.</p>
-        <a class="button" href="https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12" target="_blank" rel="noreferrer">Download on the Mac App Store</a>
+        <a class="button secondary" href="https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12" target="_blank" rel="noreferrer">Download Rouse</a>
       </article>
       <article class="card">
         <h2>Support</h2>
-        <p>Need help with setup, battery behavior, or timed sessions? Start here.</p>
-        <a class="button" href="/rouse/support/">Open support page</a>
+        <p>Need help with setup, command line access, battery behavior, or timed sessions? Start here.</p>
+        <a class="button secondary" href="/rouse/support/">Open support page</a>
       </article>
       <article class="card">
         <h2>Privacy Policy</h2>
@@ -307,6 +320,10 @@
       <li>
         <strong>Keep the menu bar as your shortcut</strong>
         Use the menu bar for the fastest toggle, then return to the dashboard for richer status, presets, and rules.
+      </li>
+      <li>
+        <strong>Automate with the official CLI</strong>
+        Use <code>rouse</code> from Terminal, shell scripts, and local automation while Rouse.app keeps ownership of the wake session.
       </li>
       <li>
         <strong>Protect battery automatically</strong>

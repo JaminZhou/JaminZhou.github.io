@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rouse | Macをスリープさせない</title>
-  <meta name="description" content="Rouse は、AI エージェント、長時間のダウンロード、書き出し、プレゼンのあいだも Mac を起動状態に保ち、メニューバー操作と落ち着いた Dashboard で扱えます。">
+  <meta name="description" content="Rouse は AI エージェント、長時間のダウンロード、書き出し、プレゼンのあいだ Mac を起動状態に保ち、メニューバー、Dashboard、公式 rouse CLI で操作できます。">
   <link rel="canonical" href="https://jaminzhou.com/rouse/ja/">
   <link rel="alternate" hreflang="en" href="https://jaminzhou.com/rouse/">
   <link rel="alternate" hreflang="ja" href="https://jaminzhou.com/rouse/ja/">
@@ -16,7 +16,7 @@
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/rouse/apple-touch-icon.png">
   <meta property="og:site_name" content="Rouse">
   <meta property="og:title" content="Rouse | Macをスリープさせない">
-  <meta property="og:description" content="AI エージェント、長時間のダウンロード、書き出し、プレゼンのあいだも Mac を起動状態に保ち、メニューバー操作と落ち着いた Dashboard で管理できます。">
+  <meta property="og:description" content="AI エージェント、長時間のダウンロード、書き出し、プレゼンのあいだ Mac を起動状態に保ち、メニューバー、Dashboard、公式 rouse CLI で操作できます。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jaminzhou.com/rouse/ja/">
   <meta property="og:image" content="https://jaminzhou.com/rouse/og-card.png">
@@ -24,7 +24,7 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Rouse | Macをスリープさせない">
-  <meta name="twitter:description" content="AI エージェント、長時間のダウンロード、書き出し、プレゼンのあいだも Mac を起動状態に保ち、メニューバー操作と落ち着いた Dashboard で管理できます。">
+  <meta name="twitter:description" content="AI エージェント、長時間のダウンロード、書き出し、プレゼンのあいだ Mac を起動状態に保ち、メニューバー、Dashboard、公式 rouse CLI で操作できます。">
   <meta name="twitter:image" content="https://jaminzhou.com/rouse/og-card.png">
   <script type="application/ld+json">
     {
@@ -32,11 +32,11 @@
       "@type": "SoftwareApplication",
       "name": "Rouse: Stay Awake",
       "url": "https://jaminzhou.com/rouse/ja/",
-      "description": "AI エージェント、長時間のダウンロード、書き出し、プレゼンのあいだも Mac を起動状態に保ち、メニューバー操作と落ち着いた Dashboard で管理できます。",
+      "description": "AI エージェント、長時間のダウンロード、書き出し、プレゼンのあいだ Mac を起動状態に保ち、メニューバー、Dashboard、公式 rouse CLI で操作できます。",
       "inLanguage": "ja",
       "operatingSystem": "macOS",
       "applicationCategory": "UtilitiesApplication",
-      "softwareVersion": "1.6.0",
+      "softwareVersion": "1.7.0",
       "image": "https://jaminzhou.com/rouse/og-card.png",
       "downloadUrl": "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12",
       "softwareHelp": "https://jaminzhou.com/rouse/ja/support/",
@@ -180,6 +180,9 @@
     }
 
     .card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: 22px;
@@ -196,6 +199,7 @@
     .card p {
       margin: 0 0 16px;
       color: var(--muted);
+      flex: 1;
     }
 
     a.button {
@@ -214,6 +218,14 @@
       background: transparent;
       border: 1px solid var(--line);
       color: var(--text);
+    }
+
+    .card .button {
+      margin-top: auto;
+      max-width: 100%;
+      justify-content: center;
+      white-space: normal;
+      line-height: 1.35;
     }
 
     .note {
@@ -262,12 +274,13 @@
     <section class="hero">
       <div class="eyebrow">Mac ユーティリティ</div>
       <h1>Rouse</h1>
-      <p class="lead">AI エージェント、長時間のダウンロード、書き出し、プレゼンのあいだも Mac を起動状態に保ち、必要なときだけ Dashboard で詳しく確認できます。</p>
-      <p class="status">Rouse は Mac App Store で配信中です。このサイトでは公開版のサポートとプライバシー情報を案内しています。</p>
+      <p class="lead">AI エージェント、長時間のダウンロード、書き出し、プレゼンのあいだ Mac を起動状態に保ち、メニューバー、Dashboard、Terminal、スクリプトから操作できます。</p>
+      <p class="status">Rouse は Mac App Store で配信中です。1.7 では、コマンドラインと自動化のための公式 <code>rouse</code> CLI を追加しました。</p>
       <div class="facts" aria-label="Release details">
         <div class="fact">Mac App Storeで配信中</div>
         <div class="fact">macOS 13 Ventura 以降</div>
-        <div class="fact">現在のバージョン: 1.6.0</div>
+        <div class="fact">現在のバージョン: 1.7.0</div>
+        <div class="fact">公式 rouse CLI</div>
       </div>
     </section>
 
@@ -275,12 +288,12 @@
       <article class="card">
         <h2>ダウンロード</h2>
         <p>Mac App Store から Rouse を入手できます。macOS 13 Ventura 以降に対応しています。</p>
-        <a class="button" href="https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12" target="_blank" rel="noreferrer">Mac App Storeで見る</a>
+        <a class="button secondary" href="https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12" target="_blank" rel="noreferrer">Mac App Storeで見る</a>
       </article>
       <article class="card">
         <h2>サポート</h2>
-        <p>セットアップ、バッテリー動作、時間指定セッションで困ったらここから確認できます。</p>
-        <a class="button" href="/rouse/ja/support/">サポートページを見る</a>
+        <p>セットアップ、コマンドライン、バッテリー動作、時間指定セッションで困ったらここから確認できます。</p>
+        <a class="button secondary" href="/rouse/ja/support/">サポートページを見る</a>
       </article>
       <article class="card">
         <h2>プライバシーポリシー</h2>
@@ -302,6 +315,10 @@
       <li>
         <strong>メニューバーを最短のショートカットとして使う</strong>
         最速の切り替えはメニューバーで行い、より詳しい状態やプリセット、ルールは Dashboard で確認できます。
+      </li>
+      <li>
+        <strong>公式 CLI で自動化する</strong>
+        Terminal、シェルスクリプト、ローカル自動化から <code>rouse</code> を使えます。セッションの管理は引き続き Rouse.app が行います。
       </li>
       <li>
         <strong>バッテリーを自動で保護する</strong>

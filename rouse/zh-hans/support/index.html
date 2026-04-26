@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rouse 支持</title>
-  <meta name="description" content="Rouse 的支持与故障排查页面，涵盖定时会话、显示器睡眠、电池保护和 App Store 更新。">
+  <meta name="description" content="Rouse 的支持与故障排查页面，涵盖命令行设置、定时会话、显示器睡眠、电池保护和 App Store 更新。">
   <link rel="canonical" href="https://jaminzhou.com/rouse/zh-hans/support/">
   <link rel="alternate" hreflang="en" href="https://jaminzhou.com/rouse/support/">
   <link rel="alternate" hreflang="ja" href="https://jaminzhou.com/rouse/ja/support/">
@@ -16,7 +16,7 @@
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/rouse/apple-touch-icon.png">
   <meta property="og:site_name" content="Rouse">
   <meta property="og:title" content="Rouse 支持">
-  <meta property="og:description" content="Rouse 的支持与故障排查页面，涵盖定时会话、显示器睡眠、电池保护和 App Store 更新。">
+  <meta property="og:description" content="Rouse 的支持与故障排查页面，涵盖命令行设置、定时会话、显示器睡眠、电池保护和 App Store 更新。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jaminzhou.com/rouse/zh-hans/support/">
   <meta property="og:image" content="https://jaminzhou.com/rouse/og-card.png">
@@ -45,6 +45,7 @@
 
     .wrap {
       max-width: 820px;
+      width: 100%;
       margin: 0 auto;
       padding: 48px 20px 72px;
     }
@@ -81,6 +82,8 @@
       border-radius: 28px;
       padding: 32px;
       box-shadow: var(--shadow);
+      min-width: 0;
+      overflow-wrap: anywhere;
     }
 
     .kicker {
@@ -122,6 +125,19 @@
 
     ul { padding-left: 20px; }
 
+    .command-block {
+      margin: 12px 0 6px;
+      padding: 16px 18px;
+      overflow-x: auto;
+      border-radius: 18px;
+      background: #211b14;
+      color: #fff7ed;
+      font: 14px/1.6 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      max-width: 100%;
+      min-width: 0;
+      white-space: pre;
+    }
+
     .meta {
       margin-top: 10px;
       color: #5f5549;
@@ -139,12 +155,14 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      min-width: 0;
       padding: 12px 16px;
       border-radius: 14px;
       background: var(--text);
       color: #fff;
       text-decoration: none;
       font-weight: 600;
+      white-space: normal;
     }
 
     .cta.secondary {
@@ -169,6 +187,32 @@
       background: var(--surface);
       border: 1px solid var(--line);
     }
+
+    @media (max-width: 560px) {
+      .wrap {
+        padding: 32px 14px 56px;
+      }
+
+      .panel {
+        padding: 24px 18px;
+        border-radius: 24px;
+      }
+
+      .cta-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .cta {
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+      }
+
+      .command-block {
+        font-size: 13px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -183,8 +227,8 @@
     <section class="panel">
       <div class="kicker">支持</div>
       <h1>Rouse 支持</h1>
-      <p class="meta">最后更新：2026 年 4 月 20 日</p>
-      <p>Rouse 提供菜单栏快速防休眠控制，以及用于显示器睡眠控制、电池保护规则和更丰富状态查看的简洁 Dashboard。</p>
+      <p class="meta">最后更新：2026 年 4 月 26 日</p>
+      <p>Rouse 提供菜单栏快速防休眠控制、用于显示器睡眠控制和电池保护规则的简洁 Dashboard，以及面向本地自动化的官方 <code>rouse</code> CLI。</p>
 
       <p>需要帮助时，你可以发送邮件到 <a href="mailto:me@jaminzhou.com">me@jaminzhou.com</a>，也可以使用反馈表单。</p>
 
@@ -202,6 +246,17 @@
         <li>如果问题和定时会话有关，请记录你选择的时长，以及是否启用了显示器防睡眠。</li>
       </ul>
 
+      <h2>命令行快速开始</h2>
+      <p>在 Rouse 设置中打开“命令行”，并复制适合你的 shell 或自动化工具的设置方式。设置后，最常用的是这些命令：</p>
+      <pre class="command-block"><code>rouse doctor
+rouse start
+rouse start --for 30m
+rouse status
+rouse stop
+rouse display-sleep prevent
+rouse display-sleep allow
+rouse open</code></pre>
+
       <h2>建议提供的信息</h2>
       <ul>
         <li>Rouse 版本和构建号</li>
@@ -215,6 +270,7 @@
       <ul>
         <li>定时会话比预期更早或更晚结束</li>
         <li>显示器睡眠行为</li>
+        <li>命令行设置、<code>rouse doctor</code> 或 macOS 权限弹窗</li>
         <li>电池保护设置</li>
         <li>Dashboard 打开、重新打开或登录时启动</li>
         <li>Support Rouse 购买或 Restore Purchases</li>
@@ -225,7 +281,10 @@
       <ul>
         <li>为什么会话会自动停止？如果启用了电池保护，电量低于你选择的阈值时，Rouse 会自动关闭。</li>
         <li>为什么睡眠或重启后定时会话显示不同？Rouse 会根据保存在 Mac 上的剩余时间恢复定时会话。</li>
-        <li>在哪里管理登录时启动？打开 Rouse Settings 并启用 Launch at login。</li>
+        <li>在哪里设置命令行工具？打开 Rouse 设置，进入“命令行”，并使用里面的设置引导。对脚本和启动器来说，完整路径方案是最稳的备用方案。</li>
+        <li>为什么 macOS 会提示 Rouse 想访问其他 App 的数据？Rouse 使用专用共享容器，让内置 CLI 可以把本地命令发送给 Rouse.app。它不会读取你的文档或其他 App 的数据。</li>
+        <li>如果点了“不允许”怎么办？退出 Rouse，打开“系统设置 &gt; 隐私与安全性 &gt; App 管理”，允许 Rouse，然后重新运行 <code>rouse doctor</code>。如果列表里没有 Rouse，请重新启动 Rouse 后再试。</li>
+        <li>在哪里管理登录时启动？打开 Rouse 设置并启用“登录时启动”。</li>
         <li>在哪里支持 Rouse 或恢复购买？打开 About Rouse，并使用 Support Rouse 区块。Restore Purchases 也在那里。</li>
         <li>为什么支持选项不可用？请确认你使用的是 Mac App Store 版 Rouse，Mac 已联网，然后在 About Rouse 中尝试 Retry Support Options。</li>
         <li>在哪里阅读隐私政策？请访问 <a href="/rouse/zh-hans/privacy/">Rouse 隐私政策</a>。</li>
@@ -240,13 +299,16 @@
         <p>显示器防睡眠是可选项。如果 Mac 保持唤醒但屏幕仍然变暗或睡眠，请确认该会话是否启用了显示器防睡眠。</p>
 
         <h3>电池保护</h3>
-        <p>Rouse 可以在电量低于你选择的阈值时自动停止活动会话。如果你觉得这个行为太激进，可以在 Rouse Settings 中调整阈值或关闭该设置。</p>
+        <p>Rouse 可以在电量低于你选择的阈值时自动停止活动会话。如果你觉得这个行为太激进，可以在 Rouse 设置中调整阈值或关闭该设置。</p>
 
         <h3>登录时启动</h3>
-        <p>如果登录后 Rouse 不可用，请打开 Rouse Settings，确认 Launch at login 仍然启用。macOS 系统设置也可能需要你检查登录项。</p>
+        <p>如果登录后 Rouse 不可用，请打开 Rouse 设置，确认“登录时启动”仍然启用。macOS 系统设置也可能需要你检查登录项。</p>
 
         <h3>App Store 更新</h3>
         <p>如果 Mac App Store 仍然显示旧版本，请刷新 Updates 页面，并确认你查看的是 Mac App Store 版 Rouse。版本历史也可以在 <a href="/rouse/zh-hans/changelog/">Rouse 更新日志</a> 中查看。</p>
+
+        <h3>命令行</h3>
+        <p>如果找不到 <code>rouse</code>，请打开 Rouse 设置，并复制适合你的 shell 或自动化工具的命令行设置方式。如果 <code>rouse doctor</code> 无法连接，请确认 Rouse.app 来自 Mac App Store，先启动一次 Rouse；如果你之前拒绝了权限弹窗，也请检查 macOS 的 App 管理权限。</p>
       </div>
 
       <h2>高级</h2>

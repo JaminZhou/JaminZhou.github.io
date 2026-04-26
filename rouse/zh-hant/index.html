@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rouse | 讓 Mac 保持喚醒</title>
-  <meta name="description" content="Rouse 讓 Mac 在 AI agent、長時間下載、匯出與簡報期間保持喚醒，並透過選單列快捷控制與簡潔 Dashboard 提供更從容的管理。">
+  <meta name="description" content="Rouse 讓 Mac 在 AI agent、長時間下載、匯出與簡報期間保持喚醒，並可透過選單列、Dashboard 和官方 rouse CLI 控制。">
   <link rel="canonical" href="https://jaminzhou.com/rouse/zh-hant/">
   <link rel="alternate" hreflang="en" href="https://jaminzhou.com/rouse/">
   <link rel="alternate" hreflang="ja" href="https://jaminzhou.com/rouse/ja/">
@@ -16,7 +16,7 @@
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/rouse/apple-touch-icon.png">
   <meta property="og:site_name" content="Rouse">
   <meta property="og:title" content="Rouse | 讓 Mac 保持喚醒">
-  <meta property="og:description" content="讓 Mac 在 AI agent、長時間下載、匯出與簡報期間保持喚醒，用選單列快速切換，再用簡潔 Dashboard 查看更完整的狀態與規則。">
+  <meta property="og:description" content="讓 Mac 在 AI agent、長時間下載、匯出與簡報期間保持喚醒，並可透過選單列、Dashboard 和官方 rouse CLI 控制。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jaminzhou.com/rouse/zh-hant/">
   <meta property="og:image" content="https://jaminzhou.com/rouse/og-card.png">
@@ -24,7 +24,7 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Rouse | 讓 Mac 保持喚醒">
-  <meta name="twitter:description" content="讓 Mac 在 AI agent、長時間下載、匯出與簡報期間保持喚醒，用選單列快速切換，再用簡潔 Dashboard 查看更完整的狀態與規則。">
+  <meta name="twitter:description" content="讓 Mac 在 AI agent、長時間下載、匯出與簡報期間保持喚醒，並可透過選單列、Dashboard 和官方 rouse CLI 控制。">
   <meta name="twitter:image" content="https://jaminzhou.com/rouse/og-card.png">
   <script type="application/ld+json">
     {
@@ -32,11 +32,11 @@
       "@type": "SoftwareApplication",
       "name": "Rouse: Stay Awake",
       "url": "https://jaminzhou.com/rouse/zh-hant/",
-      "description": "讓 Mac 在 AI agent、長時間下載、匯出與簡報期間保持喚醒，用選單列快速切換，再用簡潔 Dashboard 查看更完整的狀態與規則。",
+      "description": "讓 Mac 在 AI agent、長時間下載、匯出與簡報期間保持喚醒，並可透過選單列、Dashboard 和官方 rouse CLI 控制。",
       "inLanguage": "zh-Hant",
       "operatingSystem": "macOS",
       "applicationCategory": "UtilitiesApplication",
-      "softwareVersion": "1.6.0",
+      "softwareVersion": "1.7.0",
       "image": "https://jaminzhou.com/rouse/og-card.png",
       "downloadUrl": "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12",
       "softwareHelp": "https://jaminzhou.com/rouse/zh-hant/support/",
@@ -180,6 +180,9 @@
     }
 
     .card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: 22px;
@@ -196,6 +199,7 @@
     .card p {
       margin: 0 0 16px;
       color: var(--muted);
+      flex: 1;
     }
 
     a.button {
@@ -214,6 +218,14 @@
       background: transparent;
       border: 1px solid var(--line);
       color: var(--text);
+    }
+
+    .card .button {
+      margin-top: auto;
+      max-width: 100%;
+      justify-content: center;
+      white-space: normal;
+      line-height: 1.35;
     }
 
     .note {
@@ -262,12 +274,13 @@
     <section class="hero">
       <div class="eyebrow">Mac 工具</div>
       <h1>Rouse</h1>
-      <p class="lead">讓 Mac 在 AI agent、長時間下載、匯出與簡報期間保持喚醒，需要更多資訊時再打開簡潔的 Dashboard。</p>
-      <p class="status">Rouse 現已上架 Mac App Store。本網站提供公開版本的支援與隱私資訊。</p>
+      <p class="lead">讓 Mac 在 AI agent、長時間下載、匯出與簡報期間保持喚醒，並可從選單列、Dashboard、Terminal 或腳本控制工作階段。</p>
+      <p class="status">Rouse 已上架 Mac App Store。1.7 新增官方 <code>rouse</code> CLI，用於命令列和自動化流程。</p>
       <div class="facts" aria-label="Release details">
         <div class="fact">已上架 Mac App Store</div>
         <div class="fact">需要 macOS 13 Ventura 或以上版本</div>
-        <div class="fact">目前版本：1.6.0</div>
+        <div class="fact">目前版本：1.7.0</div>
+        <div class="fact">官方 rouse CLI</div>
       </div>
     </section>
 
@@ -275,12 +288,12 @@
       <article class="card">
         <h2>下載</h2>
         <p>可從 Mac App Store 取得 Rouse。需要 macOS 13 Ventura 或以上版本。</p>
-        <a class="button" href="https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12" target="_blank" rel="noreferrer">前往 Mac App Store</a>
+        <a class="button secondary" href="https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12" target="_blank" rel="noreferrer">前往 Mac App Store</a>
       </article>
       <article class="card">
         <h2>支援</h2>
-        <p>如果你在設定、電池行為或定時工作階段方面遇到問題，可以先從這裡查看。</p>
-        <a class="button" href="/rouse/zh-hant/support/">開啟支援頁面</a>
+        <p>如果你在設定、命令列存取、電池行為或定時工作階段方面遇到問題，可以先從這裡查看。</p>
+        <a class="button secondary" href="/rouse/zh-hant/support/">開啟支援頁面</a>
       </article>
       <article class="card">
         <h2>隱私權政策</h2>
@@ -302,6 +315,10 @@
       <li>
         <strong>把選單列保留為最快捷的入口</strong>
         最快的切換仍然在選單列完成，而更豐富的狀態、預設與規則則可在 Dashboard 中查看。
+      </li>
+      <li>
+        <strong>用官方 CLI 自動化</strong>
+        你可以在 Terminal、shell script 和本地自動化中使用 <code>rouse</code>，同時仍由 Rouse.app 持有工作階段。
       </li>
       <li>
         <strong>自動保護電池</strong>

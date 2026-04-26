@@ -38,13 +38,13 @@
   <text x="92" y="232" fill="#1F1B16" font-size="92" font-family="SF Pro Display, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="800" letter-spacing="-3">Rouse</text>
   <text x="92" y="282" fill="#B2562D" font-size="32" font-family="SF Pro Display, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700">Stay Awake on Mac</text>
   <text x="92" y="352" fill="#6F6559" font-size="31" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
-    <tspan x="92" dy="0">Fast menu bar wake toggle.</tspan>
-    <tspan x="92" dy="42">Calm dashboard for richer control.</tspan>
+    <tspan x="92" dy="0">Menu bar, Dashboard, and CLI.</tspan>
+    <tspan x="92" dy="42">Wake sessions for long work.</tspan>
   </text>
 
   <rect x="92" y="472" width="328" height="50" rx="25" fill="#1F1B16"/>
   <text x="256" y="504" text-anchor="middle" fill="#FFFDF9" font-size="24" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700">Now on the Mac App Store</text>
-  <text x="92" y="565" fill="#7D7062" font-size="21" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="600">macOS 13+ - Timed sessions - Battery-aware rules</text>
+  <text x="92" y="565" fill="#7D7062" font-size="21" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="600">macOS 13+ - Timed sessions - Official rouse CLI</text>
 
   <g filter="url(#shadow)">
     <rect x="684" y="110" width="367" height="394" rx="36" fill="url(#panel)"/>
