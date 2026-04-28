@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rouse 隐私政策</title>
-  <meta name="description" content="Rouse 隐私政策，说明本地偏好设置、支持请求以及 Mac App Store 版本的数据处理方式。">
+  <meta name="description" content="Rouse 隐私政策，说明本地偏好设置、命令行通信、支持请求以及 Mac App Store 版本的数据处理方式。">
   <link rel="canonical" href="https://jaminzhou.com/rouse/zh-hans/privacy/">
   <link rel="alternate" hreflang="en" href="https://jaminzhou.com/rouse/privacy/">
   <link rel="alternate" hreflang="ja" href="https://jaminzhou.com/rouse/ja/privacy/">
@@ -16,7 +16,7 @@
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/rouse/apple-touch-icon.png">
   <meta property="og:site_name" content="Rouse">
   <meta property="og:title" content="Rouse 隐私政策">
-  <meta property="og:description" content="Rouse 隐私政策，说明本地偏好设置、支持请求以及 Mac App Store 版本的数据处理方式。">
+  <meta property="og:description" content="Rouse 隐私政策，说明本地偏好设置、命令行通信、支持请求以及 Mac App Store 版本的数据处理方式。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jaminzhou.com/rouse/zh-hans/privacy/">
   <meta property="og:image" content="https://jaminzhou.com/rouse/og-card.png">
@@ -24,7 +24,7 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Rouse 隐私政策">
-  <meta name="twitter:description" content="Rouse 隐私政策，说明本地偏好设置、支持请求以及 Mac App Store 版本的数据处理方式。">
+  <meta name="twitter:description" content="Rouse 隐私政策，说明本地偏好设置、命令行通信、支持请求以及 Mac App Store 版本的数据处理方式。">
   <meta name="twitter:image" content="https://jaminzhou.com/rouse/og-card.png">
   <style>
     :root {
@@ -139,12 +139,12 @@
     <section class="panel">
       <div class="kicker">隐私政策</div>
       <h1>Rouse 隐私政策</h1>
-      <p class="meta">生效日期：2026 年 4 月 8 日</p>
+      <p class="meta">生效日期：2026 年 4 月 26 日</p>
 
       <p>本隐私政策适用于 macOS 版 Rouse，包括 Mac App Store 版本。</p>
 
       <h2>摘要</h2>
-      <p>Rouse 在你的 Mac 上本地运行。它提供菜单栏快速控制和更完整的 Dashboard，不需要账号、广告、分析或追踪 SDK。</p>
+      <p>Rouse 在你的 Mac 上本地运行。它提供菜单栏快速控制、更完整的 Dashboard 和官方命令行接口，不需要账号、广告、分析或追踪 SDK。</p>
 
       <h2>Rouse 不收集的信息</h2>
       <ul>
@@ -169,6 +169,9 @@
       <h2>网络活动</h2>
       <p>Mac App Store 版 Rouse 的核心防休眠功能在本地工作。使用菜单栏控制、打开 Dashboard、启动会话或管理规则时，不需要登录或远程账号。</p>
       <p>如果你选择可选的支持购买，应用会使用 Apple 的 StoreKit 和 App Store 服务加载商品、处理购买并恢复之前的购买。</p>
+
+      <h2>命令行通信</h2>
+      <p>官方 <code>rouse</code> 命令行工具会在本地与 Rouse.app 通信，让 Terminal 命令、shell 脚本和自动化工具可以控制保持唤醒会话。这类本地通信可能会使用由 macOS 管理的专用共享容器。它不会读取你的文档或其他 App 的数据，也不会把命令行使用情况发送给开发者。</p>
 
       <h2>支持请求</h2>
       <p>如果你通过邮件联系支持，你选择发送的信息，例如邮箱地址和邮件内容，只会用于回复你的请求并改进支持质量。</p>

@@ -21,7 +21,7 @@
       <link>https://jaminzhou.com/rouse/</link>
       <guid isPermaLink="true">https://jaminzhou.com/rouse/</guid>
       <pubDate>Sun, 26 Apr 2026 10:00:04 +0800</pubDate>
-      <description>Rouse is a calm menu bar app for keeping your Mac awake with battery-aware rules, timed sessions, and display sleep control.</description>
+      <description>Rouse is a calm Mac utility for keeping your Mac awake with menu bar controls, a dashboard, battery-aware rules, timed sessions, display sleep control, and the official rouse CLI.</description>
     </item>
 
     <item>
@@ -36,16 +36,16 @@
       <title>Rouse Support</title>
       <link>https://jaminzhou.com/rouse/support/</link>
       <guid isPermaLink="true">https://jaminzhou.com/rouse/support/</guid>
-      <pubDate>Fri, 10 Apr 2026 07:55:29 +0800</pubDate>
-      <description>Support resources, FAQs, and contact options for Rouse.</description>
+      <pubDate>Sun, 26 Apr 2026 10:00:04 +0800</pubDate>
+      <description>Support resources, command line setup notes, FAQs, and contact options for Rouse.</description>
     </item>
 
     <item>
       <title>Rouse Privacy Policy</title>
       <link>https://jaminzhou.com/rouse/privacy/</link>
       <guid isPermaLink="true">https://jaminzhou.com/rouse/privacy/</guid>
-      <pubDate>Fri, 10 Apr 2026 07:55:29 +0800</pubDate>
-      <description>Privacy details for Rouse on macOS.</description>
+      <pubDate>Sun, 26 Apr 2026 10:00:04 +0800</pubDate>
+      <description>Privacy details for Rouse on macOS, including local preferences and command line communication.</description>
     </item>
   </channel>
 </rss>

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rouse サポート</title>
-  <meta name="description" content="Rouse のサポートとトラブルシューティング。時間指定セッション、ディスプレイ制御、バッテリー保護、App Store 更新について確認できます。">
+  <meta name="description" content="Rouse のサポートとトラブルシューティング。コマンドライン設定、時間指定セッション、ディスプレイ制御、バッテリー保護、App Store 更新について確認できます。">
   <link rel="canonical" href="https://jaminzhou.com/rouse/ja/support/">
   <link rel="alternate" hreflang="en" href="https://jaminzhou.com/rouse/support/">
   <link rel="alternate" hreflang="ja" href="https://jaminzhou.com/rouse/ja/support/">
@@ -16,7 +16,7 @@
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/rouse/apple-touch-icon.png">
   <meta property="og:site_name" content="Rouse">
   <meta property="og:title" content="Rouse サポート">
-  <meta property="og:description" content="Rouse のサポートとトラブルシューティング。時間指定セッション、ディスプレイ制御、バッテリー保護、App Store 更新について確認できます。">
+  <meta property="og:description" content="Rouse のサポートとトラブルシューティング。コマンドライン設定、時間指定セッション、ディスプレイ制御、バッテリー保護、App Store 更新について確認できます。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jaminzhou.com/rouse/ja/support/">
   <meta property="og:image" content="https://jaminzhou.com/rouse/og-card.png">
@@ -45,6 +45,7 @@
 
     .wrap {
       max-width: 820px;
+      width: 100%;
       margin: 0 auto;
       padding: 48px 20px 72px;
     }
@@ -81,6 +82,8 @@
       border-radius: 28px;
       padding: 32px;
       box-shadow: var(--shadow);
+      min-width: 0;
+      overflow-wrap: anywhere;
     }
 
     .kicker {
@@ -122,6 +125,19 @@
 
     ul { padding-left: 20px; }
 
+    .command-block {
+      margin: 12px 0 6px;
+      padding: 16px 18px;
+      overflow-x: auto;
+      border-radius: 18px;
+      background: #211b14;
+      color: #fff7ed;
+      font: 14px/1.6 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      max-width: 100%;
+      min-width: 0;
+      white-space: pre;
+    }
+
     .meta {
       margin-top: 10px;
       color: #5f5549;
@@ -139,12 +155,14 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      min-width: 0;
       padding: 12px 16px;
       border-radius: 14px;
       background: var(--text);
       color: #fff;
       text-decoration: none;
       font-weight: 600;
+      white-space: normal;
     }
 
     .cta.secondary {
@@ -169,6 +187,32 @@
       background: var(--surface);
       border: 1px solid var(--line);
     }
+
+    @media (max-width: 560px) {
+      .wrap {
+        padding: 32px 14px 56px;
+      }
+
+      .panel {
+        padding: 24px 18px;
+        border-radius: 24px;
+      }
+
+      .cta-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .cta {
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+      }
+
+      .command-block {
+        font-size: 13px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -183,8 +227,8 @@
     <section class="panel">
       <div class="kicker">サポート</div>
       <h1>Rouse サポート</h1>
-      <p class="meta">最終更新: 2026年4月20日</p>
-      <p>Rouse は、すばやいメニューバー操作に加えて、ディスプレイ制御、バッテリー保護ルール、詳しい状態確認のための落ち着いたダッシュボードを提供します。</p>
+      <p class="meta">最終更新: 2026年4月26日</p>
+      <p>Rouse は、すばやいメニューバー操作、ディスプレイ制御やバッテリー保護ルールのための落ち着いた Dashboard、そしてローカル自動化向けの公式 <code>rouse</code> CLI を提供します。</p>
 
       <p>サポートが必要な場合は <a href="mailto:me@jaminzhou.com">me@jaminzhou.com</a> にメールするか、メールから始めたくない場合はフィードバックフォームを利用できます。</p>
 
@@ -202,6 +246,17 @@
         <li>時間指定セッションの問題では、選んだ時間とディスプレイ睡眠防止が有効だったかをメモしてください。</li>
       </ul>
 
+      <h2>コマンドラインの基本</h2>
+      <p>Rouse の設定で「コマンドライン」を開き、使っているシェルや自動化ツールに合う設定方法をコピーしてください。設定後は、次のコマンドがよく使われます。</p>
+      <pre class="command-block"><code>rouse doctor
+rouse start
+rouse start --for 30m
+rouse status
+rouse stop
+rouse display-sleep prevent
+rouse display-sleep allow
+rouse open</code></pre>
+
       <h2>含めると助かる情報</h2>
       <ul>
         <li>Rouse のバージョンとビルド番号</li>
@@ -215,6 +270,7 @@
       <ul>
         <li>時間指定セッションが想定より早く、または遅く終了する</li>
         <li>ディスプレイのスリープ動作</li>
+        <li>コマンドライン設定、<code>rouse doctor</code>、macOS の権限確認</li>
         <li>バッテリー保護設定</li>
         <li>Dashboard の表示、再表示、ログイン時起動</li>
         <li>Support Rouse の購入や Restore Purchases</li>
@@ -225,7 +281,10 @@
       <ul>
         <li>セッションが自動で停止したのはなぜですか？ バッテリー保護が有効な場合、選択したしきい値を下回ると Rouse は自動でオフになります。</li>
         <li>スリープや再起動後に時間指定セッションの表示が変わるのはなぜですか？ Rouse は Mac に保存された残り時間をもとに時間指定セッションを復元します。</li>
-        <li>ログイン時起動はどこで管理できますか？ Rouse Settings を開き、Launch at login を有効にしてください。</li>
+        <li>コマンドラインツールはどこで設定できますか？ Rouse の設定を開き、「コマンドライン」の案内を使ってください。スクリプトやランチャーにはフルパスの方法が最も確実な代替手段です。</li>
+        <li>macOS が「ほかのアプリのデータへのアクセス」を確認するのはなぜですか？ Rouse は同梱 CLI から Rouse.app へローカルコマンドを送るため、専用の共有コンテナを使います。書類やほかのアプリのデータは読み取りません。</li>
+        <li>「許可しない」を選んだ場合は？ Rouse を終了し、「システム設定 &gt; プライバシーとセキュリティ &gt; App 管理」で Rouse を許可してから、もう一度 <code>rouse doctor</code> を実行してください。Rouse が表示されない場合は、Rouse を再起動してから再試行してください。</li>
+        <li>ログイン時起動はどこで管理できますか？ Rouse の設定を開き、「ログイン時に起動」を有効にしてください。</li>
         <li>Rouse をサポートしたり購入を復元したりするには？ About Rouse の Support Rouse セクションを利用してください。</li>
         <li>サポートオプションが利用できない場合は？ Mac App Store 版を使っていること、Mac がオンラインであることを確認し、About Rouse から Retry Support Options を試してください。</li>
         <li>プライバシーポリシーはどこで読めますか？ <a href="/rouse/ja/privacy/">Rouse プライバシーポリシー</a>をご覧ください。</li>
@@ -240,13 +299,16 @@
         <p>ディスプレイ睡眠防止は任意です。Mac は起きているのに画面が暗くなる、またはスリープする場合は、そのセッションでディスプレイ睡眠防止が有効だったか確認してください。</p>
 
         <h3>バッテリー保護</h3>
-        <p>Rouse はバッテリー残量が選択したしきい値を下回ると、アクティブなセッションを自動停止できます。強すぎると感じる場合は、しきい値や設定を Rouse Settings で調整してください。</p>
+        <p>Rouse はバッテリー残量が選択したしきい値を下回ると、アクティブなセッションを自動停止できます。強すぎると感じる場合は、しきい値や設定を Rouse の設定で調整してください。</p>
 
         <h3>ログイン時起動</h3>
-        <p>ログイン後に Rouse が利用できない場合は、Rouse Settings を開き、Launch at login が有効なままか確認してください。macOS 側でログイン項目の確認が必要な場合もあります。</p>
+        <p>ログイン後に Rouse が利用できない場合は、Rouse の設定を開き、「ログイン時に起動」が有効なままか確認してください。macOS 側でログイン項目の確認が必要な場合もあります。</p>
 
         <h3>App Store の更新</h3>
         <p>Mac App Store が古いビルドを表示している場合は、Updates ページを更新し、Mac App Store 版の Rouse を見ていることを確認してください。バージョン履歴は <a href="/rouse/ja/changelog/">Rouse 更新履歴</a>でも確認できます。</p>
+
+        <h3>コマンドライン</h3>
+        <p><code>rouse</code> が見つからない場合は、Rouse の設定を開き、利用しているシェルや自動化ツールに合うコマンドライン設定方法をコピーしてください。<code>rouse doctor</code> が接続できない場合は、Rouse.app が Mac App Store 版としてインストールされていることを確認し、Rouse を一度起動してください。以前に権限確認を拒否した場合は、macOS の App 管理権限も確認してください。</p>
       </div>
 
       <h2>高度な情報</h2>
