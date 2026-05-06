@@ -3,9 +3,9 @@
   <channel>
     <title>JaminZhou Updates</title>
     <link>https://jaminzhou.com/</link>
-    <description>Updates from JaminZhou, including the personal homepage and Rouse for macOS.</description>
+    <description>Updates from JaminZhou, including the personal homepage, Rouse for macOS, and GarlicBird for iOS.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 26 Apr 2026 10:00:04 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 06 May 2026 12:00:00 +0800</lastBuildDate>
     <atom:link href="https://jaminzhou.com/index.xml" rel="self" type="application/rss+xml" />
 
     <item>
@@ -13,7 +13,31 @@
       <link>https://jaminzhou.com/</link>
       <guid isPermaLink="true">https://jaminzhou.com/</guid>
       <pubDate>Sun, 26 Apr 2026 10:00:04 +0800</pubDate>
-      <description>Independent developer building thoughtful apps for Apple platforms including Rouse for macOS.</description>
+      <description>Independent developer building thoughtful apps for Apple platforms including Rouse for macOS and GarlicBird for iOS.</description>
+    </item>
+
+    <item>
+      <title>GarlicBird for iOS</title>
+      <link>https://jaminzhou.com/garlicbird/</link>
+      <guid isPermaLink="true">https://jaminzhou.com/garlicbird/</guid>
+      <pubDate>Wed, 06 May 2026 12:00:00 +0800</pubDate>
+      <description>GarlicBird is an iOS shopping calculator for comparing unit prices across package sizes, currencies, coupons, deposits, and discounts.</description>
+    </item>
+
+    <item>
+      <title>GarlicBird Support</title>
+      <link>https://jaminzhou.com/garlicbird/support/</link>
+      <guid isPermaLink="true">https://jaminzhou.com/garlicbird/support/</guid>
+      <pubDate>Wed, 06 May 2026 12:00:00 +0800</pubDate>
+      <description>Support resources and FAQs for GarlicBird on iOS.</description>
+    </item>
+
+    <item>
+      <title>GarlicBird Privacy Policy</title>
+      <link>https://jaminzhou.com/garlicbird/privacy/</link>
+      <guid isPermaLink="true">https://jaminzhou.com/garlicbird/privacy/</guid>
+      <pubDate>Wed, 06 May 2026 12:00:00 +0800</pubDate>
+      <description>Privacy details for GarlicBird, including local history, custom units, preferences, and exchange-rate requests.</description>
     </item>
 
     <item>
