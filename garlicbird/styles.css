@@ -147,6 +147,53 @@ li {
   color: #31412e;
 }
 
+.app-store-badge {
+  display: inline-flex;
+  width: 180px;
+  height: 60px;
+  margin-top: 22px;
+  border-radius: 10px;
+  box-shadow: 0 16px 34px rgba(31, 36, 28, 0.14);
+}
+
+.app-store-badge img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.release-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 20px 0 0;
+}
+
+.release-meta div {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 253, 247, 0.7);
+}
+
+.release-meta dt {
+  margin: 0 0 3px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.release-meta dd {
+  margin: 0;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
 .icon-stage {
   display: grid;
   place-items: center;
@@ -275,6 +322,15 @@ footer a {
   .actions,
   .quick-links {
     flex-direction: column;
+  }
+
+  .app-store-badge {
+    width: 170px;
+    height: 56px;
+  }
+
+  .release-meta {
+    grid-template-columns: 1fr;
   }
 
   .button {
