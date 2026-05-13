@@ -365,24 +365,48 @@
     }
 
     .product-tile {
+      --product-accent: rgba(184, 91, 52, 0.34);
+      --product-bg-start: rgba(255, 250, 241, 0.9);
+      --product-bg-end: rgba(255, 250, 241, 0.54);
+      --product-border: var(--line);
+      --product-store-bg: rgba(255, 250, 241, 0.66);
+      --product-store-border: var(--line);
       display: grid;
       grid-template-columns: 74px minmax(0, 1fr);
       gap: 16px;
       align-items: start;
       padding: 18px;
-      border: 1px solid var(--line);
+      border: 1px solid var(--product-border);
       border-radius: 28px;
       background:
-        linear-gradient(145deg, rgba(255, 250, 241, 0.9), rgba(255, 250, 241, 0.54)),
+        linear-gradient(145deg, var(--product-bg-start), var(--product-bg-end)),
         rgba(255, 250, 241, 0.7);
       transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
     }
 
+    .product-tile.garlicbird {
+      --product-accent: rgba(84, 104, 76, 0.38);
+      --product-bg-start: rgba(246, 250, 241, 0.95);
+      --product-bg-end: rgba(223, 237, 211, 0.56);
+      --product-border: rgba(84, 104, 76, 0.24);
+      --product-store-bg: rgba(230, 241, 219, 0.74);
+      --product-store-border: rgba(84, 104, 76, 0.32);
+    }
+
+    .product-tile.rouse {
+      --product-accent: rgba(225, 105, 45, 0.44);
+      --product-bg-start: rgba(255, 246, 236, 0.95);
+      --product-bg-end: rgba(255, 222, 188, 0.54);
+      --product-border: rgba(225, 105, 45, 0.24);
+      --product-store-bg: rgba(255, 224, 194, 0.72);
+      --product-store-border: rgba(225, 105, 45, 0.34);
+    }
+
     .product-tile:hover {
       transform: translateY(-2px);
-      border-color: rgba(184, 91, 52, 0.34);
+      border-color: var(--product-accent);
       background:
-        linear-gradient(145deg, rgba(255, 250, 241, 0.96), rgba(255, 250, 241, 0.66)),
+        linear-gradient(145deg, rgba(255, 250, 241, 0.98), var(--product-bg-end)),
         rgba(255, 250, 241, 0.8);
     }
 
@@ -451,8 +475,8 @@
     }
 
     .product-link.store {
-      border-color: rgba(84, 104, 76, 0.28);
-      background: rgba(236, 244, 226, 0.64);
+      border-color: var(--product-store-border);
+      background: var(--product-store-bg);
     }
 
     .pills {
@@ -543,11 +567,29 @@
     }
 
     .work-item {
+      --work-bg: rgba(255, 250, 241, 0.6);
+      --work-border: var(--line);
+      --work-store-bg: rgba(255, 250, 241, 0.66);
+      --work-store-border: var(--line);
       min-height: 190px;
       padding: 20px;
-      border: 1px solid var(--line);
+      border: 1px solid var(--work-border);
       border-radius: 24px;
-      background: rgba(255, 250, 241, 0.6);
+      background: var(--work-bg);
+    }
+
+    .work-item.garlicbird {
+      --work-bg: linear-gradient(145deg, rgba(255, 250, 241, 0.78), rgba(223, 237, 211, 0.44));
+      --work-border: rgba(84, 104, 76, 0.24);
+      --work-store-bg: rgba(230, 241, 219, 0.74);
+      --work-store-border: rgba(84, 104, 76, 0.32);
+    }
+
+    .work-item.rouse {
+      --work-bg: linear-gradient(145deg, rgba(255, 250, 241, 0.78), rgba(255, 224, 194, 0.42));
+      --work-border: rgba(225, 105, 45, 0.24);
+      --work-store-bg: rgba(255, 224, 194, 0.72);
+      --work-store-border: rgba(225, 105, 45, 0.34);
     }
 
     .work-item h3 {
@@ -563,6 +605,11 @@
 
     .work-item .product-actions {
       margin-top: 18px;
+    }
+
+    .work-link.store {
+      border-color: var(--work-store-border);
+      background: var(--work-store-bg);
     }
 
     .note-card {
@@ -745,7 +792,7 @@
         </div>
 
         <div class="product-list">
-          <article class="product-tile">
+          <article class="product-tile garlicbird">
             <img class="product-icon" src="/garlicbird/app-icon.png" alt="" width="148" height="148">
             <div>
               <div class="product-kicker">iOS Shopping Utility</div>
@@ -758,7 +805,7 @@
             </div>
           </article>
 
-          <article class="product-tile">
+          <article class="product-tile rouse">
             <img class="product-icon" src="/rouse/apple-touch-icon.png" alt="" width="148" height="148">
             <div>
               <div class="product-kicker">macOS Utility</div>
@@ -797,20 +844,20 @@
         </div>
 
         <div class="work-grid">
-          <article class="work-item">
+          <article class="work-item garlicbird">
             <h3>GarlicBird</h3>
             <p>For price comparison moments where weight, volume, currency, coupons, and deposit math all matter at once.</p>
             <div class="product-actions">
               <a class="work-link" href="/garlicbird/">Product page</a>
-              <a class="work-link" href="https://apps.apple.com/us/app/garlicbird/id6762044720" target="_blank" rel="noreferrer">App Store</a>
+              <a class="work-link store" href="https://apps.apple.com/us/app/garlicbird/id6762044720" target="_blank" rel="noreferrer">App Store</a>
             </div>
           </article>
-          <article class="work-item">
+          <article class="work-item rouse">
             <h3>Rouse</h3>
             <p>For keeping a Mac awake during long-running work, with menu bar controls, timed sessions, and CLI automation.</p>
             <div class="product-actions">
               <a class="work-link" href="/rouse/">Product page</a>
-              <a class="work-link" href="https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12" target="_blank" rel="noreferrer">Mac App Store</a>
+              <a class="work-link store" href="https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12" target="_blank" rel="noreferrer">Mac App Store</a>
             </div>
           </article>
         </div>
