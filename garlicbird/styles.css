@@ -222,6 +222,33 @@ li {
   margin-top: 24px;
 }
 
+.locale-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.locale-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 253, 247, 0.76);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.locale-link[aria-current="page"] {
+  background: var(--text);
+  border-color: var(--text);
+  color: #fffdf7;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -237,6 +264,32 @@ li {
 }
 
 .button.secondary {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 17px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--text);
+  color: #fffdf7;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.cta.secondary {
   background: var(--surface);
   color: var(--text);
 }
@@ -292,6 +345,62 @@ code {
   color: #68451f;
 }
 
+.warning {
+  margin-top: 20px;
+  padding: 16px 18px;
+  border: 1px solid rgba(201, 120, 46, 0.2);
+  border-radius: 18px;
+  background: var(--warm-soft);
+  color: #68451f;
+}
+
+.troubleshooting,
+.entry {
+  margin-top: 24px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--surface);
+}
+
+.entry-title {
+  margin: 0;
+  font-size: 22px;
+}
+
+.entry-meta {
+  margin: 8px 0 0;
+  font-size: 14px;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+  font-size: 15px;
+}
+
+.command-block,
+pre {
+  max-width: 100%;
+  margin: 14px 0 0;
+  padding: 18px 20px;
+  overflow-x: auto;
+  border-radius: 20px;
+  background: var(--text);
+  color: #fffdf7;
+  font: 14px/1.6 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+pre code {
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
 footer {
   margin-top: 28px;
   color: var(--muted);
@@ -320,7 +429,8 @@ footer a {
   }
 
   .actions,
-  .quick-links {
+  .quick-links,
+  .cta-row {
     flex-direction: column;
   }
 
@@ -333,7 +443,8 @@ footer a {
     grid-template-columns: 1fr;
   }
 
-  .button {
+  .button,
+  .cta {
     width: 100%;
   }
 }
