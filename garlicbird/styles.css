@@ -263,23 +263,103 @@ li {
 
 .locale-switch {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  justify-content: flex-end;
+  position: relative;
   margin-bottom: 18px;
+}
+
+.toplink + .locale-switch {
+  margin-top: -56px;
+}
+
+.language-menu {
+  position: relative;
+  display: inline-flex;
+}
+
+.language-menu summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 253, 247, 0.86);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 800;
+  list-style: none;
+  user-select: none;
+}
+
+.language-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.language-menu summary::after {
+  width: 7px;
+  height: 7px;
+  margin-left: 2px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  content: "";
+  transform: translateY(-2px) rotate(45deg);
+}
+
+.language-menu[open] summary {
+  background: var(--text);
+  border-color: var(--text);
+  color: #fffdf7;
+}
+
+.language-label {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.language-menu[open] .language-label {
+  color: rgba(255, 253, 247, 0.7);
+}
+
+.language-options {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 9px);
+  right: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 6px;
+  width: min(92vw, 520px);
+  max-height: min(64vh, 420px);
+  padding: 8px;
+  overflow-y: auto;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 253, 247, 0.98);
+  box-shadow: var(--shadow);
 }
 
 .locale-link {
   display: inline-flex;
   align-items: center;
-  min-height: 38px;
-  padding: 0 13px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(255, 253, 247, 0.76);
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: transparent;
   color: var(--text);
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
+}
+
+.locale-link:hover {
+  border-color: var(--line);
+  background: var(--accent-soft);
 }
 
 .locale-link[aria-current="page"] {
@@ -471,6 +551,20 @@ footer a {
   .quick-links,
   .cta-row {
     flex-direction: column;
+  }
+
+  .locale-switch {
+    justify-content: flex-start;
+  }
+
+  .toplink + .locale-switch {
+    margin-top: 0;
+  }
+
+  .language-options {
+    right: auto;
+    left: 0;
+    width: min(calc(100vw - 28px), 420px);
   }
 
   .app-store-badge {
