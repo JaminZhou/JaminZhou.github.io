@@ -267,6 +267,7 @@ li {
   justify-content: flex-end;
   position: relative;
   margin-bottom: 18px;
+  pointer-events: none;
 }
 
 .toplink + .locale-switch {
@@ -276,6 +277,7 @@ li {
 .language-menu {
   position: relative;
   display: inline-flex;
+  pointer-events: auto;
 }
 
 .language-menu summary {
