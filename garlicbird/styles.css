@@ -80,9 +80,10 @@ a {
 }
 
 .wrap {
-  width: min(100% - 40px, 940px);
+  width: 100%;
+  max-width: 980px;
   margin: 0 auto;
-  padding: 48px 0 76px;
+  padding: 48px 20px 76px;
 }
 
 .toplink {
@@ -534,13 +535,26 @@ footer a {
 
 @media (max-width: 760px) {
   .wrap {
-    width: min(100% - 28px, 940px);
-    padding: 32px 0 60px;
+    max-width: none;
+    padding: 32px 14px 60px;
+  }
+
+  .hero,
+  .panel,
+  .card {
+    max-width: 100%;
   }
 
   .hero {
     grid-template-columns: 1fr;
     border-radius: 26px;
+  }
+
+  .hero-copy,
+  .panel,
+  .card,
+  .note {
+    overflow-wrap: anywhere;
   }
 
   .icon-stage {
@@ -578,6 +592,9 @@ footer a {
 
   .button,
   .cta {
+    min-width: 0;
+    text-align: center;
+    white-space: normal;
     width: 100%;
   }
 }
