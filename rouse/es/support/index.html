@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soporte de Rouse</title>
+  <meta name="description" content="Soporte y solución de problemas para Rouse, incluyendo línea de comandos, sesiones temporizadas, reposo de pantalla, batería y actualizaciones del App Store.">
+  <link rel="canonical" href="https://jaminzhou.com/rouse/es/support/">
+  <link rel="alternate" hreflang="en" href="https://jaminzhou.com/rouse/support/">
+  <link rel="alternate" hreflang="de" href="https://jaminzhou.com/rouse/de/support/">
+  <link rel="alternate" hreflang="fr" href="https://jaminzhou.com/rouse/fr/support/">
+  <link rel="alternate" hreflang="es" href="https://jaminzhou.com/rouse/es/support/">
+  <link rel="alternate" hreflang="ko" href="https://jaminzhou.com/rouse/ko/support/">
+  <link rel="alternate" hreflang="ja" href="https://jaminzhou.com/rouse/ja/support/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://jaminzhou.com/rouse/zh-hans/support/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://jaminzhou.com/rouse/zh-hant/support/">
+  <link rel="alternate" hreflang="x-default" href="https://jaminzhou.com/rouse/support/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/rouse/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/rouse/favicon-32.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/rouse/apple-touch-icon.png">
+  <meta property="og:site_name" content="Rouse">
+  <meta property="og:title" content="Soporte de Rouse">
+  <meta property="og:description" content="Soporte y solución de problemas para Rouse, incluyendo línea de comandos, sesiones temporizadas, reposo de pantalla, batería y actualizaciones del App Store.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jaminzhou.com/rouse/es/support/">
+  <meta property="og:image" content="https://jaminzhou.com/rouse/app-icon.png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Soporte de Rouse">
+  <meta name="twitter:description" content="Soporte y solución de problemas para Rouse, incluyendo línea de comandos, sesiones temporizadas, reposo de pantalla, batería y actualizaciones del App Store.">
+  <meta name="twitter:image" content="https://jaminzhou.com/rouse/app-icon.png">
+  <link rel="stylesheet" href="/garlicbird/styles.css?v=20260513-theme">
+</head>
+<body class="theme-rouse">
+  <main class="wrap">
+    <nav class="locale-switch" aria-label="Idioma">
+      <details class="language-menu">
+        <summary>
+          <span class="language-label">Idioma</span>
+          <span class="language-current" lang="es">Español</span>
+        </summary>
+        <div class="language-options">
+          <a class="locale-link" href="/rouse/support/" hreflang="en" lang="en">English</a>
+          <a class="locale-link" href="/rouse/de/support/" hreflang="de" lang="de">Deutsch</a>
+          <a class="locale-link" href="/rouse/fr/support/" hreflang="fr" lang="fr">Français</a>
+          <a class="locale-link" href="/rouse/es/support/" hreflang="es" lang="es" aria-current="page">Español</a>
+          <a class="locale-link" href="/rouse/ko/support/" hreflang="ko" lang="ko">한국어</a>
+          <a class="locale-link" href="/rouse/ja/support/" hreflang="ja" lang="ja">日本語</a>
+          <a class="locale-link" href="/rouse/zh-hans/support/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a class="locale-link" href="/rouse/zh-hant/support/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+        </div>
+      </details>
+    </nav>
+
+    <section class="panel">
+      <div class="kicker">Soporte</div>
+      <h1>Soporte de Rouse</h1>
+      <p class="meta">Última actualización: 26 de abril de 2026</p>
+      <p>Rouse ofrece controles rápidos en la barra de menús, un panel tranquilo para el reposo de pantalla y reglas de batería, y una CLI oficial <code>rouse</code> para automatización local.</p>
+      <p>¿Necesitas ayuda? Puedes escribir a <a href="mailto:me@jaminzhou.com">me@jaminzhou.com</a> o usar el formulario de comentarios si prefieres no empezar por correo.</p>
+      <div class="cta-row">
+        <a class="cta" href="mailto:me@jaminzhou.com?subject=Rouse%20Support">Enviar correo a soporte</a>
+        <a class="cta secondary" href="https://tally.so/r/jaW724" target="_blank" rel="noreferrer">Abrir formulario de comentarios</a>
+      </div>
+      <p>El formulario puede enviarse de forma anónima y también permite dejar un correo para seguimiento.</p>
+      <h2>Antes de contactar con soporte</h2>
+      <ul>
+        <li>Rouse admite macOS 13 Ventura o posterior.</li>
+        <li>Asegúrate de estar usando la versión de Rouse del Mac App Store.</li>
+        <li>Si el problema implica una sesión temporizada, anota la duración elegida y si la prevención de reposo de pantalla estaba activada.</li>
+      </ul>
+      <h2>Inicio rápido de línea de comandos</h2>
+      <p>En Ajustes de Rouse, abre Línea de comandos y copia la configuración que coincida con tu shell o herramienta de automatización. Después, estos son los comandos más útiles:</p>
+      <pre class="command-block"><code>rouse doctor
+rouse start
+rouse start --for 30m
+rouse status
+rouse stop
+rouse display-sleep prevent
+rouse display-sleep allow
+rouse open</code></pre>
+      <h2>Qué incluir</h2>
+      <ul>
+        <li>Tu versión y número de build de Rouse</li>
+        <li>Tu versión de macOS</li>
+        <li>Una breve descripción de lo esperado y lo ocurrido</li>
+        <li>Pasos para reproducir el problema, si es posible</li>
+        <li>Una captura si ayuda a explicar el problema</li>
+      </ul>
+      <h2>Temas comunes</h2>
+      <ul>
+        <li>Sesiones temporizadas que terminan antes o después de lo esperado</li>
+        <li>Comportamiento del reposo de pantalla</li>
+        <li>Configuración de línea de comandos, <code>rouse doctor</code> o permisos de macOS</li>
+        <li>Ajustes de protección de batería</li>
+        <li>Apertura del panel, reapertura o inicio de sesión</li>
+        <li>Compras Support Rouse o restaurar compras</li>
+        <li>Preguntas sobre versiones o actualizaciones del App Store</li>
+      </ul>
+      <h2>Preguntas frecuentes</h2>
+      <ul>
+        <li>¿Por qué se detuvo una sesión automáticamente? Si la protección de batería está activada, Rouse puede apagarse cuando la batería cae por debajo del umbral elegido.</li>
+        <li>¿Por qué una sesión temporizada se ve diferente después de reposo o reinicio? Rouse restaura las sesiones según el tiempo restante guardado localmente en tu Mac.</li>
+        <li>¿Dónde configuro la herramienta de línea de comandos? Abre Ajustes de Rouse, elige Línea de comandos y usa la guía. La opción de ruta completa es el respaldo más seguro para scripts y lanzadores.</li>
+        <li>¿Por qué macOS pidió a Rouse acceder a datos de otras apps? Rouse usa un contenedor compartido privado para que la CLI integrada envíe comandos locales a Rouse.app. No lee tus documentos ni datos de otras apps.</li>
+        <li>¿Qué hago si pulsé No permitir? Cierra Rouse, abre Ajustes del Sistema > Privacidad y seguridad > Gestión de apps, permite Rouse y ejecuta <code>rouse doctor</code> de nuevo.</li>
+        <li>¿Dónde gestiono Abrir al iniciar sesión? Abre Ajustes de Rouse y activa Abrir al iniciar sesión.</li>
+        <li>¿Dónde puedo apoyar Rouse o restaurar una compra? Abre Acerca de Rouse y usa la sección Support Rouse.</li>
+        <li>¿Por qué no están disponibles las opciones de apoyo? Confirma que usas la versión del Mac App Store, que tu Mac está conectado y prueba Reintentar opciones de apoyo.</li>
+        <li>¿Dónde leo la política de privacidad? Visita la <a href="/rouse/es/privacy/">política de privacidad de Rouse</a>.</li>
+      </ul>
+      <h2>Solución de problemas</h2>
+      <div class="troubleshooting">
+        <h3>Sesiones temporizadas</h3>
+        <p>Si una sesión termina antes de lo esperado, comprueba primero si la protección de batería la apagó en el umbral elegido. Tras reposo o reapertura, compara el tiempo restante con el estado guardado.</p>
+
+        <h3>Reposo de pantalla</h3>
+        <p>El control de reposo de pantalla es opcional. Si tu Mac sigue activo pero la pantalla se atenúa o duerme, confirma que la prevención de reposo de pantalla estaba activada para esa sesión.</p>
+
+        <h3>Protección de batería</h3>
+        <p>Rouse puede detener una sesión activa cuando la batería baja del umbral seleccionado. Si resulta demasiado agresivo, sube el umbral solo si quieres protección más temprana, o desactiva el ajuste.</p>
+
+        <h3>Abrir al iniciar sesión</h3>
+        <p>Si Rouse no está disponible tras iniciar sesión, abre Ajustes y verifica que Abrir al iniciar sesión sigue activado. macOS también puede pedir revisar los ítems de inicio.</p>
+
+        <h3>Actualizaciones del App Store</h3>
+        <p>Si el Mac App Store muestra una build antigua, actualiza la página de Actualizaciones y confirma que miras la versión de Rouse del Mac App Store. El historial también está en el <a href="/rouse/es/changelog/">registro de cambios de Rouse</a>.</p>
+
+        <h3>Línea de comandos</h3>
+        <p>Si no se encuentra <code>rouse</code>, abre Ajustes de Rouse y copia la configuración de Línea de comandos para tu shell o herramienta. Si <code>rouse doctor</code> no conecta, inicia Rouse una vez y revisa el permiso de Gestión de apps si lo denegaste.</p>
+      </div>
+      <h2>Avanzado</h2>
+      <p>Si buscas una solución avanzada en Terminal para el reposo al cerrar la tapa de un MacBook en vez de una función del App Store, lee la <a href="/rouse/es/support/clamshell/">nota de Terminal sobre reposo al cerrar el MacBook</a>. Usa <strong>pmset</strong>, requiere privilegios de administrador y queda fuera de la versión del Mac App Store de Rouse.</p>
+      <h2>Historial de versiones</h2>
+      <p>El historial público de versiones está en el <a href="/rouse/es/changelog/">registro de cambios de Rouse</a>.</p>
+      <div class="note">Las solicitudes de soporte se responden en inglés. Evita enviar contraseñas, secretos de cuenta u otra información personal sensible.</div>
+      <p style="margin-top: 28px;">
+        <a href="/rouse/es/">Volver a Rouse</a>
+        / <a href="/rouse/es/changelog/">Changelog</a>
+        / <a href="/rouse/es/privacy/">Política de privacidad</a>
+      </p>
+    </section>
+  </main>
+</body>
+</html>

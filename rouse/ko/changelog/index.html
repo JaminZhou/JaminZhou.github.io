@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rouse 변경 내역</title>
+  <meta name="description" content="빠른 메뉴 막대 깨움 제어와 차분한 대시보드를 제공하는 Mac 앱 Rouse의 릴리스 노트와 버전 기록입니다.">
+  <link rel="canonical" href="https://jaminzhou.com/rouse/ko/changelog/">
+  <link rel="alternate" hreflang="en" href="https://jaminzhou.com/rouse/changelog/">
+  <link rel="alternate" hreflang="de" href="https://jaminzhou.com/rouse/de/changelog/">
+  <link rel="alternate" hreflang="fr" href="https://jaminzhou.com/rouse/fr/changelog/">
+  <link rel="alternate" hreflang="es" href="https://jaminzhou.com/rouse/es/changelog/">
+  <link rel="alternate" hreflang="ko" href="https://jaminzhou.com/rouse/ko/changelog/">
+  <link rel="alternate" hreflang="ja" href="https://jaminzhou.com/rouse/ja/changelog/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://jaminzhou.com/rouse/zh-hans/changelog/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://jaminzhou.com/rouse/zh-hant/changelog/">
+  <link rel="alternate" hreflang="x-default" href="https://jaminzhou.com/rouse/changelog/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/rouse/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/rouse/favicon-32.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/rouse/apple-touch-icon.png">
+  <meta property="og:site_name" content="Rouse">
+  <meta property="og:title" content="Rouse 변경 내역">
+  <meta property="og:description" content="Mac App Store용 Rouse의 릴리스 노트와 버전 기록입니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jaminzhou.com/rouse/ko/changelog/">
+  <meta property="og:image" content="https://jaminzhou.com/rouse/app-icon.png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Rouse 변경 내역">
+  <meta name="twitter:description" content="Mac App Store용 Rouse의 릴리스 노트와 버전 기록입니다.">
+  <meta name="twitter:image" content="https://jaminzhou.com/rouse/app-icon.png">
+  <link rel="stylesheet" href="/garlicbird/styles.css?v=20260513-theme">
+</head>
+<body class="theme-rouse">
+  <main class="wrap">
+    <nav class="locale-switch" aria-label="언어">
+      <details class="language-menu">
+        <summary>
+          <span class="language-label">언어</span>
+          <span class="language-current" lang="ko">한국어</span>
+        </summary>
+        <div class="language-options">
+          <a class="locale-link" href="/rouse/changelog/" hreflang="en" lang="en">English</a>
+          <a class="locale-link" href="/rouse/de/changelog/" hreflang="de" lang="de">Deutsch</a>
+          <a class="locale-link" href="/rouse/fr/changelog/" hreflang="fr" lang="fr">Français</a>
+          <a class="locale-link" href="/rouse/es/changelog/" hreflang="es" lang="es">Español</a>
+          <a class="locale-link" href="/rouse/ko/changelog/" hreflang="ko" lang="ko" aria-current="page">한국어</a>
+          <a class="locale-link" href="/rouse/ja/changelog/" hreflang="ja" lang="ja">日本語</a>
+          <a class="locale-link" href="/rouse/zh-hans/changelog/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a class="locale-link" href="/rouse/zh-hant/changelog/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+        </div>
+      </details>
+    </nav>
+
+    <section class="panel">
+      <div class="kicker">변경 내역</div>
+      <h1>Rouse 변경 내역</h1>
+      <p class="meta">마지막 업데이트: 2026년 5월 16일</p>
+      <p>Mac App Store 버전 Rouse의 릴리스 노트입니다. 이 페이지는 공개 버전 기록을 짧고 사용자 중심으로 유지합니다.</p>
+      <article class="entry">
+        <h2 class="entry-title">1.8.0</h2>
+        <p class="entry-meta">독일어 현지화와 앱 언어 바로가기 추가.</p>
+        <ul>
+        <li>Rouse와 Mac App Store 목록에 독일어 현지화를 추가했습니다.</li>
+        <li>Rouse의 앱별 언어를 선택할 수 있도록 macOS 언어 및 지역을 여는 설정 바로가기를 추가했습니다.</li>
+        <li>대시보드 헤더를 정리하고 명령줄 설정 진입점을 더 가볍게 만들었습니다.</li>
+        <li>앱, 테스트, 스크린샷 동작을 더 일관되게 하기 위해 현지화 조회를 중앙화했습니다.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.7.0</h2>
+        <p class="entry-meta">공식 <code>rouse</code> 명령줄 인터페이스 추가.</p>
+        <ul>
+        <li>Terminal, 셸 스크립트, 로컬 자동화용 내장 <code>rouse</code> CLI를 추가했습니다.</li>
+        <li>명령줄 도구가 세션 시작, 중지, 상태 확인, 대시보드 열기, 디스플레이 잠자기 관리를 할 수 있습니다.</li>
+        <li>설정에 명령줄 설정 안내를 추가했습니다.</li>
+        <li>메뉴 막대에서 대시보드 접근과 지원 동작을 다듬었습니다.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.6.0</h2>
+        <p class="entry-meta">앱 전반의 접근성 개선.</p>
+        <ul>
+        <li>VoiceOver 레이블, 값, 힌트를 더 명확하게 했습니다.</li>
+        <li>키보드 탐색을 개선했습니다.</li>
+        <li>macOS 디스플레이 접근성 설정을 더 잘 따릅니다.</li>
+        <li>메뉴 막대 아이콘 정렬을 다듬었습니다.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.5.0</h2>
+        <p class="entry-meta">활성 세션 중 디스플레이 잠자기 변경.</p>
+        <ul>
+        <li>세션이 활성 상태일 때 디스플레이 잠자기를 조정할 수 있습니다.</li>
+        <li>릴리스 흐름과 세션 처리의 내부 안정성을 개선했습니다.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.4.0</h2>
+        <p class="entry-meta">대시보드 레이아웃 개선.</p>
+        <ul>
+        <li>더 차분한 표시를 위해 대시보드 레이아웃과 간격을 다듬었습니다.</li>
+        <li>긴 콘텐츠의 가독성과 균형을 개선했습니다.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.3.0</h2>
+        <p class="entry-meta">App Shortcuts와 릴리스 경험 개선.</p>
+        <ul>
+        <li>세션 시작, 시간 제한 세션 시작, 세션 중지, 대시보드 열기 바로가기를 추가했습니다.</li>
+        <li>긴 현지화 텍스트를 위한 대시보드 전환과 배치를 다듬었습니다.</li>
+        <li>피드백과 지원 진입점을 더 명확하게 했습니다.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.2.0</h2>
+        <p class="entry-meta">일본어와 중국어 현지화 지원 추가.</p>
+        <ul>
+        <li>일본어, 중국어 간체, 중국어 번체 현지화를 추가했습니다.</li>
+        <li>현재 제품 언어에 맞게 대시보드와 빠른 패널 문구를 새로 고쳤습니다.</li>
+        <li>대시보드 위치와 세션 상태 안정성을 개선했습니다.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.1.0</h2>
+        <p class="entry-meta">선택적 후원 추가.</p>
+        <ul>
+        <li>정보 창에 Support Rouse 섹션을 추가했습니다.</li>
+        <li>App Store Connect 리뷰 자산 관리 도구를 개선했습니다.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.0.0</h2>
+        <p class="entry-meta">첫 Mac App Store 릴리스.</p>
+        <ul>
+        <li>빠른 메뉴 막대 깨움 제어와 차분한 대시보드를 도입했습니다.</li>
+        <li>무기한 및 시간 제한 깨움 세션, 디스플레이 잠자기, 배터리 보호, 로그인 시 실행을 추가했습니다.</li>
+        <li>재실행 또는 시스템 깨움 후 시간 제한 세션 복원을 포함했습니다.</li>
+        </ul>
+      </article>
+      <div class="links">
+        <a href="/rouse/ko/">Rouse로 돌아가기</a>
+        <a href="/rouse/ko/support/">지원</a>
+        <a href="/rouse/ko/privacy/">개인정보 처리방침</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
