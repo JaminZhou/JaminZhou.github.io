@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solución de Terminal de Rouse para reposo al cerrar el MacBook</title>
+  <meta name="description" content="Solución avanzada de Terminal para controlar manualmente el reposo al cerrar un MacBook con pmset, fuera de la versión del Mac App Store de Rouse.">
+  <link rel="canonical" href="https://jaminzhou.com/rouse/es/support/clamshell/">
+  <link rel="alternate" hreflang="en" href="https://jaminzhou.com/rouse/support/clamshell/">
+  <link rel="alternate" hreflang="de" href="https://jaminzhou.com/rouse/de/support/clamshell/">
+  <link rel="alternate" hreflang="fr" href="https://jaminzhou.com/rouse/fr/support/clamshell/">
+  <link rel="alternate" hreflang="es" href="https://jaminzhou.com/rouse/es/support/clamshell/">
+  <link rel="alternate" hreflang="ko" href="https://jaminzhou.com/rouse/ko/support/clamshell/">
+  <link rel="alternate" hreflang="ja" href="https://jaminzhou.com/rouse/ja/support/clamshell/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://jaminzhou.com/rouse/zh-hans/support/clamshell/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://jaminzhou.com/rouse/zh-hant/support/clamshell/">
+  <link rel="alternate" hreflang="x-default" href="https://jaminzhou.com/rouse/support/clamshell/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/rouse/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/rouse/favicon-32.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/rouse/apple-touch-icon.png">
+  <meta property="og:site_name" content="Rouse">
+  <meta property="og:title" content="Solución de Terminal de Rouse para reposo al cerrar el MacBook">
+  <meta property="og:description" content="Solución avanzada de Terminal para controlar manualmente el reposo al cerrar un MacBook con pmset, fuera de la versión del Mac App Store de Rouse.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jaminzhou.com/rouse/es/support/clamshell/">
+  <meta property="og:image" content="https://jaminzhou.com/rouse/app-icon.png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Solución de Terminal de Rouse para reposo al cerrar el MacBook">
+  <meta name="twitter:description" content="Solución avanzada de Terminal para controlar manualmente el reposo al cerrar un MacBook con pmset, fuera de la versión del Mac App Store de Rouse.">
+  <meta name="twitter:image" content="https://jaminzhou.com/rouse/app-icon.png">
+  <link rel="stylesheet" href="/garlicbird/styles.css?v=20260513-theme">
+</head>
+<body class="theme-rouse">
+  <main class="wrap">
+    <nav class="locale-switch" aria-label="Idioma">
+      <details class="language-menu">
+        <summary>
+          <span class="language-label">Idioma</span>
+          <span class="language-current" lang="es">Español</span>
+        </summary>
+        <div class="language-options">
+          <a class="locale-link" href="/rouse/support/clamshell/" hreflang="en" lang="en">English</a>
+          <a class="locale-link" href="/rouse/de/support/clamshell/" hreflang="de" lang="de">Deutsch</a>
+          <a class="locale-link" href="/rouse/fr/support/clamshell/" hreflang="fr" lang="fr">Français</a>
+          <a class="locale-link" href="/rouse/es/support/clamshell/" hreflang="es" lang="es" aria-current="page">Español</a>
+          <a class="locale-link" href="/rouse/ko/support/clamshell/" hreflang="ko" lang="ko">한국어</a>
+          <a class="locale-link" href="/rouse/ja/support/clamshell/" hreflang="ja" lang="ja">日本語</a>
+          <a class="locale-link" href="/rouse/zh-hans/support/clamshell/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a class="locale-link" href="/rouse/zh-hant/support/clamshell/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+        </div>
+      </details>
+    </nav>
+
+    <section class="panel">
+      <div class="kicker">Avanzado</div>
+      <h1>Solución de Terminal para reposo al cerrar el MacBook</h1>
+      <p class="meta">Última actualización: 20 de abril de 2026</p>
+      <p>Esta página documenta una solución avanzada de Terminal para controlar manualmente el reposo al cerrar un MacBook fuera de la versión del Mac App Store de Rouse.</p>
+      <div class="warning">Es una solución a nivel de Terminal, no una API oficial de macOS ni una función del Mac App Store de Rouse. Cambia un ajuste global de energía y requiere privilegios de administrador. El comportamiento puede variar según el modelo de Mac y la versión de macOS.</div>
+      <p>La build del Mac App Store no puede incluir esto como función porque depende de cambios <code>pmset</code> con privilegios de administrador fuera del límite normal del App Sandbox.</p>
+      <h2>Comandos rápidos</h2>
+      <p>Añade esta función a tu <code>~/.zshrc</code> u otro perfil de shell:</p>
+      <pre><code>rouse-lid() {
+  case "$1" in
+    on)
+      sudo pmset -a disablesleep 1
+      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
+      ;;
+    off)
+      sudo pmset -a disablesleep 0
+      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
+      ;;
+    status)
+      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
+      ;;
+    *)
+      echo "usage: rouse-lid {on|off|status}"
+      return 1
+      ;;
+  esac
+}</code></pre>
+      <p>Recarga tu shell y usa <code>rouse-lid on</code>, <code>rouse-lid off</code> y <code>rouse-lid status</code>.</p>
+      <h2>Qué hace realmente</h2>
+      <ul>
+        <li><code>rouse-lid on</code> ejecuta <code>sudo pmset -a disablesleep 1</code>.</li>
+        <li><code>rouse-lid off</code> restaura el reposo normal con <code>sudo pmset -a disablesleep 0</code>.</li>
+        <li><code>rouse-lid status</code> imprime el estado actual <code>SleepDisabled</code> en formato legible.</li>
+        <li>El caso de uso previsto es el reposo al cerrar el MacBook, no un interruptor genérico de reposo.</li>
+      </ul>
+      <p>Como <code>disablesleep=1</code> bloquea el reposo por inactividad y al cerrar la tapa, el Mac también seguirá activo si lo dejas sin tocar. Ejecuta <code>rouse-lid off</code> cuando termines.</p>
+      <h2>Límites</h2>
+      <ul>
+        <li>Solución avanzada de Terminal, no una función de producto incluida.</li>
+        <li>Afecta globalmente al reposo del sistema, no solo al cierre de tapa.</li>
+        <li>Separada de la versión del Mac App Store de Rouse.</li>
+        <li>La build del Mac App Store no puede incluir esta ruta como función soportada.</li>
+        <li>El ajuste persiste tras reiniciar.</li>
+        <li>Usa <code>rouse-lid off</code> en cuanto termines.</li>
+      </ul>
+      <h2>Cómo eliminarla</h2>
+      <ul>
+        <li>Si el estado muestra <code>SleepDisabled = 1</code>, ejecuta primero <code>rouse-lid off</code>. Si ya eliminaste la función, ejecuta directamente <code>sudo pmset -a disablesleep 0</code>.</li>
+        <li>Elimina la función <code>rouse-lid()</code> de <code>~/.zshrc</code> o del perfil usado y recarga tu shell.</li>
+      </ul>
+      <h2>Acerca de esta página</h2>
+      <p>La versión del Mac App Store de Rouse se mantiene dentro de lo permitido por App Sandbox. Esta página documenta la solución de Terminal para usuarios avanzados cómodos cambiando ajustes de energía del sistema. La función <code>rouse-lid</code> es una ayuda independiente en tu perfil de shell; no es una interfaz de línea de comandos de la versión del Mac App Store de Rouse.</p>
+      <div class="links">
+        <a href="/rouse/es/support/">Volver a soporte</a>
+        <a href="/rouse/es/">Volver a Rouse</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
