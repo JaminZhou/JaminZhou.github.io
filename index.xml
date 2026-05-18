@@ -5,7 +5,7 @@
     <link>https://jaminzhou.com/</link>
     <description>Updates from JaminZhou, including the personal homepage, Rouse for macOS, and GarlicBird for iOS.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 17 May 2026 17:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 18 May 2026 10:00:00 +0800</lastBuildDate>
     <atom:link href="https://jaminzhou.com/index.xml" rel="self" type="application/rss+xml" />
 
     <item>
@@ -44,16 +44,16 @@
       <title>Rouse for macOS</title>
       <link>https://jaminzhou.com/rouse/</link>
       <guid isPermaLink="true">https://jaminzhou.com/rouse/</guid>
-      <pubDate>Sat, 16 May 2026 21:30:00 +0800</pubDate>
-      <description>Rouse 1.8.0 is live with German localization, and the site now includes French, Spanish, and Korean product, support, privacy, changelog, and lid-close workaround pages.</description>
+      <pubDate>Mon, 18 May 2026 10:00:00 +0800</pubDate>
+      <description>Rouse 1.9.0 is live with French, Spanish, and Korean localization across the app, App Store metadata, screenshots, and support pages.</description>
     </item>
 
     <item>
       <title>Rouse Changelog</title>
       <link>https://jaminzhou.com/rouse/changelog/</link>
       <guid isPermaLink="true">https://jaminzhou.com/rouse/changelog/</guid>
-      <pubDate>Sat, 16 May 2026 21:30:00 +0800</pubDate>
-      <description>Release notes and version history for Rouse, now updated for Rouse 1.8.0.</description>
+      <pubDate>Mon, 18 May 2026 10:00:00 +0800</pubDate>
+      <description>Release notes and version history for Rouse, now updated for Rouse 1.9.0.</description>
     </item>
 
     <item>
