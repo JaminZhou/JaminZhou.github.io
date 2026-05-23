@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JaminZhou | Independent Software Studio</title>
-  <meta name="description" content="JaminZhou is an independent developer building thoughtful apps for Apple platforms including Rouse for macOS and GarlicBird for iOS.">
+  <meta name="description" content="JaminZhou is an independent developer building thoughtful apps for Apple platforms including Hushtrail and Rouse for macOS, plus GarlicBird for iOS.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="JaminZhou">
   <link rel="canonical" href="https://jaminzhou.com/">
@@ -15,13 +15,13 @@
 
   <meta property="og:site_name" content="JaminZhou">
   <meta property="og:title" content="JaminZhou | Independent Software Studio">
-  <meta property="og:description" content="Independent developer building thoughtful apps for Apple platforms including Rouse for macOS and GarlicBird for iOS.">
+  <meta property="og:description" content="Independent developer building thoughtful apps for Apple platforms including Hushtrail and Rouse for macOS, plus GarlicBird for iOS.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jaminzhou.com/">
   <meta property="og:image" content="https://jaminzhou.com/images/jamin-zhou-avatar.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="JaminZhou | Independent Software Studio">
-  <meta name="twitter:description" content="Independent developer building thoughtful apps for Apple platforms including Rouse for macOS and GarlicBird for iOS.">
+  <meta name="twitter:description" content="Independent developer building thoughtful apps for Apple platforms including Hushtrail and Rouse for macOS, plus GarlicBird for iOS.">
   <meta name="twitter:image" content="https://jaminzhou.com/images/jamin-zhou-avatar.png">
 
   <script type="application/ld+json">
@@ -64,6 +64,16 @@
           "applicationCategory": "ShoppingApplication",
           "operatingSystem": "iOS",
           "url": "https://jaminzhou.com/garlicbird/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "SoftwareApplication",
+          "name": "Hushtrail",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "macOS",
+          "url": "https://jaminzhou.com/hushtrail/"
         }
       }
     ]
@@ -402,6 +412,15 @@
       --product-store-border: rgba(225, 105, 45, 0.34);
     }
 
+    .product-tile.hushtrail {
+      --product-accent: rgba(40, 122, 114, 0.38);
+      --product-bg-start: rgba(247, 253, 250, 0.95);
+      --product-bg-end: rgba(212, 235, 229, 0.56);
+      --product-border: rgba(40, 122, 114, 0.24);
+      --product-store-bg: rgba(221, 239, 235, 0.76);
+      --product-store-border: rgba(40, 122, 114, 0.32);
+    }
+
     .product-tile:hover {
       transform: translateY(-2px);
       border-color: var(--product-accent);
@@ -592,6 +611,13 @@
       --work-store-border: rgba(225, 105, 45, 0.34);
     }
 
+    .work-item.hushtrail {
+      --work-bg: linear-gradient(145deg, rgba(255, 250, 241, 0.78), rgba(212, 235, 229, 0.46));
+      --work-border: rgba(40, 122, 114, 0.24);
+      --work-store-bg: rgba(221, 239, 235, 0.76);
+      --work-store-border: rgba(40, 122, 114, 0.32);
+    }
+
     .work-item h3 {
       font-size: 32px;
       line-height: 1;
@@ -763,6 +789,7 @@
       <div class="nav">
         <a href="/garlicbird/">GarlicBird</a>
         <a href="/rouse/">Rouse</a>
+        <a href="/hushtrail/">Hushtrail</a>
         <a href="https://github.com/JaminZhou">GitHub</a>
         <a href="mailto:me@jaminzhou.com">Email</a>
       </div>
@@ -773,7 +800,7 @@
         <p class="eyebrow">Independent software studio</p>
         <h1 id="intro-title">Designing small tools with a calm center.</h1>
         <p class="intro">
-          I am JaminZhou, an independent developer building focused apps for Apple platforms, including Rouse for macOS and GarlicBird for iOS.
+          I am JaminZhou, an independent developer building focused apps for Apple platforms, including Hushtrail and Rouse for macOS, plus GarlicBird for iOS.
         </p>
         <p class="credential">Apple WWDC 2014 Student Scholarship Winner</p>
         <div class="hero-actions">
@@ -785,10 +812,10 @@
       <aside class="product-showcase" aria-label="Featured products">
         <div class="showcase-header">
           <div>
-            <p class="showcase-label">Now shipping</p>
-            <div class="showcase-title">Two focused tools for Apple platforms.</div>
+            <p class="showcase-label">Products</p>
+            <div class="showcase-title">Focused tools for Apple platforms.</div>
           </div>
-          <span class="showcase-note">App Store</span>
+          <span class="showcase-note">Live + beta</span>
         </div>
 
         <div class="product-list">
@@ -817,6 +844,19 @@
               </div>
             </div>
           </article>
+
+          <article class="product-tile hushtrail">
+            <img class="product-icon" src="/hushtrail/apple-touch-icon.png" alt="" width="148" height="148">
+            <div>
+              <div class="product-kicker">macOS Cleanup Utility</div>
+              <h2>Hushtrail</h2>
+              <p>Review app leftovers and privacy traces inside folders you choose, then archive eligible items with rollback instead of deleting blindly.</p>
+              <div class="product-actions">
+                <a class="product-link" href="/hushtrail/">Product page</a>
+                <a class="product-link store" href="/hushtrail/support/">Beta support</a>
+              </div>
+            </div>
+          </article>
         </div>
       </aside>
     </section>
@@ -824,7 +864,7 @@
     <section id="products" class="sections" aria-label="Work and links">
       <article class="project-card">
         <p class="card-label">Selected work</p>
-        <h2>Small Apple platform tools for daily decisions and long-running work.</h2>
+        <h2>Small Apple platform tools for daily decisions, long-running work, and careful cleanup.</h2>
         <p>
           Each app stays intentionally narrow: clear jobs, native platform behavior, and enough power for repeated daily use without turning into a cockpit.
         </p>
@@ -838,8 +878,8 @@
             <span>Rouse for macOS</span>
           </div>
           <div class="metric">
-            <strong>2</strong>
-            <span>Public App Store products</span>
+            <strong>Beta</strong>
+            <span>Hushtrail for macOS</span>
           </div>
         </div>
 
@@ -858,6 +898,14 @@
             <div class="product-actions">
               <a class="work-link" href="/rouse/">Product page</a>
               <a class="work-link store" href="https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12" target="_blank" rel="noreferrer">Mac App Store</a>
+            </div>
+          </article>
+          <article class="work-item hushtrail">
+            <h3>Hushtrail</h3>
+            <p>For reviewing authorized folders, understanding cleanup candidates, and keeping eligible archive actions reversible.</p>
+            <div class="product-actions">
+              <a class="work-link" href="/hushtrail/">Product page</a>
+              <a class="work-link store" href="/hushtrail/support/">Support</a>
             </div>
           </article>
         </div>
@@ -882,7 +930,7 @@
 
     <footer>
       <span>Copyright 2026 JaminZhou.</span>
-      <span><a href="/garlicbird/privacy/">GarlicBird privacy</a> / <a href="/garlicbird/support/">GarlicBird support</a> / <a href="/rouse/privacy/">Rouse privacy</a> / <a href="/rouse/support/">Rouse support</a></span>
+      <span><a href="/garlicbird/privacy/">GarlicBird privacy</a> / <a href="/garlicbird/support/">GarlicBird support</a> / <a href="/rouse/privacy/">Rouse privacy</a> / <a href="/rouse/support/">Rouse support</a> / <a href="/hushtrail/privacy/">Hushtrail privacy</a> / <a href="/hushtrail/support/">Hushtrail support</a></span>
     </footer>
   </main>
 </body>

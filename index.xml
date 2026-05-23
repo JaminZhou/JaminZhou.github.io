@@ -3,9 +3,9 @@
   <channel>
     <title>JaminZhou Updates</title>
     <link>https://jaminzhou.com/</link>
-    <description>Updates from JaminZhou, including the personal homepage, Rouse for macOS, and GarlicBird for iOS.</description>
+    <description>Updates from JaminZhou, including the personal homepage, Hushtrail and Rouse for macOS, and GarlicBird for iOS.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 18 May 2026 10:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 24 May 2026 03:00:00 +0800</lastBuildDate>
     <atom:link href="https://jaminzhou.com/index.xml" rel="self" type="application/rss+xml" />
 
     <item>
@@ -13,7 +13,31 @@
       <link>https://jaminzhou.com/</link>
       <guid isPermaLink="true">https://jaminzhou.com/</guid>
       <pubDate>Sun, 26 Apr 2026 10:00:04 +0800</pubDate>
-      <description>Independent developer building thoughtful apps for Apple platforms including Rouse for macOS and GarlicBird for iOS.</description>
+      <description>Independent developer building thoughtful apps for Apple platforms including Hushtrail and Rouse for macOS, plus GarlicBird for iOS.</description>
+    </item>
+
+    <item>
+      <title>Hushtrail for macOS</title>
+      <link>https://jaminzhou.com/hushtrail/</link>
+      <guid isPermaLink="true">https://jaminzhou.com/hushtrail/</guid>
+      <pubDate>Sun, 24 May 2026 03:00:00 +0800</pubDate>
+      <description>Hushtrail is a local-first macOS cleanup utility for reviewing app leftovers and privacy traces inside folders you choose, with preview scans and rollback-backed archive.</description>
+    </item>
+
+    <item>
+      <title>Hushtrail Support</title>
+      <link>https://jaminzhou.com/hushtrail/support/</link>
+      <guid isPermaLink="true">https://jaminzhou.com/hushtrail/support/</guid>
+      <pubDate>Sun, 24 May 2026 03:00:00 +0800</pubDate>
+      <description>Support resources and troubleshooting for Hushtrail authorized folders, preview scans, rollback history, browser safety, restore, and discard behavior.</description>
+    </item>
+
+    <item>
+      <title>Hushtrail Privacy Policy</title>
+      <link>https://jaminzhou.com/hushtrail/privacy/</link>
+      <guid isPermaLink="true">https://jaminzhou.com/hushtrail/privacy/</guid>
+      <pubDate>Sun, 24 May 2026 03:00:00 +0800</pubDate>
+      <description>Privacy details for Hushtrail, including authorized folders, local rollback archives, security-scoped bookmarks, support requests, and Mac App Store data handling.</description>
     </item>
 
     <item>

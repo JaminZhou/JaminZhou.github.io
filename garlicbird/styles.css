@@ -52,6 +52,33 @@ body.theme-rouse {
   --icon-shadow: rgba(80, 43, 14, 0.28);
 }
 
+body.theme-hushtrail {
+  --bg: #eef5f2;
+  --surface: #fbfffd;
+  --surface-strong: #ffffff;
+  --text: #172826;
+  --muted: #62736f;
+  --line: rgba(31, 91, 84, 0.16);
+  --accent: #287a72;
+  --accent-strong: #145a54;
+  --accent-soft: #ddefeb;
+  --warm: #7d8f58;
+  --warm-soft: #e8edd8;
+  --note-text: #3f512f;
+  --shadow: 0 24px 70px rgba(23, 72, 68, 0.11);
+  --body-gradient-start: #f8fcfa;
+  --bg-radial-warm: rgba(125, 143, 88, 0.18);
+  --bg-radial-accent: rgba(40, 122, 114, 0.16);
+  --status-border: rgba(40, 122, 114, 0.18);
+  --status-bg: rgba(221, 239, 235, 0.72);
+  --status-text: #214f4a;
+  --code-bg: rgba(40, 122, 114, 0.1);
+  --icon-stage-start: #142827;
+  --icon-stage-mid: #287a72;
+  --icon-stage-end: #9bbd98;
+  --icon-shadow: rgba(18, 46, 44, 0.28);
+}
+
 * {
   box-sizing: border-box;
 }
