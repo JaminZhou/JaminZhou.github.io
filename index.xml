@@ -3,7 +3,7 @@
   <channel>
     <title>JaminZhou Updates</title>
     <link>https://jaminzhou.com/</link>
-    <description>Updates from JaminZhou, including the personal homepage, Hushtrail and Rouse for macOS, and GarlicBird for iOS.</description>
+    <description>Updates from JaminZhou, including the personal homepage, Hushtrail and Rouse for macOS, and CalcBird for iOS.</description>
     <language>en</language>
     <lastBuildDate>Sun, 24 May 2026 03:00:00 +0800</lastBuildDate>
     <atom:link href="https://jaminzhou.com/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>https://jaminzhou.com/</link>
       <guid isPermaLink="true">https://jaminzhou.com/</guid>
       <pubDate>Sun, 26 Apr 2026 10:00:04 +0800</pubDate>
-      <description>Independent developer building thoughtful apps for Apple platforms including Hushtrail and Rouse for macOS, plus GarlicBird for iOS.</description>
+      <description>Independent developer building thoughtful apps for Apple platforms including Hushtrail and Rouse for macOS, plus CalcBird for iOS.</description>
     </item>
 
     <item>
@@ -41,27 +41,27 @@
     </item>
 
     <item>
-      <title>GarlicBird for iOS</title>
-      <link>https://jaminzhou.com/garlicbird/</link>
-      <guid isPermaLink="true">https://jaminzhou.com/garlicbird/</guid>
+      <title>CalcBird for iOS</title>
+      <link>https://jaminzhou.com/calcbird/</link>
+      <guid isPermaLink="true">https://jaminzhou.com/calcbird/</guid>
       <pubDate>Wed, 06 May 2026 12:00:00 +0800</pubDate>
-      <description>GarlicBird is an iOS shopping calculator for comparing unit prices across package sizes, currencies, coupons, deposits, and discounts.</description>
+      <description>CalcBird is an iOS shopping calculator for comparing unit prices across package sizes, currencies, coupons, deposits, and discounts.</description>
     </item>
 
     <item>
-      <title>GarlicBird Support</title>
-      <link>https://jaminzhou.com/garlicbird/support/</link>
-      <guid isPermaLink="true">https://jaminzhou.com/garlicbird/support/</guid>
+      <title>CalcBird Support</title>
+      <link>https://jaminzhou.com/calcbird/support/</link>
+      <guid isPermaLink="true">https://jaminzhou.com/calcbird/support/</guid>
       <pubDate>Wed, 06 May 2026 12:00:00 +0800</pubDate>
-      <description>Support resources and FAQs for GarlicBird on iOS.</description>
+      <description>Support resources and FAQs for CalcBird on iOS.</description>
     </item>
 
     <item>
-      <title>GarlicBird Privacy Policy</title>
-      <link>https://jaminzhou.com/garlicbird/privacy/</link>
-      <guid isPermaLink="true">https://jaminzhou.com/garlicbird/privacy/</guid>
+      <title>CalcBird Privacy Policy</title>
+      <link>https://jaminzhou.com/calcbird/privacy/</link>
+      <guid isPermaLink="true">https://jaminzhou.com/calcbird/privacy/</guid>
       <pubDate>Wed, 06 May 2026 12:00:00 +0800</pubDate>
-      <description>Privacy details for GarlicBird, including local history, custom units, preferences, and exchange-rate requests.</description>
+      <description>Privacy details for CalcBird, including local history, custom units, preferences, and exchange-rate requests.</description>
     </item>
 
     <item>
