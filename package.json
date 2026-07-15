@@ -1,0 +1,10 @@
+{
+  "name": "jaminzhou-github-io",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:rouse": "node scripts/build-rouse-site.mjs --write",
+    "check:rouse": "node scripts/build-rouse-site.mjs --check",
+    "test": "node --test"
+  }
+}

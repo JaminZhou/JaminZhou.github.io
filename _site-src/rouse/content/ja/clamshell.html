@@ -1,0 +1,68 @@
+    <section class="panel">
+      <div class="kicker">高度な情報</div>
+      <h1>MacBook 合蓋スリープ向けターミナル回避策</h1>
+      <p class="meta">最終更新: 2026年4月20日</p>
+      <p>このページは、Mac App Store 版の Rouse とは別に、pmset で MacBook の合蓋スリープを手動制御するための高度なターミナル回避策をまとめたものです。</p>
+
+      <div class="warning">
+        これはターミナルレベルの回避策であり、macOS の正式 API でも、Mac App Store 版 Rouse の機能でもありません。システム全体の電源設定を変更するため、管理者権限が必要です。挙動は Mac の機種や macOS のバージョンによって異なる場合があります。
+      </div>
+      <p>この回避策は管理者権限での <code>pmset</code> による電源設定変更に依存するため、Mac App Store 版では機能として同梱できません。</p>
+
+      <h2>クイックコマンド</h2>
+      <p><code>~/.zshrc</code> などのシェル設定に次の関数を追加します。</p>
+      <pre><code>rouse-lid() {
+  case "$1" in
+    on)
+      sudo pmset -a disablesleep 1
+      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
+      ;;
+    off)
+      sudo pmset -a disablesleep 0
+      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
+      ;;
+    status)
+      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
+      ;;
+    *)
+      echo "usage: rouse-lid {on|off|status}"
+      return 1
+      ;;
+  esac
+}</code></pre>
+
+      <p>シェルを再読み込みしたら、<code>rouse-lid on</code>、<code>rouse-lid off</code>、<code>rouse-lid status</code> を使えます。</p>
+
+      <h2>実際にやっていること</h2>
+      <ul>
+        <li><code>rouse-lid on</code> は <code>sudo pmset -a disablesleep 1</code> を実行します。</li>
+        <li><code>rouse-lid off</code> は <code>sudo pmset -a disablesleep 0</code> で通常のスリープに戻します。</li>
+        <li><code>rouse-lid status</code> は現在の <code>SleepDisabled</code> 状態を読みやすい形式で表示します。</li>
+        <li>想定している用途は MacBook の合蓋スリープであり、一般的なデスクトップ向けのスリープ切り替えではありません。</li>
+      </ul>
+      <p><code>disablesleep=1</code> はアイドルスリープと合蓋スリープの両方を止めるため、デスク上で放置した Mac もスリープしません。使い終わったらできるだけ早く <code>rouse-lid off</code> を実行してください。</p>
+
+      <h2>境界</h2>
+      <ul>
+        <li>これは高度なターミナル回避策であり、正式に出荷する製品機能ではありません。</li>
+        <li>影響するのは合蓋時だけでなく、システム全体のスリープ設定です。</li>
+        <li>Mac App Store 版の Rouse とは別物です。</li>
+        <li>Mac App Store 版では、この経路をサポート機能として提供できません。</li>
+        <li>この設定は再起動後も保持されます。<code>rouse-lid off</code> を実行し忘れると、再起動後も Mac はアイドルスリープをスキップし続けます。</li>
+        <li>使い終わったら早めに <code>rouse-lid off</code> に戻すことを勧めます。</li>
+      </ul>
+
+      <h2>削除するには</h2>
+      <ul>
+        <li>現在の状態が <code>SleepDisabled = 1</code> のままなら、先に <code>rouse-lid off</code> を実行してください。関数を消してしまった場合は、<code>sudo pmset -a disablesleep 0</code> を直接実行しても戻せます。</li>
+        <li><code>~/.zshrc</code> などのシェル設定から <code>rouse-lid()</code> を削除し、シェルを再読み込みします。</li>
+      </ul>
+
+      <h2>このページについて</h2>
+      <p>Mac App Store 版の Rouse は、App Sandbox の範囲内で動作します。このページは、システム電源設定の変更に慣れた上級ユーザー向けに、ターミナルでの手順を記したものです。このページの <code>rouse-lid</code> シェル関数はシェル設定に置く独立したヘルパーであり、Mac App Store 版 Rouse の CLI ではありません。</p>
+
+      <div class="links">
+        <a href="/rouse/ja/support/">サポートに戻る</a>
+        <a href="/rouse/ja/">Rouse に戻る</a>
+      </div>
+    </section>

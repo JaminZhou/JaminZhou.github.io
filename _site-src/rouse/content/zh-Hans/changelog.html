@@ -1,0 +1,143 @@
+    <section class="panel">
+      <div class="kicker">更新日志</div>
+      <h1>Rouse 更新日志</h1>
+      <p class="meta">最后更新：2026 年 6 月 18 日</p>
+      <p>这里记录 Rouse Mac App Store 版本的发布说明，以简洁、面向用户的方式展示公开版本历史。</p>
+
+      <article class="entry">
+        <h2 class="entry-title">1.9.3</h2>
+        <p class="entry-meta">提升菜单栏进行中会话重新配置的稳定性。</p>
+        <ul>
+          <li>在 Quick Panel 中切换持续会话和定时会话时更加稳定。</li>
+          <li>菜单栏面板打开时，定时时长控件可以稳定点击。</li>
+          <li>已开启的会话现在能更可靠地直接重新配置。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.9.2</h2>
+        <p class="entry-meta">完善本地化支持草稿和 i18n 检查。</p>
+        <ul>
+          <li>在所有当前 Rouse 语言中本地化邮件支持草稿的主题、提示、版本信息、macOS 信息和入口标签。</li>
+          <li>改进用户可见错误文案，让应用错误保持清晰且本地化，而不是回退到技术描述。</li>
+          <li>把静态 i18n 检查接入 lint、测试、CI 和 PR checklist，更早发现未来的未本地化文案。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.9.1</h2>
+        <p class="entry-meta">启用可选 Support Rouse 购买。</p>
+        <ul>
+          <li>在 Mac App Store 版本中启用可选的一次性支持购买。</li>
+          <li>所有核心常亮控制功能仍然免费，包括定时会话、显示器睡眠控制、电量规则和官方 <code>rouse</code> CLI。</li>
+          <li>新增已获批准的 Support Rouse、Buy a Coffee 和 Buy Two Coffees 商品，供愿意支持持续开发的用户选择。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.9.0</h2>
+        <p class="entry-meta">新增法语、西班牙语和韩语本地化。</p>
+        <ul>
+          <li>新增法语、西班牙语和韩语应用本地化。</li>
+          <li>为新语言补齐对应的 Mac App Store 元数据和截图。</li>
+          <li>更新本地化测试和截图工具，降低后续新增语言时漏翻的风险。</li>
+          <li>常亮会话继续聚焦菜单栏、Dashboard、显示器睡眠、电量规则和官方 <code>rouse</code> CLI。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.8.0</h2>
+        <p class="entry-meta">新增德语本地化和 App Language 快捷入口。</p>
+        <ul>
+          <li>为 Rouse 应用和 Mac App Store 商品页新增德语本地化。</li>
+          <li>在设置中加入快捷入口，方便需要为 Rouse 单独选择语言时打开 macOS Language &amp; Region。</li>
+          <li>简化 Dashboard 顶部区域，并让命令行设置入口更轻量。</li>
+          <li>集中本地化 lookup，让应用、测试和截图脚本的本地化行为更一致。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.7.0</h2>
+        <p class="entry-meta">新增官方 <code>rouse</code> 命令行工具。</p>
+        <ul>
+          <li>新增内置 <code>rouse</code> CLI，可用于 Terminal、shell 脚本和本地自动化流程。</li>
+          <li>命令行可以启动、停止、查看状态、打开 Dashboard，并控制显示器防睡眠设置；会话仍由 Rouse.app 持有。</li>
+          <li>在设置中新增命令行引导，说明权限用途和拒绝后的恢复方式。</li>
+          <li>改进了菜单栏打开 Dashboard 的体验，并打磨 About Rouse 中的支持操作。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.6.0</h2>
+        <p class="entry-meta">改进了全应用的辅助功能支持。</p>
+        <ul>
+          <li>在 Dashboard、Quick Panel、Settings、About 和菜单栏控制中提供更清晰的 VoiceOver 标签、数值和提示。</li>
+          <li>改进 Quick Panel、Settings 和 About 的键盘导航。</li>
+          <li>Dashboard 现在会更好地响应 macOS 显示辅助功能设置，包括 Reduce Motion、Reduce Transparency、Increase Contrast 和 Differentiate Without Color。</li>
+          <li>调整菜单栏图标对齐。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.5.0</h2>
+        <p class="entry-meta">现在可以在会话进行中直接调整显示器常亮设置。</p>
+        <ul>
+          <li>无需停止当前会话，也可以切换显示器常亮设置，只在需要时保持屏幕点亮。</li>
+          <li>同时改进了发布流程相关的稳定性和会话处理的可靠性。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.4.0</h2>
+        <p class="entry-meta">进一步打磨 Dashboard 的布局体验。</p>
+        <ul>
+          <li>优化 Dashboard 的布局与间距，让整体界面更简洁、更从容。</li>
+          <li>改进较长内容场景下的可读性与视觉平衡。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.3.0</h2>
+        <p class="entry-meta">新增 App Shortcuts，并进一步打磨 Dashboard 体验。</p>
+        <ul>
+          <li>新增 App Shortcuts，可直接开始会话、开始定时会话、停止会话，或打开 Dashboard。</li>
+          <li>优化 Dashboard 的状态切换和布局稳定性，长文案和多语言场景下也更清晰。</li>
+          <li>补充了更直接的反馈与支持入口，并更新了更易识别的菜单栏图标。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.2.0</h2>
+        <p class="entry-meta">新增日语和中文本地化支持。</p>
+        <ul>
+          <li>新增日语、简体中文和繁体中文本地化。</li>
+          <li>更新 Dashboard 与 Quick Panel 文案，使其与当前产品表达保持一致。</li>
+          <li>改进 Dashboard 定位行为与会话状态稳定性。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.1.0</h2>
+        <p class="entry-meta">新增可选的打赏支持。</p>
+        <ul>
+          <li>在 About Rouse 窗口中加入了 “Support Rouse” 区块，提供打赏选项和 Restore Purchases。</li>
+          <li>改进了 App Store Connect 审核素材管理的内部工具。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.0.0</h2>
+        <p class="entry-meta">Mac App Store 首次发布。</p>
+        <ul>
+          <li>提供菜单栏快速防休眠控制，以及用于更深入控制的简洁 Dashboard。</li>
+          <li>支持不限时和定时会话、显示器睡眠控制、电池保护和登录时启动。</li>
+          <li>支持在重新启动应用或系统唤醒后恢复定时会话。</li>
+        </ul>
+      </article>
+
+      <div class="links">
+        <a href="/rouse/zh-hans/">返回 Rouse</a>
+        <a href="/rouse/zh-hans/support/">支持</a>
+        <a href="/rouse/zh-hans/privacy/">隐私政策</a>
+      </div>
+    </section>

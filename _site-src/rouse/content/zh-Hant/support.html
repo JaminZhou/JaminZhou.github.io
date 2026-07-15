@@ -1,0 +1,103 @@
+    <section class="panel">
+      <div class="kicker">支援</div>
+      <h1>Rouse 支援</h1>
+      <p class="meta">最後更新：2026 年 4 月 26 日</p>
+      <p>Rouse 提供選單列快速防休眠控制、用於顯示器睡眠控制和電池保護規則的簡潔 Dashboard，以及面向本地自動化的官方 <code>rouse</code> CLI。</p>
+
+      <p>需要協助時，你可以寄信到 <a href="mailto:me@jaminzhou.com">me@jaminzhou.com</a>，也可以使用回饋表單。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="mailto:me@jaminzhou.com?subject=Rouse%20Support">寄送支援郵件</a>
+        <a class="cta secondary" href="https://tally.so/r/WOKQbP?product=rouse&amp;channel=site&amp;entry_point=support_page&amp;app_locale=zh-Hant&amp;system_locale=site" target="_blank" rel="noreferrer">開啟回饋表單</a>
+      </div>
+
+      <p>回饋表單可以匿名提交，也可以選擇留下電子郵件以便後續回覆。</p>
+
+      <h2>聯絡支援前</h2>
+      <ul>
+        <li>Rouse 支援 macOS 13 Ventura 或以上版本。</li>
+        <li>請確認你正在查看的是 Mac App Store 版 Rouse。</li>
+        <li>如果問題與定時工作階段有關，請記錄你選擇的時間，以及是否啟用了顯示器防睡眠。</li>
+      </ul>
+
+      <h2>命令列快速開始</h2>
+      <p>在 Rouse 設定中打開「命令列」，並複製適合你的 shell 或自動化工具的設定方式。設定後，最常用的是這些指令：</p>
+      <pre class="command-block"><code>rouse doctor
+rouse start
+rouse start --for 30m
+rouse status
+rouse stop
+rouse display-sleep prevent
+rouse display-sleep allow
+rouse open</code></pre>
+
+      <h2>建議提供的資訊</h2>
+      <ul>
+        <li>Rouse 版本與建置號碼</li>
+        <li>macOS 版本</li>
+        <li>你預期的行為和實際發生的情況</li>
+        <li>如果可以，請提供重現步驟</li>
+        <li>有助於說明問題的截圖</li>
+      </ul>
+
+      <h2>常見主題</h2>
+      <ul>
+        <li>定時工作階段比預期更早或更晚結束</li>
+        <li>顯示器睡眠行為</li>
+        <li>命令列設定、<code>rouse doctor</code> 或 macOS 權限提示</li>
+        <li>電池保護設定</li>
+        <li>Dashboard 開啟、重新開啟或登入時啟動</li>
+        <li>Support Rouse 購買或 Restore Purchases</li>
+        <li>App Store 發佈或更新相關問題</li>
+      </ul>
+
+      <h2>常見問題</h2>
+      <ul>
+        <li>為什麼工作階段會自動停止？如果啟用了電池保護，電量低於你選擇的門檻時，Rouse 會自動關閉。</li>
+        <li>為什麼睡眠或重新啟動後定時工作階段顯示不同？Rouse 會根據儲存在 Mac 上的剩餘時間恢復定時工作階段。</li>
+        <li>在哪裡設定命令列工具？打開 Rouse 設定，進入「命令列」，並使用裡面的設定引導。對腳本和啟動器來說，完整路徑方案是最穩的備用方案。</li>
+        <li>為什麼 macOS 會提示 Rouse 想存取其他 App 的資料？Rouse 使用專用共享容器，讓內建 CLI 可以把本地命令傳送給 Rouse.app。它不會讀取你的文件或其他 App 的資料。</li>
+        <li>如果點了「不允許」怎麼辦？退出 Rouse，打開「系統設定 &gt; 隱私權與安全性 &gt; App 管理」，允許 Rouse，然後重新執行 <code>rouse doctor</code>。如果列表裡沒有 Rouse，請重新啟動 Rouse 後再試。</li>
+        <li>在哪裡管理登入時啟動？打開 Rouse 設定並啟用「登入時啟動」。</li>
+        <li>在哪裡支持 Rouse 或恢復購買？打開 About Rouse，並使用 Support Rouse 區塊。Restore Purchases 也在那裡。</li>
+        <li>為什麼支援選項不可用？請確認你使用的是 Mac App Store 版 Rouse，Mac 已連線，然後在 About Rouse 中嘗試 Retry Support Options。</li>
+        <li>在哪裡閱讀隱私權政策？請造訪 <a href="/rouse/zh-hant/privacy/">Rouse 隱私權政策</a>。</li>
+      </ul>
+
+      <h2>疑難排解</h2>
+      <div class="troubleshooting">
+        <h3>定時工作階段</h3>
+        <p>如果工作階段比預期更早結束，請先檢查是否是電池保護在你設定的門檻處將它關閉。睡眠或重新啟動後顯示不同時，請對比儲存的剩餘時間，而不是原始開始時間。</p>
+
+        <h3>顯示器睡眠</h3>
+        <p>顯示器防睡眠是可選項。如果 Mac 保持喚醒但螢幕仍然變暗或睡眠，請確認該工作階段是否啟用了顯示器防睡眠。</p>
+
+        <h3>電池保護</h3>
+        <p>Rouse 可以在電量低於你選擇的門檻時自動停止活動工作階段。如果你覺得這個行為太積極，可以在 Rouse 設定中調整門檻或關閉該設定。</p>
+
+        <h3>登入時啟動</h3>
+        <p>如果登入後 Rouse 不可用，請打開 Rouse 設定，確認「登入時啟動」仍然啟用。macOS 系統設定也可能需要你檢查登入項目。</p>
+
+        <h3>App Store 更新</h3>
+        <p>如果 Mac App Store 仍然顯示舊版本，請重新整理 Updates 頁面，並確認你查看的是 Mac App Store 版 Rouse。版本歷史也可以在 <a href="/rouse/zh-hant/changelog/">Rouse 更新日誌</a> 中查看。</p>
+
+        <h3>命令列</h3>
+        <p>如果找不到 <code>rouse</code>，請打開 Rouse 設定，並複製適合你的 shell 或自動化工具的命令列設定方式。如果 <code>rouse doctor</code> 無法連線，請確認 Rouse.app 來自 Mac App Store，先啟動一次 Rouse；如果你之前拒絕了權限提示，也請檢查 macOS 的 App 管理權限。</p>
+      </div>
+
+      <h2>進階</h2>
+      <p>如果你想找的是 MacBook 合蓋休眠相關的進階終端方案，而不是 App Store 功能，可以看這篇 <a href="/rouse/zh-hant/support/clamshell/">MacBook 合蓋休眠終端方案說明</a>。它使用 <strong>pmset</strong>，需要管理員權限；而管理員層級的系統電源修改本身就不能作為 Mac App Store 版 Rouse 的正式能力提供，所以這部分內容會明確放在商店版之外。</p>
+
+      <h2>版本歷史</h2>
+      <p>公開發佈歷史現在記錄在 <a href="/rouse/zh-hant/changelog/">Rouse 更新日誌</a>。</p>
+
+      <div class="note">
+        支援回覆主要使用英文。請不要寄送密碼、帳號密鑰或其他敏感個人資訊。
+      </div>
+
+      <p style="margin-top: 28px;">
+        <a href="/rouse/zh-hant/">返回 Rouse</a>
+        / <a href="/rouse/zh-hant/changelog/">更新日誌</a>
+        / <a href="/rouse/zh-hant/privacy/">隱私權政策</a>
+      </p>
+    </section>

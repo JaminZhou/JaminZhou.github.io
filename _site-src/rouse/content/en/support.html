@@ -1,0 +1,107 @@
+    <section class="panel">
+      <div class="kicker">Support</div>
+      <h1>Rouse Support</h1>
+      <p class="meta">Last updated: April 26, 2026</p>
+      <p>Rouse gives you quick menu bar wake controls, a calm dashboard for display sleep control and battery-aware rules, and an official <code>rouse</code> CLI for local automation.</p>
+
+      <p>
+        Need help? You can email
+        <a href="mailto:me@jaminzhou.com">me@jaminzhou.com</a>
+        or use the feedback form if you would rather not start with email.
+      </p>
+
+      <div class="cta-row">
+        <a class="cta" href="mailto:me@jaminzhou.com?subject=Rouse%20Support">Email support</a>
+        <a class="cta secondary" href="https://tally.so/r/jaW724?product=rouse&amp;channel=site&amp;entry_point=support_page&amp;app_locale=en&amp;system_locale=site" target="_blank" rel="noreferrer">Open feedback form</a>
+      </div>
+
+      <p>The feedback form can be submitted anonymously, and it also gives you the option to leave an email for follow-up.</p>
+
+      <h2>Before you contact support</h2>
+      <ul>
+        <li>Rouse supports macOS 13 Ventura or later.</li>
+        <li>Make sure you are checking the Mac App Store version of Rouse.</li>
+        <li>If the issue involves a timed session, note the duration you chose and whether display sleep prevention was enabled.</li>
+      </ul>
+
+      <h2>Command line quick start</h2>
+      <p>In Rouse Settings, open Command Line and copy the setup that matches your shell or automation tool. After setup, these are the most useful commands:</p>
+      <pre class="command-block"><code>rouse doctor
+rouse start
+rouse start --for 30m
+rouse status
+rouse stop
+rouse display-sleep prevent
+rouse display-sleep allow
+rouse open</code></pre>
+
+      <h2>What to include</h2>
+      <ul>
+        <li>Your Rouse version and build number</li>
+        <li>Your macOS version</li>
+        <li>A short description of what you expected and what happened instead</li>
+        <li>Steps to reproduce the issue, if possible</li>
+        <li>A screenshot if it helps explain the problem</li>
+      </ul>
+
+      <h2>Common topics</h2>
+      <ul>
+        <li>Timed sessions ending earlier or later than expected</li>
+        <li>Display sleep behavior</li>
+        <li>Command line setup, <code>rouse doctor</code>, or macOS permission prompts</li>
+        <li>Battery protection settings</li>
+        <li>Dashboard opening, reopen behavior, or launch at login</li>
+        <li>Support Rouse purchases or Restore Purchases</li>
+        <li>Questions about App Store releases or updates</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <ul>
+        <li>Why did a session stop automatically? If battery protection is enabled, Rouse can turn itself off when your battery drops below the threshold you selected.</li>
+        <li>Why does a timed session look different after sleep or restart? Rouse restores timed sessions based on the remaining time it saved locally on your Mac.</li>
+        <li>Where do I set up the command line tool? Open Rouse Settings, choose Command Line, and use the setup guidance there. The full path option is the safest fallback for scripts and launchers.</li>
+        <li>Why did macOS ask Rouse to access data from other apps? Rouse uses a private shared container so the bundled CLI can send local commands to Rouse.app. It does not read your documents or data from other apps.</li>
+        <li>What if I clicked Don't Allow? Quit Rouse, open System Settings &gt; Privacy &amp; Security &gt; App Management, allow Rouse, then run <code>rouse doctor</code> again. If Rouse is not listed, relaunch Rouse and retry the command.</li>
+        <li>Where can I manage launch at login? Open Rouse Settings and turn on Launch at login.</li>
+        <li>Where can I support Rouse or restore a previous purchase? Open About Rouse and use the Support Rouse section. Restore Purchases is available there for supporter unlocks.</li>
+        <li>Why are support options unavailable? Confirm that you are using the Mac App Store version of Rouse, that your Mac is online, and then try Retry Support Options from About Rouse.</li>
+        <li>Where can I read the privacy policy? Visit <a href="/rouse/privacy/">the Rouse Privacy Policy</a>.</li>
+      </ul>
+
+      <h2>Troubleshooting</h2>
+      <div class="troubleshooting">
+        <h3>Timed sessions</h3>
+        <p>If a session ends earlier than expected, first check whether battery protection turned it off at your chosen threshold. If it looks different after sleep or relaunch, compare the remaining time against the saved session state rather than the original start time.</p>
+
+        <h3>Display sleep</h3>
+        <p>Display sleep control is optional. If your Mac stays awake but the screen still dims or sleeps, confirm that display sleep prevention was enabled for that session.</p>
+
+        <h3>Battery protection</h3>
+        <p>Rouse can automatically stop an active session when battery drops below the threshold you selected. If that behavior feels too aggressive, raise the threshold only if you want earlier protection, or turn the setting off in Rouse Settings.</p>
+
+        <h3>Launch at login</h3>
+        <p>If Rouse is not available after logging in, open Rouse Settings and verify that Launch at login is still enabled. macOS may also require you to review login items if system settings changed.</p>
+
+        <h3>App Store updates</h3>
+        <p>If the Mac App Store still shows an older build, refresh the App Store Updates page and confirm that you are viewing the Mac App Store version of Rouse. Version history is also available on the <a href="/rouse/changelog/">Rouse changelog</a>.</p>
+
+        <h3>Command line</h3>
+        <p>If <code>rouse</code> is not found, open Rouse Settings and copy the Command Line setup that matches your shell or automation tool. If <code>rouse doctor</code> cannot connect, make sure Rouse.app is installed from the Mac App Store, launch Rouse once, and check the macOS App Management permission if you previously denied the prompt.</p>
+      </div>
+
+      <h2>Advanced</h2>
+      <p>If you want an advanced terminal workaround for MacBook lid-close sleep rather than an App Store feature, see the <a href="/rouse/support/clamshell/">MacBook lid-close sleep terminal workaround note</a>. It uses <strong>pmset</strong>, requires admin privileges, and is intentionally outside the Mac App Store version of Rouse because the App Store build cannot expose administrator-level system power changes as a product feature.</p>
+
+      <h2>Version history</h2>
+      <p>The public release history now lives on the <a href="/rouse/changelog/">Rouse changelog</a>.</p>
+
+      <div class="note">
+        Support requests are answered in English. Please avoid sending passwords, account secrets, or other sensitive personal information.
+      </div>
+
+      <p style="margin-top: 28px;">
+        <a href="/rouse/">Back to Rouse</a>
+        / <a href="/rouse/changelog/">Changelog</a>
+        / <a href="/rouse/privacy/">Privacy Policy</a>
+      </p>
+    </section>
