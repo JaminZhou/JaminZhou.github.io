@@ -1,0 +1,51 @@
+{
+  "pages": {
+    "en.landing": {
+      "title": "Hushtrail | Careful Cleanup for Mac",
+      "description": "Hushtrail is a local-first macOS cleanup utility for reviewing app leftovers and privacy traces inside folders you choose, with preview scans and rollback-backed archive.",
+      "ogTitle": "Hushtrail | Careful Cleanup for Mac",
+      "ogDescription": "Review app leftovers and privacy traces inside folders you choose, then archive eligible items with rollback instead of deleting blindly.",
+      "twitterTitle": "Hushtrail | Careful Cleanup for Mac",
+      "twitterDescription": "Review app leftovers and privacy traces inside folders you choose, then archive eligible items with rollback instead of deleting blindly.",
+      "ogImageWidth": "1024",
+      "ogImageHeight": "1024",
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Hushtrail",
+        "url": "https://jaminzhou.com/hushtrail/",
+        "description": "A local-first macOS cleanup utility for reviewing app leftovers and privacy traces inside folders you choose, with preview scans and rollback-backed archive.",
+        "inLanguage": "en",
+        "operatingSystem": "macOS 13+",
+        "applicationCategory": "UtilitiesApplication",
+        "image": "https://jaminzhou.com/hushtrail/app-icon.png",
+        "softwareHelp": "https://jaminzhou.com/hushtrail/support/",
+        "subjectOf": {
+          "@type": "CreativeWork",
+          "name": "Hushtrail Privacy Policy",
+          "url": "https://jaminzhou.com/hushtrail/privacy/"
+        }
+      },
+      "topLink": {
+        "href": "/",
+        "label": "JaminZhou home"
+      }
+    },
+    "en.support": {
+      "title": "Hushtrail Support",
+      "description": "Support and troubleshooting for Hushtrail, including authorized folders, preview scans, rollback history, browser safety, restore, and discard behavior.",
+      "ogTitle": "Hushtrail Support",
+      "ogDescription": "Support and troubleshooting for Hushtrail authorized folders, preview scans, rollback history, browser safety, restore, and discard behavior.",
+      "twitterTitle": "Hushtrail Support",
+      "twitterDescription": "Support and troubleshooting for Hushtrail authorized folders, preview scans, rollback history, browser safety, restore, and discard behavior."
+    },
+    "en.privacy": {
+      "title": "Hushtrail Privacy Policy",
+      "description": "Privacy Policy for Hushtrail, including authorized folders, local rollback archives, security-scoped bookmarks, support requests, and Mac App Store data handling.",
+      "ogTitle": "Hushtrail Privacy Policy",
+      "ogDescription": "Read how Hushtrail handles authorized folders, local rollback archives, security-scoped bookmarks, support requests, and Mac App Store data handling.",
+      "twitterTitle": "Hushtrail Privacy Policy",
+      "twitterDescription": "Read how Hushtrail handles authorized folders, local rollback archives, security-scoped bookmarks, support requests, and Mac App Store data handling."
+    }
+  }
+}

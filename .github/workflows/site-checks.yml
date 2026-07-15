@@ -29,5 +29,5 @@ jobs:
       - name: Run site tests
         run: npm test
 
-      - name: Check generated Rouse pages
-        run: npm run check:rouse
+      - name: Check generated product pages
+        run: npm run check:site
