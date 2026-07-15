@@ -1,0 +1,256 @@
+{
+  "pages": {
+    "en.landing": {
+      "title": "CalcBird | Unit Price Shopping Helper",
+      "description": "CalcBird is an iOS shopping calculator on the App Store for comparing unit prices across package sizes, currencies, coupons, deposits, and discounts.",
+      "ogTitle": "CalcBird | Unit Price Shopping Helper",
+      "ogDescription": "Download CalcBird on the App Store and compare package sizes, currencies, and discount conditions before you buy.",
+      "twitterTitle": "CalcBird | Unit Price Shopping Helper",
+      "twitterDescription": "Download CalcBird on the App Store and compare package sizes, currencies, and discount conditions before you buy.",
+      "ogImageWidth": "512",
+      "ogImageHeight": "512",
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "CalcBird",
+        "url": "https://jaminzhou.com/calcbird/",
+        "description": "CalcBird is an iOS shopping calculator for comparing unit prices across package sizes, currencies, coupons, deposits, and discounts.",
+        "inLanguage": "en",
+        "operatingSystem": "iOS",
+        "applicationCategory": "ShoppingApplication",
+        "softwareVersion": "1.0.1",
+        "downloadUrl": "https://apps.apple.com/app/id6762044720",
+        "installUrl": "https://apps.apple.com/app/id6762044720",
+        "image": "https://jaminzhou.com/calcbird/app-icon.png",
+        "softwareHelp": "https://jaminzhou.com/calcbird/support/",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "subjectOf": {
+          "@type": "CreativeWork",
+          "name": "CalcBird Privacy Policy",
+          "url": "https://jaminzhou.com/calcbird/privacy/"
+        }
+      },
+      "topLink": {
+        "href": "/",
+        "label": "JaminZhou home"
+      }
+    },
+    "en.support": {
+      "title": "CalcBird Support",
+      "description": "Support and FAQs for CalcBird, including unit price calculation, product comparison, exchange rates, custom units, system language, and Siri Shortcuts.",
+      "ogTitle": "CalcBird Support",
+      "ogDescription": "Get help with unit price calculation, product comparison, exchange rates, custom units, system language, and Siri Shortcuts.",
+      "twitterTitle": "CalcBird Support",
+      "twitterDescription": "Get help with unit price calculation, product comparison, exchange rates, custom units, system language, and Siri Shortcuts.",
+      "topLink": {
+        "href": "/calcbird/",
+        "label": "Back to CalcBird"
+      }
+    },
+    "en.privacy": {
+      "title": "CalcBird Privacy Policy",
+      "description": "Privacy Policy for CalcBird, including local history, custom units, preferences, exchange-rate requests, and support email.",
+      "ogTitle": "CalcBird Privacy Policy",
+      "ogDescription": "Read how CalcBird handles local history, custom units, preferences, exchange-rate requests, and support email.",
+      "twitterTitle": "CalcBird Privacy Policy",
+      "twitterDescription": "Read how CalcBird handles local history, custom units, preferences, exchange-rate requests, and support email.",
+      "topLink": {
+        "href": "/calcbird/",
+        "label": "Back to CalcBird"
+      }
+    },
+    "ja.landing": {
+      "title": "算鳥 | 単価と買い物比較をすばやく",
+      "description": "算鳥は、容量、個数、通貨、クーポン、前払い、割引条件をそろえて、日常の買い物で本当の単価を比べるための iOS 計算ツールです。",
+      "ogTitle": "算鳥 | 単価と買い物比較をすばやく",
+      "ogDescription": "容量、個数、通貨、割引条件をそろえて、買う前に単価を比べられます。",
+      "twitterTitle": "算鳥 | 単価と買い物比較をすばやく",
+      "twitterDescription": "容量、個数、通貨、割引条件をそろえて、買う前に単価を比べられます。",
+      "ogImageWidth": "512",
+      "ogImageHeight": "512",
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "算鳥",
+        "url": "https://jaminzhou.com/calcbird/ja/",
+        "description": "算鳥は、日常の買い物で本当の単価を比べるための iOS ショッピング計算ツールです。",
+        "inLanguage": "ja",
+        "operatingSystem": "iOS",
+        "applicationCategory": "ShoppingApplication",
+        "softwareVersion": "1.0.1",
+        "downloadUrl": "https://apps.apple.com/app/id6762044720",
+        "installUrl": "https://apps.apple.com/app/id6762044720",
+        "image": "https://jaminzhou.com/calcbird/app-icon.png",
+        "softwareHelp": "https://jaminzhou.com/calcbird/ja/support/",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "subjectOf": {
+          "@type": "CreativeWork",
+          "name": "算鳥 プライバシーポリシー",
+          "url": "https://jaminzhou.com/calcbird/ja/privacy/"
+        }
+      },
+      "topLink": {
+        "href": "/",
+        "label": "JaminZhou home"
+      }
+    },
+    "ja.support": {
+      "title": "算鳥サポート",
+      "description": "算鳥のサポートと FAQ。単価計算、商品比較、為替レート、カスタム単位、システム言語、Siri とショートカットについて。",
+      "ogTitle": "算鳥サポート",
+      "ogDescription": "単価計算、商品比較、為替レート、カスタム単位、システム言語、Siri とショートカットについてのサポート。",
+      "twitterTitle": "算鳥サポート",
+      "twitterDescription": "単価計算、商品比較、為替レート、カスタム単位、システム言語、Siri とショートカットについてのサポート。",
+      "topLink": {
+        "href": "/calcbird/ja/",
+        "label": "算鳥に戻る"
+      }
+    },
+    "ja.privacy": {
+      "title": "算鳥 プライバシーポリシー",
+      "description": "算鳥のプライバシーポリシー。ローカル履歴、カスタム単位、設定、為替レートリクエスト、サポートメールについて。",
+      "ogTitle": "算鳥 プライバシーポリシー",
+      "ogDescription": "算鳥がローカル履歴、カスタム単位、設定、為替レートリクエスト、サポートメールをどのように扱うかを説明します。",
+      "twitterTitle": "算鳥 プライバシーポリシー",
+      "twitterDescription": "算鳥がローカル履歴、カスタム単位、設定、為替レートリクエスト、サポートメールをどのように扱うかを説明します。",
+      "topLink": {
+        "href": "/calcbird/ja/",
+        "label": "算鳥に戻る"
+      }
+    },
+    "zh-Hans.landing": {
+      "title": "算鸟 | 单价、比价和优惠妙算",
+      "description": "算鸟是一款面向日常购物的 iOS 单价和比价工具，支持规格、币种、优惠券、定金膨胀和满减条件的统一比较。",
+      "ogTitle": "算鸟 | 单价、比价和优惠妙算",
+      "ogDescription": "把规格、币种和优惠条件统一到同一口径，买之前先看真实单价。",
+      "twitterTitle": "算鸟 | 单价、比价和优惠妙算",
+      "twitterDescription": "把规格、币种和优惠条件统一到同一口径，买之前先看真实单价。",
+      "ogImageWidth": "512",
+      "ogImageHeight": "512",
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "算鸟",
+        "url": "https://jaminzhou.com/calcbird/zh-hans/",
+        "description": "算鸟是一款面向日常购物的 iOS 单价和比价工具。",
+        "inLanguage": "zh-Hans",
+        "operatingSystem": "iOS",
+        "applicationCategory": "ShoppingApplication",
+        "softwareVersion": "1.0.1",
+        "downloadUrl": "https://apps.apple.com/app/id6762044720",
+        "installUrl": "https://apps.apple.com/app/id6762044720",
+        "image": "https://jaminzhou.com/calcbird/app-icon.png",
+        "softwareHelp": "https://jaminzhou.com/calcbird/zh-hans/support/",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "subjectOf": {
+          "@type": "CreativeWork",
+          "name": "算鸟隐私政策",
+          "url": "https://jaminzhou.com/calcbird/zh-hans/privacy/"
+        }
+      },
+      "topLink": {
+        "href": "/",
+        "label": "JaminZhou home"
+      }
+    },
+    "zh-Hans.support": {
+      "title": "算鸟支持",
+      "description": "算鸟支持和常见问题，包括单价计算、商品比价、汇率、自定义单位、系统语言、Siri 和快捷指令。",
+      "ogTitle": "算鸟支持",
+      "ogDescription": "获取单价计算、商品比价、汇率、自定义单位、系统语言、Siri 和快捷指令相关支持。",
+      "twitterTitle": "算鸟支持",
+      "twitterDescription": "获取单价计算、商品比价、汇率、自定义单位、系统语言、Siri 和快捷指令相关支持。",
+      "topLink": {
+        "href": "/calcbird/zh-hans/",
+        "label": "返回算鸟"
+      }
+    },
+    "zh-Hans.privacy": {
+      "title": "算鸟隐私政策",
+      "description": "算鸟隐私政策，包括本地历史、自定义单位、偏好设置、汇率请求和支持邮件。",
+      "ogTitle": "算鸟隐私政策",
+      "ogDescription": "了解算鸟如何处理本地历史、自定义单位、偏好设置、汇率请求和支持邮件。",
+      "twitterTitle": "算鸟隐私政策",
+      "twitterDescription": "了解算鸟如何处理本地历史、自定义单位、偏好设置、汇率请求和支持邮件。",
+      "topLink": {
+        "href": "/calcbird/zh-hans/",
+        "label": "返回算鸟"
+      }
+    },
+    "zh-Hant.landing": {
+      "title": "算鳥 | 單價、比價和優惠妙算",
+      "description": "算鳥是一款面向日常購物的 iOS 單價和比價工具，支援規格、幣別、優惠券、訂金膨脹和滿減條件的統一比較。",
+      "ogTitle": "算鳥 | 單價、比價和優惠妙算",
+      "ogDescription": "把規格、幣別和優惠條件統一到同一口徑，購買前先看真實單價。",
+      "twitterTitle": "算鳥 | 單價、比價和優惠妙算",
+      "twitterDescription": "把規格、幣別和優惠條件統一到同一口徑，購買前先看真實單價。",
+      "ogImageWidth": "512",
+      "ogImageHeight": "512",
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "算鳥",
+        "url": "https://jaminzhou.com/calcbird/zh-hant/",
+        "description": "算鳥是一款面向日常購物的 iOS 單價和比價工具。",
+        "inLanguage": "zh-Hant",
+        "operatingSystem": "iOS",
+        "applicationCategory": "ShoppingApplication",
+        "softwareVersion": "1.0.1",
+        "downloadUrl": "https://apps.apple.com/app/id6762044720",
+        "installUrl": "https://apps.apple.com/app/id6762044720",
+        "image": "https://jaminzhou.com/calcbird/app-icon.png",
+        "softwareHelp": "https://jaminzhou.com/calcbird/zh-hant/support/",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "subjectOf": {
+          "@type": "CreativeWork",
+          "name": "算鳥隱私權政策",
+          "url": "https://jaminzhou.com/calcbird/zh-hant/privacy/"
+        }
+      },
+      "topLink": {
+        "href": "/",
+        "label": "JaminZhou home"
+      }
+    },
+    "zh-Hant.support": {
+      "title": "算鳥支援",
+      "description": "算鳥支援和常見問題，包括單價計算、商品比價、匯率、自訂單位、系統語言、Siri 和捷徑。",
+      "ogTitle": "算鳥支援",
+      "ogDescription": "取得單價計算、商品比價、匯率、自訂單位、系統語言、Siri 和捷徑相關支援。",
+      "twitterTitle": "算鳥支援",
+      "twitterDescription": "取得單價計算、商品比價、匯率、自訂單位、系統語言、Siri 和捷徑相關支援。",
+      "topLink": {
+        "href": "/calcbird/zh-hant/",
+        "label": "返回算鳥"
+      }
+    },
+    "zh-Hant.privacy": {
+      "title": "算鳥隱私權政策",
+      "description": "算鳥隱私權政策，包括本機歷史、自訂單位、偏好設定、匯率請求和支援郵件。",
+      "ogTitle": "算鳥隱私權政策",
+      "ogDescription": "了解算鳥如何處理本機歷史、自訂單位、偏好設定、匯率請求和支援郵件。",
+      "twitterTitle": "算鳥隱私權政策",
+      "twitterDescription": "了解算鳥如何處理本機歷史、自訂單位、偏好設定、匯率請求和支援郵件。",
+      "topLink": {
+        "href": "/calcbird/zh-hant/",
+        "label": "返回算鳥"
+      }
+    }
+  }
+}

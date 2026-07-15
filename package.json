@@ -5,6 +5,12 @@
   "scripts": {
     "build:rouse": "node scripts/build-rouse-site.mjs --write",
     "check:rouse": "node scripts/build-rouse-site.mjs --check",
+    "build:calcbird": "node scripts/build-calcbird-site.mjs --write",
+    "check:calcbird": "node scripts/build-calcbird-site.mjs --check",
+    "build:hushtrail": "node scripts/build-hushtrail-site.mjs --write",
+    "check:hushtrail": "node scripts/build-hushtrail-site.mjs --check",
+    "build:site": "npm run build:rouse && npm run build:calcbird && npm run build:hushtrail",
+    "check:site": "npm run check:rouse && npm run check:calcbird && npm run check:hushtrail",
     "test": "node --test"
   }
 }
