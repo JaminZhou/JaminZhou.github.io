@@ -1,0 +1,68 @@
+    <section class="panel">
+      <div class="kicker">Fortgeschritten</div>
+      <h1>Terminal-Workaround für MacBook Deckel-Ruhezustand</h1>
+      <p class="meta">Zuletzt aktualisiert: 16. Mai 2026</p>
+      <p>Diese Seite dokumentiert einen fortgeschrittenen Terminal-Workaround, um den MacBook Ruhezustand beim Schließen des Deckels manuell zu steuern, außerhalb der Mac App Store Version von Rouse.</p>
+
+      <div class="warning">
+        Dies ist ein Terminal-Workaround, keine offizielle macOS API und keine Mac App Store Funktion von Rouse. Er ändert eine systemweite Energieeinstellung und erfordert Administratorrechte. Das Verhalten kann je nach Mac Modell und macOS Version variieren.
+      </div>
+      <p>Der Mac App Store Build kann dies nicht als Funktion ausliefern, weil der Workaround Administrator-<code>pmset</code>-Änderungen außerhalb der normalen App-Sandbox-Grenze benötigt.</p>
+
+      <h2>Schnelle Befehle</h2>
+      <p>Füge diese Funktion zu deiner <code>~/.zshrc</code> oder einem anderen Shell-Profil hinzu:</p>
+      <pre><code>rouse-lid() {
+  case "$1" in
+    on)
+      sudo pmset -a disablesleep 1
+      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
+      ;;
+    off)
+      sudo pmset -a disablesleep 0
+      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
+      ;;
+    status)
+      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
+      ;;
+    *)
+      echo "usage: rouse-lid {on|off|status}"
+      return 1
+      ;;
+  esac
+}</code></pre>
+
+      <p>Lade deine Shell neu und nutze dann <code>rouse-lid on</code>, <code>rouse-lid off</code> und <code>rouse-lid status</code>.</p>
+
+      <h2>Was es tatsächlich macht</h2>
+      <ul>
+        <li><code>rouse-lid on</code> führt <code>sudo pmset -a disablesleep 1</code> aus.</li>
+        <li><code>rouse-lid off</code> stellt normalen Ruhezustand mit <code>sudo pmset -a disablesleep 0</code> wieder her.</li>
+        <li><code>rouse-lid status</code> gibt den aktuellen <code>SleepDisabled</code> Status lesbar aus.</li>
+        <li>Der beabsichtigte Anwendungsfall ist MacBook Deckel-Ruhezustand, nicht ein allgemeiner Desktop-Ruhezustand-Schalter.</li>
+      </ul>
+      <p>Da <code>disablesleep=1</code> sowohl Leerlauf-Ruhezustand als auch Deckel-Ruhezustand blockiert, bleibt der Mac auch wach, wenn er unberührt auf dem Schreibtisch liegt. Führe <code>rouse-lid off</code> aus, sobald du fertig bist.</p>
+
+      <h2>Grenzen</h2>
+      <ul>
+        <li>Dies ist ein fortgeschrittener Terminal-Workaround, keine ausgelieferte Produktfunktion.</li>
+        <li>Er betrifft den System-Ruhezustand global, nicht nur den Ruhezustand beim Schließen des Deckels.</li>
+        <li>Er ist getrennt von der Mac App Store Version von Rouse.</li>
+        <li>Der Mac App Store Build kann diesen Pfad nicht als unterstützte Funktion enthalten.</li>
+        <li>Die Einstellung bleibt über Neustarts hinweg bestehen. Wenn du <code>rouse-lid off</code> vergisst, überspringt dein Mac auch nach einem Neustart weiterhin den Leerlauf-Ruhezustand.</li>
+        <li>Führe möglichst direkt <code>rouse-lid off</code> aus, sobald du fertig bist.</li>
+      </ul>
+
+      <h2>Entfernen</h2>
+      <ul>
+        <li>Wenn der aktuelle Status noch <code>SleepDisabled = 1</code> zeigt, führe zuerst <code>rouse-lid off</code> aus. Falls du die Funktion bereits entfernt hast, kannst du direkt <code>sudo pmset -a disablesleep 0</code> ausführen.</li>
+        <li>Entferne die Funktion <code>rouse-lid()</code> aus <code>~/.zshrc</code> oder dem Shell-Profil, das du genutzt hast, und lade die Shell neu.</li>
+      </ul>
+
+      <h2>Über diese Seite</h2>
+      <p>Die Mac App Store Version von Rouse bleibt innerhalb dessen, was die App Sandbox erlaubt. Diese Seite dokumentiert den Terminal-Workaround für fortgeschrittene Nutzer, die sich mit Änderungen an System-Energieeinstellungen wohlfühlen. Die hier gezeigte <code>rouse-lid</code> Shell-Funktion ist ein eigenständiger Helfer in deinem Shell-Profil; sie ist keine Befehlszeilenschnittstelle der Mac App Store Version von Rouse.</p>
+
+      <div class="links">
+        <a href="/rouse/de/support/">Zurück zum Support</a>
+        <a href="/rouse/de/">Zurück zu Rouse</a>
+      </div>
+    </section>

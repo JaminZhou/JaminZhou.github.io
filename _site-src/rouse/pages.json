@@ -1,0 +1,508 @@
+{
+  "pages": {
+    "en.landing": {
+      "title": "Rouse | Stay Awake on Mac",
+      "description": "Rouse keeps your Mac awake for AI agents and long work with timed sessions, display sleep control, battery-aware rules, and the official rouse CLI.",
+      "ogTitle": "Rouse | Stay Awake on Mac",
+      "ogDescription": "Keep your Mac awake for AI agents and long work with timed sessions, display sleep control, battery-aware rules, and the official rouse CLI.",
+      "twitterTitle": "Rouse | Stay Awake on Mac",
+      "twitterDescription": "Keep your Mac awake for AI agents and long work with timed sessions, display sleep control, battery-aware rules, and the official rouse CLI.",
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Rouse: Stay Awake",
+        "url": "https://jaminzhou.com/rouse/",
+        "description": "Keep your Mac awake for AI agents and long work with timed sessions, display sleep control, battery-aware rules, and the official rouse CLI.",
+        "inLanguage": "en",
+        "operatingSystem": "macOS",
+        "applicationCategory": "UtilitiesApplication",
+        "softwareVersion": "1.9.3",
+        "image": "https://jaminzhou.com/rouse/app-icon.png",
+        "downloadUrl": "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12",
+        "softwareHelp": "https://jaminzhou.com/rouse/support/",
+        "subjectOf": {
+          "@type": "CreativeWork",
+          "name": "Rouse Privacy Policy",
+          "url": "https://jaminzhou.com/rouse/privacy/"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12"
+        }
+      }
+    },
+    "en.changelog": {
+      "title": "Rouse Changelog",
+      "description": "Release notes and version history for Rouse, the Mac app with quick menu bar wake controls and a calm dashboard.",
+      "ogTitle": "Rouse Changelog",
+      "ogDescription": "Release notes and version history for Rouse on the Mac App Store.",
+      "twitterTitle": "Rouse Changelog",
+      "twitterDescription": "Release notes and version history for Rouse on the Mac App Store."
+    },
+    "en.support": {
+      "title": "Rouse Support",
+      "description": "Support and troubleshooting for Rouse, including command line setup, timed sessions, display sleep, battery protection, and App Store updates.",
+      "ogTitle": "Rouse Support",
+      "ogDescription": "Support and troubleshooting for Rouse, including command line setup, timed sessions, display sleep, battery protection, and App Store updates.",
+      "twitterTitle": "Rouse Support",
+      "twitterDescription": "Support and troubleshooting for Rouse, including command line setup, timed sessions, display sleep, battery protection, and App Store updates."
+    },
+    "en.privacy": {
+      "title": "Rouse Privacy Policy",
+      "description": "Privacy Policy for Rouse, including local preferences, command line communication, support requests, and Mac App Store data handling.",
+      "ogTitle": "Rouse Privacy Policy",
+      "ogDescription": "Read how Rouse handles local preferences, command line communication, support requests, and Mac App Store data handling.",
+      "twitterTitle": "Rouse Privacy Policy",
+      "twitterDescription": "Read how Rouse handles local preferences, command line communication, support requests, and Mac App Store data handling."
+    },
+    "en.clamshell": {
+      "title": "Rouse MacBook Lid-Close Sleep Terminal Workaround",
+      "description": "An advanced terminal workaround for manually controlling MacBook lid-close sleep with pmset, outside the Mac App Store version of Rouse.",
+      "ogTitle": "Rouse MacBook Lid-Close Sleep Terminal Workaround",
+      "ogDescription": "An advanced terminal workaround for manually controlling MacBook lid-close sleep with pmset, outside the Mac App Store version of Rouse.",
+      "twitterTitle": "Rouse MacBook Lid-Close Sleep Terminal Workaround",
+      "twitterDescription": "An advanced terminal workaround for manually controlling MacBook lid-close sleep with pmset, outside the Mac App Store version of Rouse."
+    },
+    "de.landing": {
+      "title": "Rouse | Wach bleiben am Mac",
+      "description": "Rouse hält deinen Mac für AI-Agents und lange Arbeit wach, mit Timern, Bildschirmsteuerung, Akkuregeln und offizieller rouse CLI.",
+      "ogTitle": "Rouse | Wach bleiben am Mac",
+      "ogDescription": "Halte deinen Mac für AI-Agents, lange Arbeit, Timer, Bildschirmsteuerung und Terminal-Automation wach.",
+      "twitterTitle": "Rouse | Wach bleiben am Mac",
+      "twitterDescription": "Halte deinen Mac für AI-Agents, lange Arbeit, Timer, Bildschirmsteuerung und Terminal-Automation wach.",
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Rouse: Stay Awake",
+        "url": "https://jaminzhou.com/rouse/de/",
+        "description": "Rouse hält deinen Mac für AI-Agents und lange Arbeit wach, mit Timern, Bildschirmsteuerung, Akkuregeln und offizieller rouse CLI.",
+        "inLanguage": "de",
+        "operatingSystem": "macOS",
+        "applicationCategory": "UtilitiesApplication",
+        "softwareVersion": "1.9.3",
+        "image": "https://jaminzhou.com/rouse/app-icon.png",
+        "downloadUrl": "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12",
+        "softwareHelp": "https://jaminzhou.com/rouse/de/support/",
+        "subjectOf": {
+          "@type": "CreativeWork",
+          "name": "Rouse Datenschutzerklärung",
+          "url": "https://jaminzhou.com/rouse/de/privacy/"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12"
+        }
+      }
+    },
+    "de.changelog": {
+      "title": "Rouse Changelog",
+      "description": "Versionshinweise und Versionsverlauf für Rouse, die Mac App mit Menüleistensteuerung und ruhigem Dashboard.",
+      "ogTitle": "Rouse Changelog",
+      "ogDescription": "Versionshinweise und Versionsverlauf für Rouse im Mac App Store.",
+      "twitterTitle": "Rouse Changelog",
+      "twitterDescription": "Versionshinweise und Versionsverlauf für Rouse im Mac App Store."
+    },
+    "de.support": {
+      "title": "Rouse Support",
+      "description": "Support und Fehlerbehebung für Rouse, inklusive Befehlszeilen-Einrichtung, Timern, Bildschirmsteuerung, Akkuschutz und App Store Updates.",
+      "ogTitle": "Rouse Support",
+      "ogDescription": "Support und Fehlerbehebung für Rouse, inklusive Befehlszeilen-Einrichtung, Timern, Bildschirmsteuerung, Akkuschutz und App Store Updates.",
+      "twitterTitle": "Rouse Support",
+      "twitterDescription": "Support und Fehlerbehebung für Rouse, inklusive Befehlszeilen-Einrichtung, Timern, Bildschirmsteuerung, Akkuschutz und App Store Updates."
+    },
+    "de.privacy": {
+      "title": "Rouse Datenschutzerklärung",
+      "description": "Datenschutzerklärung für Rouse, inklusive lokaler Einstellungen, Befehlszeilen-Kommunikation, Support-Anfragen und Mac App Store Datenverarbeitung.",
+      "ogTitle": "Rouse Datenschutzerklärung",
+      "ogDescription": "Wie Rouse lokale Einstellungen, Befehlszeilen-Kommunikation, Support-Anfragen und Mac App Store Daten verarbeitet.",
+      "twitterTitle": "Rouse Datenschutzerklärung",
+      "twitterDescription": "Wie Rouse lokale Einstellungen, Befehlszeilen-Kommunikation, Support-Anfragen und Mac App Store Daten verarbeitet."
+    },
+    "de.clamshell": {
+      "title": "Rouse Terminal-Workaround für MacBook Deckel-Ruhezustand",
+      "description": "Ein fortgeschrittener Terminal-Workaround zum manuellen Steuern des MacBook Ruhezustands beim Schließen des Deckels mit pmset, außerhalb der Mac App Store Version von Rouse.",
+      "ogTitle": "Rouse Terminal-Workaround für MacBook Deckel-Ruhezustand",
+      "ogDescription": "Ein fortgeschrittener Terminal-Workaround für MacBook Deckel-Ruhezustand mit pmset, außerhalb der Mac App Store Version von Rouse.",
+      "twitterTitle": "Rouse Terminal-Workaround für MacBook Deckel-Ruhezustand",
+      "twitterDescription": "Ein fortgeschrittener Terminal-Workaround für MacBook Deckel-Ruhezustand mit pmset, außerhalb der Mac App Store Version von Rouse."
+    },
+    "fr.landing": {
+      "title": "Rouse | Garder le Mac éveillé",
+      "description": "Rouse garde votre Mac éveillé pour les agents IA et les longues tâches avec minuteurs, contrôle de l’écran, règles de batterie et CLI rouse officielle.",
+      "ogTitle": "Rouse | Garder le Mac éveillé",
+      "ogDescription": "Gardez votre Mac éveillé pour les agents IA, les longues tâches, les minuteurs, le contrôle de l’écran et l’automatisation Terminal.",
+      "twitterTitle": "Rouse | Garder le Mac éveillé",
+      "twitterDescription": "Gardez votre Mac éveillé pour les agents IA, les longues tâches, les minuteurs, le contrôle de l’écran et l’automatisation Terminal.",
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Rouse: Stay Awake",
+        "url": "https://jaminzhou.com/rouse/fr/",
+        "description": "Rouse garde votre Mac éveillé pour les agents IA et les longues tâches avec minuteurs, contrôle de l’écran, règles de batterie et CLI rouse officielle.",
+        "inLanguage": "fr",
+        "operatingSystem": "macOS",
+        "applicationCategory": "UtilitiesApplication",
+        "softwareVersion": "1.9.3",
+        "image": "https://jaminzhou.com/rouse/app-icon.png",
+        "downloadUrl": "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12",
+        "softwareHelp": "https://jaminzhou.com/rouse/fr/support/",
+        "subjectOf": {
+          "@type": "CreativeWork",
+          "name": "Politique de confidentialité de Rouse",
+          "url": "https://jaminzhou.com/rouse/fr/privacy/"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12"
+        }
+      }
+    },
+    "fr.changelog": {
+      "title": "Changelog Rouse",
+      "description": "Notes de version et historique de Rouse, l’app Mac avec contrôles rapides d’éveil dans la barre des menus et tableau de bord calme.",
+      "ogTitle": "Changelog Rouse",
+      "ogDescription": "Notes de version et historique de Rouse sur le Mac App Store.",
+      "twitterTitle": "Changelog Rouse",
+      "twitterDescription": "Notes de version et historique de Rouse sur le Mac App Store."
+    },
+    "fr.support": {
+      "title": "Support Rouse",
+      "description": "Support et dépannage pour Rouse, y compris configuration de la ligne de commande, sessions minutées, veille de l’écran, batterie et mises à jour App Store.",
+      "ogTitle": "Support Rouse",
+      "ogDescription": "Support et dépannage pour Rouse, y compris configuration de la ligne de commande, sessions minutées, veille de l’écran, batterie et mises à jour App Store.",
+      "twitterTitle": "Support Rouse",
+      "twitterDescription": "Support et dépannage pour Rouse, y compris configuration de la ligne de commande, sessions minutées, veille de l’écran, batterie et mises à jour App Store."
+    },
+    "fr.privacy": {
+      "title": "Politique de confidentialité de Rouse",
+      "description": "Politique de confidentialité de Rouse, y compris préférences locales, communication en ligne de commande, demandes de support et données Mac App Store.",
+      "ogTitle": "Politique de confidentialité de Rouse",
+      "ogDescription": "Découvrez comment Rouse gère les préférences locales, la communication en ligne de commande, les demandes de support et les données Mac App Store.",
+      "twitterTitle": "Politique de confidentialité de Rouse",
+      "twitterDescription": "Découvrez comment Rouse gère les préférences locales, la communication en ligne de commande, les demandes de support et les données Mac App Store."
+    },
+    "fr.clamshell": {
+      "title": "Solution Terminal Rouse pour la veille à la fermeture du MacBook",
+      "description": "Solution Terminal avancée pour contrôler manuellement la veille à la fermeture d’un MacBook avec pmset, hors de la version Mac App Store de Rouse.",
+      "ogTitle": "Solution Terminal Rouse pour la veille à la fermeture du MacBook",
+      "ogDescription": "Solution Terminal avancée pour contrôler manuellement la veille à la fermeture d’un MacBook avec pmset, hors de la version Mac App Store de Rouse.",
+      "twitterTitle": "Solution Terminal Rouse pour la veille à la fermeture du MacBook",
+      "twitterDescription": "Solution Terminal avancée pour contrôler manuellement la veille à la fermeture d’un MacBook avec pmset, hors de la version Mac App Store de Rouse."
+    },
+    "es.landing": {
+      "title": "Rouse | Mantén activo tu Mac",
+      "description": "Rouse mantiene tu Mac activo para agentes de IA y trabajos largos con sesiones temporizadas, control de pantalla, reglas de batería y la CLI oficial rouse.",
+      "ogTitle": "Rouse | Mantén activo tu Mac",
+      "ogDescription": "Mantén tu Mac activo para agentes de IA, trabajos largos, temporizadores, control de pantalla y automatización en Terminal.",
+      "twitterTitle": "Rouse | Mantén activo tu Mac",
+      "twitterDescription": "Mantén tu Mac activo para agentes de IA, trabajos largos, temporizadores, control de pantalla y automatización en Terminal.",
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Rouse: Stay Awake",
+        "url": "https://jaminzhou.com/rouse/es/",
+        "description": "Rouse mantiene tu Mac activo para agentes de IA y trabajos largos con sesiones temporizadas, control de pantalla, reglas de batería y la CLI oficial rouse.",
+        "inLanguage": "es",
+        "operatingSystem": "macOS",
+        "applicationCategory": "UtilitiesApplication",
+        "softwareVersion": "1.9.3",
+        "image": "https://jaminzhou.com/rouse/app-icon.png",
+        "downloadUrl": "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12",
+        "softwareHelp": "https://jaminzhou.com/rouse/es/support/",
+        "subjectOf": {
+          "@type": "CreativeWork",
+          "name": "Política de privacidad de Rouse",
+          "url": "https://jaminzhou.com/rouse/es/privacy/"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12"
+        }
+      }
+    },
+    "es.changelog": {
+      "title": "Registro de cambios de Rouse",
+      "description": "Notas de versión e historial de Rouse, la app para Mac con controles rápidos de actividad en la barra de menús y un panel tranquilo.",
+      "ogTitle": "Registro de cambios de Rouse",
+      "ogDescription": "Notas de versión e historial de Rouse en el Mac App Store.",
+      "twitterTitle": "Registro de cambios de Rouse",
+      "twitterDescription": "Notas de versión e historial de Rouse en el Mac App Store."
+    },
+    "es.support": {
+      "title": "Soporte de Rouse",
+      "description": "Soporte y solución de problemas para Rouse, incluyendo línea de comandos, sesiones temporizadas, reposo de pantalla, batería y actualizaciones del App Store.",
+      "ogTitle": "Soporte de Rouse",
+      "ogDescription": "Soporte y solución de problemas para Rouse, incluyendo línea de comandos, sesiones temporizadas, reposo de pantalla, batería y actualizaciones del App Store.",
+      "twitterTitle": "Soporte de Rouse",
+      "twitterDescription": "Soporte y solución de problemas para Rouse, incluyendo línea de comandos, sesiones temporizadas, reposo de pantalla, batería y actualizaciones del App Store."
+    },
+    "es.privacy": {
+      "title": "Política de privacidad de Rouse",
+      "description": "Política de privacidad de Rouse, incluyendo preferencias locales, comunicación de línea de comandos, soporte y datos del Mac App Store.",
+      "ogTitle": "Política de privacidad de Rouse",
+      "ogDescription": "Lee cómo Rouse gestiona preferencias locales, comunicación de línea de comandos, solicitudes de soporte y datos del Mac App Store.",
+      "twitterTitle": "Política de privacidad de Rouse",
+      "twitterDescription": "Lee cómo Rouse gestiona preferencias locales, comunicación de línea de comandos, solicitudes de soporte y datos del Mac App Store."
+    },
+    "es.clamshell": {
+      "title": "Solución de Terminal de Rouse para reposo al cerrar el MacBook",
+      "description": "Solución avanzada de Terminal para controlar manualmente el reposo al cerrar un MacBook con pmset, fuera de la versión del Mac App Store de Rouse.",
+      "ogTitle": "Solución de Terminal de Rouse para reposo al cerrar el MacBook",
+      "ogDescription": "Solución avanzada de Terminal para controlar manualmente el reposo al cerrar un MacBook con pmset, fuera de la versión del Mac App Store de Rouse.",
+      "twitterTitle": "Solución de Terminal de Rouse para reposo al cerrar el MacBook",
+      "twitterDescription": "Solución avanzada de Terminal para controlar manualmente el reposo al cerrar un MacBook con pmset, fuera de la versión del Mac App Store de Rouse."
+    },
+    "ko.landing": {
+      "title": "Rouse | Mac을 깨워 두기",
+      "description": "Rouse는 AI 에이전트와 오래 걸리는 작업을 위해 시간 제한 세션, 디스플레이 잠자기 제어, 배터리 규칙, 공식 rouse CLI로 Mac을 깨워 둡니다.",
+      "ogTitle": "Rouse | Mac을 깨워 두기",
+      "ogDescription": "AI 에이전트, 긴 작업, 타이머, 디스플레이 제어, Terminal 자동화를 위해 Mac을 깨워 두세요.",
+      "twitterTitle": "Rouse | Mac을 깨워 두기",
+      "twitterDescription": "AI 에이전트, 긴 작업, 타이머, 디스플레이 제어, Terminal 자동화를 위해 Mac을 깨워 두세요.",
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Rouse: Stay Awake",
+        "url": "https://jaminzhou.com/rouse/ko/",
+        "description": "Rouse는 AI 에이전트와 오래 걸리는 작업을 위해 시간 제한 세션, 디스플레이 잠자기 제어, 배터리 규칙, 공식 rouse CLI로 Mac을 깨워 둡니다.",
+        "inLanguage": "ko",
+        "operatingSystem": "macOS",
+        "applicationCategory": "UtilitiesApplication",
+        "softwareVersion": "1.9.3",
+        "image": "https://jaminzhou.com/rouse/app-icon.png",
+        "downloadUrl": "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12",
+        "softwareHelp": "https://jaminzhou.com/rouse/ko/support/",
+        "subjectOf": {
+          "@type": "CreativeWork",
+          "name": "Rouse 개인정보 처리방침",
+          "url": "https://jaminzhou.com/rouse/ko/privacy/"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12"
+        }
+      }
+    },
+    "ko.changelog": {
+      "title": "Rouse 변경 내역",
+      "description": "빠른 메뉴 막대 깨움 제어와 차분한 대시보드를 제공하는 Mac 앱 Rouse의 릴리스 노트와 버전 기록입니다.",
+      "ogTitle": "Rouse 변경 내역",
+      "ogDescription": "Mac App Store용 Rouse의 릴리스 노트와 버전 기록입니다.",
+      "twitterTitle": "Rouse 변경 내역",
+      "twitterDescription": "Mac App Store용 Rouse의 릴리스 노트와 버전 기록입니다."
+    },
+    "ko.support": {
+      "title": "Rouse 지원",
+      "description": "명령줄 설정, 시간 제한 세션, 디스플레이 잠자기, 배터리 보호, App Store 업데이트를 포함한 Rouse 지원 및 문제 해결입니다.",
+      "ogTitle": "Rouse 지원",
+      "ogDescription": "명령줄 설정, 시간 제한 세션, 디스플레이 잠자기, 배터리 보호, App Store 업데이트를 포함한 Rouse 지원 및 문제 해결입니다.",
+      "twitterTitle": "Rouse 지원",
+      "twitterDescription": "명령줄 설정, 시간 제한 세션, 디스플레이 잠자기, 배터리 보호, App Store 업데이트를 포함한 Rouse 지원 및 문제 해결입니다."
+    },
+    "ko.privacy": {
+      "title": "Rouse 개인정보 처리방침",
+      "description": "로컬 환경설정, 명령줄 통신, 지원 요청, Mac App Store 데이터 처리를 포함한 Rouse 개인정보 처리방침입니다.",
+      "ogTitle": "Rouse 개인정보 처리방침",
+      "ogDescription": "Rouse가 로컬 환경설정, 명령줄 통신, 지원 요청, Mac App Store 데이터 처리를 어떻게 다루는지 확인하세요.",
+      "twitterTitle": "Rouse 개인정보 처리방침",
+      "twitterDescription": "Rouse가 로컬 환경설정, 명령줄 통신, 지원 요청, Mac App Store 데이터 처리를 어떻게 다루는지 확인하세요."
+    },
+    "ko.clamshell": {
+      "title": "Rouse MacBook 덮개 닫힘 잠자기 Terminal 우회",
+      "description": "Mac App Store 버전의 Rouse 밖에서 pmset으로 MacBook 덮개 닫힘 잠자기를 수동 제어하는 고급 Terminal 우회 방법입니다.",
+      "ogTitle": "Rouse MacBook 덮개 닫힘 잠자기 Terminal 우회",
+      "ogDescription": "Mac App Store 버전의 Rouse 밖에서 pmset으로 MacBook 덮개 닫힘 잠자기를 수동 제어하는 고급 Terminal 우회 방법입니다.",
+      "twitterTitle": "Rouse MacBook 덮개 닫힘 잠자기 Terminal 우회",
+      "twitterDescription": "Mac App Store 버전의 Rouse 밖에서 pmset으로 MacBook 덮개 닫힘 잠자기를 수동 제어하는 고급 Terminal 우회 방법입니다."
+    },
+    "ja.landing": {
+      "title": "Rouse | Macをスリープさせない",
+      "description": "Rouse は AI エージェントや長時間の作業中に Mac を起動状態に保ち、時間指定、ディスプレイ制御、バッテリー保護、公式 rouse CLI に対応します。",
+      "ogTitle": "Rouse | Macをスリープさせない",
+      "ogDescription": "AI エージェントや長時間の作業中に Mac を起動状態に保ち、時間指定、ディスプレイ制御、バッテリー保護、公式 rouse CLI に対応します。",
+      "twitterTitle": "Rouse | Macをスリープさせない",
+      "twitterDescription": "AI エージェントや長時間の作業中に Mac を起動状態に保ち、時間指定、ディスプレイ制御、バッテリー保護、公式 rouse CLI に対応します。",
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Rouse: Stay Awake",
+        "url": "https://jaminzhou.com/rouse/ja/",
+        "description": "AI エージェントや長時間の作業中に Mac を起動状態に保ち、時間指定、ディスプレイ制御、バッテリー保護、公式 rouse CLI に対応します。",
+        "inLanguage": "ja",
+        "operatingSystem": "macOS",
+        "applicationCategory": "UtilitiesApplication",
+        "softwareVersion": "1.9.3",
+        "image": "https://jaminzhou.com/rouse/app-icon.png",
+        "downloadUrl": "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12",
+        "softwareHelp": "https://jaminzhou.com/rouse/ja/support/",
+        "subjectOf": {
+          "@type": "CreativeWork",
+          "name": "Rouse Privacy Policy",
+          "url": "https://jaminzhou.com/rouse/ja/privacy/"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12"
+        }
+      }
+    },
+    "ja.changelog": {
+      "title": "Rouse 更新履歴",
+      "description": "Rouse の Mac App Store 版に関するリリースノートとバージョン履歴。",
+      "ogTitle": "Rouse 更新履歴",
+      "ogDescription": "Rouse の Mac App Store 版に関するリリースノートとバージョン履歴。",
+      "twitterTitle": "Rouse 更新履歴",
+      "twitterDescription": "Rouse の Mac App Store 版に関するリリースノートとバージョン履歴。"
+    },
+    "ja.support": {
+      "title": "Rouse サポート",
+      "description": "Rouse のサポートとトラブルシューティング。コマンドライン設定、時間指定セッション、ディスプレイ制御、バッテリー保護、App Store 更新について確認できます。",
+      "ogTitle": "Rouse サポート",
+      "ogDescription": "Rouse のサポートとトラブルシューティング。コマンドライン設定、時間指定セッション、ディスプレイ制御、バッテリー保護、App Store 更新について確認できます。",
+      "twitterTitle": "Rouse サポート",
+      "twitterDescription": "Rouse のサポートとトラブルシューティング。コマンドライン設定、時間指定セッション、ディスプレイ制御、バッテリー保護、App Store 更新について確認できます。"
+    },
+    "ja.privacy": {
+      "title": "Rouse プライバシーポリシー",
+      "description": "Rouse のプライバシーポリシー。ローカル設定、コマンドライン通信、サポート連絡、Mac App Store 版のデータ取り扱いについて説明します。",
+      "ogTitle": "Rouse プライバシーポリシー",
+      "ogDescription": "Rouse のプライバシーポリシー。ローカル設定、コマンドライン通信、サポート連絡、Mac App Store 版のデータ取り扱いについて説明します。",
+      "twitterTitle": "Rouse プライバシーポリシー",
+      "twitterDescription": "Rouse のプライバシーポリシー。ローカル設定、コマンドライン通信、サポート連絡、Mac App Store 版のデータ取り扱いについて説明します。"
+    },
+    "ja.clamshell": {
+      "title": "Rouse MacBook 合蓋スリープ向けターミナル回避策",
+      "description": "Mac App Store 版の Rouse とは別に、pmset で MacBook の合蓋スリープを手動制御するための高度なターミナル回避策です。",
+      "ogTitle": "Rouse MacBook 合蓋スリープ向けターミナル回避策",
+      "ogDescription": "Mac App Store 版の Rouse とは別に、pmset で MacBook の合蓋スリープを手動制御するための高度なターミナル回避策です。",
+      "twitterTitle": "Rouse MacBook 合蓋スリープ向けターミナル回避策",
+      "twitterDescription": "Mac App Store 版の Rouse とは別に、pmset で MacBook の合蓋スリープを手動制御するための高度なターミナル回避策です。"
+    },
+    "zh-Hans.landing": {
+      "title": "Rouse | 让 Mac 保持唤醒",
+      "description": "Rouse 让 Mac 在 AI agent 和长时间任务期间保持唤醒，支持定时会话、显示器睡眠控制、电池保护规则和官方 rouse CLI。",
+      "ogTitle": "Rouse | 让 Mac 保持唤醒",
+      "ogDescription": "让 Mac 在 AI agent 和长时间任务期间保持唤醒，支持定时会话、显示器睡眠控制、电池保护规则和官方 rouse CLI。",
+      "twitterTitle": "Rouse | 让 Mac 保持唤醒",
+      "twitterDescription": "让 Mac 在 AI agent 和长时间任务期间保持唤醒，支持定时会话、显示器睡眠控制、电池保护规则和官方 rouse CLI。",
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Rouse: Stay Awake",
+        "url": "https://jaminzhou.com/rouse/zh-hans/",
+        "description": "让 Mac 在 AI agent 和长时间任务期间保持唤醒，支持定时会话、显示器睡眠控制、电池保护规则和官方 rouse CLI。",
+        "inLanguage": "zh-Hans",
+        "operatingSystem": "macOS",
+        "applicationCategory": "UtilitiesApplication",
+        "softwareVersion": "1.9.3",
+        "image": "https://jaminzhou.com/rouse/app-icon.png",
+        "downloadUrl": "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12",
+        "softwareHelp": "https://jaminzhou.com/rouse/zh-hans/support/",
+        "subjectOf": {
+          "@type": "CreativeWork",
+          "name": "Rouse Privacy Policy",
+          "url": "https://jaminzhou.com/rouse/zh-hans/privacy/"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12"
+        }
+      }
+    },
+    "zh-Hans.changelog": {
+      "title": "Rouse 更新日志",
+      "description": "Rouse Mac App Store 版本的发布说明与版本历史。",
+      "ogTitle": "Rouse 更新日志",
+      "ogDescription": "Rouse Mac App Store 版本的发布说明与版本历史。",
+      "twitterTitle": "Rouse 更新日志",
+      "twitterDescription": "Rouse Mac App Store 版本的发布说明与版本历史。"
+    },
+    "zh-Hans.support": {
+      "title": "Rouse 支持",
+      "description": "Rouse 的支持与故障排查页面，涵盖命令行设置、定时会话、显示器睡眠、电池保护和 App Store 更新。",
+      "ogTitle": "Rouse 支持",
+      "ogDescription": "Rouse 的支持与故障排查页面，涵盖命令行设置、定时会话、显示器睡眠、电池保护和 App Store 更新。",
+      "twitterTitle": "Rouse 支持",
+      "twitterDescription": "Rouse 的支持与故障排查页面，涵盖命令行设置、定时会话、显示器睡眠、电池保护和 App Store 更新。"
+    },
+    "zh-Hans.privacy": {
+      "title": "Rouse 隐私政策",
+      "description": "Rouse 隐私政策，说明本地偏好设置、命令行通信、支持请求以及 Mac App Store 版本的数据处理方式。",
+      "ogTitle": "Rouse 隐私政策",
+      "ogDescription": "Rouse 隐私政策，说明本地偏好设置、命令行通信、支持请求以及 Mac App Store 版本的数据处理方式。",
+      "twitterTitle": "Rouse 隐私政策",
+      "twitterDescription": "Rouse 隐私政策，说明本地偏好设置、命令行通信、支持请求以及 Mac App Store 版本的数据处理方式。"
+    },
+    "zh-Hans.clamshell": {
+      "title": "Rouse MacBook 合盖休眠终端方案",
+      "description": "一个基于 pmset 的高级终端方案，用于在 Mac App Store 版 Rouse 之外手动控制 MacBook 合盖休眠。",
+      "ogTitle": "Rouse MacBook 合盖休眠终端方案",
+      "ogDescription": "一个基于 pmset 的高级终端方案，用于在 Mac App Store 版 Rouse 之外手动控制 MacBook 合盖休眠。",
+      "twitterTitle": "Rouse MacBook 合盖休眠终端方案",
+      "twitterDescription": "一个基于 pmset 的高级终端方案，用于在 Mac App Store 版 Rouse 之外手动控制 MacBook 合盖休眠。"
+    },
+    "zh-Hant.landing": {
+      "title": "Rouse | 讓 Mac 保持喚醒",
+      "description": "Rouse 讓 Mac 在 AI agent 和長時間任務期間保持喚醒，支援定時工作階段、顯示器睡眠控制、電池保護規則和官方 rouse CLI。",
+      "ogTitle": "Rouse | 讓 Mac 保持喚醒",
+      "ogDescription": "讓 Mac 在 AI agent 和長時間任務期間保持喚醒，支援定時工作階段、顯示器睡眠控制、電池保護規則和官方 rouse CLI。",
+      "twitterTitle": "Rouse | 讓 Mac 保持喚醒",
+      "twitterDescription": "讓 Mac 在 AI agent 和長時間任務期間保持喚醒，支援定時工作階段、顯示器睡眠控制、電池保護規則和官方 rouse CLI。",
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Rouse: Stay Awake",
+        "url": "https://jaminzhou.com/rouse/zh-hant/",
+        "description": "讓 Mac 在 AI agent 和長時間任務期間保持喚醒，支援定時工作階段、顯示器睡眠控制、電池保護規則和官方 rouse CLI。",
+        "inLanguage": "zh-Hant",
+        "operatingSystem": "macOS",
+        "applicationCategory": "UtilitiesApplication",
+        "softwareVersion": "1.9.3",
+        "image": "https://jaminzhou.com/rouse/app-icon.png",
+        "downloadUrl": "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12",
+        "softwareHelp": "https://jaminzhou.com/rouse/zh-hant/support/",
+        "subjectOf": {
+          "@type": "CreativeWork",
+          "name": "Rouse Privacy Policy",
+          "url": "https://jaminzhou.com/rouse/zh-hant/privacy/"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12"
+        }
+      }
+    },
+    "zh-Hant.changelog": {
+      "title": "Rouse 更新日誌",
+      "description": "Rouse Mac App Store 版本的發佈說明與版本歷史。",
+      "ogTitle": "Rouse 更新日誌",
+      "ogDescription": "Rouse Mac App Store 版本的發佈說明與版本歷史。",
+      "twitterTitle": "Rouse 更新日誌",
+      "twitterDescription": "Rouse Mac App Store 版本的發佈說明與版本歷史。"
+    },
+    "zh-Hant.support": {
+      "title": "Rouse 支援",
+      "description": "Rouse 的支援與疑難排解頁面，涵蓋命令列設定、定時工作階段、顯示器睡眠、電池保護和 App Store 更新。",
+      "ogTitle": "Rouse 支援",
+      "ogDescription": "Rouse 的支援與疑難排解頁面，涵蓋命令列設定、定時工作階段、顯示器睡眠、電池保護和 App Store 更新。",
+      "twitterTitle": "Rouse 支援",
+      "twitterDescription": "Rouse 的支援與疑難排解頁面，涵蓋命令列設定、定時工作階段、顯示器睡眠、電池保護和 App Store 更新。"
+    },
+    "zh-Hant.privacy": {
+      "title": "Rouse 隱私權政策",
+      "description": "Rouse 隱私權政策，說明本地偏好設定、命令列通訊、支援請求以及 Mac App Store 版本的資料處理方式。",
+      "ogTitle": "Rouse 隱私權政策",
+      "ogDescription": "Rouse 隱私權政策，說明本地偏好設定、命令列通訊、支援請求以及 Mac App Store 版本的資料處理方式。",
+      "twitterTitle": "Rouse 隱私權政策",
+      "twitterDescription": "Rouse 隱私權政策，說明本地偏好設定、命令列通訊、支援請求以及 Mac App Store 版本的資料處理方式。"
+    },
+    "zh-Hant.clamshell": {
+      "title": "Rouse MacBook 合蓋休眠終端方案",
+      "description": "一個基於 pmset 的進階終端方案，用於在 Mac App Store 版 Rouse 之外手動控制 MacBook 合蓋休眠。",
+      "ogTitle": "Rouse MacBook 合蓋休眠終端方案",
+      "ogDescription": "一個基於 pmset 的進階終端方案，用於在 Mac App Store 版 Rouse 之外手動控制 MacBook 合蓋休眠。",
+      "twitterTitle": "Rouse MacBook 合蓋休眠終端方案",
+      "twitterDescription": "一個基於 pmset 的進階終端方案，用於在 Mac App Store 版 Rouse 之外手動控制 MacBook 合蓋休眠。"
+    }
+  }
+}

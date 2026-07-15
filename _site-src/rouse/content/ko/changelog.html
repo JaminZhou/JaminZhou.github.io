@@ -1,0 +1,141 @@
+    <section class="panel">
+      <div class="kicker">변경 내역</div>
+      <h1>Rouse 변경 내역</h1>
+      <p class="meta">마지막 업데이트: 2026년 6월 18일</p>
+      <p>Mac App Store 버전 Rouse의 릴리스 노트입니다. 이 페이지는 공개 버전 기록을 짧고 사용자 중심으로 유지합니다.</p>
+      <article class="entry">
+        <h2 class="entry-title">1.9.3</h2>
+        <p class="entry-meta">메뉴 막대에서 실행 중인 세션을 더 안정적으로 다시 설정합니다.</p>
+        <ul>
+          <li>Quick Panel에서 무기한 세션과 시간 제한 세션 사이를 더 안정적으로 전환할 수 있습니다.</li>
+          <li>메뉴 막대 패널이 열린 상태에서도 시간 설정 컨트롤을 안정적으로 클릭할 수 있습니다.</li>
+          <li>실행 중인 세션을 직접 다시 설정하는 동작이 더 안정적으로 처리됩니다.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.9.2</h2>
+        <p class="entry-meta">현지화된 지원 초안과 i18n 검사를 다듬었습니다.</p>
+        <ul>
+          <li>현재 Rouse가 지원하는 모든 언어에서 이메일 지원 초안의 제목, 안내 문구, 버전 정보, macOS 정보, 진입점 라벨을 현지화했습니다.</li>
+          <li>앱 오류가 기술적인 설명으로 떨어지지 않고 명확한 현지화 문구로 보이도록 사용자-facing 오류 문구를 개선했습니다.</li>
+          <li>앞으로 현지화되지 않은 문구가 더 일찍 잡히도록 lint, 테스트, CI, PR 체크리스트에 정적 i18n 검사를 추가했습니다.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.9.1</h2>
+        <p class="entry-meta">선택 사항인 Support Rouse 구매를 활성화했습니다.</p>
+        <ul>
+          <li>Mac App Store 버전에서 선택 사항인 일회성 지원 구매를 활성화했습니다.</li>
+          <li>시간 제한 세션, 디스플레이 잠자기 제어, 배터리 규칙, 공식 <code>rouse</code> CLI를 포함한 핵심 깨움 제어 기능은 모두 계속 무료입니다.</li>
+          <li>지속적인 개발을 지원하고 싶은 사용자를 위해 승인된 Support Rouse, Buy a Coffee, Buy Two Coffees 제품을 추가했습니다.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.9.0</h2>
+        <p class="entry-meta">프랑스어, 스페인어, 한국어 현지화 추가.</p>
+        <ul>
+          <li>앱에 프랑스어, 스페인어, 한국어 현지화를 추가했습니다.</li>
+          <li>새 언어에 맞춘 Mac App Store 메타데이터와 스크린샷을 추가했습니다.</li>
+          <li>앞으로의 번역이 빠지지 않도록 현지화 테스트와 스크린샷 도구를 업데이트했습니다.</li>
+          <li>깨우기 세션은 메뉴 막대, Dashboard, 디스플레이 잠자기, 배터리 규칙, 공식 <code>rouse</code> CLI에 계속 집중합니다.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.8.0</h2>
+        <p class="entry-meta">독일어 현지화와 앱 언어 바로가기 추가.</p>
+        <ul>
+        <li>Rouse와 Mac App Store 목록에 독일어 현지화를 추가했습니다.</li>
+        <li>Rouse의 앱별 언어를 선택할 수 있도록 macOS 언어 및 지역을 여는 설정 바로가기를 추가했습니다.</li>
+        <li>대시보드 헤더를 정리하고 명령줄 설정 진입점을 더 가볍게 만들었습니다.</li>
+        <li>앱, 테스트, 스크린샷 동작을 더 일관되게 하기 위해 현지화 조회를 중앙화했습니다.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.7.0</h2>
+        <p class="entry-meta">공식 <code>rouse</code> 명령줄 인터페이스 추가.</p>
+        <ul>
+        <li>Terminal, 셸 스크립트, 로컬 자동화용 내장 <code>rouse</code> CLI를 추가했습니다.</li>
+        <li>명령줄 도구가 세션 시작, 중지, 상태 확인, 대시보드 열기, 디스플레이 잠자기 관리를 할 수 있습니다.</li>
+        <li>설정에 명령줄 설정 안내를 추가했습니다.</li>
+        <li>메뉴 막대에서 대시보드 접근과 지원 동작을 다듬었습니다.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.6.0</h2>
+        <p class="entry-meta">앱 전반의 접근성 개선.</p>
+        <ul>
+        <li>VoiceOver 레이블, 값, 힌트를 더 명확하게 했습니다.</li>
+        <li>키보드 탐색을 개선했습니다.</li>
+        <li>macOS 디스플레이 접근성 설정을 더 잘 따릅니다.</li>
+        <li>메뉴 막대 아이콘 정렬을 다듬었습니다.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.5.0</h2>
+        <p class="entry-meta">활성 세션 중 디스플레이 잠자기 변경.</p>
+        <ul>
+        <li>세션이 활성 상태일 때 디스플레이 잠자기를 조정할 수 있습니다.</li>
+        <li>릴리스 흐름과 세션 처리의 내부 안정성을 개선했습니다.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.4.0</h2>
+        <p class="entry-meta">대시보드 레이아웃 개선.</p>
+        <ul>
+        <li>더 차분한 표시를 위해 대시보드 레이아웃과 간격을 다듬었습니다.</li>
+        <li>긴 콘텐츠의 가독성과 균형을 개선했습니다.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.3.0</h2>
+        <p class="entry-meta">App Shortcuts와 릴리스 경험 개선.</p>
+        <ul>
+        <li>세션 시작, 시간 제한 세션 시작, 세션 중지, 대시보드 열기 바로가기를 추가했습니다.</li>
+        <li>긴 현지화 텍스트를 위한 대시보드 전환과 배치를 다듬었습니다.</li>
+        <li>피드백과 지원 진입점을 더 명확하게 했습니다.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.2.0</h2>
+        <p class="entry-meta">일본어와 중국어 현지화 지원 추가.</p>
+        <ul>
+        <li>일본어, 중국어 간체, 중국어 번체 현지화를 추가했습니다.</li>
+        <li>현재 제품 언어에 맞게 대시보드와 빠른 패널 문구를 새로 고쳤습니다.</li>
+        <li>대시보드 위치와 세션 상태 안정성을 개선했습니다.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.1.0</h2>
+        <p class="entry-meta">선택적 후원 추가.</p>
+        <ul>
+        <li>정보 창에 Support Rouse 섹션을 추가했습니다.</li>
+        <li>App Store Connect 리뷰 자산 관리 도구를 개선했습니다.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.0.0</h2>
+        <p class="entry-meta">첫 Mac App Store 릴리스.</p>
+        <ul>
+        <li>빠른 메뉴 막대 깨움 제어와 차분한 대시보드를 도입했습니다.</li>
+        <li>무기한 및 시간 제한 깨움 세션, 디스플레이 잠자기, 배터리 보호, 로그인 시 실행을 추가했습니다.</li>
+        <li>재실행 또는 시스템 깨움 후 시간 제한 세션 복원을 포함했습니다.</li>
+        </ul>
+      </article>
+      <div class="links">
+        <a href="/rouse/ko/">Rouse로 돌아가기</a>
+        <a href="/rouse/ko/support/">지원</a>
+        <a href="/rouse/ko/privacy/">개인정보 처리방침</a>
+      </div>
+    </section>

@@ -1,0 +1,58 @@
+    <section class="panel">
+      <div class="kicker">Avancé</div>
+      <h1>Solution Terminal pour la veille à la fermeture du MacBook</h1>
+      <p class="meta">Dernière mise à jour : 20 avril 2026</p>
+      <p>Cette page documente une solution Terminal avancée pour contrôler manuellement la veille à la fermeture d’un MacBook en dehors de la version Mac App Store de Rouse.</p>
+      <div class="warning">Il s’agit d’une solution au niveau Terminal, pas d’une API macOS officielle ni d’une fonction Mac App Store de Rouse. Elle modifie un réglage d’alimentation global et requiert des droits administrateur. Le comportement peut varier selon les modèles de Mac et versions de macOS.</div>
+      <p>La version Mac App Store ne peut pas proposer cela comme fonction, car cette solution dépend de changements <code>pmset</code> avec droits administrateur hors des limites normales de l’App Sandbox.</p>
+      <h2>Commandes rapides</h2>
+      <p>Ajoutez cette fonction à votre <code>~/.zshrc</code> ou à un autre profil shell :</p>
+      <pre><code>rouse-lid() {
+  case "$1" in
+    on)
+      sudo pmset -a disablesleep 1
+      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
+      ;;
+    off)
+      sudo pmset -a disablesleep 0
+      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
+      ;;
+    status)
+      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
+      ;;
+    *)
+      echo "usage: rouse-lid {on|off|status}"
+      return 1
+      ;;
+  esac
+}</code></pre>
+      <p>Rechargez votre shell, puis utilisez <code>rouse-lid on</code>, <code>rouse-lid off</code> et <code>rouse-lid status</code>.</p>
+      <h2>Ce que cela fait</h2>
+      <ul>
+        <li><code>rouse-lid on</code> exécute <code>sudo pmset -a disablesleep 1</code>.</li>
+        <li><code>rouse-lid off</code> restaure la veille normale avec <code>sudo pmset -a disablesleep 0</code>.</li>
+        <li><code>rouse-lid status</code> affiche l’état actuel <code>SleepDisabled</code> de façon lisible.</li>
+        <li>Le cas d’usage visé est la veille à la fermeture du MacBook, pas un interrupteur général de veille.</li>
+      </ul>
+      <p>Comme <code>disablesleep=1</code> bloque la veille inactive et la veille à la fermeture, le Mac reste aussi éveillé s’il est laissé sans interaction. Lancez <code>rouse-lid off</code> dès que vous avez terminé.</p>
+      <h2>Limites</h2>
+      <ul>
+        <li>Solution Terminal avancée, pas une fonction produit livrée.</li>
+        <li>Affecte la veille système globalement, pas seulement la fermeture du capot.</li>
+        <li>Séparée de la version Mac App Store de Rouse.</li>
+        <li>La version Mac App Store ne peut pas inclure ce chemin comme fonction prise en charge.</li>
+        <li>Le réglage persiste après redémarrage.</li>
+        <li>Préférez <code>rouse-lid off</code> dès que vous avez terminé.</li>
+      </ul>
+      <h2>Comment la supprimer</h2>
+      <ul>
+        <li>Si l’état affiche encore <code>SleepDisabled = 1</code>, lancez d’abord <code>rouse-lid off</code>. Si vous avez déjà supprimé la fonction, lancez directement <code>sudo pmset -a disablesleep 0</code>.</li>
+        <li>Supprimez la fonction <code>rouse-lid()</code> de <code>~/.zshrc</code> ou du profil shell utilisé, puis rechargez votre shell.</li>
+      </ul>
+      <h2>À propos de cette page</h2>
+      <p>La version Mac App Store de Rouse reste dans ce que l’App Sandbox permet. Cette page documente la solution Terminal pour les utilisateurs avancés à l’aise avec les réglages d’alimentation système. La fonction shell <code>rouse-lid</code> est une aide autonome dans votre profil shell ; ce n’est pas une interface en ligne de commande pour la version Mac App Store de Rouse.</p>
+      <div class="links">
+        <a href="/rouse/fr/support/">Retour au support</a>
+        <a href="/rouse/fr/">Retour à Rouse</a>
+      </div>
+    </section>

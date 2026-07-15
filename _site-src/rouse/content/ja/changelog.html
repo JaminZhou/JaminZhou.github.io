@@ -1,0 +1,143 @@
+    <section class="panel">
+      <div class="kicker">更新履歴</div>
+      <h1>Rouse 更新履歴</h1>
+      <p class="meta">最終更新: 2026年6月18日</p>
+      <p>Rouse の Mac App Store 版に関するリリースノートです。公開向けのバージョン履歴を短く分かりやすくまとめています。</p>
+
+      <article class="entry">
+        <h2 class="entry-title">1.9.3</h2>
+        <p class="entry-meta">メニューバーからの実行中セッション再設定を安定化しました。</p>
+        <ul>
+          <li>Quick Panel で無期限セッションとタイマー付きセッションをより安定して切り替えられます。</li>
+          <li>メニューバーパネルを開いている間も、時間設定の操作をクリックしやすく保ちます。</li>
+          <li>実行中のセッションを直接再設定するときの動作がより信頼できるようになりました。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.9.2</h2>
+        <p class="entry-meta">ローカライズされたサポート下書きと i18n チェックを改善しました。</p>
+        <ul>
+          <li>現在のすべての Rouse ロケールで、メールサポート下書きの件名、案内文、バージョン情報、macOS 情報、入口ラベルをローカライズしました。</li>
+          <li>アプリのエラーが技術的な説明に戻らず、分かりやすくローカライズされた文言で表示されるようにしました。</li>
+          <li>今後の未ローカライズ文言を早く見つけられるよう、lint、テスト、CI、PR チェックリストに静的 i18n チェックを追加しました。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.9.1</h2>
+        <p class="entry-meta">任意の Support Rouse 購入を有効にしました。</p>
+        <ul>
+          <li>Mac App Store 版で、任意の一回限りのサポート購入を有効にしました。</li>
+          <li>時間指定セッション、ディスプレイ制御、バッテリールール、公式 <code>rouse</code> CLI を含む基本のスリープ防止機能は引き続きすべて無料です。</li>
+          <li>継続的な開発を支援したい方向けに、承認済みの Support Rouse、Buy a Coffee、Buy Two Coffees を追加しました。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.9.0</h2>
+        <p class="entry-meta">フランス語、スペイン語、韓国語ローカライズを追加しました。</p>
+        <ul>
+          <li>アプリにフランス語、スペイン語、韓国語ローカライズを追加しました。</li>
+          <li>新しい言語向けの Mac App Store メタデータとスクリーンショットを追加しました。</li>
+          <li>今後の翻訳が揃うように、ローカライズテストとスクリーンショットツールを更新しました。</li>
+          <li>スリープ防止セッションは、メニューバー、Dashboard、ディスプレイスリープ、バッテリールール、公式 <code>rouse</code> CLI に引き続き集中しています。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.8.0</h2>
+        <p class="entry-meta">ドイツ語ローカライズと App Language ショートカットを追加しました。</p>
+        <ul>
+          <li>Rouse 本体と Mac App Store 掲載情報にドイツ語ローカライズを追加しました。</li>
+          <li>Rouse のアプリ別言語を選びたいときに macOS の Language &amp; Region を開ける Settings ショートカットを追加しました。</li>
+          <li>Dashboard ヘッダーをすっきりさせ、コマンドライン設定への入口を軽くしました。</li>
+          <li>アプリ、テスト、スクリーンショットでより一貫した動作になるよう、ローカライズ lookup を集約しました。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.7.0</h2>
+        <p class="entry-meta">公式の <code>rouse</code> コマンドラインインターフェイスを追加しました。</p>
+        <ul>
+          <li>Terminal、シェルスクリプト、ローカル自動化から使える同梱 <code>rouse</code> CLI を追加しました。</li>
+          <li>Rouse.app がセッションを管理したまま、開始、停止、状態確認、Dashboard の表示、ディスプレイスリープ設定をコマンドラインから操作できます。</li>
+          <li>設定にコマンドラインの案内を追加し、権限の意味と復旧手順を分かりやすくしました。</li>
+          <li>メニューバーからの Dashboard 表示と About Rouse のサポート操作を磨きました。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.6.0</h2>
+        <p class="entry-meta">アプリ全体のアクセシビリティを改善しました。</p>
+        <ul>
+          <li>Dashboard、Quick Panel、Settings、About、メニューバー操作で VoiceOver のラベル、値、ヒントをより分かりやすくしました。</li>
+          <li>Quick Panel、Settings、About のキーボード操作を改善しました。</li>
+          <li>Reduce Motion、Reduce Transparency、Increase Contrast、Differentiate Without Color など、macOS の表示アクセシビリティ設定を Dashboard がより反映するようにしました。</li>
+          <li>メニューバーアイコンの配置を調整しました。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.5.0</h2>
+        <p class="entry-meta">セッション実行中でもディスプレイのスリープ設定を変更できるようになりました。</p>
+        <ul>
+          <li>実行中のセッションを止めずにディスプレイのスリープ設定を切り替えられるようになり、必要なときだけ画面を点灯したままにできます。</li>
+          <li>リリースまわりとセッション処理の安定性も改善しました。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.4.0</h2>
+        <p class="entry-meta">Dashboard のレイアウトをさらに磨きました。</p>
+        <ul>
+          <li>Dashboard のレイアウトと余白を調整し、よりすっきり落ち着いた見た目にしました。</li>
+          <li>長めの表示内容でも読みやすいよう、全体のバランスを改善しました。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.3.0</h2>
+        <p class="entry-meta">App Shortcuts 対応と Dashboard の磨き込み。</p>
+        <ul>
+          <li>App Shortcuts に対応し、セッション開始、時間指定セッション開始、停止、Dashboard の表示をすばやく実行できるようにしました。</li>
+          <li>Dashboard の状態遷移を滑らかにし、長い文言や多言語でのレイアウト安定性を改善しました。</li>
+          <li>フィードバックとサポートへの導線を追加し、メニューバーアイコンも見分けやすく更新しました。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.2.0</h2>
+        <p class="entry-meta">日本語と中国語のローカライズを追加。</p>
+        <ul>
+          <li>日本語、簡体字中国語、繁体字中国語のローカライズを追加しました。</li>
+          <li>Dashboard と Quick Panel の文言を、現在の製品表現に合わせて更新しました。</li>
+          <li>Dashboard の配置挙動とセッション状態の安定性を改善しました。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.1.0</h2>
+        <p class="entry-meta">任意の投げ銭サポートを追加。</p>
+        <ul>
+          <li>About Rouse ウィンドウに「Support Rouse」セクションを追加し、投げ銭オプションと Restore Purchases を利用できるようにしました。</li>
+          <li>App Store Connect のレビュー用アセット管理に関する内部ツールを改善しました。</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h2 class="entry-title">1.0.0</h2>
+        <p class="entry-meta">Mac App Store 初回リリース。</p>
+        <ul>
+          <li>すばやいメニューバー操作と、より詳しく確認できる落ち着いたダッシュボードを導入しました。</li>
+          <li>無期限・時間指定セッション、ディスプレイ制御、バッテリー保護、ログイン時起動に対応しました。</li>
+          <li>再起動後やスリープ復帰後にも、時間指定セッションを復元できるようにしました。</li>
+        </ul>
+      </article>
+
+      <div class="links">
+        <a href="/rouse/ja/">Rouse に戻る</a>
+        <a href="/rouse/ja/support/">サポート</a>
+        <a href="/rouse/ja/privacy/">プライバシーポリシー</a>
+      </div>
+    </section>

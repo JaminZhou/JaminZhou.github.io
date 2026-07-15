@@ -1,0 +1,103 @@
+    <section class="panel">
+      <div class="kicker">サポート</div>
+      <h1>Rouse サポート</h1>
+      <p class="meta">最終更新: 2026年4月26日</p>
+      <p>Rouse は、すばやいメニューバー操作、ディスプレイ制御やバッテリー保護ルールのための落ち着いた Dashboard、そしてローカル自動化向けの公式 <code>rouse</code> CLI を提供します。</p>
+
+      <p>サポートが必要な場合は <a href="mailto:me@jaminzhou.com">me@jaminzhou.com</a> にメールするか、メールから始めたくない場合はフィードバックフォームを利用できます。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="mailto:me@jaminzhou.com?subject=Rouse%20Support">サポートにメール</a>
+        <a class="cta secondary" href="https://tally.so/r/9qRx01?product=rouse&amp;channel=site&amp;entry_point=support_page&amp;app_locale=ja&amp;system_locale=site" target="_blank" rel="noreferrer">フィードバックフォームを開く</a>
+      </div>
+
+      <p>フィードバックフォームは匿名でも送信でき、返信が必要な場合はメールアドレスを任意で残せます。</p>
+
+      <h2>問い合わせ前に確認すること</h2>
+      <ul>
+        <li>Rouse は macOS 13 Ventura 以降に対応しています。</li>
+        <li>Mac App Store 版の Rouse を確認していることを確かめてください。</li>
+        <li>時間指定セッションの問題では、選んだ時間とディスプレイ睡眠防止が有効だったかをメモしてください。</li>
+      </ul>
+
+      <h2>コマンドラインの基本</h2>
+      <p>Rouse の設定で「コマンドライン」を開き、使っているシェルや自動化ツールに合う設定方法をコピーしてください。設定後は、次のコマンドがよく使われます。</p>
+      <pre class="command-block"><code>rouse doctor
+rouse start
+rouse start --for 30m
+rouse status
+rouse stop
+rouse display-sleep prevent
+rouse display-sleep allow
+rouse open</code></pre>
+
+      <h2>含めると助かる情報</h2>
+      <ul>
+        <li>Rouse のバージョンとビルド番号</li>
+        <li>macOS のバージョン</li>
+        <li>期待した動作と実際に起きたことの短い説明</li>
+        <li>可能であれば再現手順</li>
+        <li>問題の説明に役立つスクリーンショット</li>
+      </ul>
+
+      <h2>よくあるトピック</h2>
+      <ul>
+        <li>時間指定セッションが想定より早く、または遅く終了する</li>
+        <li>ディスプレイのスリープ動作</li>
+        <li>コマンドライン設定、<code>rouse doctor</code>、macOS の権限確認</li>
+        <li>バッテリー保護設定</li>
+        <li>Dashboard の表示、再表示、ログイン時起動</li>
+        <li>Support Rouse の購入や Restore Purchases</li>
+        <li>App Store のリリースや更新に関する質問</li>
+      </ul>
+
+      <h2>よくある質問</h2>
+      <ul>
+        <li>セッションが自動で停止したのはなぜですか？ バッテリー保護が有効な場合、選択したしきい値を下回ると Rouse は自動でオフになります。</li>
+        <li>スリープや再起動後に時間指定セッションの表示が変わるのはなぜですか？ Rouse は Mac に保存された残り時間をもとに時間指定セッションを復元します。</li>
+        <li>コマンドラインツールはどこで設定できますか？ Rouse の設定を開き、「コマンドライン」の案内を使ってください。スクリプトやランチャーにはフルパスの方法が最も確実な代替手段です。</li>
+        <li>macOS が「ほかのアプリのデータへのアクセス」を確認するのはなぜですか？ Rouse は同梱 CLI から Rouse.app へローカルコマンドを送るため、専用の共有コンテナを使います。書類やほかのアプリのデータは読み取りません。</li>
+        <li>「許可しない」を選んだ場合は？ Rouse を終了し、「システム設定 &gt; プライバシーとセキュリティ &gt; App 管理」で Rouse を許可してから、もう一度 <code>rouse doctor</code> を実行してください。Rouse が表示されない場合は、Rouse を再起動してから再試行してください。</li>
+        <li>ログイン時起動はどこで管理できますか？ Rouse の設定を開き、「ログイン時に起動」を有効にしてください。</li>
+        <li>Rouse をサポートしたり購入を復元したりするには？ About Rouse の Support Rouse セクションを利用してください。</li>
+        <li>サポートオプションが利用できない場合は？ Mac App Store 版を使っていること、Mac がオンラインであることを確認し、About Rouse から Retry Support Options を試してください。</li>
+        <li>プライバシーポリシーはどこで読めますか？ <a href="/rouse/ja/privacy/">Rouse プライバシーポリシー</a>をご覧ください。</li>
+      </ul>
+
+      <h2>トラブルシューティング</h2>
+      <div class="troubleshooting">
+        <h3>時間指定セッション</h3>
+        <p>セッションが想定より早く終わる場合は、まずバッテリー保護が選択したしきい値で停止させたか確認してください。スリープや再起動後の表示が違う場合は、開始時刻ではなく保存された残り時間と比べてください。</p>
+
+        <h3>ディスプレイのスリープ</h3>
+        <p>ディスプレイ睡眠防止は任意です。Mac は起きているのに画面が暗くなる、またはスリープする場合は、そのセッションでディスプレイ睡眠防止が有効だったか確認してください。</p>
+
+        <h3>バッテリー保護</h3>
+        <p>Rouse はバッテリー残量が選択したしきい値を下回ると、アクティブなセッションを自動停止できます。強すぎると感じる場合は、しきい値や設定を Rouse の設定で調整してください。</p>
+
+        <h3>ログイン時起動</h3>
+        <p>ログイン後に Rouse が利用できない場合は、Rouse の設定を開き、「ログイン時に起動」が有効なままか確認してください。macOS 側でログイン項目の確認が必要な場合もあります。</p>
+
+        <h3>App Store の更新</h3>
+        <p>Mac App Store が古いビルドを表示している場合は、Updates ページを更新し、Mac App Store 版の Rouse を見ていることを確認してください。バージョン履歴は <a href="/rouse/ja/changelog/">Rouse 更新履歴</a>でも確認できます。</p>
+
+        <h3>コマンドライン</h3>
+        <p><code>rouse</code> が見つからない場合は、Rouse の設定を開き、利用しているシェルや自動化ツールに合うコマンドライン設定方法をコピーしてください。<code>rouse doctor</code> が接続できない場合は、Rouse.app が Mac App Store 版としてインストールされていることを確認し、Rouse を一度起動してください。以前に権限確認を拒否した場合は、macOS の App 管理権限も確認してください。</p>
+      </div>
+
+      <h2>高度な情報</h2>
+      <p>MacBook の合蓋スリープ向け高度なターミナル回避策を探している場合は、<a href="/rouse/ja/support/clamshell/">MacBook 合蓋スリープ向けターミナル回避策メモ</a>を見てください。<strong>pmset</strong> を使い、管理者権限が必要で、管理者権限によるシステム電源変更は App Store 版の機能として提供できないため、Mac App Store 版の Rouse には含まれません。</p>
+
+      <h2>バージョン履歴</h2>
+      <p>公開版のリリース履歴は <a href="/rouse/ja/changelog/">Rouse 更新履歴</a>にあります。</p>
+
+      <div class="note">
+        サポート返信は主に英語で行われます。パスワード、アカウントの秘密情報、その他の機密性の高い個人情報は送信しないでください。
+      </div>
+
+      <p style="margin-top: 28px;">
+        <a href="/rouse/ja/">Rouse に戻る</a>
+        / <a href="/rouse/ja/changelog/">更新履歴</a>
+        / <a href="/rouse/ja/privacy/">プライバシーポリシー</a>
+      </p>
+    </section>
