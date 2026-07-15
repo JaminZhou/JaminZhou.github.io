@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
-import { access, readFile } from "node:fs/promises";
+import { access, mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import os from "node:os";
 import path from "node:path";
 import test from "node:test";
 
@@ -19,7 +20,10 @@ import {
   renderAlternateLinks as renderHushtrailAlternates,
   renderLocaleSwitcher as renderHushtrailLocaleSwitcher,
 } from "../scripts/build-hushtrail-site.mjs";
-import { validateHtmlStructure } from "../scripts/lib/static-product-site.mjs";
+import {
+  createStaticProductSite,
+  validateHtmlStructure,
+} from "../scripts/lib/static-product-site.mjs";
 
 const PRODUCT_SITES = [
   {
@@ -76,6 +80,50 @@ test("Hushtrail remains English-only without localization controls", () => {
   assert.equal(hushtrailOutputPath("en", "support"), "hushtrail/support/index.html");
   assert.equal(renderHushtrailAlternates("privacy"), "");
   assert.equal(renderHushtrailLocaleSwitcher("en", "privacy"), "");
+});
+
+test("product metadata is escaped before insertion into HTML", async (t) => {
+  const repositoryRoot = await mkdtemp(path.join(os.tmpdir(), "product-site-"));
+  t.after(() => rm(repositoryRoot, { recursive: true, force: true }));
+
+  const sourceRoot = path.join(repositoryRoot, "_site-src", "example");
+  await mkdir(path.join(sourceRoot, "content", "en"), { recursive: true });
+  await writeFile(
+    path.join(sourceRoot, "template.html"),
+    "<title>{{TITLE}}</title><meta name=\"description\" content=\"{{DESCRIPTION}}\"><meta property=\"og:title\" content=\"{{OG_TITLE}}\"><meta property=\"og:description\" content=\"{{OG_DESCRIPTION}}\"><meta name=\"twitter:title\" content=\"{{TWITTER_TITLE}}\"><meta name=\"twitter:description\" content=\"{{TWITTER_DESCRIPTION}}\">{{LANG}}{{CANONICAL}}{{ALTERNATE_LINKS}}{{OG_IMAGE_DIMENSIONS}}{{STRUCTURED_DATA}}{{BODY_HEADER}}{{CONTENT}}",
+  );
+  await writeFile(path.join(sourceRoot, "content", "en", "landing.html"), "<p>Body</p>");
+  await writeFile(
+    path.join(sourceRoot, "pages.json"),
+    JSON.stringify({
+      pages: {
+        "en.landing": {
+          title: 'Title "A" & <B>',
+          description: 'Description "A" & <B>',
+          ogTitle: 'Open Graph "A" & <B>',
+          ogDescription: 'Open Graph description "A" & <B>',
+          twitterTitle: 'Twitter "A" & <B>',
+          twitterDescription: 'Twitter description "A" & <B>',
+        },
+      },
+    }),
+  );
+
+  const site = createStaticProductSite({
+    repositoryRoot,
+    sourceDirectory: "example",
+    productSegment: "example",
+    productName: "Example",
+    defaultLocaleId: "en",
+    locales: [{ id: "en", segment: "", hreflang: "en", label: "English", menuLabel: "Language" }],
+    surfaces: [{ id: "landing", segment: "" }],
+  });
+  const rendered = (await site.buildSite()).get("example/index.html");
+
+  assert.match(rendered, /<title>Title &quot;A&quot; &amp; &lt;B&gt;<\/title>/);
+  assert.match(rendered, /content=\"Description &quot;A&quot; &amp; &lt;B&gt;\"/);
+  assert.match(rendered, /content=\"Open Graph &quot;A&quot; &amp; &lt;B&gt;\"/);
+  assert.match(rendered, /content=\"Twitter description &quot;A&quot; &amp; &lt;B&gt;\"/);
 });
 
 test("generated product pages match committed GitHub Pages output", async () => {

@@ -161,15 +161,17 @@ ${links}
     const bodyHeader = `${renderTopLink(metadata.topLink)}${renderLocaleSwitcher(localeId, surfaceId)}`;
     const values = {
       "{{LANG}}": locale.id,
-      "{{TITLE}}": metadata.title,
-      "{{DESCRIPTION}}": metadata.description,
+      "{{TITLE}}": escapeHtml(metadata.title),
+      "{{DESCRIPTION}}": escapeHtml(metadata.description),
       "{{CANONICAL}}": canonical,
       "{{ALTERNATE_LINKS}}": renderAlternateLinks(surfaceId),
-      "{{OG_TITLE}}": metadata.ogTitle,
-      "{{OG_DESCRIPTION}}": metadata.ogDescription,
+      "{{OG_TITLE}}": escapeHtml(metadata.ogTitle),
+      "{{OG_DESCRIPTION}}": escapeHtml(metadata.ogDescription),
       "{{OG_IMAGE_DIMENSIONS}}": renderImageDimensions(metadata),
-      "{{TWITTER_TITLE}}": metadata.twitterTitle ?? metadata.ogTitle,
-      "{{TWITTER_DESCRIPTION}}": metadata.twitterDescription ?? metadata.ogDescription,
+      "{{TWITTER_TITLE}}": escapeHtml(metadata.twitterTitle ?? metadata.ogTitle),
+      "{{TWITTER_DESCRIPTION}}": escapeHtml(
+        metadata.twitterDescription ?? metadata.ogDescription,
+      ),
       "{{STRUCTURED_DATA}}": renderStructuredData(metadata.structuredData),
       "{{BODY_HEADER}}": bodyHeader ? `${bodyHeader}\n` : "",
       "{{CONTENT}}": content.trimEnd(),
