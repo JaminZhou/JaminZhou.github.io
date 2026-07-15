@@ -4,6 +4,7 @@ on:
   pull_request:
   push:
     branches:
+      # The repository default branch and GitHub Pages source are both master.
       - master
 
 permissions:
