@@ -13,15 +13,16 @@ import {
   validateHtmlStructure,
 } from "../scripts/build-rouse-site.mjs";
 
-test("Rouse site model covers eight locales and five surfaces", () => {
-  assert.equal(LOCALES.length, 8);
+test("Rouse site model covers nine locales and five surfaces", () => {
+  assert.equal(LOCALES.length, 9);
   assert.equal(SURFACES.length, 5);
-  assert.equal(new Set(LOCALES.map((locale) => locale.id)).size, 8);
+  assert.equal(new Set(LOCALES.map((locale) => locale.id)).size, 9);
 });
 
 test("output paths preserve the existing GitHub Pages URLs", () => {
   assert.equal(pageOutputPath("en", "landing"), "rouse/index.html");
   assert.equal(pageOutputPath("de", "support"), "rouse/de/support/index.html");
+  assert.equal(pageOutputPath("pt-BR", "landing"), "rouse/pt-br/index.html");
   assert.equal(
     pageOutputPath("zh-Hant", "clamshell"),
     "rouse/zh-hant/support/clamshell/index.html",

@@ -503,6 +503,69 @@
       "ogDescription": "一個基於 pmset 的進階終端方案，用於在 Mac App Store 版 Rouse 之外手動控制 MacBook 合蓋休眠。",
       "twitterTitle": "Rouse MacBook 合蓋休眠終端方案",
       "twitterDescription": "一個基於 pmset 的進階終端方案，用於在 Mac App Store 版 Rouse 之外手動控制 MacBook 合蓋休眠。"
+    },
+    "pt-BR.landing": {
+      "title": "Rouse | Mantenha o Mac Ativo",
+      "description": "O Rouse mantém o Mac ativo para agentes de IA e tarefas longas com sessões cronometradas, controle do repouso da tela, regras de bateria e a CLI oficial rouse.",
+      "ogTitle": "Rouse | Mantenha o Mac Ativo",
+      "ogDescription": "Mantenha o Mac ativo para agentes de IA e tarefas longas com sessões cronometradas, controle da tela e automação pelo Terminal.",
+      "twitterTitle": "Rouse | Mantenha o Mac Ativo",
+      "twitterDescription": "Mantenha o Mac ativo para agentes de IA e tarefas longas com sessões cronometradas, controle da tela e automação pelo Terminal.",
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Rouse: Stay Awake",
+        "url": "https://jaminzhou.com/rouse/pt-br/",
+        "description": "O Rouse mantém o Mac ativo para agentes de IA e tarefas longas com sessões cronometradas, controle do repouso da tela, regras de bateria e a CLI oficial rouse.",
+        "inLanguage": "pt-BR",
+        "operatingSystem": "macOS",
+        "applicationCategory": "UtilitiesApplication",
+        "softwareVersion": "1.9.3",
+        "image": "https://jaminzhou.com/rouse/app-icon.png",
+        "downloadUrl": "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12",
+        "softwareHelp": "https://jaminzhou.com/rouse/pt-br/support/",
+        "subjectOf": {
+          "@type": "CreativeWork",
+          "name": "Política de Privacidade do Rouse",
+          "url": "https://jaminzhou.com/rouse/pt-br/privacy/"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12"
+        }
+      }
+    },
+    "pt-BR.changelog": {
+      "title": "Notas de Versão do Rouse",
+      "description": "Notas de lançamento e histórico de versões do Rouse na Mac App Store.",
+      "ogTitle": "Notas de Versão do Rouse",
+      "ogDescription": "Notas de lançamento e histórico de versões do Rouse na Mac App Store.",
+      "twitterTitle": "Notas de Versão do Rouse",
+      "twitterDescription": "Notas de lançamento e histórico de versões do Rouse na Mac App Store."
+    },
+    "pt-BR.support": {
+      "title": "Suporte do Rouse",
+      "description": "Suporte e solução de problemas do Rouse, incluindo linha de comando, sessões cronometradas, repouso da tela, proteção da bateria e atualizações.",
+      "ogTitle": "Suporte do Rouse",
+      "ogDescription": "Suporte e solução de problemas do Rouse, incluindo linha de comando, sessões cronometradas, repouso da tela, proteção da bateria e atualizações.",
+      "twitterTitle": "Suporte do Rouse",
+      "twitterDescription": "Suporte e solução de problemas do Rouse, incluindo linha de comando, sessões cronometradas, repouso da tela, proteção da bateria e atualizações."
+    },
+    "pt-BR.privacy": {
+      "title": "Política de Privacidade do Rouse",
+      "description": "Política de Privacidade do Rouse sobre preferências locais, comunicação da linha de comando, pedidos de suporte e dados da Mac App Store.",
+      "ogTitle": "Política de Privacidade do Rouse",
+      "ogDescription": "Saiba como o Rouse trata preferências locais, comunicação da linha de comando, pedidos de suporte e dados da Mac App Store.",
+      "twitterTitle": "Política de Privacidade do Rouse",
+      "twitterDescription": "Saiba como o Rouse trata preferências locais, comunicação da linha de comando, pedidos de suporte e dados da Mac App Store."
+    },
+    "pt-BR.clamshell": {
+      "title": "Rouse: Solução por Terminal para Repouso ao Fechar o MacBook",
+      "description": "Uma solução avançada com pmset para controlar manualmente o repouso ao fechar o MacBook, fora da versão do Rouse na Mac App Store.",
+      "ogTitle": "Rouse: Solução por Terminal para Repouso ao Fechar o MacBook",
+      "ogDescription": "Uma solução avançada com pmset para controlar manualmente o repouso ao fechar o MacBook, fora da versão do Rouse na Mac App Store.",
+      "twitterTitle": "Rouse: Solução por Terminal para Repouso ao Fechar o MacBook",
+      "twitterDescription": "Uma solução avançada com pmset para controlar manualmente o repouso ao fechar o MacBook, fora da versão do Rouse na Mac App Store."
     }
   }
 }
