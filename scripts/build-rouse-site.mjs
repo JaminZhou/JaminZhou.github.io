@@ -1,4 +1,4 @@
-import { readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -11,6 +11,13 @@ export const LOCALES = Object.freeze([
   { id: "de", hreflang: "de", segment: "de", label: "Deutsch", menuLabel: "Sprache" },
   { id: "fr", hreflang: "fr", segment: "fr", label: "Français", menuLabel: "Langue" },
   { id: "es", hreflang: "es", segment: "es", label: "Español", menuLabel: "Idioma" },
+  {
+    id: "pt-BR",
+    hreflang: "pt-BR",
+    segment: "pt-br",
+    label: "Português (Brasil)",
+    menuLabel: "Idioma",
+  },
   { id: "ko", hreflang: "ko", segment: "ko", label: "한국어", menuLabel: "언어" },
   { id: "ja", hreflang: "ja", segment: "ja", label: "日本語", menuLabel: "言語" },
   {
@@ -203,7 +210,9 @@ export async function buildSite({ write = false } = {}) {
       pages.set(relativePath, rendered);
 
       if (write) {
-        await writeFile(path.join(REPOSITORY_ROOT, relativePath), rendered);
+        const outputPath = path.join(REPOSITORY_ROOT, relativePath);
+        await mkdir(path.dirname(outputPath), { recursive: true });
+        await writeFile(outputPath, rendered);
       }
     }
   }
