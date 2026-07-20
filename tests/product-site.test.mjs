@@ -162,6 +162,19 @@ test("sitemap includes every generated product route exactly once", async () => 
   }
 });
 
+test("homepage and sitemap expose the Codex UI Kit showcase", async () => {
+  const [homepage, sitemap] = await Promise.all([
+    readFile(new URL("../index.html", import.meta.url), "utf8"),
+    readFile(new URL("../sitemap.xml", import.meta.url), "utf8"),
+  ]);
+
+  assert.equal(homepage.split('href="/codex-ui-kit/"').length - 1, 1);
+  assert.equal(
+    sitemap.split("<loc>https://jaminzhou.com/codex-ui-kit/</loc>").length - 1,
+    1,
+  );
+});
+
 test("generated product pages do not contain broken root-relative links or assets", async () => {
   for (const site of PRODUCT_SITES) {
     const pages = await site.buildSite({ write: false });
