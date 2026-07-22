@@ -11,7 +11,17 @@ import {
   renderAlternateLinks,
   renderLocaleSwitcher,
   validateHtmlStructure,
+  validateReleaseVersionConsistency,
 } from "../scripts/build-rouse-site.mjs";
+
+async function releaseVersionInputs() {
+  const [manifest, pages, homepage] = await Promise.all([
+    readFile(new URL("../_site-src/rouse/pages.json", import.meta.url), "utf8").then(JSON.parse),
+    buildSite({ write: false }),
+    readFile(new URL("../index.html", import.meta.url), "utf8"),
+  ]);
+  return { manifest, pages, homepage };
+}
 
 test("Rouse site model covers nine locales and five surfaces", () => {
   assert.equal(LOCALES.length, 9);
@@ -69,6 +79,45 @@ test("generated pages keep structural HTML containers balanced", async () => {
   for (const [relativePath, generated] of pages) {
     assert.deepEqual(validateHtmlStructure(generated), [], relativePath);
   }
+});
+
+test("root homepage and every localized landing page use the canonical Rouse version", async () => {
+  const inputs = await releaseVersionInputs();
+  assert.deepEqual(validateReleaseVersionConsistency(inputs), []);
+});
+
+test("Rouse release version validation rejects root and localized version drift", async () => {
+  const inputs = await releaseVersionInputs();
+  const expectedVersion = inputs.manifest.pages["en.landing"].structuredData.softwareVersion;
+  const staleVersion = "0.0.0";
+  const staleManifest = structuredClone(inputs.manifest);
+  staleManifest.pages["de.landing"].structuredData.softwareVersion = staleVersion;
+
+  const stalePages = new Map(inputs.pages);
+  const frenchLandingPath = pageOutputPath("fr", "landing");
+  stalePages.set(
+    frenchLandingPath,
+    stalePages.get(frenchLandingPath).replaceAll(expectedVersion, staleVersion),
+  );
+
+  const staleHomepage = inputs.homepage.replace(
+    `<strong>${expectedVersion}</strong>\n            <span>Rouse for macOS</span>`,
+    `<strong>${staleVersion}</strong>\n            <span>Rouse for macOS</span>`,
+  );
+
+  assert.deepEqual(
+    validateReleaseVersionConsistency({
+      manifest: staleManifest,
+      pages: stalePages,
+      homepage: staleHomepage,
+    }),
+    [
+      `de.landing softwareVersion is "${staleVersion}"; expected "${expectedVersion}"`,
+      `rouse/fr/index.html contains visible version "${staleVersion}"; expected "${expectedVersion}"`,
+      `rouse/fr/index.html visible version metric does not include "${expectedVersion}"`,
+      `index.html Rouse metric version is "${staleVersion}"; expected "${expectedVersion}"`,
+    ],
+  );
 });
 
 test("sitemap includes every generated Rouse route exactly once", async () => {
