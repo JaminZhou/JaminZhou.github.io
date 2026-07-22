@@ -142,6 +142,70 @@ export function validateHtmlStructure(html) {
   return errors;
 }
 
+export function validateReleaseVersionConsistency({ manifest, pages, homepage }) {
+  const errors = [];
+  const expectedVersion = manifest.pages?.["en.landing"]?.structuredData?.softwareVersion;
+
+  if (typeof expectedVersion !== "string" || !/^\d+\.\d+\.\d+$/.test(expectedVersion)) {
+    return ["en.landing must define a semantic structuredData.softwareVersion"];
+  }
+
+  for (const locale of LOCALES) {
+    const pageKey = `${locale.id}.landing`;
+    const structuredVersion = manifest.pages?.[pageKey]?.structuredData?.softwareVersion;
+    if (structuredVersion !== expectedVersion) {
+      errors.push(
+        `${pageKey} softwareVersion is ${JSON.stringify(structuredVersion)}; expected ${JSON.stringify(expectedVersion)}`,
+      );
+    }
+
+    const relativePath = pageOutputPath(locale.id, "landing");
+    const html = pages.get(relativePath);
+    if (typeof html !== "string") {
+      errors.push(`${relativePath} is missing from generated Rouse pages`);
+      continue;
+    }
+
+    const visibleHtml = html
+      .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
+      .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, "");
+    const mismatchedVisibleVersions = [
+      ...new Set(
+        [...visibleHtml.matchAll(/\b\d+\.\d+\.\d+\b/g)]
+          .map((match) => match[0])
+          .filter((version) => version !== expectedVersion),
+      ),
+    ];
+    if (mismatchedVisibleVersions.length > 0) {
+      errors.push(
+        `${relativePath} contains visible version ${mismatchedVisibleVersions.map((version) => JSON.stringify(version)).join(", ")}; expected ${JSON.stringify(expectedVersion)}`,
+      );
+    }
+
+    const visibleVersions = [...html.matchAll(/<dd>\s*([^<]+?)\s*<\/dd>/g)].map(
+      (match) => match[1],
+    );
+    if (!visibleVersions.includes(expectedVersion)) {
+      errors.push(
+        `${relativePath} visible version metric does not include ${JSON.stringify(expectedVersion)}`,
+      );
+    }
+  }
+
+  const homepageMetric = homepage.match(
+    /<div class="metric">\s*<strong>\s*([^<]+?)\s*<\/strong>\s*<span>\s*Rouse for macOS\s*<\/span>\s*<\/div>/,
+  );
+  if (!homepageMetric) {
+    errors.push("index.html is missing the Rouse for macOS version metric");
+  } else if (homepageMetric[1] !== expectedVersion) {
+    errors.push(
+      `index.html Rouse metric version is ${JSON.stringify(homepageMetric[1])}; expected ${JSON.stringify(expectedVersion)}`,
+    );
+  }
+
+  return errors;
+}
+
 function renderStructuredData(structuredData) {
   if (!structuredData) return "";
 
@@ -231,6 +295,13 @@ async function checkSite() {
     if (structureErrors.length > 0) {
       throw new Error(`${relativePath}:\n${structureErrors.join("\n")}`);
     }
+  }
+
+  const manifest = await loadManifest();
+  const homepage = await readFile(path.join(REPOSITORY_ROOT, "index.html"), "utf8");
+  const versionErrors = validateReleaseVersionConsistency({ manifest, pages, homepage });
+  if (versionErrors.length > 0) {
+    throw new Error(`Rouse release versions are inconsistent:\n${versionErrors.join("\n")}`);
   }
 
   if (stale.length > 0) {
