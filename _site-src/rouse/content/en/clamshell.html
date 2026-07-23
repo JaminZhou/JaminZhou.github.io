@@ -1,65 +1,33 @@
     <section class="panel">
-      <div class="kicker">Advanced</div>
-      <h1>MacBook lid-close sleep terminal workaround</h1>
-      <p class="meta">Last updated: April 20, 2026</p>
-      <p>This page documents an advanced terminal workaround for manually controlling MacBook lid-close sleep outside the Mac App Store version of Rouse.</p>
+      <div class="kicker">Status</div>
+      <h1>Closed-lid support and the optional Helper</h1>
+      <p class="meta">Last updated: July 23, 2026</p>
+      <div class="warning"><strong>Pre-release:</strong> there is no signed Helper download yet. Do not install unsigned builds. This page will link to a signed and notarized DMG only after the real-device safety matrix passes.</div>
+      <p>The Mac App Store version of Rouse remains sandboxed and never runs as root. It can prevent idle system and display sleep through public macOS APIs, but closed-lid operation requires a system-wide power change that a normal Mac App Store app cannot make.</p>
 
-      <div class="warning">
-        This is a terminal-level workaround, not an official macOS API or a Mac App Store feature of Rouse. It changes a system-wide power setting and requires administrator privileges. Behavior may vary across Mac models and macOS versions.
-      </div>
-      <p>The Mac App Store build cannot ship this as a feature because this workaround depends on administrator-level <code>pmset</code> power changes outside the normal App Sandbox boundary.</p>
+      <h2>Planned flow</h2>
+      <ol>
+        <li>Install the separately distributed <strong>Rouse Closed-Lid Helper</strong> in Applications.</li>
+        <li>Approve its background service in System Settings. The Helper uses Apple’s Service Management framework and never asks Rouse to collect a password.</li>
+        <li>Enable the optional, default-off setting in Rouse. Rouse then renews short leases only while a wake session is active.</li>
+      </ol>
+      <p>The privileged source is public for review at <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper">Rouse Closed-Lid Helper on GitHub</a>.</p>
 
-      <h2>Quick commands</h2>
-      <p>Add this function to your <code>~/.zshrc</code> or another shell profile:</p>
-      <pre><code>rouse-lid() {
-  case "$1" in
-    on)
-      sudo pmset -a disablesleep 1
-      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
-      ;;
-    off)
-      sudo pmset -a disablesleep 0
-      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
-      ;;
-    status)
-      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
-      ;;
-    *)
-      echo "usage: rouse-lid {on|off|status}"
-      return 1
-      ;;
-  esac
-}</code></pre>
-
-      <p>Reload your shell, then use <code>rouse-lid on</code>, <code>rouse-lid off</code>, and <code>rouse-lid status</code>.</p>
-
-      <h2>What it actually does</h2>
+      <h2>Safety model</h2>
       <ul>
-        <li><code>rouse-lid on</code> runs <code>sudo pmset -a disablesleep 1</code>.</li>
-        <li><code>rouse-lid off</code> restores normal sleep with <code>sudo pmset -a disablesleep 0</code>.</li>
-        <li><code>rouse-lid status</code> prints the current <code>SleepDisabled</code> state in a readable format.</li>
-        <li>The intended use case here is MacBook lid-close sleep, not a generic desktop sleep toggle.</li>
-      </ul>
-      <p>Because <code>disablesleep=1</code> blocks both idle sleep and lid-close sleep, the Mac will also stay awake when left untouched on the desktop. Run <code>rouse-lid off</code> as soon as you are done.</p>
-
-      <h2>Boundaries</h2>
-      <ul>
-        <li>This is an advanced terminal workaround, not a shipped product feature.</li>
-        <li>It affects system sleep globally, not only lid-close sleep.</li>
-        <li>It is separate from the Mac App Store version of Rouse.</li>
-        <li>The Mac App Store build cannot include this path as a supported feature.</li>
-        <li>The setting persists across restarts. If you forget to run <code>rouse-lid off</code>, your Mac will continue skipping idle sleep after reboot.</li>
-        <li>Prefer <code>rouse-lid off</code> as soon as you are done.</li>
+        <li>The daemon exposes fixed status, lease, release, and restore operations—not a shell or general command runner.</li>
+        <li>Each lease lasts 90 seconds and is capped at 120 seconds. If Rouse quits, disconnects, or stops renewing, the override expires automatically.</li>
+        <li>Before changing anything, the daemon records the original setting for each power source. It restores those exact values after expiry, disconnect, restart, removal, or explicit cleanup.</li>
+        <li>Rouse and the Helper verify the expected signing team, bundle identifiers, App Group, and protocol version before communicating.</li>
       </ul>
 
-      <h2>How to remove it</h2>
-      <ul>
-        <li>If the current state still shows <code>SleepDisabled = 1</code>, run <code>rouse-lid off</code> first. If you already removed the function, you can run <code>sudo pmset -a disablesleep 0</code> directly.</li>
-        <li>Remove the <code>rouse-lid()</code> function from <code>~/.zshrc</code> or whichever shell profile you used, then reload your shell.</li>
-      </ul>
+      <h2>Release status</h2>
+      <p>The implementation is being tested, but it is not yet a supported public feature. Release requires Developer ID signing, notarization, Gatekeeper verification, and Apple silicon and Intel tests covering AC, battery, restart, force quit, daemon failure, update, and removal. Until those checks pass, Rouse and this site must not promise closed-lid operation.</p>
 
-      <h2>About this page</h2>
-      <p>The Mac App Store version of Rouse stays within what the App Sandbox allows. This page documents the terminal-level workaround for advanced users who are comfortable changing system power settings. The <code>rouse-lid</code> shell function shown on this page is a standalone helper that lives in your shell profile; it is not a command-line interface for the Mac App Store version of Rouse.</p>
+      <h2>Manual recovery only</h2>
+      <p>Once released, use the Helper’s <strong>Restore &amp; Remove Service</strong> action first. If the Helper and daemon were deleted before cleanup and the Mac refuses to sleep, an administrator can restore the default with:</p>
+      <pre><code>sudo pmset -a disablesleep 0</code></pre>
+      <p>This emergency command cannot reconstruct a non-default value set by another tool. Normal Helper removal restores the exact captured values.</p>
 
       <div class="links">
         <a href="/rouse/support/">Back to Support</a>

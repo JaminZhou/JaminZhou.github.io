@@ -1,60 +1,31 @@
- <section class="panel">
-<div class="kicker">Avan&ccedil;ado</div>
-<h1>Solu&ccedil;&atilde;o por Terminal para Repouso ao Fechar o MacBook</h1>
-<p class="meta">&Uacute;ltima atualiza&ccedil;&atilde;o: 20 de abril de 2026</p>
-<p>Esta p&aacute;gina documenta uma solu&ccedil;&atilde;o avan&ccedil;ada de Terminal para controlar manualmente o repouso ao fechar a tampa do MacBook, fora da vers&atilde;o do Rouse na Mac App Store.</p>
-<div class="warning">
-        Esta &eacute; uma solu&ccedil;&atilde;o por Terminal, n&atilde;o uma API oficial do macOS nem um recurso do Rouse na Mac App Store. Ela altera um ajuste de energia do sistema e exige privil&eacute;gios de administrador. O comportamento pode variar entre modelos de Mac e vers&otilde;es do macOS.
+    <section class="panel">
+      <div class="kicker">Status</div>
+      <h1>Suporte com a tampa fechada e auxiliar opcional</h1>
+      <p class="meta">Última atualização: 23 de julho de 2026</p>
+      <div class="warning"><strong>Pré-lançamento:</strong> ainda não há um auxiliar assinado para download. Não instale builds sem assinatura. Um DMG assinado e notarizado será oferecido somente após a matriz de segurança passar em Macs reais.</div>
+      <p>A versão do Rouse na Mac App Store continua no App Sandbox e nunca roda como root. Ela pode impedir o repouso ocioso do sistema e da tela pelas APIs públicas do macOS, mas o uso com a tampa fechada exige uma alteração global de energia que um app comum da Mac App Store não pode fazer.</p>
+      <h2>Fluxo planejado</h2>
+      <ol>
+        <li>Instalar o <strong>Rouse Closed-Lid Helper</strong>, distribuído separadamente, em Aplicativos.</li>
+        <li>Aprovar o serviço em segundo plano nos Ajustes do Sistema. O auxiliar usa o Service Management da Apple e o Rouse não coleta a senha de administrador.</li>
+        <li>Ativar no Rouse a opção facultativa, desativada por padrão. Concessões curtas são renovadas apenas durante uma sessão ativa do Rouse.</li>
+      </ol>
+      <p>O código privilegiado é público para revisão no <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper">GitHub</a>.</p>
+      <h2>Modelo de segurança</h2>
+      <ul>
+        <li>O daemon oferece somente operações fixas de status, concessão, liberação e restauração, sem shell ou execução genérica de comandos.</li>
+        <li>Cada concessão dura 90 segundos e tem limite de 120. Ela expira automaticamente se o Rouse encerrar, desconectar ou parar de renovar.</li>
+        <li>Os valores originais de cada fonte de energia são gravados antes da alteração e restaurados exatamente após expiração, desconexão, reinício, remoção ou limpeza.</li>
+        <li>A equipe de assinatura, os Bundle IDs, o App Group e a versão do protocolo são verificados antes da comunicação.</li>
+      </ul>
+      <h2>Status do lançamento</h2>
+      <p>A implementação está em testes, mas ainda não é um recurso público compatível. O lançamento exige assinatura Developer ID, notarização, verificação do Gatekeeper e testes em Apple silicon e Intel cobrindo energia, bateria, reinício, encerramento forçado, falha do daemon, atualização e remoção. Até lá, o uso com a tampa fechada não é prometido.</p>
+      <h2>Somente para recuperação de emergência</h2>
+      <p>Após o lançamento, use primeiro “Restaurar e remover serviço” no auxiliar. Se o auxiliar e o daemon forem apagados antes da limpeza e o Mac não entrar em repouso, um administrador pode restaurar o padrão:</p>
+      <pre><code>sudo pmset -a disablesleep 0</code></pre>
+      <p>Esse comando de emergência não reconstrói um valor fora do padrão definido por outra ferramenta. A remoção normal restaura os valores exatos gravados.</p>
+      <div class="links">
+        <a href="/rouse/pt-br/support/">Voltar ao suporte</a>
+        <a href="/rouse/pt-br/">Voltar ao Rouse</a>
       </div>
-<p>A vers&atilde;o da Mac App Store n&atilde;o pode oferecer isso como recurso porque a solu&ccedil;&atilde;o depende de altera&ccedil;&otilde;es de energia com <code>pmset</code> e privil&eacute;gios de administrador, fora dos limites normais do App Sandbox.</p>
-<h2>Comandos r&aacute;pidos</h2>
-<p>Adicione esta fun&ccedil;&atilde;o ao seu <code>~/.zshrc</code> ou outro perfil de shell:</p>
-<pre><code>rouse-lid() {
-  case "$1" in
-    on)
-      sudo pmset -a disablesleep 1
-      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
-      ;;
-    off)
-      sudo pmset -a disablesleep 0
-      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
-      ;;
-    status)
-      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
-      ;;
-    *)
-      echo "usage: rouse-lid {on|off|status}"
-      return 1
-      ;;
-  esac
-}</code></pre>
-<p>Recarregue seu shell e use <code>rouse-lid on</code>, <code>rouse-lid off</code>e <code>rouse-lid status</code>.</p>
-<h2>O que realmente faz</h2>
-<ul>
-<li><code>rouse-lid on</code> corre <code>sudo pmset -a disablesleep 1</code>.</li>
-<li><code>rouse-lid off</code> restaura o sono normal com <code>sudo pmset -a disablesleep 0</code>.</li>
-<li><code>rouse-lid status</code> imprime o atual <code>SleepDisabled</code> estado em um formato leg&iacute;vel.</li>
-<li>O caso de uso desta p&aacute;gina &eacute; o repouso com a tampa do MacBook fechada, n&atilde;o um controle gen&eacute;rico de repouso para desktops.</li>
-</ul>
-<p>Como <code>disablesleep=1</code> impede tanto o repouso por inatividade quanto o repouso com a tampa fechada, o Mac continuar&aacute; ativo mesmo sem uso. Execute <code>rouse-lid off</code> assim que terminar.</p>
-<h2>Limites</h2>
-<ul>
-<li>Esta &eacute; uma solu&ccedil;&atilde;o alternativa avan&ccedil;ada para o terminal, n&atilde;o um recurso do produto enviado.</li>
-<li>Afeta o sono do sistema globalmente, n&atilde;o apenas o sono com a tampa fechada.</li>
-<li>&Eacute; separado da vers&atilde;o do Rouse na Mac App Store.</li>
-<li>A vers&atilde;o da Mac App Store n&atilde;o pode incluir esse caminho como um recurso compat&iacute;vel.</li>
-<li>O ajuste persiste ap&oacute;s reinicializa&ccedil;&otilde;es. Se voc&ecirc; esquecer de executar <code>rouse-lid off</code>, o Mac continuar&aacute; ignorando o repouso depois de reiniciar.</li>
-<li>Prefiro <code>rouse-lid off</code> assim que terminar.</li>
-</ul>
-<h2>Como remov&ecirc;-lo</h2>
-<ul>
-<li>Se o estado atual ainda mostrar <code>SleepDisabled = 1</code>, corra <code>rouse-lid off</code> primeiro. Se voc&ecirc; j&aacute; removeu a fun&ccedil;&atilde;o, voc&ecirc; pode executar <code>sudo pmset -a disablesleep 0</code> diretamente.</li>
-<li>Remova o <code>rouse-lid()</code> fun&ccedil;&atilde;o de <code>~/.zshrc</code> ou qualquer perfil de shell que voc&ecirc; usou e recarregue seu shell.</li>
-</ul>
-<h2>Sobre esta p&aacute;gina</h2>
-<p>A vers&atilde;o do Rouse na Mac App Store respeita os limites do App Sandbox. Esta p&aacute;gina documenta uma solu&ccedil;&atilde;o de Terminal para usu&aacute;rios avan&ccedil;ados que sabem alterar os ajustes de energia do sistema. A fun&ccedil;&atilde;o de shell <code>rouse-lid</code> mostrada aqui &eacute; um auxiliar independente salvo no perfil do shell; ela n&atilde;o faz parte da CLI da vers&atilde;o do Rouse na Mac App Store.</p>
-<div class="links">
-<a href="/rouse/pt-br/support/">Voltar ao suporte</a>
-<a href="/rouse/pt-br/">De volta ao Rouse</a>
-</div>
-</section>
+    </section>

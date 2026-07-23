@@ -56,12 +56,12 @@
       "twitterDescription": "Read how Rouse handles local preferences, command line communication, support requests, and Mac App Store data handling."
     },
     "en.clamshell": {
-      "title": "Rouse MacBook Lid-Close Sleep Terminal Workaround",
-      "description": "An advanced terminal workaround for manually controlling MacBook lid-close sleep with pmset, outside the Mac App Store version of Rouse.",
-      "ogTitle": "Rouse MacBook Lid-Close Sleep Terminal Workaround",
-      "ogDescription": "An advanced terminal workaround for manually controlling MacBook lid-close sleep with pmset, outside the Mac App Store version of Rouse.",
-      "twitterTitle": "Rouse MacBook Lid-Close Sleep Terminal Workaround",
-      "twitterDescription": "An advanced terminal workaround for manually controlling MacBook lid-close sleep with pmset, outside the Mac App Store version of Rouse."
+    "title": "Rouse Closed-Lid Support and Optional Helper",
+    "description": "Current pre-release status and safety model for the optional open-source Rouse Closed-Lid Helper, distributed separately from the Mac App Store app.",
+    "ogTitle": "Rouse Closed-Lid Support and Optional Helper",
+    "ogDescription": "Current pre-release status and safety model for the optional open-source Rouse Closed-Lid Helper, distributed separately from the Mac App Store app.",
+    "twitterTitle": "Rouse Closed-Lid Support and Optional Helper",
+    "twitterDescription": "Current pre-release status and safety model for the optional open-source Rouse Closed-Lid Helper, distributed separately from the Mac App Store app."
     },
     "de.landing": {
       "title": "Rouse | Wach bleiben am Mac",
@@ -119,12 +119,12 @@
       "twitterDescription": "Wie Rouse lokale Einstellungen, Befehlszeilen-Kommunikation, Support-Anfragen und Mac App Store Daten verarbeitet."
     },
     "de.clamshell": {
-      "title": "Rouse Terminal-Workaround für MacBook Deckel-Ruhezustand",
-      "description": "Ein fortgeschrittener Terminal-Workaround zum manuellen Steuern des MacBook Ruhezustands beim Schließen des Deckels mit pmset, außerhalb der Mac App Store Version von Rouse.",
-      "ogTitle": "Rouse Terminal-Workaround für MacBook Deckel-Ruhezustand",
-      "ogDescription": "Ein fortgeschrittener Terminal-Workaround für MacBook Deckel-Ruhezustand mit pmset, außerhalb der Mac App Store Version von Rouse.",
-      "twitterTitle": "Rouse Terminal-Workaround für MacBook Deckel-Ruhezustand",
-      "twitterDescription": "Ein fortgeschrittener Terminal-Workaround für MacBook Deckel-Ruhezustand mit pmset, außerhalb der Mac App Store Version von Rouse."
+    "title": "Rouse Unterstützung bei geschlossenem Deckel und optionaler Helfer",
+    "description": "Aktueller Vorabstatus und Sicherheitsmodell des optionalen Open-Source-Helfers, separat von der Mac App Store App.",
+    "ogTitle": "Rouse Unterstützung bei geschlossenem Deckel und optionaler Helfer",
+    "ogDescription": "Aktueller Vorabstatus und Sicherheitsmodell des optionalen Open-Source-Helfers, separat von der Mac App Store App.",
+    "twitterTitle": "Rouse Unterstützung bei geschlossenem Deckel und optionaler Helfer",
+    "twitterDescription": "Aktueller Vorabstatus und Sicherheitsmodell des optionalen Open-Source-Helfers, separat von der Mac App Store App."
     },
     "fr.landing": {
       "title": "Rouse | Garder le Mac éveillé",
@@ -182,12 +182,12 @@
       "twitterDescription": "Découvrez comment Rouse gère les préférences locales, la communication en ligne de commande, les demandes de support et les données Mac App Store."
     },
     "fr.clamshell": {
-      "title": "Solution Terminal Rouse pour la veille à la fermeture du MacBook",
-      "description": "Solution Terminal avancée pour contrôler manuellement la veille à la fermeture d’un MacBook avec pmset, hors de la version Mac App Store de Rouse.",
-      "ogTitle": "Solution Terminal Rouse pour la veille à la fermeture du MacBook",
-      "ogDescription": "Solution Terminal avancée pour contrôler manuellement la veille à la fermeture d’un MacBook avec pmset, hors de la version Mac App Store de Rouse.",
-      "twitterTitle": "Solution Terminal Rouse pour la veille à la fermeture du MacBook",
-      "twitterDescription": "Solution Terminal avancée pour contrôler manuellement la veille à la fermeture d’un MacBook avec pmset, hors de la version Mac App Store de Rouse."
+    "title": "Rouse écran fermé et assistant facultatif",
+    "description": "État de préversion et modèle de sécurité de l’assistant open source facultatif, distribué séparément de l’app Mac App Store.",
+    "ogTitle": "Rouse écran fermé et assistant facultatif",
+    "ogDescription": "État de préversion et modèle de sécurité de l’assistant open source facultatif, distribué séparément de l’app Mac App Store.",
+    "twitterTitle": "Rouse écran fermé et assistant facultatif",
+    "twitterDescription": "État de préversion et modèle de sécurité de l’assistant open source facultatif, distribué séparément de l’app Mac App Store."
     },
     "es.landing": {
       "title": "Rouse | Mantén activo tu Mac",
@@ -245,12 +245,12 @@
       "twitterDescription": "Lee cómo Rouse gestiona preferencias locales, comunicación de línea de comandos, solicitudes de soporte y datos del Mac App Store."
     },
     "es.clamshell": {
-      "title": "Solución de Terminal de Rouse para reposo al cerrar el MacBook",
-      "description": "Solución avanzada de Terminal para controlar manualmente el reposo al cerrar un MacBook con pmset, fuera de la versión del Mac App Store de Rouse.",
-      "ogTitle": "Solución de Terminal de Rouse para reposo al cerrar el MacBook",
-      "ogDescription": "Solución avanzada de Terminal para controlar manualmente el reposo al cerrar un MacBook con pmset, fuera de la versión del Mac App Store de Rouse.",
-      "twitterTitle": "Solución de Terminal de Rouse para reposo al cerrar el MacBook",
-      "twitterDescription": "Solución avanzada de Terminal para controlar manualmente el reposo al cerrar un MacBook con pmset, fuera de la versión del Mac App Store de Rouse."
+    "title": "Rouse con tapa cerrada y asistente opcional",
+    "description": "Estado preliminar y modelo de seguridad del asistente opcional de código abierto, distribuido por separado de la app del Mac App Store.",
+    "ogTitle": "Rouse con tapa cerrada y asistente opcional",
+    "ogDescription": "Estado preliminar y modelo de seguridad del asistente opcional de código abierto, distribuido por separado de la app del Mac App Store.",
+    "twitterTitle": "Rouse con tapa cerrada y asistente opcional",
+    "twitterDescription": "Estado preliminar y modelo de seguridad del asistente opcional de código abierto, distribuido por separado de la app del Mac App Store."
     },
     "ko.landing": {
       "title": "Rouse | Mac을 깨워 두기",
@@ -308,12 +308,12 @@
       "twitterDescription": "Rouse가 로컬 환경설정, 명령줄 통신, 지원 요청, Mac App Store 데이터 처리를 어떻게 다루는지 확인하세요."
     },
     "ko.clamshell": {
-      "title": "Rouse MacBook 덮개 닫힘 잠자기 Terminal 우회",
-      "description": "Mac App Store 버전의 Rouse 밖에서 pmset으로 MacBook 덮개 닫힘 잠자기를 수동 제어하는 고급 Terminal 우회 방법입니다.",
-      "ogTitle": "Rouse MacBook 덮개 닫힘 잠자기 Terminal 우회",
-      "ogDescription": "Mac App Store 버전의 Rouse 밖에서 pmset으로 MacBook 덮개 닫힘 잠자기를 수동 제어하는 고급 Terminal 우회 방법입니다.",
-      "twitterTitle": "Rouse MacBook 덮개 닫힘 잠자기 Terminal 우회",
-      "twitterDescription": "Mac App Store 버전의 Rouse 밖에서 pmset으로 MacBook 덮개 닫힘 잠자기를 수동 제어하는 고급 Terminal 우회 방법입니다."
+    "title": "Rouse 덮개 닫힘 지원과 선택형 도우미",
+    "description": "Mac App Store 앱과 별도로 배포되는 선택형 오픈 소스 도우미의 출시 전 상태와 안전 모델입니다.",
+    "ogTitle": "Rouse 덮개 닫힘 지원과 선택형 도우미",
+    "ogDescription": "Mac App Store 앱과 별도로 배포되는 선택형 오픈 소스 도우미의 출시 전 상태와 안전 모델입니다.",
+    "twitterTitle": "Rouse 덮개 닫힘 지원과 선택형 도우미",
+    "twitterDescription": "Mac App Store 앱과 별도로 배포되는 선택형 오픈 소스 도우미의 출시 전 상태와 안전 모델입니다."
     },
     "ja.landing": {
       "title": "Rouse | Macをスリープさせない",
@@ -371,12 +371,12 @@
       "twitterDescription": "Rouse のプライバシーポリシー。ローカル設定、コマンドライン通信、サポート連絡、Mac App Store 版のデータ取り扱いについて説明します。"
     },
     "ja.clamshell": {
-      "title": "Rouse MacBook 合蓋スリープ向けターミナル回避策",
-      "description": "Mac App Store 版の Rouse とは別に、pmset で MacBook の合蓋スリープを手動制御するための高度なターミナル回避策です。",
-      "ogTitle": "Rouse MacBook 合蓋スリープ向けターミナル回避策",
-      "ogDescription": "Mac App Store 版の Rouse とは別に、pmset で MacBook の合蓋スリープを手動制御するための高度なターミナル回避策です。",
-      "twitterTitle": "Rouse MacBook 合蓋スリープ向けターミナル回避策",
-      "twitterDescription": "Mac App Store 版の Rouse とは別に、pmset で MacBook の合蓋スリープを手動制御するための高度なターミナル回避策です。"
+    "title": "Rouse 合蓋サポートとオプションのヘルパー",
+    "description": "Mac App Store App とは別に配布するオープンソースのオプションヘルパーについて、現在のリリース前状況と安全設計を説明します。",
+    "ogTitle": "Rouse 合蓋サポートとオプションのヘルパー",
+    "ogDescription": "Mac App Store App とは別に配布するオープンソースのオプションヘルパーについて、現在のリリース前状況と安全設計を説明します。",
+    "twitterTitle": "Rouse 合蓋サポートとオプションのヘルパー",
+    "twitterDescription": "Mac App Store App とは別に配布するオープンソースのオプションヘルパーについて、現在のリリース前状況と安全設計を説明します。"
     },
     "zh-Hans.landing": {
       "title": "Rouse | 让 Mac 保持唤醒",
@@ -434,12 +434,12 @@
       "twitterDescription": "Rouse 隐私政策，说明本地偏好设置、命令行通信、支持请求以及 Mac App Store 版本的数据处理方式。"
     },
     "zh-Hans.clamshell": {
-      "title": "Rouse MacBook 合盖休眠终端方案",
-      "description": "一个基于 pmset 的高级终端方案，用于在 Mac App Store 版 Rouse 之外手动控制 MacBook 合盖休眠。",
-      "ogTitle": "Rouse MacBook 合盖休眠终端方案",
-      "ogDescription": "一个基于 pmset 的高级终端方案，用于在 Mac App Store 版 Rouse 之外手动控制 MacBook 合盖休眠。",
-      "twitterTitle": "Rouse MacBook 合盖休眠终端方案",
-      "twitterDescription": "一个基于 pmset 的高级终端方案，用于在 Mac App Store 版 Rouse 之外手动控制 MacBook 合盖休眠。"
+    "title": "Rouse 合盖支持与可选辅助工具",
+    "description": "介绍与 Mac App Store 应用分开分发的开源可选辅助工具目前的未发布状态和安全设计。",
+    "ogTitle": "Rouse 合盖支持与可选辅助工具",
+    "ogDescription": "介绍与 Mac App Store 应用分开分发的开源可选辅助工具目前的未发布状态和安全设计。",
+    "twitterTitle": "Rouse 合盖支持与可选辅助工具",
+    "twitterDescription": "介绍与 Mac App Store 应用分开分发的开源可选辅助工具目前的未发布状态和安全设计。"
     },
     "zh-Hant.landing": {
       "title": "Rouse | 讓 Mac 保持喚醒",
@@ -497,12 +497,12 @@
       "twitterDescription": "Rouse 隱私權政策，說明本地偏好設定、命令列通訊、支援請求以及 Mac App Store 版本的資料處理方式。"
     },
     "zh-Hant.clamshell": {
-      "title": "Rouse MacBook 合蓋休眠終端方案",
-      "description": "一個基於 pmset 的進階終端方案，用於在 Mac App Store 版 Rouse 之外手動控制 MacBook 合蓋休眠。",
-      "ogTitle": "Rouse MacBook 合蓋休眠終端方案",
-      "ogDescription": "一個基於 pmset 的進階終端方案，用於在 Mac App Store 版 Rouse 之外手動控制 MacBook 合蓋休眠。",
-      "twitterTitle": "Rouse MacBook 合蓋休眠終端方案",
-      "twitterDescription": "一個基於 pmset 的進階終端方案，用於在 Mac App Store 版 Rouse 之外手動控制 MacBook 合蓋休眠。"
+    "title": "Rouse 闔蓋支援與可選輔助工具",
+    "description": "介紹與 Mac App Store App 分開發佈的開源可選輔助工具目前的未發佈狀態和安全設計。",
+    "ogTitle": "Rouse 闔蓋支援與可選輔助工具",
+    "ogDescription": "介紹與 Mac App Store App 分開發佈的開源可選輔助工具目前的未發佈狀態和安全設計。",
+    "twitterTitle": "Rouse 闔蓋支援與可選輔助工具",
+    "twitterDescription": "介紹與 Mac App Store App 分開發佈的開源可選輔助工具目前的未發佈狀態和安全設計。"
     },
     "pt-BR.landing": {
       "title": "Rouse | Mantenha o Mac Ativo",
@@ -560,12 +560,12 @@
       "twitterDescription": "Saiba como o Rouse trata preferências locais, comunicação da linha de comando, pedidos de suporte e dados da Mac App Store."
     },
     "pt-BR.clamshell": {
-      "title": "Rouse: Solução por Terminal para Repouso ao Fechar o MacBook",
-      "description": "Uma solução avançada com pmset para controlar manualmente o repouso ao fechar o MacBook, fora da versão do Rouse na Mac App Store.",
-      "ogTitle": "Rouse: Solução por Terminal para Repouso ao Fechar o MacBook",
-      "ogDescription": "Uma solução avançada com pmset para controlar manualmente o repouso ao fechar o MacBook, fora da versão do Rouse na Mac App Store.",
-      "twitterTitle": "Rouse: Solução por Terminal para Repouso ao Fechar o MacBook",
-      "twitterDescription": "Uma solução avançada com pmset para controlar manualmente o repouso ao fechar o MacBook, fora da versão do Rouse na Mac App Store."
+    "title": "Rouse com tampa fechada e auxiliar opcional",
+    "description": "Status de pré-lançamento e modelo de segurança do auxiliar opcional de código aberto, distribuído separadamente do app da Mac App Store.",
+    "ogTitle": "Rouse com tampa fechada e auxiliar opcional",
+    "ogDescription": "Status de pré-lançamento e modelo de segurança do auxiliar opcional de código aberto, distribuído separadamente do app da Mac App Store.",
+    "twitterTitle": "Rouse com tampa fechada e auxiliar opcional",
+    "twitterDescription": "Status de pré-lançamento e modelo de segurança do auxiliar opcional de código aberto, distribuído separadamente do app da Mac App Store."
     }
   }
 }

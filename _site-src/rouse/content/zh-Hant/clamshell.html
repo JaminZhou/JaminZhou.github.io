@@ -1,65 +1,33 @@
     <section class="panel">
-      <div class="kicker">進階</div>
-      <h1>MacBook 合蓋休眠終端方案</h1>
-      <p class="meta">最後更新：2026 年 4 月 20 日</p>
-      <p>這頁記錄的是一個基於終端的進階方案，用來在 Mac App Store 版 Rouse 之外手動處理 MacBook 合蓋休眠。</p>
+      <div class="kicker">目前狀態</div>
+      <h1>闔蓋支援與可選輔助工具</h1>
+      <p class="meta">最後更新：2026 年 7 月 23 日</p>
+      <div class="warning"><strong>尚未發佈：</strong>目前沒有已簽署的輔助工具可供下載，請勿安裝未簽署的建置。只有實機安全矩陣通過後，本頁才會提供已簽署、公證的 DMG。</div>
+      <p>Mac App Store 版 Rouse 會繼續在沙盒中執行，也不會以 root 身分執行。它可透過 macOS 公開 API 阻止閒置系統睡眠和顯示器睡眠；但闔蓋運作需要系統層級電源修改，一般 Mac App Store App 無權直接完成。</p>
 
-      <div class="warning">
-        這是一個終端層面的方案，不是 macOS 官方支援的 API，也不是 Mac App Store 版 Rouse 的功能。它會修改系統層級的電源設定，而且需要管理員權限。具體表現可能因 Mac 機型和 macOS 版本而不同。
-      </div>
-      <p>Mac App Store 版不能把它做成功能，因為這條路線依賴管理員權限下的 <code>pmset</code> 系統電源修改，超出了商店版應用的正常沙盒邊界。</p>
+      <h2>預計使用方式</h2>
+      <ol>
+        <li>把獨立發佈的 <strong>Rouse 闔蓋輔助工具</strong> 放入「應用程式」檔案夾。</li>
+        <li>在「系統設定」中核准它的背景服務。輔助工具使用 Apple Service Management 框架，Rouse 不會收集管理員密碼。</li>
+        <li>在 Rouse 中開啟預設關閉的可選開關。只有 Rouse 喚醒工作階段作用中時，才會續期短租約。</li>
+      </ol>
+      <p>特權元件原始碼公開供檢視：<a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper">GitHub 上的 Rouse Closed-Lid Helper</a>。</p>
 
-      <h2>快捷命令</h2>
-      <p>把下面這段 function 加到你的 <code>~/.zshrc</code> 或其他 shell 設定裡：</p>
-      <pre><code>rouse-lid() {
-  case "$1" in
-    on)
-      sudo pmset -a disablesleep 1
-      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
-      ;;
-    off)
-      sudo pmset -a disablesleep 0
-      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
-      ;;
-    status)
-      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
-      ;;
-    *)
-      echo "usage: rouse-lid {on|off|status}"
-      return 1
-      ;;
-  esac
-}</code></pre>
-
-      <p>重新載入 shell 之後，就可以用 <code>rouse-lid on</code>、<code>rouse-lid off</code> 和 <code>rouse-lid status</code>。</p>
-
-      <h2>它實際做了什麼</h2>
+      <h2>安全設計</h2>
       <ul>
-        <li><code>rouse-lid on</code> 會執行 <code>sudo pmset -a disablesleep 1</code>。</li>
-        <li><code>rouse-lid off</code> 會用 <code>sudo pmset -a disablesleep 0</code> 恢復正常睡眠。</li>
-        <li><code>rouse-lid status</code> 會用更易讀的格式印出目前的 <code>SleepDisabled</code> 狀態。</li>
-        <li>這裡主要針對的是 MacBook 的合蓋休眠，不是泛用的桌面版睡眠開關。</li>
-      </ul>
-      <p>因為 <code>disablesleep=1</code> 會同時阻止閒置睡眠和合蓋睡眠，所以 Mac 在桌面閒置時也會保持喚醒。用完後請盡快執行 <code>rouse-lid off</code>。</p>
-
-      <h2>邊界</h2>
-      <ul>
-        <li>這是進階終端方案，不是正式產品功能。</li>
-        <li>它影響的是整個系統的睡眠行為，不只是合蓋睡眠。</li>
-        <li>它和 Mac App Store 版 Rouse 是分開的。</li>
-        <li>Mac App Store 版不能把這條路徑作為受支援功能內建進去。</li>
-        <li>該設定重啟後仍保留。如果忘了執行 <code>rouse-lid off</code>，你的 Mac 在重啟後仍會持續跳過閒置睡眠。</li>
-        <li>用完之後，最好盡快執行 <code>rouse-lid off</code>。</li>
+        <li>守護程式只提供固定的狀態、租約、釋放和還原操作，不提供 shell 或通用指令執行能力。</li>
+        <li>單次租約為 90 秒，上限 120 秒。Rouse 結束、連線中斷或停止續期後，覆寫設定會自動到期。</li>
+        <li>修改前會分別記錄每種電源來源的原始值；租約到期、連線中斷、重新啟動、移除或主動清理時，會還原這些精確值。</li>
+        <li>通訊前會驗證開發團隊簽章、Bundle ID、App Group 和協定版本。</li>
       </ul>
 
-      <h2>如何移除</h2>
-      <ul>
-        <li>如果目前仍顯示 <code>SleepDisabled = 1</code>，先執行 <code>rouse-lid off</code>；如果你已經刪掉了 function，也可以直接執行 <code>sudo pmset -a disablesleep 0</code>。</li>
-        <li>從 <code>~/.zshrc</code> 或你使用的 shell 設定裡刪掉 <code>rouse-lid()</code>，然後重新載入 shell。</li>
-      </ul>
+      <h2>發佈狀態</h2>
+      <p>實作已進入測試，但還不是受支援的公開功能。發佈前必須完成 Developer ID 簽署、公證、Gatekeeper 驗證，以及 Apple 晶片和 Intel 實機上的電源、電池、重新啟動、強制結束、守護程式故障、升級和移除測試。在這些檢查完成前，Rouse 和官網都不會承諾闔蓋運作可用。</p>
 
-      <h2>關於本頁</h2>
-      <p>Mac App Store 版 Rouse 專注在 App Sandbox 允許的範圍內。本頁面為熟悉系統電源設定修改的進階使用者提供終端層面的方案說明。本頁的 <code>rouse-lid</code> shell function 只是放在你 shell profile 裡的獨立 helper，不是 Mac App Store 版 Rouse 的命令列介面。</p>
+      <h2>僅供緊急還原</h2>
+      <p>正式發佈後應優先使用輔助工具中的「還原並移除服務」。如果輔助工具和守護程式在清理前已被刪除，而且 Mac 無法正常睡眠，管理員可以還原預設值：</p>
+      <pre><code>sudo pmset -a disablesleep 0</code></pre>
+      <p>這條緊急指令無法還原其他工具設定的非預設值；正常移除輔助工具時會還原先前擷取的精確值。</p>
 
       <div class="links">
         <a href="/rouse/zh-hant/support/">返回支援頁</a>
