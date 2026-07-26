@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rouse MacBook 合盖休眠终端方案</title>
-  <meta name="description" content="一个基于 pmset 的高级终端方案，用于在 Mac App Store 版 Rouse 之外手动控制 MacBook 合盖休眠。">
+  <title>Rouse 合盖支持与可选辅助工具</title>
+  <meta name="description" content="介绍与 Mac App Store 应用分开分发的开源可选辅助工具的发布状态、安全设计和延期测试。">
   <link rel="canonical" href="https://jaminzhou.com/rouse/zh-hans/support/clamshell/">
   <link rel="alternate" hreflang="en" href="https://jaminzhou.com/rouse/support/clamshell/">
   <link rel="alternate" hreflang="de" href="https://jaminzhou.com/rouse/de/support/clamshell/">
@@ -21,16 +21,16 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/rouse/favicon-32.png">
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/rouse/apple-touch-icon.png">
   <meta property="og:site_name" content="Rouse">
-  <meta property="og:title" content="Rouse MacBook 合盖休眠终端方案">
-  <meta property="og:description" content="一个基于 pmset 的高级终端方案，用于在 Mac App Store 版 Rouse 之外手动控制 MacBook 合盖休眠。">
+  <meta property="og:title" content="Rouse 合盖支持与可选辅助工具">
+  <meta property="og:description" content="介绍与 Mac App Store 应用分开分发的开源可选辅助工具的发布状态、安全设计和延期测试。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jaminzhou.com/rouse/zh-hans/support/clamshell/">
   <meta property="og:image" content="https://jaminzhou.com/rouse/app-icon.png">
   <meta property="og:image:width" content="1024">
   <meta property="og:image:height" content="1024">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Rouse MacBook 合盖休眠终端方案">
-  <meta name="twitter:description" content="一个基于 pmset 的高级终端方案，用于在 Mac App Store 版 Rouse 之外手动控制 MacBook 合盖休眠。">
+  <meta name="twitter:title" content="Rouse 合盖支持与可选辅助工具">
+  <meta name="twitter:description" content="介绍与 Mac App Store 应用分开分发的开源可选辅助工具的发布状态、安全设计和延期测试。">
   <meta name="twitter:image" content="https://jaminzhou.com/rouse/app-icon.png">
   <link rel="stylesheet" href="/garlicbird/styles.css?v=20260513-theme">
 </head>
@@ -57,67 +57,35 @@
     </nav>
 
     <section class="panel">
-      <div class="kicker">高级</div>
-      <h1>MacBook 合盖休眠终端方案</h1>
-      <p class="meta">最后更新：2026 年 4 月 20 日</p>
-      <p>这页记录的是一个基于终端的高级方案，用来在 Mac App Store 版 Rouse 之外手动处理 MacBook 合盖休眠。</p>
+      <div class="kicker">当前状态</div>
+      <h1>合盖支持与可选辅助工具</h1>
+      <p class="meta">最后更新：2026 年 7 月 26 日</p>
+      <div class="warning"><strong>Helper v1.0.0 已发布：</strong>请只从<a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/releases/tag/v1.0.0">官方 GitHub Release</a>下载 Developer ID 签名、Apple 公证的 DMG。应用内集成需要 Rouse 1.11 或更高版本；安装前请确认 Mac App Store 版本。</div>
+      <p>Mac App Store 版 Rouse 会继续保持沙盒运行，也不会以 root 身份执行。它可以通过 macOS 公开 API 阻止空闲系统睡眠和显示器睡眠；但合盖运行需要系统级电源修改，普通 Mac App Store 应用无权直接完成。</p>
 
-      <div class="warning">
-        这是一个终端层面的方案，不是 macOS 官方支持的 API，也不是 Mac App Store 版 Rouse 的功能。它会修改系统级电源设置，并且需要管理员权限。具体表现可能因 Mac 机型和 macOS 版本而不同。
-      </div>
-      <p>Mac App Store 版不能把它做成功能，因为这条路线依赖管理员权限下的 <code>pmset</code> 系统电源修改，超出了商店版应用的正常沙盒边界。</p>
+      <h2>安装与使用</h2>
+      <ol>
+        <li>把独立分发的 <strong>Rouse 合盖辅助工具</strong> 放入“应用程序”文件夹。</li>
+        <li>在“系统设置”中批准它的后台服务。辅助工具使用 Apple Service Management 框架，Rouse 不会收集管理员密码。</li>
+        <li>在 Rouse 中打开默认关闭的可选开关。只有 Rouse 唤醒会话处于活动状态时，才会续期短租约。</li>
+      </ol>
+      <p>特权组件源码在 <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper">GitHub 上的 Rouse Closed-Lid Helper</a> 公开接受审查；签名下载位于<a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/releases/tag/v1.0.0">官方 v1.0.0 Release</a>。</p>
 
-      <h2>快捷命令</h2>
-      <p>把下面这段 function 加到你的 <code>~/.zshrc</code> 或其他 shell 配置里：</p>
-      <pre><code>rouse-lid() {
-  case "$1" in
-    on)
-      sudo pmset -a disablesleep 1
-      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
-      ;;
-    off)
-      sudo pmset -a disablesleep 0
-      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
-      ;;
-    status)
-      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
-      ;;
-    *)
-      echo "usage: rouse-lid {on|off|status}"
-      return 1
-      ;;
-  esac
-}</code></pre>
-
-      <p>重新加载 shell 之后，就可以用 <code>rouse-lid on</code>、<code>rouse-lid off</code> 和 <code>rouse-lid status</code>。</p>
-
-      <h2>它实际做了什么</h2>
+      <h2>安全设计</h2>
       <ul>
-        <li><code>rouse-lid on</code> 会执行 <code>sudo pmset -a disablesleep 1</code>。</li>
-        <li><code>rouse-lid off</code> 会用 <code>sudo pmset -a disablesleep 0</code> 恢复正常睡眠。</li>
-        <li><code>rouse-lid status</code> 会用更易读的格式打印当前的 <code>SleepDisabled</code> 状态。</li>
-        <li>这里主要针对的是 MacBook 的合盖休眠，不是泛用的桌面版睡眠开关。</li>
-      </ul>
-      <p>因为 <code>disablesleep=1</code> 会同时阻止空闲睡眠和合盖睡眠，所以 Mac 在桌面闲置时也会保持唤醒。用完后请尽快执行 <code>rouse-lid off</code>。</p>
-
-      <h2>边界</h2>
-      <ul>
-        <li>这是高级终端方案，不是正式产品功能。</li>
-        <li>它影响的是整个系统的睡眠行为，不只是合盖睡眠。</li>
-        <li>它和 Mac App Store 版 Rouse 是分开的。</li>
-        <li>Mac App Store 版不能把这条路径作为受支持功能内置进去。</li>
-        <li>该设置重启后仍保留。如果忘了执行 <code>rouse-lid off</code>，你的 Mac 在重启后仍会持续跳过空闲睡眠。</li>
-        <li>用完之后，最好尽快执行 <code>rouse-lid off</code>。</li>
+        <li>守护进程只提供固定的状态、租约、释放和恢复操作，不提供 shell 或通用命令执行能力。</li>
+        <li>单次租约为 90 秒，上限 120 秒。Rouse 退出、断开连接或停止续期后，覆盖设置会自动到期。</li>
+        <li>修改前会分别记录每种电源来源的原始值；租约到期、连接中断、重启、移除或主动清理时，会恢复这些精确值。</li>
+        <li>通信前会校验开发团队签名、Bundle ID、App Group 和协议版本。</li>
       </ul>
 
-      <h2>如何移除</h2>
-      <ul>
-        <li>如果当前仍显示 <code>SleepDisabled = 1</code>，先执行 <code>rouse-lid off</code>；如果你已经删掉了 function，也可以直接运行 <code>sudo pmset -a disablesleep 0</code>。</li>
-        <li>从 <code>~/.zshrc</code> 或你使用的 shell 配置里删掉 <code>rouse-lid()</code>，然后重新加载 shell。</li>
-      </ul>
+      <h2>发布状态</h2>
+      <p>Helper v1.0.0 已签名、公证并公开发布。已验证签名版 Rouse TestFlight 集成、Universal 和 Rosetta 构建、有限租约恢复、设置精确还原，以及 Apple 芯片接通电源时的合盖运行。根据已记录的 v1.0.0 版本例外，电池与电源切换、主动睡眠和低电量保护、守护进程强制重启、完整重启与关机、干净账户下的公开产物验证、原地升级仍为延期且未记为通过。<a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/blob/v1.0.0/docs/releasing.md#v100-recorded-validation-exception">查看准确证据和延期清单</a>。</p>
 
-      <h2>关于本页</h2>
-      <p>Mac App Store 版 Rouse 专注在 App Sandbox 允许的范围内。本页面为熟悉系统电源设置修改的进阶用户提供终端层面的方案说明。本页的 <code>rouse-lid</code> shell function 只是放在你 shell profile 里的独立 helper，不是 Mac App Store 版 Rouse 的命令行接口。</p>
+      <h2>恢复与移除</h2>
+      <p>应优先使用辅助工具里的“恢复并移除服务”。如果辅助工具和守护进程在清理前已被删除，而且 Mac 无法正常睡眠，管理员可以恢复默认值：</p>
+      <pre><code>sudo pmset -a disablesleep 0</code></pre>
+      <p>这条紧急命令无法还原其他工具设置的非默认值；正常移除辅助工具时会恢复之前捕获的精确值。</p>
 
       <div class="links">
         <a href="/rouse/zh-hans/support/">返回支持页</a>

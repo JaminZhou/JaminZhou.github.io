@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rouse MacBook 合蓋スリープ向けターミナル回避策</title>
-  <meta name="description" content="Mac App Store 版の Rouse とは別に、pmset で MacBook の合蓋スリープを手動制御するための高度なターミナル回避策です。">
+  <title>Rouse 合蓋サポートとオプションのヘルパー</title>
+  <meta name="description" content="Mac App Store App とは別に配布するオープンソースのオプションヘルパーについて、公開状況、安全設計、延期した検証を説明します。">
   <link rel="canonical" href="https://jaminzhou.com/rouse/ja/support/clamshell/">
   <link rel="alternate" hreflang="en" href="https://jaminzhou.com/rouse/support/clamshell/">
   <link rel="alternate" hreflang="de" href="https://jaminzhou.com/rouse/de/support/clamshell/">
@@ -21,16 +21,16 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/rouse/favicon-32.png">
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/rouse/apple-touch-icon.png">
   <meta property="og:site_name" content="Rouse">
-  <meta property="og:title" content="Rouse MacBook 合蓋スリープ向けターミナル回避策">
-  <meta property="og:description" content="Mac App Store 版の Rouse とは別に、pmset で MacBook の合蓋スリープを手動制御するための高度なターミナル回避策です。">
+  <meta property="og:title" content="Rouse 合蓋サポートとオプションのヘルパー">
+  <meta property="og:description" content="Mac App Store App とは別に配布するオープンソースのオプションヘルパーについて、公開状況、安全設計、延期した検証を説明します。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jaminzhou.com/rouse/ja/support/clamshell/">
   <meta property="og:image" content="https://jaminzhou.com/rouse/app-icon.png">
   <meta property="og:image:width" content="1024">
   <meta property="og:image:height" content="1024">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Rouse MacBook 合蓋スリープ向けターミナル回避策">
-  <meta name="twitter:description" content="Mac App Store 版の Rouse とは別に、pmset で MacBook の合蓋スリープを手動制御するための高度なターミナル回避策です。">
+  <meta name="twitter:title" content="Rouse 合蓋サポートとオプションのヘルパー">
+  <meta name="twitter:description" content="Mac App Store App とは別に配布するオープンソースのオプションヘルパーについて、公開状況、安全設計、延期した検証を説明します。">
   <meta name="twitter:image" content="https://jaminzhou.com/rouse/app-icon.png">
   <link rel="stylesheet" href="/garlicbird/styles.css?v=20260513-theme">
 </head>
@@ -57,67 +57,35 @@
     </nav>
 
     <section class="panel">
-      <div class="kicker">高度な情報</div>
-      <h1>MacBook 合蓋スリープ向けターミナル回避策</h1>
-      <p class="meta">最終更新: 2026年4月20日</p>
-      <p>このページは、Mac App Store 版の Rouse とは別に、pmset で MacBook の合蓋スリープを手動制御するための高度なターミナル回避策をまとめたものです。</p>
+      <div class="kicker">現在の状況</div>
+      <h1>合蓋サポートとオプションのヘルパー</h1>
+      <p class="meta">最終更新: 2026年7月26日</p>
+      <div class="warning"><strong>Helper v1.0.0 公開済み:</strong> <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/releases/tag/v1.0.0">公式 GitHub リリース</a>から Developer ID 署名・Apple 公証済み DMG のみをダウンロードしてください。連携には Rouse 1.11 以降が必要です。設定前に Mac App Store のバージョンを確認してください。</div>
+      <p>Mac App Store 版 Rouse は引き続きサンドボックス内で動作し、root 権限では実行しません。公開 macOS API でアイドル時のシステムスリープとディスプレイスリープを防げますが、合蓋動作には通常の Mac App Store App が行えないシステム全体の電源変更が必要です。</p>
 
-      <div class="warning">
-        これはターミナルレベルの回避策であり、macOS の正式 API でも、Mac App Store 版 Rouse の機能でもありません。システム全体の電源設定を変更するため、管理者権限が必要です。挙動は Mac の機種や macOS のバージョンによって異なる場合があります。
-      </div>
-      <p>この回避策は管理者権限での <code>pmset</code> による電源設定変更に依存するため、Mac App Store 版では機能として同梱できません。</p>
+      <h2>設定手順</h2>
+      <ol>
+        <li>別途配布する <strong>Rouse Closed-Lid Helper</strong> をアプリケーションフォルダに置きます。</li>
+        <li>システム設定でバックグラウンドサービスを承認します。Apple の Service Management を使い、Rouse が管理者パスワードを収集することはありません。</li>
+        <li>Rouse で初期状態がオフのオプションを有効にします。Rouse の稼働セッション中だけ短いリースを更新します。</li>
+      </ol>
+      <p>特権コンポーネントのソースは <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper">GitHub の Rouse Closed-Lid Helper</a> で公開し、署名済みダウンロードは <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/releases/tag/v1.0.0">公式 v1.0.0 リリース</a>で提供しています。</p>
 
-      <h2>クイックコマンド</h2>
-      <p><code>~/.zshrc</code> などのシェル設定に次の関数を追加します。</p>
-      <pre><code>rouse-lid() {
-  case "$1" in
-    on)
-      sudo pmset -a disablesleep 1
-      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
-      ;;
-    off)
-      sudo pmset -a disablesleep 0
-      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
-      ;;
-    status)
-      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
-      ;;
-    *)
-      echo "usage: rouse-lid {on|off|status}"
-      return 1
-      ;;
-  esac
-}</code></pre>
-
-      <p>シェルを再読み込みしたら、<code>rouse-lid on</code>、<code>rouse-lid off</code>、<code>rouse-lid status</code> を使えます。</p>
-
-      <h2>実際にやっていること</h2>
+      <h2>安全設計</h2>
       <ul>
-        <li><code>rouse-lid on</code> は <code>sudo pmset -a disablesleep 1</code> を実行します。</li>
-        <li><code>rouse-lid off</code> は <code>sudo pmset -a disablesleep 0</code> で通常のスリープに戻します。</li>
-        <li><code>rouse-lid status</code> は現在の <code>SleepDisabled</code> 状態を読みやすい形式で表示します。</li>
-        <li>想定している用途は MacBook の合蓋スリープであり、一般的なデスクトップ向けのスリープ切り替えではありません。</li>
-      </ul>
-      <p><code>disablesleep=1</code> はアイドルスリープと合蓋スリープの両方を止めるため、デスク上で放置した Mac もスリープしません。使い終わったらできるだけ早く <code>rouse-lid off</code> を実行してください。</p>
-
-      <h2>境界</h2>
-      <ul>
-        <li>これは高度なターミナル回避策であり、正式に出荷する製品機能ではありません。</li>
-        <li>影響するのは合蓋時だけでなく、システム全体のスリープ設定です。</li>
-        <li>Mac App Store 版の Rouse とは別物です。</li>
-        <li>Mac App Store 版では、この経路をサポート機能として提供できません。</li>
-        <li>この設定は再起動後も保持されます。<code>rouse-lid off</code> を実行し忘れると、再起動後も Mac はアイドルスリープをスキップし続けます。</li>
-        <li>使い終わったら早めに <code>rouse-lid off</code> に戻すことを勧めます。</li>
+        <li>デーモンが提供するのは固定された状態確認、リース、解放、復元操作だけで、シェルや汎用コマンド実行機能はありません。</li>
+        <li>リースは 90 秒、上限は 120 秒です。Rouse の終了、切断、更新停止時には自動的に期限切れになります。</li>
+        <li>変更前に電源種別ごとの元の値を記録し、期限切れ、切断、再起動、削除、明示的なクリーンアップ時に正確な値を復元します。</li>
+        <li>通信前に開発チーム署名、Bundle ID、App Group、プロトコルバージョンを検証します。</li>
       </ul>
 
-      <h2>削除するには</h2>
-      <ul>
-        <li>現在の状態が <code>SleepDisabled = 1</code> のままなら、先に <code>rouse-lid off</code> を実行してください。関数を消してしまった場合は、<code>sudo pmset -a disablesleep 0</code> を直接実行しても戻せます。</li>
-        <li><code>~/.zshrc</code> などのシェル設定から <code>rouse-lid()</code> を削除し、シェルを再読み込みします。</li>
-      </ul>
+      <h2>リリース状況</h2>
+      <p>Helper v1.0.0 は署名・公証済みで公開されています。署名済み Rouse TestFlight 連携、Universal / Rosetta ビルド、上限付きリースの復旧、設定値の正確な復元、Apple シリコンで AC 電源使用時の合蓋動作を検証しました。記録済みの v1.0.0 例外により、バッテリー切り替え、明示的なスリープと低バッテリー保護、デーモンの強制再起動、システムの再起動と終了、クリーンアカウントでの公開アーティファクト検証、インプレース更新は延期され、合格として記録していません。<a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/blob/v1.0.0/docs/releasing.md#v100-recorded-validation-exception">正確な証拠と延期項目を確認</a>。</p>
 
-      <h2>このページについて</h2>
-      <p>Mac App Store 版の Rouse は、App Sandbox の範囲内で動作します。このページは、システム電源設定の変更に慣れた上級ユーザー向けに、ターミナルでの手順を記したものです。このページの <code>rouse-lid</code> シェル関数はシェル設定に置く独立したヘルパーであり、Mac App Store 版 Rouse の CLI ではありません。</p>
+      <h2>復旧と削除</h2>
+      <p>まずヘルパーの「復元してサービスを削除」を使ってください。クリーンアップ前にヘルパーとデーモンを削除し、Mac がスリープしなくなった場合のみ、管理者が既定値に戻せます。</p>
+      <pre><code>sudo pmset -a disablesleep 0</code></pre>
+      <p>この緊急コマンドでは、別のツールが設定した既定値以外の値を復元できません。通常の削除では記録した正確な値を復元します。</p>
 
       <div class="links">
         <a href="/rouse/ja/support/">サポートに戻る</a>

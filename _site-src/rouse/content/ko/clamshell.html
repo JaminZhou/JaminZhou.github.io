@@ -1,56 +1,29 @@
     <section class="panel">
-      <div class="kicker">고급</div>
-      <h1>MacBook 덮개 닫힘 잠자기 Terminal 우회</h1>
-      <p class="meta">마지막 업데이트: 2026년 4월 20일</p>
-      <p>이 페이지는 Mac App Store 버전의 Rouse 밖에서 MacBook 덮개 닫힘 잠자기를 수동으로 제어하는 고급 Terminal 우회 방법을 설명합니다.</p>
-      <div class="warning">이는 Terminal 수준의 우회 방법이며 공식 macOS API나 Rouse의 Mac App Store 기능이 아닙니다. 시스템 전체 전원 설정을 변경하고 관리자 권한이 필요합니다. Mac 모델과 macOS 버전에 따라 동작이 달라질 수 있습니다.</div>
-      <p>이 우회 방법은 일반 App Sandbox 경계 밖의 관리자 수준 <code>pmset</code> 전원 변경에 의존하므로 Mac App Store 빌드에 기능으로 포함할 수 없습니다.</p>
-      <h2>빠른 명령</h2>
-      <p>이 함수를 <code>~/.zshrc</code> 또는 다른 셸 프로필에 추가하세요.</p>
-      <pre><code>rouse-lid() {
-  case "$1" in
-    on)
-      sudo pmset -a disablesleep 1
-      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
-      ;;
-    off)
-      sudo pmset -a disablesleep 0
-      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
-      ;;
-    status)
-      pmset -g | awk '/^[[:space:]]*SleepDisabled[[:space:]]/ { print "SleepDisabled =", $2 }'
-      ;;
-    *)
-      echo "usage: rouse-lid {on|off|status}"
-      return 1
-      ;;
-  esac
-}</code></pre>
-      <p>셸을 다시 불러온 뒤 <code>rouse-lid on</code>, <code>rouse-lid off</code>, <code>rouse-lid status</code>를 사용하세요.</p>
-      <h2>실제로 하는 일</h2>
+      <div class="kicker">현재 상태</div>
+      <h1>덮개 닫힘 지원과 선택형 도우미</h1>
+      <p class="meta">마지막 업데이트: 2026년 7월 26일</p>
+      <div class="warning"><strong>Helper v1.0.0 출시:</strong> <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/releases/tag/v1.0.0">공식 GitHub 릴리스</a>에서 Developer ID 서명과 Apple 공증을 받은 DMG만 다운로드하세요. 연동에는 Rouse 1.11 이상이 필요하므로 설치 전에 Mac App Store 버전을 확인하세요.</div>
+      <p>Mac App Store 버전의 Rouse는 계속 샌드박스 안에서 실행되며 root로 실행되지 않습니다. 공개 macOS API로 유휴 시스템 및 디스플레이 잠자기를 막을 수 있지만, 덮개를 닫은 상태의 작동에는 일반 Mac App Store 앱이 수행할 수 없는 시스템 전체 전원 변경이 필요합니다.</p>
+      <h2>설치 방법</h2>
+      <ol>
+        <li>별도로 배포되는 <strong>Rouse Closed-Lid Helper</strong>를 응용 프로그램 폴더에 설치합니다.</li>
+        <li>시스템 설정에서 백그라운드 서비스를 승인합니다. Apple Service Management를 사용하며 Rouse는 관리자 암호를 수집하지 않습니다.</li>
+        <li>Rouse에서 기본값이 꺼진 선택 옵션을 켭니다. Rouse 세션이 활성 상태일 때만 짧은 임대를 갱신합니다.</li>
+      </ol>
+      <p>권한 구성 요소의 소스는 검토할 수 있도록 <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper">GitHub</a>에 공개되어 있으며, 서명된 다운로드는 <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/releases/tag/v1.0.0">공식 v1.0.0 릴리스</a>에서 제공합니다.</p>
+      <h2>안전 모델</h2>
       <ul>
-        <li><code>rouse-lid on</code>은 <code>sudo pmset -a disablesleep 1</code>을 실행합니다.</li>
-        <li><code>rouse-lid off</code>는 <code>sudo pmset -a disablesleep 0</code>으로 정상 잠자기를 복원합니다.</li>
-        <li><code>rouse-lid status</code>는 현재 <code>SleepDisabled</code> 상태를 읽기 쉬운 형식으로 출력합니다.</li>
-        <li>여기서 의도한 사용 사례는 일반 데스크톱 잠자기 토글이 아니라 MacBook 덮개 닫힘 잠자기입니다.</li>
+        <li>데몬은 고정된 상태, 임대, 해제, 복원 작업만 제공하며 셸이나 일반 명령 실행 기능은 제공하지 않습니다.</li>
+        <li>임대는 90초이며 최대 120초입니다. Rouse가 종료되거나 연결이 끊기거나 갱신을 멈추면 자동으로 만료됩니다.</li>
+        <li>변경 전에 전원 공급원별 원래 값을 기록하고 만료, 연결 해제, 재시동, 제거 또는 정리 시 정확히 복원합니다.</li>
+        <li>통신 전에 개발 팀 서명, Bundle ID, App Group 및 프로토콜 버전을 확인합니다.</li>
       </ul>
-      <p><code>disablesleep=1</code>은 유휴 잠자기와 덮개 닫힘 잠자기를 모두 막기 때문에, Mac을 그대로 둬도 계속 깨어 있습니다. 작업을 마치면 바로 <code>rouse-lid off</code>를 실행하세요.</p>
-      <h2>범위</h2>
-      <ul>
-        <li>제품에 포함된 기능이 아니라 고급 Terminal 우회 방법입니다.</li>
-        <li>덮개 닫힘뿐 아니라 시스템 잠자기 전체에 영향을 줍니다.</li>
-        <li>Mac App Store 버전의 Rouse와 분리되어 있습니다.</li>
-        <li>Mac App Store 빌드는 이 경로를 지원 기능으로 포함할 수 없습니다.</li>
-        <li>설정은 재시동 후에도 유지됩니다.</li>
-        <li>작업을 마치면 바로 <code>rouse-lid off</code>를 사용하는 것이 좋습니다.</li>
-      </ul>
-      <h2>제거 방법</h2>
-      <ul>
-        <li>현재 상태가 아직 <code>SleepDisabled = 1</code>이면 먼저 <code>rouse-lid off</code>를 실행하세요. 함수를 이미 제거했다면 <code>sudo pmset -a disablesleep 0</code>을 직접 실행할 수 있습니다.</li>
-        <li><code>~/.zshrc</code> 또는 사용한 셸 프로필에서 <code>rouse-lid()</code> 함수를 제거한 뒤 셸을 다시 불러오세요.</li>
-      </ul>
-      <h2>이 페이지에 대해</h2>
-      <p>Mac App Store 버전의 Rouse는 App Sandbox가 허용하는 범위 안에 머뭅니다. 이 페이지는 시스템 전원 설정 변경에 익숙한 고급 사용자를 위한 Terminal 수준 우회 방법을 설명합니다. 여기의 <code>rouse-lid</code> 셸 함수는 셸 프로필에 있는 독립 도우미이며 Mac App Store 버전 Rouse의 명령줄 인터페이스가 아닙니다.</p>
+      <h2>출시 상태</h2>
+      <p>Helper v1.0.0은 서명, 공증되어 공개되었습니다. 서명된 Rouse TestFlight 연동, 유니버설 및 Rosetta 빌드, 제한된 임대 복구, 정확한 설정 복원, Apple silicon에서 전원 연결 상태의 덮개 닫힘 작동을 검증했습니다. 문서화된 v1.0.0 예외에 따라 배터리 전환, 명시적 잠자기 및 배터리 부족 보호, 데몬 강제 재시작, 전체 재시동과 종료, 깨끗한 계정에서 공개 아티팩트 검증, 인플레이스 업데이트는 연기되었으며 통과로 기록하지 않습니다. <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/blob/v1.0.0/docs/releasing.md#v100-recorded-validation-exception">정확한 증거와 연기 항목 보기</a>.</p>
+      <h2>복구 및 제거</h2>
+      <p>먼저 도우미의 “복원 및 서비스 제거”를 사용하세요. 정리 전에 도우미와 데몬을 삭제했고 Mac이 잠자기 상태로 들어가지 않는 경우에만 관리자가 기본값을 복원할 수 있습니다.</p>
+      <pre><code>sudo pmset -a disablesleep 0</code></pre>
+      <p>이 긴급 명령은 다른 도구가 설정한 기본값이 아닌 값을 복원할 수 없습니다. 정상 제거는 기록한 정확한 값을 복원합니다.</p>
       <div class="links">
         <a href="/rouse/ko/support/">지원으로 돌아가기</a>
         <a href="/rouse/ko/">Rouse로 돌아가기</a>
