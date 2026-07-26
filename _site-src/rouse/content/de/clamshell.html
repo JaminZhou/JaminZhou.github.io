@@ -1,16 +1,16 @@
     <section class="panel">
       <div class="kicker">Status</div>
       <h1>Unterstützung bei geschlossenem Deckel und optionaler Helfer</h1>
-      <p class="meta">Zuletzt aktualisiert: 23. Juli 2026</p>
-      <div class="warning"><strong>Vorabversion:</strong> Es gibt noch keinen signierten Helfer zum Herunterladen. Installiere keine unsignierten Builds. Eine signierte und notarisierte DMG wird erst nach bestandener Sicherheitsmatrix auf echten Macs verlinkt.</div>
+      <p class="meta">Zuletzt aktualisiert: 26. Juli 2026</p>
+      <div class="warning"><strong>Helper v1.0.0 ist verfügbar:</strong> Lade nur das Developer-ID-signierte und von Apple notarisierte DMG aus der <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/releases/tag/v1.0.0">offiziellen GitHub-Veröffentlichung</a>. Die Integration benötigt Rouse 1.11 oder neuer; prüfe vor der Einrichtung die Version im Mac App Store.</div>
       <p>Die Mac App Store Version von Rouse bleibt in der Sandbox und läuft nie als root. Über öffentliche macOS APIs kann sie Leerlauf- und Display-Ruhezustand verhindern. Der Betrieb bei geschlossenem Deckel erfordert jedoch eine systemweite Energieänderung, die eine normale Mac App Store App nicht vornehmen darf.</p>
-      <h2>Geplanter Ablauf</h2>
+      <h2>Einrichtung</h2>
       <ol>
         <li>Den separat verteilten <strong>Rouse Closed-Lid Helper</strong> im Programme-Ordner installieren.</li>
         <li>Seinen Hintergrunddienst in den Systemeinstellungen genehmigen. Der Helfer nutzt Apples Service Management; Rouse erfasst kein Administratorpasswort.</li>
         <li>Die optionale, standardmäßig deaktivierte Einstellung in Rouse aktivieren. Kurze Berechtigungen werden nur während einer aktiven Rouse-Sitzung erneuert.</li>
       </ol>
-      <p>Der privilegierte Quellcode ist zur Prüfung auf <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper">GitHub</a> öffentlich.</p>
+      <p>Der privilegierte Quellcode ist zur Prüfung auf <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper">GitHub</a> öffentlich; der signierte Download steht in der <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/releases/tag/v1.0.0">offiziellen v1.0.0-Veröffentlichung</a>.</p>
       <h2>Sicherheitsmodell</h2>
       <ul>
         <li>Der Daemon bietet nur feste Status-, Berechtigungs-, Freigabe- und Wiederherstellungsaktionen, keine Shell oder allgemeine Befehlsausführung.</li>
@@ -19,9 +19,9 @@
         <li>Entwicklerteam-Signatur, Bundle-IDs, App Group und Protokollversion werden vor der Kommunikation geprüft.</li>
       </ul>
       <h2>Veröffentlichungsstatus</h2>
-      <p>Die Implementierung wird getestet, ist aber noch keine unterstützte öffentliche Funktion. Vor der Freigabe sind Developer-ID-Signierung, Notarisierung, Gatekeeper-Prüfung sowie Apple-Silicon- und Intel-Tests für Netzbetrieb, Batterie, Neustart, erzwungenes Beenden, Daemon-Ausfall, Update und Entfernung erforderlich. Bis dahin wird der Betrieb bei geschlossenem Deckel nicht versprochen.</p>
-      <h2>Nur zur Notfallwiederherstellung</h2>
-      <p>Nach der Veröffentlichung zuerst „Wiederherstellen &amp; Dienst entfernen“ im Helfer verwenden. Wurden Helfer und Daemon vor der Bereinigung gelöscht und der Mac schläft nicht mehr, kann ein Administrator den Standard wiederherstellen:</p>
+      <p>Helper v1.0.0 ist signiert, notarisiert und öffentlich. Verifiziert wurden die signierte Rouse-TestFlight-Integration, Universal- und Rosetta-Builds, begrenzte Lease-Wiederherstellung, exakte Einstellungswiederherstellung und der Betrieb bei geschlossenem Deckel unter Netzstrom auf Apple silicon. Im dokumentierten v1.0.0-Ausnahmefall bleiben Batterieübergänge, expliziter Ruhezustand und Akkuschutz, erzwungener Daemon-Neustart, vollständiger Neustart und Ausschalten, Prüfung des veröffentlichten Artefakts in einem sauberen Konto sowie ein direktes Update aufgeschoben und nicht als bestanden vermerkt. <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/blob/v1.0.0/docs/releasing.md#v100-recorded-validation-exception">Genaue Nachweise und Aufschübe lesen</a>.</p>
+      <h2>Wiederherstellung und Entfernung</h2>
+      <p>Zuerst „Wiederherstellen &amp; Dienst entfernen“ im Helfer verwenden. Wurden Helfer und Daemon vor der Bereinigung gelöscht und der Mac schläft nicht mehr, kann ein Administrator den Standard wiederherstellen:</p>
       <pre><code>sudo pmset -a disablesleep 0</code></pre>
       <p>Dieser Notfallbefehl kann einen von einem anderen Tool gesetzten Nichtstandardwert nicht rekonstruieren. Die normale Entfernung stellt die exakt gespeicherten Werte wieder her.</p>
       <div class="links">

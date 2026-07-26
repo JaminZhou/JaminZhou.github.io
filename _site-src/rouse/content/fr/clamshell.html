@@ -1,16 +1,16 @@
     <section class="panel">
       <div class="kicker">État</div>
       <h1>Prise en charge écran fermé et assistant facultatif</h1>
-      <p class="meta">Dernière mise à jour : 23 juillet 2026</p>
-      <div class="warning"><strong>Préversion :</strong> aucun assistant signé n’est encore disponible. N’installez pas de build non signé. Un DMG signé et notarié sera proposé uniquement après validation de la matrice de sécurité sur de vrais Mac.</div>
+      <p class="meta">Dernière mise à jour : 26 juillet 2026</p>
+      <div class="warning"><strong>Helper v1.0.0 est disponible :</strong> téléchargez uniquement le DMG signé Developer ID et notarié par Apple depuis la <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/releases/tag/v1.0.0">version GitHub officielle</a>. L’intégration exige Rouse 1.11 ou version ultérieure ; vérifiez la version du Mac App Store avant l’installation.</div>
       <p>La version Mac App Store de Rouse reste dans l’App Sandbox et ne s’exécute jamais en root. Elle peut empêcher la veille inactive du système et de l’écran via les API publiques de macOS, mais le fonctionnement écran fermé exige une modification d’alimentation globale interdite à une app Mac App Store ordinaire.</p>
-      <h2>Parcours prévu</h2>
+      <h2>Installation</h2>
       <ol>
         <li>Installer le <strong>Rouse Closed-Lid Helper</strong>, distribué séparément, dans Applications.</li>
         <li>Autoriser son service en arrière-plan dans Réglages Système. L’assistant utilise Service Management d’Apple et Rouse ne recueille aucun mot de passe administrateur.</li>
         <li>Activer l’option facultative, désactivée par défaut, dans Rouse. Les autorisations courtes ne sont renouvelées que pendant une session Rouse active.</li>
       </ol>
-      <p>Le code privilégié est public pour examen sur <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper">GitHub</a>.</p>
+      <p>Le code privilégié est public pour examen sur <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper">GitHub</a> ; le téléchargement signé se trouve dans la <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/releases/tag/v1.0.0">version v1.0.0 officielle</a>.</p>
       <h2>Modèle de sécurité</h2>
       <ul>
         <li>Le daemon n’expose que des opérations fixes d’état, d’autorisation, de libération et de restauration, sans shell ni exécution générale de commandes.</li>
@@ -19,9 +19,9 @@
         <li>La signature de l’équipe, les identifiants de bundle, l’App Group et la version du protocole sont vérifiés avant toute communication.</li>
       </ul>
       <h2>État de la publication</h2>
-      <p>L’implémentation est en test, mais n’est pas encore une fonction publique prise en charge. La publication exige une signature Developer ID, la notarisation, la vérification Gatekeeper et des tests Apple silicon et Intel couvrant secteur, batterie, redémarrage, fermeture forcée, panne du daemon, mise à jour et suppression. Le fonctionnement écran fermé n’est pas promis avant leur réussite.</p>
-      <h2>Récupération d’urgence uniquement</h2>
-      <p>Après publication, utilisez d’abord « Restaurer et supprimer le service » dans l’assistant. Si l’assistant et le daemon ont été supprimés avant le nettoyage et que le Mac refuse de se mettre en veille, un administrateur peut restaurer la valeur par défaut :</p>
+      <p>Helper v1.0.0 est signé, notarié et public. L’intégration Rouse TestFlight signée, les builds universel et Rosetta, la récupération par bail borné, la restauration exacte des réglages et le fonctionnement écran fermé sur secteur avec Apple silicon ont été vérifiés. Selon l’exception v1.0.0 documentée, les transitions sur batterie, la mise en veille explicite et la protection de batterie faible, le redémarrage forcé du daemon, le redémarrage et l’arrêt complets, la validation de l’artefact publié sur un compte propre et la mise à jour sur place restent reportés et ne sont pas notés comme réussis. <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/blob/v1.0.0/docs/releasing.md#v100-recorded-validation-exception">Consulter les preuves et reports exacts</a>.</p>
+      <h2>Récupération et suppression</h2>
+      <p>Utilisez d’abord « Restaurer et supprimer le service » dans l’assistant. Si l’assistant et le daemon ont été supprimés avant le nettoyage et que le Mac refuse de se mettre en veille, un administrateur peut restaurer la valeur par défaut :</p>
       <pre><code>sudo pmset -a disablesleep 0</code></pre>
       <p>Cette commande d’urgence ne peut pas reconstituer une valeur non standard définie par un autre outil. La suppression normale restaure les valeurs exactes enregistrées.</p>
       <div class="links">

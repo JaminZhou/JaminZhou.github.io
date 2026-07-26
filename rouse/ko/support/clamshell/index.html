@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rouse 덮개 닫힘 지원과 선택형 도우미</title>
-  <meta name="description" content="Mac App Store 앱과 별도로 배포되는 선택형 오픈 소스 도우미의 출시 전 상태와 안전 모델입니다.">
+  <meta name="description" content="Mac App Store 앱과 별도로 배포되는 선택형 오픈 소스 도우미의 출시 상태, 안전 모델 및 연기된 검사입니다.">
   <link rel="canonical" href="https://jaminzhou.com/rouse/ko/support/clamshell/">
   <link rel="alternate" hreflang="en" href="https://jaminzhou.com/rouse/support/clamshell/">
   <link rel="alternate" hreflang="de" href="https://jaminzhou.com/rouse/de/support/clamshell/">
@@ -22,7 +22,7 @@
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/rouse/apple-touch-icon.png">
   <meta property="og:site_name" content="Rouse">
   <meta property="og:title" content="Rouse 덮개 닫힘 지원과 선택형 도우미">
-  <meta property="og:description" content="Mac App Store 앱과 별도로 배포되는 선택형 오픈 소스 도우미의 출시 전 상태와 안전 모델입니다.">
+  <meta property="og:description" content="Mac App Store 앱과 별도로 배포되는 선택형 오픈 소스 도우미의 출시 상태, 안전 모델 및 연기된 검사입니다.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jaminzhou.com/rouse/ko/support/clamshell/">
   <meta property="og:image" content="https://jaminzhou.com/rouse/app-icon.png">
@@ -30,7 +30,7 @@
   <meta property="og:image:height" content="1024">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Rouse 덮개 닫힘 지원과 선택형 도우미">
-  <meta name="twitter:description" content="Mac App Store 앱과 별도로 배포되는 선택형 오픈 소스 도우미의 출시 전 상태와 안전 모델입니다.">
+  <meta name="twitter:description" content="Mac App Store 앱과 별도로 배포되는 선택형 오픈 소스 도우미의 출시 상태, 안전 모델 및 연기된 검사입니다.">
   <meta name="twitter:image" content="https://jaminzhou.com/rouse/app-icon.png">
   <link rel="stylesheet" href="/garlicbird/styles.css?v=20260513-theme">
 </head>
@@ -59,16 +59,16 @@
     <section class="panel">
       <div class="kicker">현재 상태</div>
       <h1>덮개 닫힘 지원과 선택형 도우미</h1>
-      <p class="meta">마지막 업데이트: 2026년 7월 23일</p>
-      <div class="warning"><strong>출시 전:</strong> 아직 서명된 도우미 다운로드가 없습니다. 서명되지 않은 빌드는 설치하지 마세요. 실제 Mac 안전성 검증이 끝난 뒤에만 서명 및 공증된 DMG를 제공합니다.</div>
+      <p class="meta">마지막 업데이트: 2026년 7월 26일</p>
+      <div class="warning"><strong>Helper v1.0.0 출시:</strong> <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/releases/tag/v1.0.0">공식 GitHub 릴리스</a>에서 Developer ID 서명과 Apple 공증을 받은 DMG만 다운로드하세요. 연동에는 Rouse 1.11 이상이 필요하므로 설치 전에 Mac App Store 버전을 확인하세요.</div>
       <p>Mac App Store 버전의 Rouse는 계속 샌드박스 안에서 실행되며 root로 실행되지 않습니다. 공개 macOS API로 유휴 시스템 및 디스플레이 잠자기를 막을 수 있지만, 덮개를 닫은 상태의 작동에는 일반 Mac App Store 앱이 수행할 수 없는 시스템 전체 전원 변경이 필요합니다.</p>
-      <h2>예정된 사용 흐름</h2>
+      <h2>설치 방법</h2>
       <ol>
         <li>별도로 배포되는 <strong>Rouse Closed-Lid Helper</strong>를 응용 프로그램 폴더에 설치합니다.</li>
         <li>시스템 설정에서 백그라운드 서비스를 승인합니다. Apple Service Management를 사용하며 Rouse는 관리자 암호를 수집하지 않습니다.</li>
         <li>Rouse에서 기본값이 꺼진 선택 옵션을 켭니다. Rouse 세션이 활성 상태일 때만 짧은 임대를 갱신합니다.</li>
       </ol>
-      <p>권한 구성 요소의 소스는 검토할 수 있도록 <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper">GitHub</a>에 공개되어 있습니다.</p>
+      <p>권한 구성 요소의 소스는 검토할 수 있도록 <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper">GitHub</a>에 공개되어 있으며, 서명된 다운로드는 <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/releases/tag/v1.0.0">공식 v1.0.0 릴리스</a>에서 제공합니다.</p>
       <h2>안전 모델</h2>
       <ul>
         <li>데몬은 고정된 상태, 임대, 해제, 복원 작업만 제공하며 셸이나 일반 명령 실행 기능은 제공하지 않습니다.</li>
@@ -77,9 +77,9 @@
         <li>통신 전에 개발 팀 서명, Bundle ID, App Group 및 프로토콜 버전을 확인합니다.</li>
       </ul>
       <h2>출시 상태</h2>
-      <p>구현은 테스트 중이지만 아직 지원되는 공개 기능은 아닙니다. Developer ID 서명, 공증, Gatekeeper 확인과 Apple Silicon 및 Intel 실제 기기에서 전원, 배터리, 재시동, 강제 종료, 데몬 장애, 업데이트, 제거 테스트를 통과해야 출시합니다. 그전에는 덮개 닫힘 작동을 보장하지 않습니다.</p>
-      <h2>긴급 복구 전용</h2>
-      <p>출시 후에는 먼저 도우미의 “복원 및 서비스 제거”를 사용하세요. 정리 전에 도우미와 데몬을 삭제했고 Mac이 잠자기 상태로 들어가지 않는 경우에만 관리자가 기본값을 복원할 수 있습니다.</p>
+      <p>Helper v1.0.0은 서명, 공증되어 공개되었습니다. 서명된 Rouse TestFlight 연동, 유니버설 및 Rosetta 빌드, 제한된 임대 복구, 정확한 설정 복원, Apple silicon에서 전원 연결 상태의 덮개 닫힘 작동을 검증했습니다. 문서화된 v1.0.0 예외에 따라 배터리 전환, 명시적 잠자기 및 배터리 부족 보호, 데몬 강제 재시작, 전체 재시동과 종료, 깨끗한 계정에서 공개 아티팩트 검증, 인플레이스 업데이트는 연기되었으며 통과로 기록하지 않습니다. <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/blob/v1.0.0/docs/releasing.md#v100-recorded-validation-exception">정확한 증거와 연기 항목 보기</a>.</p>
+      <h2>복구 및 제거</h2>
+      <p>먼저 도우미의 “복원 및 서비스 제거”를 사용하세요. 정리 전에 도우미와 데몬을 삭제했고 Mac이 잠자기 상태로 들어가지 않는 경우에만 관리자가 기본값을 복원할 수 있습니다.</p>
       <pre><code>sudo pmset -a disablesleep 0</code></pre>
       <p>이 긴급 명령은 다른 도구가 설정한 기본값이 아닌 값을 복원할 수 없습니다. 정상 제거는 기록한 정확한 값을 복원합니다.</p>
       <div class="links">

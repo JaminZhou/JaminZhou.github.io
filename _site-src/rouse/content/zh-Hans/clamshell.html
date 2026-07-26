@@ -1,17 +1,17 @@
     <section class="panel">
       <div class="kicker">当前状态</div>
       <h1>合盖支持与可选辅助工具</h1>
-      <p class="meta">最后更新：2026 年 7 月 23 日</p>
-      <div class="warning"><strong>尚未发布：</strong>目前没有已签名的辅助工具可供下载，请勿安装未签名构建。只有真机安全矩阵通过后，本页才会提供已签名、公证的 DMG。</div>
+      <p class="meta">最后更新：2026 年 7 月 26 日</p>
+      <div class="warning"><strong>Helper v1.0.0 已发布：</strong>请只从<a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/releases/tag/v1.0.0">官方 GitHub Release</a>下载 Developer ID 签名、Apple 公证的 DMG。应用内集成需要 Rouse 1.11 或更高版本；安装前请确认 Mac App Store 版本。</div>
       <p>Mac App Store 版 Rouse 会继续保持沙盒运行，也不会以 root 身份执行。它可以通过 macOS 公开 API 阻止空闲系统睡眠和显示器睡眠；但合盖运行需要系统级电源修改，普通 Mac App Store 应用无权直接完成。</p>
 
-      <h2>计划使用方式</h2>
+      <h2>安装与使用</h2>
       <ol>
         <li>把独立分发的 <strong>Rouse 合盖辅助工具</strong> 放入“应用程序”文件夹。</li>
         <li>在“系统设置”中批准它的后台服务。辅助工具使用 Apple Service Management 框架，Rouse 不会收集管理员密码。</li>
         <li>在 Rouse 中打开默认关闭的可选开关。只有 Rouse 唤醒会话处于活动状态时，才会续期短租约。</li>
       </ol>
-      <p>特权组件源码会公开接受审查：<a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper">GitHub 上的 Rouse Closed-Lid Helper</a>。</p>
+      <p>特权组件源码在 <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper">GitHub 上的 Rouse Closed-Lid Helper</a> 公开接受审查；签名下载位于<a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/releases/tag/v1.0.0">官方 v1.0.0 Release</a>。</p>
 
       <h2>安全设计</h2>
       <ul>
@@ -22,10 +22,10 @@
       </ul>
 
       <h2>发布状态</h2>
-      <p>实现已经进入测试，但还不是受支持的公开功能。发布前必须完成 Developer ID 签名、公证、Gatekeeper 验证，以及 Apple 芯片和 Intel 真机上的电源、电池、重启、强制退出、守护进程故障、升级和移除测试。在这些检查完成前，Rouse 和官网都不会承诺合盖运行可用。</p>
+      <p>Helper v1.0.0 已签名、公证并公开发布。已验证签名版 Rouse TestFlight 集成、Universal 和 Rosetta 构建、有限租约恢复、设置精确还原，以及 Apple 芯片接通电源时的合盖运行。根据已记录的 v1.0.0 版本例外，电池与电源切换、主动睡眠和低电量保护、守护进程强制重启、完整重启与关机、干净账户下的公开产物验证、原地升级仍为延期且未记为通过。<a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/blob/v1.0.0/docs/releasing.md#v100-recorded-validation-exception">查看准确证据和延期清单</a>。</p>
 
-      <h2>仅用于紧急恢复</h2>
-      <p>正式发布后应优先使用辅助工具里的“恢复并移除服务”。如果辅助工具和守护进程在清理前已被删除，而且 Mac 无法正常睡眠，管理员可以恢复默认值：</p>
+      <h2>恢复与移除</h2>
+      <p>应优先使用辅助工具里的“恢复并移除服务”。如果辅助工具和守护进程在清理前已被删除，而且 Mac 无法正常睡眠，管理员可以恢复默认值：</p>
       <pre><code>sudo pmset -a disablesleep 0</code></pre>
       <p>这条紧急命令无法还原其他工具设置的非默认值；正常移除辅助工具时会恢复之前捕获的精确值。</p>
 

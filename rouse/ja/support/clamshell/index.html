@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rouse 合蓋サポートとオプションのヘルパー</title>
-  <meta name="description" content="Mac App Store App とは別に配布するオープンソースのオプションヘルパーについて、現在のリリース前状況と安全設計を説明します。">
+  <meta name="description" content="Mac App Store App とは別に配布するオープンソースのオプションヘルパーについて、公開状況、安全設計、延期した検証を説明します。">
   <link rel="canonical" href="https://jaminzhou.com/rouse/ja/support/clamshell/">
   <link rel="alternate" hreflang="en" href="https://jaminzhou.com/rouse/support/clamshell/">
   <link rel="alternate" hreflang="de" href="https://jaminzhou.com/rouse/de/support/clamshell/">
@@ -22,7 +22,7 @@
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/rouse/apple-touch-icon.png">
   <meta property="og:site_name" content="Rouse">
   <meta property="og:title" content="Rouse 合蓋サポートとオプションのヘルパー">
-  <meta property="og:description" content="Mac App Store App とは別に配布するオープンソースのオプションヘルパーについて、現在のリリース前状況と安全設計を説明します。">
+  <meta property="og:description" content="Mac App Store App とは別に配布するオープンソースのオプションヘルパーについて、公開状況、安全設計、延期した検証を説明します。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jaminzhou.com/rouse/ja/support/clamshell/">
   <meta property="og:image" content="https://jaminzhou.com/rouse/app-icon.png">
@@ -30,7 +30,7 @@
   <meta property="og:image:height" content="1024">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Rouse 合蓋サポートとオプションのヘルパー">
-  <meta name="twitter:description" content="Mac App Store App とは別に配布するオープンソースのオプションヘルパーについて、現在のリリース前状況と安全設計を説明します。">
+  <meta name="twitter:description" content="Mac App Store App とは別に配布するオープンソースのオプションヘルパーについて、公開状況、安全設計、延期した検証を説明します。">
   <meta name="twitter:image" content="https://jaminzhou.com/rouse/app-icon.png">
   <link rel="stylesheet" href="/garlicbird/styles.css?v=20260513-theme">
 </head>
@@ -59,17 +59,17 @@
     <section class="panel">
       <div class="kicker">現在の状況</div>
       <h1>合蓋サポートとオプションのヘルパー</h1>
-      <p class="meta">最終更新: 2026年7月23日</p>
-      <div class="warning"><strong>リリース前:</strong> 署名済みヘルパーのダウンロードはまだありません。未署名ビルドをインストールしないでください。実機の安全性テストが完了した後に限り、署名・公証済み DMG を掲載します。</div>
+      <p class="meta">最終更新: 2026年7月26日</p>
+      <div class="warning"><strong>Helper v1.0.0 公開済み:</strong> <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/releases/tag/v1.0.0">公式 GitHub リリース</a>から Developer ID 署名・Apple 公証済み DMG のみをダウンロードしてください。連携には Rouse 1.11 以降が必要です。設定前に Mac App Store のバージョンを確認してください。</div>
       <p>Mac App Store 版 Rouse は引き続きサンドボックス内で動作し、root 権限では実行しません。公開 macOS API でアイドル時のシステムスリープとディスプレイスリープを防げますが、合蓋動作には通常の Mac App Store App が行えないシステム全体の電源変更が必要です。</p>
 
-      <h2>予定している利用手順</h2>
+      <h2>設定手順</h2>
       <ol>
         <li>別途配布する <strong>Rouse Closed-Lid Helper</strong> をアプリケーションフォルダに置きます。</li>
         <li>システム設定でバックグラウンドサービスを承認します。Apple の Service Management を使い、Rouse が管理者パスワードを収集することはありません。</li>
         <li>Rouse で初期状態がオフのオプションを有効にします。Rouse の稼働セッション中だけ短いリースを更新します。</li>
       </ol>
-      <p>特権コンポーネントのソースは <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper">GitHub の Rouse Closed-Lid Helper</a> で公開しています。</p>
+      <p>特権コンポーネントのソースは <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper">GitHub の Rouse Closed-Lid Helper</a> で公開し、署名済みダウンロードは <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/releases/tag/v1.0.0">公式 v1.0.0 リリース</a>で提供しています。</p>
 
       <h2>安全設計</h2>
       <ul>
@@ -80,10 +80,10 @@
       </ul>
 
       <h2>リリース状況</h2>
-      <p>実装はテスト中ですが、まだ正式にサポートする公開機能ではありません。Developer ID 署名、公証、Gatekeeper 検証に加え、Apple シリコンと Intel 実機で AC、バッテリー、再起動、強制終了、デーモン障害、更新、削除を検証してから公開します。それまでは合蓋動作を保証しません。</p>
+      <p>Helper v1.0.0 は署名・公証済みで公開されています。署名済み Rouse TestFlight 連携、Universal / Rosetta ビルド、上限付きリースの復旧、設定値の正確な復元、Apple シリコンで AC 電源使用時の合蓋動作を検証しました。記録済みの v1.0.0 例外により、バッテリー切り替え、明示的なスリープと低バッテリー保護、デーモンの強制再起動、システムの再起動と終了、クリーンアカウントでの公開アーティファクト検証、インプレース更新は延期され、合格として記録していません。<a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/blob/v1.0.0/docs/releasing.md#v100-recorded-validation-exception">正確な証拠と延期項目を確認</a>。</p>
 
-      <h2>緊急復旧専用</h2>
-      <p>公開後は、まずヘルパーの「復元してサービスを削除」を使ってください。クリーンアップ前にヘルパーとデーモンを削除し、Mac がスリープしなくなった場合のみ、管理者が既定値に戻せます。</p>
+      <h2>復旧と削除</h2>
+      <p>まずヘルパーの「復元してサービスを削除」を使ってください。クリーンアップ前にヘルパーとデーモンを削除し、Mac がスリープしなくなった場合のみ、管理者が既定値に戻せます。</p>
       <pre><code>sudo pmset -a disablesleep 0</code></pre>
       <p>この緊急コマンドでは、別のツールが設定した既定値以外の値を復元できません。通常の削除では記録した正確な値を復元します。</p>
 

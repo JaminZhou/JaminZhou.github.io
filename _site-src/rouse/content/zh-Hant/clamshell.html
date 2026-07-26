@@ -1,17 +1,17 @@
     <section class="panel">
       <div class="kicker">目前狀態</div>
       <h1>闔蓋支援與可選輔助工具</h1>
-      <p class="meta">最後更新：2026 年 7 月 23 日</p>
-      <div class="warning"><strong>尚未發佈：</strong>目前沒有已簽署的輔助工具可供下載，請勿安裝未簽署的建置。只有實機安全矩陣通過後，本頁才會提供已簽署、公證的 DMG。</div>
+      <p class="meta">最後更新：2026 年 7 月 26 日</p>
+      <div class="warning"><strong>Helper v1.0.0 已發佈：</strong>請只從<a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/releases/tag/v1.0.0">官方 GitHub Release</a>下載 Developer ID 簽署、Apple 公證的 DMG。App 內整合需要 Rouse 1.11 或更新版本；安裝前請確認 Mac App Store 版本。</div>
       <p>Mac App Store 版 Rouse 會繼續在沙盒中執行，也不會以 root 身分執行。它可透過 macOS 公開 API 阻止閒置系統睡眠和顯示器睡眠；但闔蓋運作需要系統層級電源修改，一般 Mac App Store App 無權直接完成。</p>
 
-      <h2>預計使用方式</h2>
+      <h2>安裝與使用</h2>
       <ol>
         <li>把獨立發佈的 <strong>Rouse 闔蓋輔助工具</strong> 放入「應用程式」檔案夾。</li>
         <li>在「系統設定」中核准它的背景服務。輔助工具使用 Apple Service Management 框架，Rouse 不會收集管理員密碼。</li>
         <li>在 Rouse 中開啟預設關閉的可選開關。只有 Rouse 喚醒工作階段作用中時，才會續期短租約。</li>
       </ol>
-      <p>特權元件原始碼公開供檢視：<a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper">GitHub 上的 Rouse Closed-Lid Helper</a>。</p>
+      <p>特權元件原始碼在 <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper">GitHub 上的 Rouse Closed-Lid Helper</a> 公開供檢視；簽署下載位於<a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/releases/tag/v1.0.0">官方 v1.0.0 Release</a>。</p>
 
       <h2>安全設計</h2>
       <ul>
@@ -22,10 +22,10 @@
       </ul>
 
       <h2>發佈狀態</h2>
-      <p>實作已進入測試，但還不是受支援的公開功能。發佈前必須完成 Developer ID 簽署、公證、Gatekeeper 驗證，以及 Apple 晶片和 Intel 實機上的電源、電池、重新啟動、強制結束、守護程式故障、升級和移除測試。在這些檢查完成前，Rouse 和官網都不會承諾闔蓋運作可用。</p>
+      <p>Helper v1.0.0 已簽署、公證並公開發佈。已驗證簽署版 Rouse TestFlight 整合、Universal 和 Rosetta 建置、有限租約還原、設定精確還原，以及 Apple 晶片接通電源時的闔蓋運作。根據已記錄的 v1.0.0 版本例外，電池與電源切換、主動睡眠和低電量保護、守護程式強制重新啟動、完整重新啟動與關機、乾淨帳號下的公開產物驗證、原地升級仍為延期且未記為通過。<a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/blob/v1.0.0/docs/releasing.md#v100-recorded-validation-exception">查看準確證據和延期清單</a>。</p>
 
-      <h2>僅供緊急還原</h2>
-      <p>正式發佈後應優先使用輔助工具中的「還原並移除服務」。如果輔助工具和守護程式在清理前已被刪除，而且 Mac 無法正常睡眠，管理員可以還原預設值：</p>
+      <h2>還原與移除</h2>
+      <p>應優先使用輔助工具中的「還原並移除服務」。如果輔助工具和守護程式在清理前已被刪除，而且 Mac 無法正常睡眠，管理員可以還原預設值：</p>
       <pre><code>sudo pmset -a disablesleep 0</code></pre>
       <p>這條緊急指令無法還原其他工具設定的非預設值；正常移除輔助工具時會還原先前擷取的精確值。</p>
 

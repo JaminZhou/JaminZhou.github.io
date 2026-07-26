@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rouse Closed-Lid Support and Optional Helper</title>
-  <meta name="description" content="Current pre-release status and safety model for the optional open-source Rouse Closed-Lid Helper, distributed separately from the Mac App Store app.">
+  <meta name="description" content="Release status, safety model, and deferred coverage for the optional open-source Rouse Closed-Lid Helper, distributed separately from the Mac App Store app.">
   <link rel="canonical" href="https://jaminzhou.com/rouse/support/clamshell/">
   <link rel="alternate" hreflang="en" href="https://jaminzhou.com/rouse/support/clamshell/">
   <link rel="alternate" hreflang="de" href="https://jaminzhou.com/rouse/de/support/clamshell/">
@@ -22,7 +22,7 @@
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/rouse/apple-touch-icon.png">
   <meta property="og:site_name" content="Rouse">
   <meta property="og:title" content="Rouse Closed-Lid Support and Optional Helper">
-  <meta property="og:description" content="Current pre-release status and safety model for the optional open-source Rouse Closed-Lid Helper, distributed separately from the Mac App Store app.">
+  <meta property="og:description" content="Release status, safety model, and deferred coverage for the optional open-source Rouse Closed-Lid Helper, distributed separately from the Mac App Store app.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jaminzhou.com/rouse/support/clamshell/">
   <meta property="og:image" content="https://jaminzhou.com/rouse/app-icon.png">
@@ -30,7 +30,7 @@
   <meta property="og:image:height" content="1024">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Rouse Closed-Lid Support and Optional Helper">
-  <meta name="twitter:description" content="Current pre-release status and safety model for the optional open-source Rouse Closed-Lid Helper, distributed separately from the Mac App Store app.">
+  <meta name="twitter:description" content="Release status, safety model, and deferred coverage for the optional open-source Rouse Closed-Lid Helper, distributed separately from the Mac App Store app.">
   <meta name="twitter:image" content="https://jaminzhou.com/rouse/app-icon.png">
   <link rel="stylesheet" href="/garlicbird/styles.css?v=20260513-theme">
 </head>
@@ -59,17 +59,17 @@
     <section class="panel">
       <div class="kicker">Status</div>
       <h1>Closed-lid support and the optional Helper</h1>
-      <p class="meta">Last updated: July 23, 2026</p>
-      <div class="warning"><strong>Pre-release:</strong> there is no signed Helper download yet. Do not install unsigned builds. This page will link to a signed and notarized DMG only after the real-device safety matrix passes.</div>
+      <p class="meta">Last updated: July 26, 2026</p>
+      <div class="warning"><strong>Helper v1.0.0 is available:</strong> download only the Developer ID-signed and Apple-notarized DMG from the <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/releases/tag/v1.0.0">official GitHub release</a>. The integration requires Rouse 1.11 or later; check the Mac App Store version before setup.</div>
       <p>The Mac App Store version of Rouse remains sandboxed and never runs as root. It can prevent idle system and display sleep through public macOS APIs, but closed-lid operation requires a system-wide power change that a normal Mac App Store app cannot make.</p>
 
-      <h2>Planned flow</h2>
+      <h2>Setup flow</h2>
       <ol>
         <li>Install the separately distributed <strong>Rouse Closed-Lid Helper</strong> in Applications.</li>
         <li>Approve its background service in System Settings. The Helper uses Apple’s Service Management framework and never asks Rouse to collect a password.</li>
         <li>Enable the optional, default-off setting in Rouse. Rouse then renews short leases only while a wake session is active.</li>
       </ol>
-      <p>The privileged source is public for review at <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper">Rouse Closed-Lid Helper on GitHub</a>.</p>
+      <p>The privileged source is public for review at <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper">Rouse Closed-Lid Helper on GitHub</a>; use the <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/releases/tag/v1.0.0">official v1.0.0 release</a> for the signed download.</p>
 
       <h2>Safety model</h2>
       <ul>
@@ -80,10 +80,10 @@
       </ul>
 
       <h2>Release status</h2>
-      <p>The implementation is being tested, but it is not yet a supported public feature. Release requires Developer ID signing, notarization, Gatekeeper verification, and Apple silicon and Intel tests covering AC, battery, restart, force quit, daemon failure, update, and removal. Until those checks pass, Rouse and this site must not promise closed-lid operation.</p>
+      <p>Helper v1.0.0 is signed, notarized, and public. The signed Rouse TestFlight integration, universal and Rosetta builds, bounded lease recovery, exact settings restoration, and AC-powered closed-lid operation on Apple silicon were verified. Under the recorded v1.0.0 exception, battery transitions, explicit Sleep and low-battery behavior, forced daemon restart, full restart and shutdown, clean-account validation of the published artifact, and in-place update remain deferred and are not recorded as passed. <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/blob/v1.0.0/docs/releasing.md#v100-recorded-validation-exception">Read the exact evidence and deferred list</a>.</p>
 
-      <h2>Manual recovery only</h2>
-      <p>Once released, use the Helper’s <strong>Restore &amp; Remove Service</strong> action first. If the Helper and daemon were deleted before cleanup and the Mac refuses to sleep, an administrator can restore the default with:</p>
+      <h2>Recovery and removal</h2>
+      <p>Use the Helper’s <strong>Restore &amp; Remove Service</strong> action first. If the Helper and daemon were deleted before cleanup and the Mac refuses to sleep, an administrator can restore the default with:</p>
       <pre><code>sudo pmset -a disablesleep 0</code></pre>
       <p>This emergency command cannot reconstruct a non-default value set by another tool. Normal Helper removal restores the exact captured values.</p>
 

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rouse com tampa fechada e auxiliar opcional</title>
-  <meta name="description" content="Status de pré-lançamento e modelo de segurança do auxiliar opcional de código aberto, distribuído separadamente do app da Mac App Store.">
+  <meta name="description" content="Status de lançamento, modelo de segurança e testes adiados do auxiliar opcional de código aberto, distribuído separadamente do app da Mac App Store.">
   <link rel="canonical" href="https://jaminzhou.com/rouse/pt-br/support/clamshell/">
   <link rel="alternate" hreflang="en" href="https://jaminzhou.com/rouse/support/clamshell/">
   <link rel="alternate" hreflang="de" href="https://jaminzhou.com/rouse/de/support/clamshell/">
@@ -22,7 +22,7 @@
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/rouse/apple-touch-icon.png">
   <meta property="og:site_name" content="Rouse">
   <meta property="og:title" content="Rouse com tampa fechada e auxiliar opcional">
-  <meta property="og:description" content="Status de pré-lançamento e modelo de segurança do auxiliar opcional de código aberto, distribuído separadamente do app da Mac App Store.">
+  <meta property="og:description" content="Status de lançamento, modelo de segurança e testes adiados do auxiliar opcional de código aberto, distribuído separadamente do app da Mac App Store.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jaminzhou.com/rouse/pt-br/support/clamshell/">
   <meta property="og:image" content="https://jaminzhou.com/rouse/app-icon.png">
@@ -30,7 +30,7 @@
   <meta property="og:image:height" content="1024">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Rouse com tampa fechada e auxiliar opcional">
-  <meta name="twitter:description" content="Status de pré-lançamento e modelo de segurança do auxiliar opcional de código aberto, distribuído separadamente do app da Mac App Store.">
+  <meta name="twitter:description" content="Status de lançamento, modelo de segurança e testes adiados do auxiliar opcional de código aberto, distribuído separadamente do app da Mac App Store.">
   <meta name="twitter:image" content="https://jaminzhou.com/rouse/app-icon.png">
   <link rel="stylesheet" href="/garlicbird/styles.css?v=20260513-theme">
 </head>
@@ -59,16 +59,16 @@
     <section class="panel">
       <div class="kicker">Status</div>
       <h1>Suporte com a tampa fechada e auxiliar opcional</h1>
-      <p class="meta">Última atualização: 23 de julho de 2026</p>
-      <div class="warning"><strong>Pré-lançamento:</strong> ainda não há um auxiliar assinado para download. Não instale builds sem assinatura. Um DMG assinado e notarizado será oferecido somente após a matriz de segurança passar em Macs reais.</div>
+      <p class="meta">Última atualização: 26 de julho de 2026</p>
+      <div class="warning"><strong>Helper v1.0.0 está disponível:</strong> baixe somente o DMG assinado com Developer ID e notarizado pela Apple na <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/releases/tag/v1.0.0">versão oficial do GitHub</a>. A integração exige o Rouse 1.11 ou posterior; confira a versão da Mac App Store antes da instalação.</div>
       <p>A versão do Rouse na Mac App Store continua no App Sandbox e nunca roda como root. Ela pode impedir o repouso ocioso do sistema e da tela pelas APIs públicas do macOS, mas o uso com a tampa fechada exige uma alteração global de energia que um app comum da Mac App Store não pode fazer.</p>
-      <h2>Fluxo planejado</h2>
+      <h2>Instalação</h2>
       <ol>
         <li>Instalar o <strong>Rouse Closed-Lid Helper</strong>, distribuído separadamente, em Aplicativos.</li>
         <li>Aprovar o serviço em segundo plano nos Ajustes do Sistema. O auxiliar usa o Service Management da Apple e o Rouse não coleta a senha de administrador.</li>
         <li>Ativar no Rouse a opção facultativa, desativada por padrão. Concessões curtas são renovadas apenas durante uma sessão ativa do Rouse.</li>
       </ol>
-      <p>O código privilegiado é público para revisão no <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper">GitHub</a>.</p>
+      <p>O código privilegiado é público para revisão no <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper">GitHub</a>; o download assinado está na <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/releases/tag/v1.0.0">versão oficial v1.0.0</a>.</p>
       <h2>Modelo de segurança</h2>
       <ul>
         <li>O daemon oferece somente operações fixas de status, concessão, liberação e restauração, sem shell ou execução genérica de comandos.</li>
@@ -77,9 +77,9 @@
         <li>A equipe de assinatura, os Bundle IDs, o App Group e a versão do protocolo são verificados antes da comunicação.</li>
       </ul>
       <h2>Status do lançamento</h2>
-      <p>A implementação está em testes, mas ainda não é um recurso público compatível. O lançamento exige assinatura Developer ID, notarização, verificação do Gatekeeper e testes em Apple silicon e Intel cobrindo energia, bateria, reinício, encerramento forçado, falha do daemon, atualização e remoção. Até lá, o uso com a tampa fechada não é prometido.</p>
-      <h2>Somente para recuperação de emergência</h2>
-      <p>Após o lançamento, use primeiro “Restaurar e remover serviço” no auxiliar. Se o auxiliar e o daemon forem apagados antes da limpeza e o Mac não entrar em repouso, um administrador pode restaurar o padrão:</p>
+      <p>O Helper v1.0.0 está assinado, notarizado e público. Foram verificados a integração assinada com o Rouse TestFlight, os builds universal e Rosetta, a recuperação por concessão limitada, a restauração exata dos ajustes e o uso com tampa fechada e energia externa em Apple silicon. Pela exceção v1.0.0 documentada, as transições para bateria, o repouso explícito e a proteção de bateria fraca, a reinicialização forçada do daemon, a reinicialização e o desligamento completos, a validação do artefato publicado em uma conta limpa e a atualização no local continuam adiados e não são registrados como aprovados. <a href="https://github.com/JaminZhou/Rouse-Closed-Lid-Helper/blob/v1.0.0/docs/releasing.md#v100-recorded-validation-exception">Veja as evidências e os adiamentos exatos</a>.</p>
+      <h2>Recuperação e remoção</h2>
+      <p>Use primeiro “Restaurar e remover serviço” no auxiliar. Se o auxiliar e o daemon forem apagados antes da limpeza e o Mac não entrar em repouso, um administrador pode restaurar o padrão:</p>
       <pre><code>sudo pmset -a disablesleep 0</code></pre>
       <p>Esse comando de emergência não reconstrói um valor fora do padrão definido por outra ferramenta. A remoção normal restaura os valores exatos gravados.</p>
       <div class="links">

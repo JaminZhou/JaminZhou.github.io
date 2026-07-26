@@ -57,11 +57,11 @@
     },
     "en.clamshell": {
     "title": "Rouse Closed-Lid Support and Optional Helper",
-    "description": "Current pre-release status and safety model for the optional open-source Rouse Closed-Lid Helper, distributed separately from the Mac App Store app.",
+    "description": "Release status, safety model, and deferred coverage for the optional open-source Rouse Closed-Lid Helper, distributed separately from the Mac App Store app.",
     "ogTitle": "Rouse Closed-Lid Support and Optional Helper",
-    "ogDescription": "Current pre-release status and safety model for the optional open-source Rouse Closed-Lid Helper, distributed separately from the Mac App Store app.",
+    "ogDescription": "Release status, safety model, and deferred coverage for the optional open-source Rouse Closed-Lid Helper, distributed separately from the Mac App Store app.",
     "twitterTitle": "Rouse Closed-Lid Support and Optional Helper",
-    "twitterDescription": "Current pre-release status and safety model for the optional open-source Rouse Closed-Lid Helper, distributed separately from the Mac App Store app."
+    "twitterDescription": "Release status, safety model, and deferred coverage for the optional open-source Rouse Closed-Lid Helper, distributed separately from the Mac App Store app."
     },
     "de.landing": {
       "title": "Rouse | Wach bleiben am Mac",
@@ -120,11 +120,11 @@
     },
     "de.clamshell": {
     "title": "Rouse Unterstützung bei geschlossenem Deckel und optionaler Helfer",
-    "description": "Aktueller Vorabstatus und Sicherheitsmodell des optionalen Open-Source-Helfers, separat von der Mac App Store App.",
+    "description": "Veröffentlichungsstatus, Sicherheitsmodell und aufgeschobene Prüfungen des optionalen Open-Source-Helfers, separat von der Mac App Store App.",
     "ogTitle": "Rouse Unterstützung bei geschlossenem Deckel und optionaler Helfer",
-    "ogDescription": "Aktueller Vorabstatus und Sicherheitsmodell des optionalen Open-Source-Helfers, separat von der Mac App Store App.",
+    "ogDescription": "Veröffentlichungsstatus, Sicherheitsmodell und aufgeschobene Prüfungen des optionalen Open-Source-Helfers, separat von der Mac App Store App.",
     "twitterTitle": "Rouse Unterstützung bei geschlossenem Deckel und optionaler Helfer",
-    "twitterDescription": "Aktueller Vorabstatus und Sicherheitsmodell des optionalen Open-Source-Helfers, separat von der Mac App Store App."
+    "twitterDescription": "Veröffentlichungsstatus, Sicherheitsmodell und aufgeschobene Prüfungen des optionalen Open-Source-Helfers, separat von der Mac App Store App."
     },
     "fr.landing": {
       "title": "Rouse | Garder le Mac éveillé",
@@ -183,11 +183,11 @@
     },
     "fr.clamshell": {
     "title": "Rouse écran fermé et assistant facultatif",
-    "description": "État de préversion et modèle de sécurité de l’assistant open source facultatif, distribué séparément de l’app Mac App Store.",
+    "description": "État de publication, modèle de sécurité et tests reportés de l’assistant open source facultatif, distribué séparément de l’app Mac App Store.",
     "ogTitle": "Rouse écran fermé et assistant facultatif",
-    "ogDescription": "État de préversion et modèle de sécurité de l’assistant open source facultatif, distribué séparément de l’app Mac App Store.",
+    "ogDescription": "État de publication, modèle de sécurité et tests reportés de l’assistant open source facultatif, distribué séparément de l’app Mac App Store.",
     "twitterTitle": "Rouse écran fermé et assistant facultatif",
-    "twitterDescription": "État de préversion et modèle de sécurité de l’assistant open source facultatif, distribué séparément de l’app Mac App Store."
+    "twitterDescription": "État de publication, modèle de sécurité et tests reportés de l’assistant open source facultatif, distribué séparément de l’app Mac App Store."
     },
     "es.landing": {
       "title": "Rouse | Mantén activo tu Mac",
@@ -246,11 +246,11 @@
     },
     "es.clamshell": {
     "title": "Rouse con tapa cerrada y asistente opcional",
-    "description": "Estado preliminar y modelo de seguridad del asistente opcional de código abierto, distribuido por separado de la app del Mac App Store.",
+    "description": "Estado de publicación, modelo de seguridad y pruebas aplazadas del asistente opcional de código abierto, distribuido por separado de la app del Mac App Store.",
     "ogTitle": "Rouse con tapa cerrada y asistente opcional",
-    "ogDescription": "Estado preliminar y modelo de seguridad del asistente opcional de código abierto, distribuido por separado de la app del Mac App Store.",
+    "ogDescription": "Estado de publicación, modelo de seguridad y pruebas aplazadas del asistente opcional de código abierto, distribuido por separado de la app del Mac App Store.",
     "twitterTitle": "Rouse con tapa cerrada y asistente opcional",
-    "twitterDescription": "Estado preliminar y modelo de seguridad del asistente opcional de código abierto, distribuido por separado de la app del Mac App Store."
+    "twitterDescription": "Estado de publicación, modelo de seguridad y pruebas aplazadas del asistente opcional de código abierto, distribuido por separado de la app del Mac App Store."
     },
     "ko.landing": {
       "title": "Rouse | Mac을 깨워 두기",
@@ -309,11 +309,11 @@
     },
     "ko.clamshell": {
     "title": "Rouse 덮개 닫힘 지원과 선택형 도우미",
-    "description": "Mac App Store 앱과 별도로 배포되는 선택형 오픈 소스 도우미의 출시 전 상태와 안전 모델입니다.",
+    "description": "Mac App Store 앱과 별도로 배포되는 선택형 오픈 소스 도우미의 출시 상태, 안전 모델 및 연기된 검사입니다.",
     "ogTitle": "Rouse 덮개 닫힘 지원과 선택형 도우미",
-    "ogDescription": "Mac App Store 앱과 별도로 배포되는 선택형 오픈 소스 도우미의 출시 전 상태와 안전 모델입니다.",
+    "ogDescription": "Mac App Store 앱과 별도로 배포되는 선택형 오픈 소스 도우미의 출시 상태, 안전 모델 및 연기된 검사입니다.",
     "twitterTitle": "Rouse 덮개 닫힘 지원과 선택형 도우미",
-    "twitterDescription": "Mac App Store 앱과 별도로 배포되는 선택형 오픈 소스 도우미의 출시 전 상태와 안전 모델입니다."
+    "twitterDescription": "Mac App Store 앱과 별도로 배포되는 선택형 오픈 소스 도우미의 출시 상태, 안전 모델 및 연기된 검사입니다."
     },
     "ja.landing": {
       "title": "Rouse | Macをスリープさせない",
@@ -372,11 +372,11 @@
     },
     "ja.clamshell": {
     "title": "Rouse 合蓋サポートとオプションのヘルパー",
-    "description": "Mac App Store App とは別に配布するオープンソースのオプションヘルパーについて、現在のリリース前状況と安全設計を説明します。",
+    "description": "Mac App Store App とは別に配布するオープンソースのオプションヘルパーについて、公開状況、安全設計、延期した検証を説明します。",
     "ogTitle": "Rouse 合蓋サポートとオプションのヘルパー",
-    "ogDescription": "Mac App Store App とは別に配布するオープンソースのオプションヘルパーについて、現在のリリース前状況と安全設計を説明します。",
+    "ogDescription": "Mac App Store App とは別に配布するオープンソースのオプションヘルパーについて、公開状況、安全設計、延期した検証を説明します。",
     "twitterTitle": "Rouse 合蓋サポートとオプションのヘルパー",
-    "twitterDescription": "Mac App Store App とは別に配布するオープンソースのオプションヘルパーについて、現在のリリース前状況と安全設計を説明します。"
+    "twitterDescription": "Mac App Store App とは別に配布するオープンソースのオプションヘルパーについて、公開状況、安全設計、延期した検証を説明します。"
     },
     "zh-Hans.landing": {
       "title": "Rouse | 让 Mac 保持唤醒",
@@ -435,11 +435,11 @@
     },
     "zh-Hans.clamshell": {
     "title": "Rouse 合盖支持与可选辅助工具",
-    "description": "介绍与 Mac App Store 应用分开分发的开源可选辅助工具目前的未发布状态和安全设计。",
+    "description": "介绍与 Mac App Store 应用分开分发的开源可选辅助工具的发布状态、安全设计和延期测试。",
     "ogTitle": "Rouse 合盖支持与可选辅助工具",
-    "ogDescription": "介绍与 Mac App Store 应用分开分发的开源可选辅助工具目前的未发布状态和安全设计。",
+    "ogDescription": "介绍与 Mac App Store 应用分开分发的开源可选辅助工具的发布状态、安全设计和延期测试。",
     "twitterTitle": "Rouse 合盖支持与可选辅助工具",
-    "twitterDescription": "介绍与 Mac App Store 应用分开分发的开源可选辅助工具目前的未发布状态和安全设计。"
+    "twitterDescription": "介绍与 Mac App Store 应用分开分发的开源可选辅助工具的发布状态、安全设计和延期测试。"
     },
     "zh-Hant.landing": {
       "title": "Rouse | 讓 Mac 保持喚醒",
@@ -498,11 +498,11 @@
     },
     "zh-Hant.clamshell": {
     "title": "Rouse 闔蓋支援與可選輔助工具",
-    "description": "介紹與 Mac App Store App 分開發佈的開源可選輔助工具目前的未發佈狀態和安全設計。",
+    "description": "介紹與 Mac App Store App 分開發佈的開源可選輔助工具的發佈狀態、安全設計和延期測試。",
     "ogTitle": "Rouse 闔蓋支援與可選輔助工具",
-    "ogDescription": "介紹與 Mac App Store App 分開發佈的開源可選輔助工具目前的未發佈狀態和安全設計。",
+    "ogDescription": "介紹與 Mac App Store App 分開發佈的開源可選輔助工具的發佈狀態、安全設計和延期測試。",
     "twitterTitle": "Rouse 闔蓋支援與可選輔助工具",
-    "twitterDescription": "介紹與 Mac App Store App 分開發佈的開源可選輔助工具目前的未發佈狀態和安全設計。"
+    "twitterDescription": "介紹與 Mac App Store App 分開發佈的開源可選輔助工具的發佈狀態、安全設計和延期測試。"
     },
     "pt-BR.landing": {
       "title": "Rouse | Mantenha o Mac Ativo",
@@ -561,11 +561,11 @@
     },
     "pt-BR.clamshell": {
     "title": "Rouse com tampa fechada e auxiliar opcional",
-    "description": "Status de pré-lançamento e modelo de segurança do auxiliar opcional de código aberto, distribuído separadamente do app da Mac App Store.",
+    "description": "Status de lançamento, modelo de segurança e testes adiados do auxiliar opcional de código aberto, distribuído separadamente do app da Mac App Store.",
     "ogTitle": "Rouse com tampa fechada e auxiliar opcional",
-    "ogDescription": "Status de pré-lançamento e modelo de segurança do auxiliar opcional de código aberto, distribuído separadamente do app da Mac App Store.",
+    "ogDescription": "Status de lançamento, modelo de segurança e testes adiados do auxiliar opcional de código aberto, distribuído separadamente do app da Mac App Store.",
     "twitterTitle": "Rouse com tampa fechada e auxiliar opcional",
-    "twitterDescription": "Status de pré-lançamento e modelo de segurança do auxiliar opcional de código aberto, distribuído separadamente do app da Mac App Store."
+    "twitterDescription": "Status de lançamento, modelo de segurança e testes adiados do auxiliar opcional de código aberto, distribuído separadamente do app da Mac App Store."
     }
   }
 }
