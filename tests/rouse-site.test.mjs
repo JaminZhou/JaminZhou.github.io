@@ -58,9 +58,40 @@ test("language switcher keeps the current locale and surface", () => {
   assert.match(switcher, /aria-label="Langue"/);
   assert.match(
     switcher,
-    /href="\/rouse\/fr\/privacy\/"[^>]+aria-current="page"[^>]*>Français<\/a>/,
+    /href="\/rouse\/fr\/privacy\/"[^>]+aria-current="page"[^>]*>Français/,
   );
   assert.match(switcher, /href="\/rouse\/ja\/privacy\/"/);
+});
+
+test("masthead copy and actions preserve every selected Rouse locale", async () => {
+  const pages = await buildSite({ write: false });
+
+  for (const locale of LOCALES.filter((candidate) => candidate.id !== "en")) {
+    const landing = pages.get(pageOutputPath(locale.id, "landing"));
+    const support = pages.get(pageOutputPath(locale.id, "support"));
+    const privacy = pages.get(pageOutputPath(locale.id, "privacy"));
+    const changelog = pages.get(pageOutputPath(locale.id, "changelog"));
+    const clamshell = pages.get(pageOutputPath(locale.id, "clamshell"));
+    const landingRoute = `/${pageOutputPath(locale.id, "landing").replace(/index\.html$/, "")}`;
+    const supportRoute = `/${pageOutputPath(locale.id, "support").replace(/index\.html$/, "")}`;
+
+    assert.ok(landing.includes(`aria-label="${locale.ui.breadcrumbLabel}"`), locale.id);
+    assert.ok(landing.includes(`href="/#products">${locale.ui.products}</a>`), locale.id);
+    assert.ok(support.includes(`aria-label="${locale.ui.emailSupport}"`), locale.id);
+    assert.ok(support.includes(`<span>Rouse · ${locale.ui.support}</span>`), locale.id);
+    assert.ok(privacy.includes(`href="${landingRoute}"`), locale.id);
+    assert.ok(privacy.includes(`aria-label="${locale.ui.backToProduct}"`), locale.id);
+    assert.ok(privacy.includes(`<span aria-current="page">${locale.ui.privacy}</span>`), locale.id);
+
+    for (const [page, label] of [
+      [changelog, locale.ui.changelog],
+      [clamshell, locale.ui.clamshell],
+    ]) {
+      assert.ok(page.includes(`href="${supportRoute}"`), locale.id);
+      assert.ok(page.includes(`aria-label="${locale.ui.support}"`), locale.id);
+      assert.ok(page.includes(`<span aria-current="page">${label}</span>`), locale.id);
+    }
+  }
 });
 
 test("generated pages match committed GitHub Pages output", async () => {
@@ -78,6 +109,16 @@ test("generated pages keep structural HTML containers balanced", async () => {
 
   for (const [relativePath, generated] of pages) {
     assert.deepEqual(validateHtmlStructure(generated), [], relativePath);
+  }
+});
+
+test("new-window links explicitly isolate the opener", async () => {
+  const pages = await buildSite({ write: false });
+
+  for (const [relativePath, generated] of pages) {
+    for (const match of generated.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)) {
+      assert.match(match[0], /rel="[^"]*\bnoopener\b[^"]*"/, relativePath);
+    }
   }
 });
 
@@ -101,8 +142,8 @@ test("Rouse release version validation rejects root and localized version drift"
   );
 
   const staleHomepage = inputs.homepage.replace(
-    `<strong>${expectedVersion}</strong>\n            <span>Rouse for macOS</span>`,
-    `<strong>${staleVersion}</strong>\n            <span>Rouse for macOS</span>`,
+    `data-rouse-version="${expectedVersion}"`,
+    `data-rouse-version="${staleVersion}"`,
   );
 
   assert.deepEqual(
@@ -115,7 +156,7 @@ test("Rouse release version validation rejects root and localized version drift"
       `de.landing softwareVersion is "${staleVersion}"; expected "${expectedVersion}"`,
       `rouse/fr/index.html contains visible version "${staleVersion}"; expected "${expectedVersion}"`,
       `rouse/fr/index.html visible version metric does not include "${expectedVersion}"`,
-      `index.html Rouse metric version is "${staleVersion}"; expected "${expectedVersion}"`,
+      `index.html Rouse version is "${staleVersion}"; expected "${expectedVersion}"`,
     ],
   );
 });

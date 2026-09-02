@@ -25,6 +25,21 @@ Tests verify the product page matrices, URLs, canonical alternates, language
 switchers where applicable, balanced structural HTML, sitemap coverage,
 root-relative links, and that committed output matches generated output.
 
+## Visual system
+
+The production visual system is derived directly from the Claude Design export
+`JaminZhou portfolio redesign (4).zip`:
+
+- `assets/classical/` contains the exported Classical stylesheet and vendored
+  Cormorant Garamond and Lora variable fonts.
+- `assets/site.css` contains the responsive homepage and shared product,
+  document, support, and changelog surfaces.
+- `assets/site.js` provides the small production-only interaction layer for the
+  sticky masthead, exported hover states, and language menus.
+
+The generated product routes intentionally do not ship Claude Design's preview
+runtime or its React CDN dependency.
+
 ## Rouse source layout
 
 Rouse keeps its deployed pages as plain HTML so every locale has a stable URL,
@@ -47,7 +62,7 @@ npm test
 npm run check:rouse
 ```
 
-`build:rouse` regenerates all 40 committed pages. Tests verify the locale and
+`build:rouse` regenerates all 45 committed pages. Tests verify the locale and
 surface matrix, URLs, canonical alternates, language switcher, balanced
 structural HTML, sitemap coverage, and that generated output is current.
 

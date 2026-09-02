@@ -10,13 +10,35 @@ const REPOSITORY_ROOT = path.resolve(fileURLToPath(new URL("..", import.meta.url
 
 export const LOCALES = Object.freeze([
   { id: "en", hreflang: "en", segment: "", label: "English", menuLabel: "Language" },
-  { id: "ja", hreflang: "ja", segment: "ja", label: "日本語", menuLabel: "言語" },
+  {
+    id: "ja",
+    hreflang: "ja",
+    segment: "ja",
+    label: "日本語",
+    menuLabel: "言語",
+    ui: {
+      breadcrumbLabel: "パンくずリスト",
+      products: "製品",
+      support: "サポート",
+      privacy: "プライバシー",
+      emailSupport: "メールサポート",
+      backToProduct: "CalcBird に戻る",
+    },
+  },
   {
     id: "zh-Hans",
     hreflang: "zh-Hans",
     segment: "zh-hans",
     label: "简体中文",
     menuLabel: "语言",
+    ui: {
+      breadcrumbLabel: "面包屑导航",
+      products: "产品",
+      support: "支持",
+      privacy: "隐私",
+      emailSupport: "邮件支持",
+      backToProduct: "返回 CalcBird",
+    },
   },
   {
     id: "zh-Hant",
@@ -24,6 +46,14 @@ export const LOCALES = Object.freeze([
     segment: "zh-hant",
     label: "繁體中文",
     menuLabel: "語言",
+    ui: {
+      breadcrumbLabel: "麵包屑導覽",
+      products: "產品",
+      support: "支援",
+      privacy: "隱私",
+      emailSupport: "電子郵件支援",
+      backToProduct: "返回 CalcBird",
+    },
   },
 ]);
 
@@ -41,6 +71,8 @@ const site = createStaticProductSite({
   defaultLocaleId: "en",
   locales: LOCALES,
   surfaces: SURFACES,
+  storeUrl: "https://apps.apple.com/app/id6762044720",
+  storeLabel: "App Store",
 });
 
 export const pageOutputPath = site.pageOutputPath;

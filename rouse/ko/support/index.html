@@ -32,30 +32,52 @@
   <meta name="twitter:title" content="Rouse 지원">
   <meta name="twitter:description" content="명령줄 설정, 시간 제한 세션, 디스플레이 잠자기, 배터리 보호, App Store 업데이트를 포함한 Rouse 지원 및 문제 해결입니다.">
   <meta name="twitter:image" content="https://jaminzhou.com/rouse/app-icon.png">
-  <link rel="stylesheet" href="/garlicbird/styles.css?v=20260513-theme">
+  <link rel="stylesheet" href="/assets/classical/styles.css?v=20260902">
+  <link rel="stylesheet" href="/assets/site.css?v=20260902">
 </head>
-<body class="theme-rouse">
-  <main class="wrap">
-    <nav class="locale-switch" aria-label="언어">
-      <details class="language-menu">
-        <summary>
-          <span class="language-label">언어</span>
-          <span class="language-current" lang="ko">한국어</span>
-        </summary>
-        <div class="language-options">
-          <a class="locale-link" href="/rouse/support/" hreflang="en" lang="en">English</a>
-          <a class="locale-link" href="/rouse/de/support/" hreflang="de" lang="de">Deutsch</a>
-          <a class="locale-link" href="/rouse/fr/support/" hreflang="fr" lang="fr">Français</a>
-          <a class="locale-link" href="/rouse/es/support/" hreflang="es" lang="es">Español</a>
-          <a class="locale-link" href="/rouse/pt-br/support/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-          <a class="locale-link" href="/rouse/ko/support/" hreflang="ko" lang="ko" aria-current="page">한국어</a>
-          <a class="locale-link" href="/rouse/ja/support/" hreflang="ja" lang="ja">日本語</a>
-          <a class="locale-link" href="/rouse/zh-hans/support/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-          <a class="locale-link" href="/rouse/zh-hant/support/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-        </div>
-      </details>
+<body class="theme-rouse surface-support">
+<header class="site-masthead">
+  <div class="masthead-inner">
+    <a class="brand-link" href="/">
+      <img src="/images/jamin-zhou-avatar.png" alt="" width="26" height="26">
+      <span>JaminZhou</span>
+    </a>
+    <nav class="breadcrumbs" aria-label="이동 경로">
+      <span aria-hidden="true" class="hide-small">/</span>
+      <a class="hide-small" href="/rouse/ko/">Rouse</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">지원</span>
     </nav>
-
+    <details class="language-menu">
+      <summary aria-label="언어 — 한국어">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3.6 9h16.8"></path><path d="M3.6 15h16.8"></path><path d="M12 3c2.4 2.6 3.6 5.6 3.6 9s-1.2 6.4-3.6 9c-2.4-2.6-3.6-5.6-3.6-9s1.2-6.4 3.6-9z"></path></svg>
+        <span class="language-full">한국어</span>
+        <span class="language-abbr" style="display:none">KO</span>
+        <svg class="language-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+      </summary>
+      <div class="language-options">
+        <span class="language-options-label">언어</span>
+        <ul class="language-options-list" aria-label="언어">
+          <li><a class="locale-link" href="/rouse/support/" hreflang="en" lang="en">English</a></li>
+          <li><a class="locale-link" href="/rouse/de/support/" hreflang="de" lang="de">Deutsch</a></li>
+          <li><a class="locale-link" href="/rouse/fr/support/" hreflang="fr" lang="fr">Français</a></li>
+          <li><a class="locale-link" href="/rouse/es/support/" hreflang="es" lang="es">Español</a></li>
+          <li><a class="locale-link" href="/rouse/pt-br/support/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+          <li><a class="locale-link" href="/rouse/ko/support/" hreflang="ko" lang="ko" aria-current="page">한국어<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"></path></svg></a></li>
+          <li><a class="locale-link" href="/rouse/ja/support/" hreflang="ja" lang="ja">日本語</a></li>
+          <li><a class="locale-link" href="/rouse/zh-hans/support/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li>
+          <li><a class="locale-link" href="/rouse/zh-hant/support/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li>
+        </ul>
+      </div>
+    </details>
+    <a class="header-action" href="mailto:me@jaminzhou.com?subject=Rouse%20%EC%A7%80%EC%9B%90" aria-label="이메일 지원"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg><span class="header-action-label">이메일 지원</span></a>
+  </div>
+</header>
+  <main class="site-main">
+<div class="product-identity">
+    <img src="/rouse/app-icon.png" alt="" width="52" height="52">
+    <span>Rouse · 지원</span>
+  </div>
     <section class="panel">
       <div class="kicker">지원</div>
       <h1>Rouse 지원</h1>
@@ -64,7 +86,7 @@
       <p>도움이 필요하신가요? <a href="mailto:me@jaminzhou.com">me@jaminzhou.com</a>으로 이메일을 보내거나, 이메일로 시작하고 싶지 않다면 피드백 양식을 사용할 수 있습니다.</p>
       <div class="cta-row">
         <a class="cta" href="mailto:me@jaminzhou.com?subject=Rouse%20Support">지원 이메일 보내기</a>
-        <a class="cta secondary" href="https://tally.so/r/QKzj9A?product=rouse&amp;channel=site&amp;entry_point=support_page&amp;app_locale=ko&amp;system_locale=site" target="_blank" rel="noreferrer">피드백 양식 열기</a>
+        <a class="cta secondary" href="https://tally.so/r/QKzj9A?product=rouse&amp;channel=site&amp;entry_point=support_page&amp;app_locale=ko&amp;system_locale=site" target="_blank" rel="noopener noreferrer">피드백 양식 열기</a>
       </div>
       <p>피드백 양식은 익명으로 제출할 수 있으며, 후속 연락을 위해 이메일을 남길 수도 있습니다.</p>
       <h2>지원 요청 전 확인</h2>
@@ -140,10 +162,11 @@ rouse open</code></pre>
       <div class="note">지원 요청은 영어로 답변됩니다. 비밀번호, 계정 비밀 정보 또는 기타 민감한 개인 정보는 보내지 마세요.</div>
       <p style="margin-top: 28px;">
         <a href="/rouse/ko/">Rouse로 돌아가기</a>
-        / <a href="/rouse/ko/changelog/">Changelog</a>
+        / <a href="/rouse/ko/changelog/">변경 내역</a>
         / <a href="/rouse/ko/privacy/">개인정보 처리방침</a>
       </p>
     </section>
   </main>
+  <script type="module" src="/assets/site.js?v=20260902"></script>
 </body>
 </html>

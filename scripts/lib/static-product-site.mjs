@@ -3,12 +3,182 @@ import path from "node:path";
 
 const SITE_ORIGIN = "https://jaminzhou.com";
 
-function escapeHtml(value) {
+export function escapeHtml(value) {
   return String(value)
     .replaceAll("&", "&amp;")
     .replaceAll('"', "&quot;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;");
+}
+
+const ICONS = Object.freeze({
+  globe:
+    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3.6 9h16.8"></path><path d="M3.6 15h16.8"></path><path d="M12 3c2.4 2.6 3.6 5.6 3.6 9s-1.2 6.4-3.6 9c-2.4-2.6-3.6-5.6-3.6-9s1.2-6.4 3.6-9z"></path></svg>',
+  caret:
+    '<svg class="language-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>',
+  check:
+    '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"></path></svg>',
+  back:
+    '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>',
+  mail:
+    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>',
+  support:
+    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="3.6"></circle><path d="m14.6 9.4 3.3-3.3"></path><path d="m6.1 17.9 3.3-3.3"></path><path d="m14.6 14.6 3.3 3.3"></path><path d="m6.1 6.1 3.3 3.3"></path></svg>',
+});
+
+const DEFAULT_UI = Object.freeze({
+  breadcrumbLabel: "Breadcrumb",
+  products: "Products",
+  support: "Support",
+  privacy: "Privacy",
+  changelog: "Changelog",
+  clamshell: "Closed-lid",
+  emailSupport: "Email support",
+});
+
+function interfaceCopy(locale, productName) {
+  return {
+    ...DEFAULT_UI,
+    backToProduct: `Back to ${productName}`,
+    ...locale.ui,
+  };
+}
+
+function surfaceLabel(ui, surfaceId) {
+  return surfaceId === "landing" ? null : (ui[surfaceId] ?? surfaceId);
+}
+
+function localeAbbreviation(localeId) {
+  return (
+    {
+      "pt-BR": "PT-BR",
+      "zh-Hans": "ZH-CN",
+      "zh-Hant": "ZH-TW",
+    }[localeId] ?? localeId.toUpperCase()
+  );
+}
+
+export function renderDesignLocaleSwitcher({ locales, currentLocale, routeFor }) {
+  if (locales.length < 2) return "";
+
+  const links = locales
+    .map((locale) => {
+      const isCurrent = locale.id === currentLocale.id;
+      return `          <li><a class="locale-link" href="${escapeHtml(routeFor(locale.id))}" hreflang="${escapeHtml(locale.hreflang)}" lang="${escapeHtml(locale.id)}"${isCurrent ? ' aria-current="page"' : ""}>${escapeHtml(locale.label)}${isCurrent ? ICONS.check : ""}</a></li>`;
+    })
+    .join("\n");
+
+  return `    <details class="language-menu">
+      <summary aria-label="${escapeHtml(currentLocale.menuLabel)} — ${escapeHtml(currentLocale.label)}">
+        ${ICONS.globe}
+        <span class="language-full">${escapeHtml(currentLocale.label)}</span>
+        <span class="language-abbr" style="display:none">${escapeHtml(localeAbbreviation(currentLocale.id))}</span>
+        ${ICONS.caret}
+      </summary>
+      <div class="language-options">
+        <span class="language-options-label">${escapeHtml(currentLocale.menuLabel)}</span>
+        <ul class="language-options-list" aria-label="${escapeHtml(currentLocale.menuLabel)}">
+${links}
+        </ul>
+      </div>
+    </details>`;
+}
+
+function renderHeaderAction({
+  productName,
+  surfaceId,
+  storeUrl,
+  storeLabel,
+  routeForSurface,
+  ui,
+}) {
+  if (surfaceId === "landing" && storeUrl) {
+    return `    <a class="header-action" href="${escapeHtml(storeUrl)}"><span class="header-action-label">${escapeHtml(storeLabel ?? "App Store")}</span></a>`;
+  }
+  if (surfaceId === "landing") {
+    const supportRoute = routeForSurface("support");
+    return supportRoute
+      ? `    <a class="header-action" href="${escapeHtml(supportRoute)}">${ICONS.support}<span class="header-action-label">${escapeHtml(ui.support)}</span></a>`
+      : "";
+  }
+  if (surfaceId === "support") {
+    return `    <a class="header-action" href="mailto:me@jaminzhou.com?subject=${encodeURIComponent(`${productName} ${ui.support}`)}" aria-label="${escapeHtml(ui.emailSupport)}">${ICONS.mail}<span class="header-action-label">${escapeHtml(ui.emailSupport)}</span></a>`;
+  }
+  if (surfaceId === "privacy") {
+    return `    <a class="header-action" href="${escapeHtml(routeForSurface("landing"))}" aria-label="${escapeHtml(ui.backToProduct)}">${ICONS.back}<span class="header-action-label">${escapeHtml(ui.backToProduct)}</span></a>`;
+  }
+  const supportRoute = routeForSurface("support");
+  return supportRoute
+    ? `    <a class="header-action" href="${escapeHtml(supportRoute)}" aria-label="${escapeHtml(ui.support)}">${ICONS.support}<span class="header-action-label">${escapeHtml(ui.support)}</span></a>`
+    : "";
+}
+
+export function renderProductMasthead({
+  locales,
+  currentLocale,
+  routeFor,
+  productName,
+  surfaceId,
+  storeUrl,
+  storeLabel,
+  routeForSurface,
+}) {
+  const ui = interfaceCopy(currentLocale, productName);
+  const currentSurfaceLabel = surfaceLabel(ui, surfaceId);
+  const crumb = currentSurfaceLabel
+    ? `      <span aria-hidden="true" class="hide-small">/</span>\n      <a class="hide-small" href="${escapeHtml(routeForSurface("landing"))}">${escapeHtml(productName)}</a>\n      <span aria-hidden="true">/</span>\n      <span aria-current="page">${escapeHtml(currentSurfaceLabel)}</span>`
+    : `      <span aria-hidden="true" class="hide-small">/</span>\n      <a class="hide-small" href="/#products">${escapeHtml(ui.products)}</a>\n      <span aria-hidden="true">/</span>\n      <span aria-current="page">${escapeHtml(productName)}</span>`;
+  const switcher = renderDesignLocaleSwitcher({ locales, currentLocale, routeFor });
+  const action = renderHeaderAction({
+    productName,
+    surfaceId,
+    storeUrl,
+    storeLabel,
+    routeForSurface,
+    ui,
+  });
+
+  return `<header class="site-masthead">
+  <div class="masthead-inner">
+    <a class="brand-link" href="/">
+      <img src="/images/jamin-zhou-avatar.png" alt="" width="26" height="26">
+      <span>JaminZhou</span>
+    </a>
+    <nav class="breadcrumbs" aria-label="${escapeHtml(ui.breadcrumbLabel)}">
+${crumb}
+    </nav>
+${switcher ? `${switcher}\n` : ""}${action}
+  </div>
+</header>`;
+}
+
+export function decorateProductContent({
+  content,
+  productName,
+  productSegment,
+  surfaceId,
+  currentLocale,
+}) {
+  if (surfaceId === "landing" || /data-r="(?:ph1|dh1|sh1|ch1)"/.test(content)) {
+    return content;
+  }
+
+  const currentSurfaceLabel = surfaceLabel(interfaceCopy(currentLocale, productName), surfaceId);
+  return `<div class="product-identity">
+    <img src="/${escapeHtml(productSegment)}/app-icon.png" alt="" width="52" height="52">
+    <span>${escapeHtml(productName)} · ${escapeHtml(currentSurfaceLabel)}</span>
+  </div>
+${content}`;
+}
+
+export function productBodyClass({ productSegment, surfaceId }) {
+  const surfaceClass =
+    surfaceId === "privacy"
+      ? "surface-document"
+      : surfaceId === "landing"
+        ? "surface-product"
+        : `surface-${surfaceId}`;
+  return `theme-${productSegment} ${surfaceClass}`;
 }
 
 export function validateHtmlStructure(html) {
@@ -59,6 +229,9 @@ function renderStructuredData(structuredData) {
   if (!structuredData) return "";
 
   const json = JSON.stringify(structuredData, null, 2)
+    .replaceAll("<", "\\u003c")
+    .replaceAll("\u2028", "\\u2028")
+    .replaceAll("\u2029", "\\u2029")
     .split("\n")
     .map((line) => `    ${line}`)
     .join("\n");
@@ -78,6 +251,8 @@ export function createStaticProductSite({
   defaultLocaleId,
   locales,
   surfaces,
+  storeUrl,
+  storeLabel,
 }) {
   const sourceRoot = path.join(repositoryRoot, "_site-src", sourceDirectory);
   const localeIds = new Set(locales.map((locale) => locale.id));
@@ -126,39 +301,27 @@ export function createStaticProductSite({
   }
 
   function renderLocaleSwitcher(localeId, surfaceId) {
-    if (locales.length === 1) return "";
-
-    const current = localeFor(localeId);
-    const links = locales
-      .map((locale) => {
-        const currentAttribute = locale.id === localeId ? ' aria-current="page"' : "";
-        return `          <a class="locale-link" href="${routePath(locale.id, surfaceId)}" hreflang="${escapeHtml(locale.hreflang)}" lang="${escapeHtml(locale.id)}"${currentAttribute}>${escapeHtml(locale.label)}</a>`;
-      })
-      .join("\n");
-
-    return `    <nav class="locale-switch" aria-label="${escapeHtml(current.menuLabel)}">
-      <details class="language-menu">
-        <summary>
-          <span class="language-label">${escapeHtml(current.menuLabel)}</span>
-          <span class="language-current" lang="${escapeHtml(current.id)}">${escapeHtml(current.label)}</span>
-        </summary>
-        <div class="language-options">
-${links}
-        </div>
-      </details>
-    </nav>
-`;
-  }
-
-  function renderTopLink(topLink) {
-    if (!topLink) return "";
-    return `    <a class="toplink" href="${escapeHtml(topLink.href)}">${escapeHtml(topLink.label)}</a>\n`;
+    return renderDesignLocaleSwitcher({
+      locales,
+      currentLocale: localeFor(localeId),
+      routeFor: (targetLocaleId) => routePath(targetLocaleId, surfaceId),
+    });
   }
 
   function renderPage({ localeId, surfaceId, metadata, content, template }) {
     const locale = localeFor(localeId);
     const canonical = `${SITE_ORIGIN}${routePath(localeId, surfaceId)}`;
-    const bodyHeader = `${renderTopLink(metadata.topLink)}${renderLocaleSwitcher(localeId, surfaceId)}`;
+    const bodyHeader = renderProductMasthead({
+      locales,
+      currentLocale: locale,
+      routeFor: (targetLocaleId) => routePath(targetLocaleId, surfaceId),
+      productName,
+      surfaceId,
+      storeUrl,
+      storeLabel,
+      routeForSurface: (targetSurfaceId) =>
+        surfaceIds.has(targetSurfaceId) ? routePath(localeId, targetSurfaceId) : null,
+    });
     const values = {
       "{{LANG}}": locale.id,
       "{{TITLE}}": escapeHtml(metadata.title),
@@ -174,7 +337,14 @@ ${links}
       ),
       "{{STRUCTURED_DATA}}": renderStructuredData(metadata.structuredData),
       "{{BODY_HEADER}}": bodyHeader ? `${bodyHeader}\n` : "",
-      "{{CONTENT}}": content.trimEnd(),
+      "{{BODY_CLASS}}": productBodyClass({ productSegment, surfaceId }),
+      "{{CONTENT}}": decorateProductContent({
+        content: content.trimEnd(),
+        productName,
+        productSegment,
+        surfaceId,
+        currentLocale: locale,
+      }),
     };
 
     let rendered = template;
