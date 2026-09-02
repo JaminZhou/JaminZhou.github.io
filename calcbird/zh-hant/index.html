@@ -14,7 +14,8 @@
   <link rel="alternate" hreflang="x-default" href="https://jaminzhou.com/calcbird/">
   <link rel="icon" type="image/png" sizes="512x512" href="/calcbird/app-icon.png">
   <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="/calcbird/app-icon.png">
-  <link rel="stylesheet" href="/calcbird/styles.css?v=20260513-theme">
+  <link rel="stylesheet" href="/assets/classical/styles.css?v=20260902">
+  <link rel="stylesheet" href="/assets/site.css?v=20260902">
   <meta property="og:site_name" content="CalcBird">
   <meta property="og:title" content="算鳥 | 單價、比價和優惠妙算">
   <meta property="og:description" content="把規格、幣別和優惠條件統一到同一口徑，購買前先看真實單價。">
@@ -55,24 +56,40 @@
     }
   </script>
 </head>
-<body>
-  <main class="wrap">
-    <a class="toplink" href="/">JaminZhou home</a>
-    <nav class="locale-switch" aria-label="語言">
-      <details class="language-menu">
-        <summary>
-          <span class="language-label">語言</span>
-          <span class="language-current" lang="zh-Hant">繁體中文</span>
-        </summary>
-        <div class="language-options">
-          <a class="locale-link" href="/calcbird/" hreflang="en" lang="en">English</a>
-          <a class="locale-link" href="/calcbird/ja/" hreflang="ja" lang="ja">日本語</a>
-          <a class="locale-link" href="/calcbird/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-          <a class="locale-link" href="/calcbird/zh-hant/" hreflang="zh-Hant" lang="zh-Hant" aria-current="page">繁體中文</a>
-        </div>
-      </details>
+<body class="theme-calcbird surface-product">
+<header class="site-masthead">
+  <div class="masthead-inner">
+    <a class="brand-link" href="/">
+      <img src="/images/jamin-zhou-avatar.png" alt="" width="26" height="26">
+      <span>JaminZhou</span>
+    </a>
+    <nav class="breadcrumbs" aria-label="麵包屑導覽">
+      <span aria-hidden="true" class="hide-small">/</span>
+      <a class="hide-small" href="/#products">產品</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">CalcBird</span>
     </nav>
-
+    <details class="language-menu">
+      <summary aria-label="語言 — 繁體中文">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3.6 9h16.8"></path><path d="M3.6 15h16.8"></path><path d="M12 3c2.4 2.6 3.6 5.6 3.6 9s-1.2 6.4-3.6 9c-2.4-2.6-3.6-5.6-3.6-9s1.2-6.4 3.6-9z"></path></svg>
+        <span class="language-full">繁體中文</span>
+        <span class="language-abbr" style="display:none">ZH-TW</span>
+        <svg class="language-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+      </summary>
+      <div class="language-options">
+        <span class="language-options-label">語言</span>
+        <ul class="language-options-list" aria-label="語言">
+          <li><a class="locale-link" href="/calcbird/" hreflang="en" lang="en">English</a></li>
+          <li><a class="locale-link" href="/calcbird/ja/" hreflang="ja" lang="ja">日本語</a></li>
+          <li><a class="locale-link" href="/calcbird/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li>
+          <li><a class="locale-link" href="/calcbird/zh-hant/" hreflang="zh-Hant" lang="zh-Hant" aria-current="page">繁體中文<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"></path></svg></a></li>
+        </ul>
+      </div>
+    </details>
+    <a class="header-action" href="https://apps.apple.com/app/id6762044720"><span class="header-action-label">App Store</span></a>
+  </div>
+</header>
+  <main class="site-main">
     <section class="hero">
       <div class="hero-copy">
         <div class="kicker">iOS 購物工具</div>
@@ -144,5 +161,6 @@
       <a href="/">JaminZhou</a>
     </footer>
   </main>
+  <script type="module" src="/assets/site.js?v=20260902"></script>
 </body>
 </html>

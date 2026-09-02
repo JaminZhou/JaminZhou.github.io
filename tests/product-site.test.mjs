@@ -68,9 +68,28 @@ test("CalcBird alternates and language switcher preserve the current surface", (
   assert.match(switcher, /aria-label="语言"/);
   assert.match(
     switcher,
-    /href="\/calcbird\/zh-hans\/privacy\/"[^>]+aria-current="page"[^>]*>简体中文<\/a>/,
+    /href="\/calcbird\/zh-hans\/privacy\/"[^>]+aria-current="page"[^>]*>简体中文/,
   );
   assert.match(switcher, /href="\/calcbird\/ja\/privacy\/"/);
+});
+
+test("CalcBird masthead copy and actions preserve the selected locale", async () => {
+  const pages = await buildCalcBirdSite({ write: false });
+
+  for (const locale of CALCBIRD_LOCALES.filter((candidate) => candidate.id !== "en")) {
+    const landing = pages.get(calcBirdOutputPath(locale.id, "landing"));
+    const support = pages.get(calcBirdOutputPath(locale.id, "support"));
+    const privacy = pages.get(calcBirdOutputPath(locale.id, "privacy"));
+    const landingRoute = `/${calcBirdOutputPath(locale.id, "landing").replace(/index\.html$/, "")}`;
+
+    assert.ok(landing.includes(`aria-label="${locale.ui.breadcrumbLabel}"`), locale.id);
+    assert.ok(landing.includes(`href="/#products">${locale.ui.products}</a>`), locale.id);
+    assert.ok(support.includes(`aria-label="${locale.ui.emailSupport}"`), locale.id);
+    assert.ok(support.includes(`<span>CalcBird · ${locale.ui.support}</span>`), locale.id);
+    assert.ok(privacy.includes(`href="${landingRoute}"`), locale.id);
+    assert.ok(privacy.includes(`aria-label="${locale.ui.backToProduct}"`), locale.id);
+    assert.ok(privacy.includes(`<span aria-current="page">${locale.ui.privacy}</span>`), locale.id);
+  }
 });
 
 test("Hushtrail remains English-only without localization controls", () => {
@@ -104,6 +123,10 @@ test("product metadata is escaped before insertion into HTML", async (t) => {
           ogDescription: 'Open Graph description "A" & <B>',
           twitterTitle: 'Twitter "A" & <B>',
           twitterDescription: 'Twitter description "A" & <B>',
+          structuredData: {
+            "@context": "https://schema.org",
+            name: "</script><script>alert(1)</script>",
+          },
         },
       },
     }),
@@ -124,6 +147,8 @@ test("product metadata is escaped before insertion into HTML", async (t) => {
   assert.match(rendered, /content=\"Description &quot;A&quot; &amp; &lt;B&gt;\"/);
   assert.match(rendered, /content=\"Open Graph &quot;A&quot; &amp; &lt;B&gt;\"/);
   assert.match(rendered, /content=\"Twitter description &quot;A&quot; &amp; &lt;B&gt;\"/);
+  assert.doesNotMatch(rendered, /<\/script><script>alert\(1\)<\/script>/);
+  assert.match(rendered, /\\u003c\/script>\\u003cscript>alert\(1\)\\u003c\/script>/);
 });
 
 test("generated product pages match committed GitHub Pages output", async () => {
@@ -173,6 +198,52 @@ test("homepage and sitemap expose the Codex UI Kit showcase", async () => {
     sitemap.split("<loc>https://jaminzhou.com/codex-ui-kit/</loc>").length - 1,
     1,
   );
+});
+
+test("production pages use the vendored Classical system without the design preview runtime", async () => {
+  const [homepage, siteCss, cormorantLicense, loraLicense] = await Promise.all([
+    readFile(new URL("../index.html", import.meta.url), "utf8"),
+    readFile(new URL("../assets/site.css", import.meta.url), "utf8"),
+    readFile(
+      new URL("../assets/classical/fonts/OFL-CormorantGaramond.txt", import.meta.url),
+      "utf8",
+    ),
+    readFile(new URL("../assets/classical/fonts/OFL-Lora.txt", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(homepage, /href="\/assets\/classical\/styles\.css\?v=20260902"/);
+  assert.match(homepage, /href="\/assets\/site\.css\?v=20260902"/);
+  assert.doesNotMatch(homepage, /support\.js|<x-dc\b|data-dc-script/);
+  assert.match(siteCss, /\.language-menu > summary,\s*\.locale-link \{\s*min-height: 44px;/);
+  assert.match(siteCss, /max-height: min\(calc\(100vh - 88px\), 468px\);/);
+  assert.match(siteCss, /\.header-action \{[\s\S]*?min-height: 36px;/);
+  assert.match(
+    siteCss,
+    /@media \(max-width: 340px\) \{[\s\S]*?\.breadcrumbs \{\s*display: none;/,
+  );
+  assert.match(cormorantLicense, /Copyright 2015 the Cormorant Project Authors/);
+  assert.match(loraLicense, /Copyright 2011 The Lora Project Authors/);
+  assert.match(cormorantLicense, /SIL OPEN FONT LICENSE Version 1\.1/);
+  assert.match(loraLicense, /SIL OPEN FONT LICENSE Version 1\.1/);
+});
+
+test("legacy iCube privacy pages keep complete static document metadata", async () => {
+  for (const product of ["iCube_Lite", "iCube_Pro"]) {
+    const html = await readFile(
+      new URL(`../privacy_policy/${product}/index.html`, import.meta.url),
+      "utf8",
+    );
+
+    assert.match(html, /<html lang="en">/);
+    assert.match(html, /<meta name="description" content="[^"]+">/);
+    assert.match(
+      html,
+      new RegExp(`<link rel="canonical" href="https://jaminzhou\\.com/privacy_policy/${product}/">`),
+    );
+    assert.match(html, /<link rel="icon"[^>]+href="\/images\/jamin-zhou-avatar\.png">/);
+    assert.equal(html.split("<main>").length - 1, 1);
+    assert.equal(html.split("<h1>").length - 1, 1);
+  }
 });
 
 test("generated product pages do not contain broken root-relative links or assets", async () => {

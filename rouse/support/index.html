@@ -32,59 +32,88 @@
   <meta name="twitter:title" content="Rouse Support">
   <meta name="twitter:description" content="Support and troubleshooting for Rouse, including command line setup, timed sessions, display sleep, battery protection, and App Store updates.">
   <meta name="twitter:image" content="https://jaminzhou.com/rouse/app-icon.png">
-  <link rel="stylesheet" href="/garlicbird/styles.css?v=20260513-theme">
+  <link rel="stylesheet" href="/assets/classical/styles.css?v=20260902">
+  <link rel="stylesheet" href="/assets/site.css?v=20260902">
 </head>
-<body class="theme-rouse">
-  <main class="wrap">
-    <nav class="locale-switch" aria-label="Language">
-      <details class="language-menu">
-        <summary>
-          <span class="language-label">Language</span>
-          <span class="language-current" lang="en">English</span>
-        </summary>
-        <div class="language-options">
-          <a class="locale-link" href="/rouse/support/" hreflang="en" lang="en" aria-current="page">English</a>
-          <a class="locale-link" href="/rouse/de/support/" hreflang="de" lang="de">Deutsch</a>
-          <a class="locale-link" href="/rouse/fr/support/" hreflang="fr" lang="fr">Français</a>
-          <a class="locale-link" href="/rouse/es/support/" hreflang="es" lang="es">Español</a>
-          <a class="locale-link" href="/rouse/pt-br/support/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
-          <a class="locale-link" href="/rouse/ko/support/" hreflang="ko" lang="ko">한국어</a>
-          <a class="locale-link" href="/rouse/ja/support/" hreflang="ja" lang="ja">日本語</a>
-          <a class="locale-link" href="/rouse/zh-hans/support/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-          <a class="locale-link" href="/rouse/zh-hant/support/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
-        </div>
-      </details>
+<body class="theme-rouse surface-support">
+<header class="site-masthead">
+  <div class="masthead-inner">
+    <a class="brand-link" href="/">
+      <img src="/images/jamin-zhou-avatar.png" alt="" width="26" height="26">
+      <span>JaminZhou</span>
+    </a>
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <span aria-hidden="true" class="hide-small">/</span>
+      <a class="hide-small" href="/rouse/">Rouse</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Support</span>
     </nav>
-
-    <section class="panel">
-      <div class="kicker">Support</div>
-      <h1>Rouse Support</h1>
-      <p class="meta">Last updated: April 26, 2026</p>
-      <p>Rouse gives you quick menu bar wake controls, a calm dashboard for display sleep control and battery-aware rules, and an official <code>rouse</code> CLI for local automation.</p>
-
-      <p>
-        Need help? You can email
-        <a href="mailto:me@jaminzhou.com">me@jaminzhou.com</a>
-        or use the feedback form if you would rather not start with email.
-      </p>
-
-      <div class="cta-row">
-        <a class="cta" href="mailto:me@jaminzhou.com?subject=Rouse%20Support">Email support</a>
-        <a class="cta secondary" href="https://tally.so/r/jaW724?product=rouse&amp;channel=site&amp;entry_point=support_page&amp;app_locale=en&amp;system_locale=site" target="_blank" rel="noreferrer">Open feedback form</a>
+    <details class="language-menu">
+      <summary aria-label="Language — English">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3.6 9h16.8"></path><path d="M3.6 15h16.8"></path><path d="M12 3c2.4 2.6 3.6 5.6 3.6 9s-1.2 6.4-3.6 9c-2.4-2.6-3.6-5.6-3.6-9s1.2-6.4 3.6-9z"></path></svg>
+        <span class="language-full">English</span>
+        <span class="language-abbr" style="display:none">EN</span>
+        <svg class="language-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+      </summary>
+      <div class="language-options">
+        <span class="language-options-label">Language</span>
+        <ul class="language-options-list" aria-label="Language">
+          <li><a class="locale-link" href="/rouse/support/" hreflang="en" lang="en" aria-current="page">English<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"></path></svg></a></li>
+          <li><a class="locale-link" href="/rouse/de/support/" hreflang="de" lang="de">Deutsch</a></li>
+          <li><a class="locale-link" href="/rouse/fr/support/" hreflang="fr" lang="fr">Français</a></li>
+          <li><a class="locale-link" href="/rouse/es/support/" hreflang="es" lang="es">Español</a></li>
+          <li><a class="locale-link" href="/rouse/pt-br/support/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+          <li><a class="locale-link" href="/rouse/ko/support/" hreflang="ko" lang="ko">한국어</a></li>
+          <li><a class="locale-link" href="/rouse/ja/support/" hreflang="ja" lang="ja">日本語</a></li>
+          <li><a class="locale-link" href="/rouse/zh-hans/support/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li>
+          <li><a class="locale-link" href="/rouse/zh-hant/support/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li>
+        </ul>
       </div>
+    </details>
+    <a class="header-action" href="mailto:me@jaminzhou.com?subject=Rouse%20Support" aria-label="Email support"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg><span class="header-action-label">Email support</span></a>
+  </div>
+</header>
+  <main class="site-main">
+<section style="padding:clamp(34px,4vw,54px) 0 clamp(24px,3vw,34px)">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
+      <img src="https://jaminzhou.com/rouse/app-icon.png" alt="Rouse app icon" width="52" height="52" style="width:52px;height:52px;border-radius:12px;box-shadow:0 1px 5px color-mix(in srgb,#2a211b 16%,transparent)">
+      <div>
+        <span style="display:block;font-family:var(--font-ui);font-size:11.5px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:4px">Rouse · macOS</span>
+        <span style="display:block;font-family:var(--font-ui);font-size:12.5px;color:color-mix(in srgb,var(--color-text) 58%,transparent)">Last updated: April 26, 2026</span>
+      </div>
+    </div>
+    <h1 data-r="sh1" style="font-family:var(--font-heading);font-weight:400;font-size:clamp(32px,3.5vw,46px);line-height:1.08;letter-spacing:-0.015em;margin:0 0 16px;max-width:20ch">Rouse Support</h1>
+    <p style="font-size:16px;line-height:1.68;max-width:64ch;margin:0 0 12px;color:color-mix(in srgb,var(--color-text) 82%,transparent)">Rouse gives you quick menu bar wake controls, a calm dashboard for display sleep control and battery-aware rules, and an official <code style="font-family:var(--font-mono);font-size:14px;padding:1px 5px;border:1px solid var(--color-divider);border-radius:3px;background:#fffdf8">rouse</code> CLI for local automation.</p>
+    <p style="font-size:16px;line-height:1.68;max-width:64ch;margin:0 0 22px;color:color-mix(in srgb,var(--color-text) 82%,transparent)">Need help? You can email <a href="mailto:me@jaminzhou.com">me@jaminzhou.com</a> or use the feedback form if you would rather not start with email.</p>
+    <div data-r="ctas" style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px">
+      <a href="mailto:me@jaminzhou.com?subject=Rouse%20Support" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 22px;border-radius:4px;text-decoration:none;border:1px solid var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent);color:var(--accent-deep);font-family:var(--font-ui);font-size:14.5px;font-weight:600;transition:background 160ms ease" style-hover="background:color-mix(in srgb,var(--accent) 18%,transparent)" style-active="background:color-mix(in srgb,var(--accent) 28%,transparent)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+        Email support
+      </a>
+      <a href="https://tally.so/r/jaW724?product=rouse&amp;channel=site&amp;entry_point=support_page&amp;app_locale=en&amp;system_locale=site" style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 20px;border-radius:4px;text-decoration:none;border:1px solid var(--color-divider);color:var(--color-text);font-family:var(--font-ui);font-size:14.5px;font-weight:500;transition:background 160ms ease" style-hover="background:color-mix(in srgb,var(--color-text) 6%,transparent)">Open feedback form</a>
+    </div>
+    <p style="font-family:var(--font-ui);font-size:13px;line-height:1.6;max-width:60ch;margin:0;color:color-mix(in srgb,var(--color-text) 62%,transparent)">The feedback form can be submitted anonymously, and it also gives you the option to leave an email for follow-up.</p>
+  </section>
 
-      <p>The feedback form can be submitted anonymously, and it also gives you the option to leave an email for follow-up.</p>
+  <hr style="height:1px;border:0;margin:0;background:var(--color-divider)">
 
-      <h2>Before you contact support</h2>
-      <ul>
-        <li>Rouse supports macOS 13 Ventura or later.</li>
-        <li>Make sure you are checking the Mac App Store version of Rouse.</li>
-        <li>If the issue involves a timed session, note the duration you chose and whether display sleep prevention was enabled.</li>
-      </ul>
+  <div data-r="sgrid" style="display:grid;grid-template-columns:minmax(0,1fr) 214px;gap:clamp(24px,4vw,52px);padding:clamp(26px,3vw,40px) 0 0;align-items:start">
 
-      <h2>Command line quick start</h2>
-      <p>In Rouse Settings, open Command Line and copy the setup that matches your shell or automation tool. After setup, these are the most useful commands:</p>
-      <pre class="command-block"><code>rouse doctor
+    <div style="min-width:0;max-width:760px">
+
+      <section id="before" style="scroll-margin-top:78px;margin-bottom:38px">
+        <h2 style="font-family:var(--font-heading);font-weight:600;font-size:24px;line-height:1.2;margin:0 0 14px">Before you contact support</h2>
+        <ul style="margin:0;padding-left:20px;font-size:15.5px;line-height:1.7;color:color-mix(in srgb,var(--color-text) 85%,transparent)">
+          <li style="margin-bottom:7px">Rouse supports macOS 13 Ventura or later.</li>
+          <li style="margin-bottom:7px">Make sure you are checking the Mac App Store version of Rouse.</li>
+          <li>If the issue involves a timed session, note the duration you chose and whether display sleep prevention was enabled.</li>
+        </ul>
+      </section>
+
+      <section id="cli" style="scroll-margin-top:78px;margin-bottom:38px">
+        <h2 style="font-family:var(--font-heading);font-weight:600;font-size:24px;line-height:1.2;margin:0 0 14px">Command line quick start</h2>
+        <p style="margin:0 0 16px;font-size:15.5px;line-height:1.7;color:color-mix(in srgb,var(--color-text) 85%,transparent)">In Rouse Settings, open Command Line and copy the setup that matches your shell or automation tool. After setup, these are the most useful commands:</p>
+        <pre style="margin:0;padding:16px 18px;border:1px solid var(--color-divider);border-left:2px solid var(--accent);border-radius:5px;background:#fffdf8;overflow-x:auto;font-family:var(--font-mono);font-size:13.5px;line-height:1.85;color:color-mix(in srgb,var(--color-text) 88%,transparent)"><code>rouse doctor
 rouse start
 rouse start --for 30m
 rouse status
@@ -92,77 +121,139 @@ rouse stop
 rouse display-sleep prevent
 rouse display-sleep allow
 rouse open</code></pre>
+      </section>
 
-      <h2>What to include</h2>
-      <ul>
-        <li>Your Rouse version and build number</li>
-        <li>Your macOS version</li>
-        <li>A short description of what you expected and what happened instead</li>
-        <li>Steps to reproduce the issue, if possible</li>
-        <li>A screenshot if it helps explain the problem</li>
-      </ul>
+      <section id="include" style="scroll-margin-top:78px;margin-bottom:38px">
+        <h2 style="font-family:var(--font-heading);font-weight:600;font-size:24px;line-height:1.2;margin:0 0 14px">What to include</h2>
+        <ul style="margin:0;padding-left:20px;font-size:15.5px;line-height:1.7;color:color-mix(in srgb,var(--color-text) 85%,transparent)">
+          <li style="margin-bottom:7px">Your Rouse version and build number</li>
+          <li style="margin-bottom:7px">Your macOS version</li>
+          <li style="margin-bottom:7px">A short description of what you expected and what happened instead</li>
+          <li style="margin-bottom:7px">Steps to reproduce the issue, if possible</li>
+          <li>A screenshot if it helps explain the problem</li>
+        </ul>
+      </section>
 
-      <h2>Common topics</h2>
-      <ul>
-        <li>Timed sessions ending earlier or later than expected</li>
-        <li>Display sleep behavior</li>
-        <li>Command line setup, <code>rouse doctor</code>, or macOS permission prompts</li>
-        <li>Battery protection settings</li>
-        <li>Dashboard opening, reopen behavior, or launch at login</li>
-        <li>Support Rouse purchases or Restore Purchases</li>
-        <li>Questions about App Store releases or updates</li>
-      </ul>
+      <section id="topics" style="scroll-margin-top:78px;margin-bottom:38px">
+        <h2 style="font-family:var(--font-heading);font-weight:600;font-size:24px;line-height:1.2;margin:0 0 14px">Common topics</h2>
+        <ul data-r="two" style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 20px;font-family:var(--font-ui);font-size:14px;color:color-mix(in srgb,var(--color-text) 80%,transparent)">
+          <li style="padding:8px 0;border-top:1px solid var(--color-divider)">Timed sessions ending earlier or later than expected</li>
+          <li style="padding:8px 0;border-top:1px solid var(--color-divider)">Display sleep behavior</li>
+          <li style="padding:8px 0;border-top:1px solid var(--color-divider)">Command line setup, <code style="font-family:var(--font-mono);font-size:13px">rouse doctor</code>, or macOS permission prompts</li>
+          <li style="padding:8px 0;border-top:1px solid var(--color-divider)">Battery protection settings</li>
+          <li style="padding:8px 0;border-top:1px solid var(--color-divider)">Dashboard opening, reopen behavior, or launch at login</li>
+          <li style="padding:8px 0;border-top:1px solid var(--color-divider)">Support Rouse purchases or Restore Purchases</li>
+          <li style="padding:8px 0;border-top:1px solid var(--color-divider)">Questions about App Store releases or updates</li>
+        </ul>
+      </section>
 
-      <h2>Frequently asked questions</h2>
-      <ul>
-        <li>Why did a session stop automatically? If battery protection is enabled, Rouse can turn itself off when your battery drops below the threshold you selected.</li>
-        <li>Why does a timed session look different after sleep or restart? Rouse restores timed sessions based on the remaining time it saved locally on your Mac.</li>
-        <li>Where do I set up the command line tool? Open Rouse Settings, choose Command Line, and use the setup guidance there. The full path option is the safest fallback for scripts and launchers.</li>
-        <li>Why did macOS ask Rouse to access data from other apps? Rouse uses a private shared container so the bundled CLI can send local commands to Rouse.app. It does not read your documents or data from other apps.</li>
-        <li>What if I clicked Don't Allow? Quit Rouse, open System Settings &gt; Privacy &amp; Security &gt; App Management, allow Rouse, then run <code>rouse doctor</code> again. If Rouse is not listed, relaunch Rouse and retry the command.</li>
-        <li>Where can I manage launch at login? Open Rouse Settings and turn on Launch at login.</li>
-        <li>Where can I support Rouse or restore a previous purchase? Open About Rouse and use the Support Rouse section. Restore Purchases is available there for supporter unlocks.</li>
-        <li>Why are support options unavailable? Confirm that you are using the Mac App Store version of Rouse, that your Mac is online, and then try Retry Support Options from About Rouse.</li>
-        <li>Where can I read the privacy policy? Visit <a href="/rouse/privacy/">the Rouse Privacy Policy</a>.</li>
-      </ul>
+      <section id="faq" style="scroll-margin-top:78px;margin-bottom:38px">
+        <h2 style="font-family:var(--font-heading);font-weight:600;font-size:24px;line-height:1.2;margin:0 0 16px">Frequently asked questions</h2>
+        <div style="border-top:1px solid var(--color-divider)">
+          <details style="border-bottom:1px solid var(--color-divider)">
+            <summary style="padding:13px 0;font-family:var(--font-ui);font-size:14.5px;font-weight:500">Why did a session stop automatically?</summary>
+            <p style="margin:0 0 14px;font-size:15px;line-height:1.7;color:color-mix(in srgb,var(--color-text) 82%,transparent)">If battery protection is enabled, Rouse can turn itself off when your battery drops below the threshold you selected.</p>
+          </details>
+          <details style="border-bottom:1px solid var(--color-divider)">
+            <summary style="padding:13px 0;font-family:var(--font-ui);font-size:14.5px;font-weight:500">Why does a timed session look different after sleep or restart?</summary>
+            <p style="margin:0 0 14px;font-size:15px;line-height:1.7;color:color-mix(in srgb,var(--color-text) 82%,transparent)">Rouse restores timed sessions based on the remaining time it saved locally on your Mac.</p>
+          </details>
+          <details style="border-bottom:1px solid var(--color-divider)">
+            <summary style="padding:13px 0;font-family:var(--font-ui);font-size:14.5px;font-weight:500">Where do I set up the command line tool?</summary>
+            <p style="margin:0 0 14px;font-size:15px;line-height:1.7;color:color-mix(in srgb,var(--color-text) 82%,transparent)">Open Rouse Settings, choose Command Line, and use the setup guidance there. The full path option is the safest fallback for scripts and launchers.</p>
+          </details>
+          <details style="border-bottom:1px solid var(--color-divider)">
+            <summary style="padding:13px 0;font-family:var(--font-ui);font-size:14.5px;font-weight:500">Why did macOS ask Rouse to access data from other apps?</summary>
+            <p style="margin:0 0 14px;font-size:15px;line-height:1.7;color:color-mix(in srgb,var(--color-text) 82%,transparent)">Rouse uses a private shared container so the bundled CLI can send local commands to Rouse.app. It does not read your documents or data from other apps.</p>
+          </details>
+          <details style="border-bottom:1px solid var(--color-divider)">
+            <summary style="padding:13px 0;font-family:var(--font-ui);font-size:14.5px;font-weight:500">What if I clicked Don't Allow?</summary>
+            <p style="margin:0 0 14px;font-size:15px;line-height:1.7;color:color-mix(in srgb,var(--color-text) 82%,transparent)">Quit Rouse, open System Settings &gt; Privacy &amp; Security &gt; App Management, allow Rouse, then run <code style="font-family:var(--font-mono);font-size:13.5px">rouse doctor</code> again. If Rouse is not listed, relaunch Rouse and retry the command.</p>
+          </details>
+          <details style="border-bottom:1px solid var(--color-divider)">
+            <summary style="padding:13px 0;font-family:var(--font-ui);font-size:14.5px;font-weight:500">Where can I manage launch at login?</summary>
+            <p style="margin:0 0 14px;font-size:15px;line-height:1.7;color:color-mix(in srgb,var(--color-text) 82%,transparent)">Open Rouse Settings and turn on Launch at login.</p>
+          </details>
+          <details style="border-bottom:1px solid var(--color-divider)">
+            <summary style="padding:13px 0;font-family:var(--font-ui);font-size:14.5px;font-weight:500">Where can I support Rouse or restore a previous purchase?</summary>
+            <p style="margin:0 0 14px;font-size:15px;line-height:1.7;color:color-mix(in srgb,var(--color-text) 82%,transparent)">Open About Rouse and use the Support Rouse section. Restore Purchases is available there for supporter unlocks.</p>
+          </details>
+          <details style="border-bottom:1px solid var(--color-divider)">
+            <summary style="padding:13px 0;font-family:var(--font-ui);font-size:14.5px;font-weight:500">Why are support options unavailable?</summary>
+            <p style="margin:0 0 14px;font-size:15px;line-height:1.7;color:color-mix(in srgb,var(--color-text) 82%,transparent)">Confirm that you are using the Mac App Store version of Rouse, that your Mac is online, and then try Retry Support Options from About Rouse.</p>
+          </details>
+          <details style="border-bottom:1px solid var(--color-divider)">
+            <summary style="padding:13px 0;font-family:var(--font-ui);font-size:14.5px;font-weight:500">Where can I read the privacy policy?</summary>
+            <p style="margin:0 0 14px;font-size:15px;line-height:1.7;color:color-mix(in srgb,var(--color-text) 82%,transparent)">Visit <a href="https://jaminzhou.com/rouse/privacy/">the Rouse Privacy Policy</a>.</p>
+          </details>
+        </div>
+      </section>
 
-      <h2>Troubleshooting</h2>
-      <div class="troubleshooting">
-        <h3>Timed sessions</h3>
-        <p>If a session ends earlier than expected, first check whether battery protection turned it off at your chosen threshold. If it looks different after sleep or relaunch, compare the remaining time against the saved session state rather than the original start time.</p>
+      <section id="troubleshooting" style="scroll-margin-top:78px;margin-bottom:38px">
+        <h2 style="font-family:var(--font-heading);font-weight:600;font-size:24px;line-height:1.2;margin:0 0 18px">Troubleshooting</h2>
 
-        <h3>Display sleep</h3>
-        <p>Display sleep control is optional. If your Mac stays awake but the screen still dims or sleeps, confirm that display sleep prevention was enabled for that session.</p>
+        <h3 style="font-family:var(--font-heading);font-weight:600;font-size:18px;margin:0 0 8px">Timed sessions</h3>
+        <p style="margin:0 0 22px;font-size:15.5px;line-height:1.7;color:color-mix(in srgb,var(--color-text) 84%,transparent)">If a session ends earlier than expected, first check whether battery protection turned it off at your chosen threshold. If it looks different after sleep or relaunch, compare the remaining time against the saved session state rather than the original start time.</p>
 
-        <h3>Battery protection</h3>
-        <p>Rouse can automatically stop an active session when battery drops below the threshold you selected. If that behavior feels too aggressive, raise the threshold only if you want earlier protection, or turn the setting off in Rouse Settings.</p>
+        <h3 style="font-family:var(--font-heading);font-weight:600;font-size:18px;margin:0 0 8px">Display sleep</h3>
+        <p style="margin:0 0 22px;font-size:15.5px;line-height:1.7;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Display sleep control is optional. If your Mac stays awake but the screen still dims or sleeps, confirm that display sleep prevention was enabled for that session.</p>
 
-        <h3>Launch at login</h3>
-        <p>If Rouse is not available after logging in, open Rouse Settings and verify that Launch at login is still enabled. macOS may also require you to review login items if system settings changed.</p>
+        <h3 style="font-family:var(--font-heading);font-weight:600;font-size:18px;margin:0 0 8px">Battery protection</h3>
+        <p style="margin:0 0 22px;font-size:15.5px;line-height:1.7;color:color-mix(in srgb,var(--color-text) 84%,transparent)">Rouse can automatically stop an active session when battery drops below the threshold you selected. If that behavior feels too aggressive, raise the threshold only if you want earlier protection, or turn the setting off in Rouse Settings.</p>
 
-        <h3>App Store updates</h3>
-        <p>If the Mac App Store still shows an older build, refresh the App Store Updates page and confirm that you are viewing the Mac App Store version of Rouse. Version history is also available on the <a href="/rouse/changelog/">Rouse changelog</a>.</p>
+        <h3 style="font-family:var(--font-heading);font-weight:600;font-size:18px;margin:0 0 8px">Launch at login</h3>
+        <p style="margin:0 0 22px;font-size:15.5px;line-height:1.7;color:color-mix(in srgb,var(--color-text) 84%,transparent)">If Rouse is not available after logging in, open Rouse Settings and verify that Launch at login is still enabled. macOS may also require you to review login items if system settings changed.</p>
 
-        <h3>Command line</h3>
-        <p>If <code>rouse</code> is not found, open Rouse Settings and copy the Command Line setup that matches your shell or automation tool. If <code>rouse doctor</code> cannot connect, make sure Rouse.app is installed from the Mac App Store, launch Rouse once, and check the macOS App Management permission if you previously denied the prompt.</p>
-      </div>
+        <h3 style="font-family:var(--font-heading);font-weight:600;font-size:18px;margin:0 0 8px">App Store updates</h3>
+        <p style="margin:0 0 22px;font-size:15.5px;line-height:1.7;color:color-mix(in srgb,var(--color-text) 84%,transparent)">If the Mac App Store still shows an older build, refresh the App Store Updates page and confirm that you are viewing the Mac App Store version of Rouse. Version history is also available on the <a href="https://jaminzhou.com/rouse/changelog/">Rouse changelog</a>.</p>
 
-      <h2>Closed-lid support</h2>
-      <p>Rouse offers an optional, open-source <a href="/rouse/support/clamshell/">Closed-Lid Helper</a> distributed separately from the Mac App Store app. Helper v1.0.0 is available as a Developer ID-signed and Apple-notarized DMG; the linked page covers setup, the verified safety model, explicitly deferred checks, and recovery.</p>
+        <h3 style="font-family:var(--font-heading);font-weight:600;font-size:18px;margin:0 0 8px">Command line</h3>
+        <p style="margin:0;font-size:15.5px;line-height:1.7;color:color-mix(in srgb,var(--color-text) 84%,transparent)">If <code style="font-family:var(--font-mono);font-size:14px">rouse</code> is not found, open Rouse Settings and copy the Command Line setup that matches your shell or automation tool. If <code style="font-family:var(--font-mono);font-size:14px">rouse doctor</code> cannot connect, make sure Rouse.app is installed from the Mac App Store, launch Rouse once, and check the macOS App Management permission if you previously denied the prompt.</p>
+      </section>
 
-      <h2>Version history</h2>
-      <p>The public release history now lives on the <a href="/rouse/changelog/">Rouse changelog</a>.</p>
+      <section id="clamshell" style="scroll-margin-top:78px;margin-bottom:38px">
+        <h2 style="font-family:var(--font-heading);font-weight:600;font-size:24px;line-height:1.2;margin:0 0 14px">Closed-lid support</h2>
+        <div style="border:1px solid color-mix(in srgb,var(--gold) 50%,transparent);border-left:2px solid var(--gold);border-radius:5px;background:color-mix(in srgb,var(--gold) 7%,transparent);padding:16px 18px">
+          <span style="display:block;font-family:var(--font-ui);font-size:11px;font-weight:600;letter-spacing:0.11em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:8px">Optional · distributed separately</span>
+          <p style="margin:0;font-size:15px;line-height:1.7;color:color-mix(in srgb,var(--color-text) 86%,transparent)">Rouse offers an optional, open-source <a href="https://jaminzhou.com/rouse/support/clamshell/">Closed-Lid Helper</a> distributed separately from the Mac App Store app. Helper v1.0.0 is available as a Developer ID-signed and Apple-notarized DMG; the linked page covers setup, the verified safety model, explicitly deferred checks, and recovery.</p>
+        </div>
+      </section>
 
-      <div class="note">
-        Support requests are answered in English. Please avoid sending passwords, account secrets, or other sensitive personal information.
-      </div>
+      <section id="history" style="scroll-margin-top:78px;margin-bottom:34px">
+        <h2 style="font-family:var(--font-heading);font-weight:600;font-size:24px;line-height:1.2;margin:0 0 14px">Version history</h2>
+        <p style="margin:0 0 18px;font-size:15.5px;line-height:1.7;color:color-mix(in srgb,var(--color-text) 84%,transparent)">The public release history now lives on the <a href="https://jaminzhou.com/rouse/changelog/">Rouse changelog</a>.</p>
+        <p style="margin:0;font-family:var(--font-ui);font-size:13.5px;line-height:1.65;color:color-mix(in srgb,var(--color-text) 62%,transparent)">Support requests are answered in English. Please avoid sending passwords, account secrets, or other sensitive personal information.</p>
+      </section>
+    </div>
 
-      <p style="margin-top: 28px;">
-        <a href="/rouse/">Back to Rouse</a>
-        / <a href="/rouse/changelog/">Changelog</a>
-        / <a href="/rouse/privacy/">Privacy Policy</a>
-      </p>
-    </section>
+    <nav data-r="toc" aria-label="On this page" style="position:sticky;top:78px;border-left:1px solid var(--color-divider);padding-left:20px;font-family:var(--font-ui)">
+      <span style="display:block;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb,var(--color-text) 55%,transparent);margin-bottom:12px">On this page</span>
+      <ol data-r="toclist" style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;font-size:13px">
+        <li><a href="#before" style="text-decoration:none;color:color-mix(in srgb,var(--color-text) 72%,transparent)" style-hover="color:var(--accent-deep)">Before you contact</a></li>
+        <li><a href="#cli" style="text-decoration:none;color:color-mix(in srgb,var(--color-text) 72%,transparent)" style-hover="color:var(--accent-deep)">Command line</a></li>
+        <li><a href="#include" style="text-decoration:none;color:color-mix(in srgb,var(--color-text) 72%,transparent)" style-hover="color:var(--accent-deep)">What to include</a></li>
+        <li><a href="#topics" style="text-decoration:none;color:color-mix(in srgb,var(--color-text) 72%,transparent)" style-hover="color:var(--accent-deep)">Common topics</a></li>
+        <li><a href="#faq" style="text-decoration:none;color:color-mix(in srgb,var(--color-text) 72%,transparent)" style-hover="color:var(--accent-deep)">FAQ</a></li>
+        <li><a href="#troubleshooting" style="text-decoration:none;color:color-mix(in srgb,var(--color-text) 72%,transparent)" style-hover="color:var(--accent-deep)">Troubleshooting</a></li>
+        <li><a href="#clamshell" style="text-decoration:none;color:color-mix(in srgb,var(--color-text) 72%,transparent)" style-hover="color:var(--accent-deep)">Closed-lid support</a></li>
+        <li><a href="#history" style="text-decoration:none;color:color-mix(in srgb,var(--color-text) 72%,transparent)" style-hover="color:var(--accent-deep)">Version history</a></li>
+      </ol>
+    </nav>
+  </div>
+
+  <hr style="height:1px;border:0;margin:0;background:var(--color-divider)">
+
+  <footer style="padding:24px 0 40px;font-family:var(--font-ui);display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;font-size:13px">
+    <a href="https://jaminzhou.com/rouse/" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--color-text);margin-right:auto">
+      <img src="https://jaminzhou.com/rouse/app-icon.png" alt="" width="22" height="22" style="width:22px;height:22px;border-radius:6px">
+      <span style="font-family:var(--font-heading);font-weight:600;font-size:15px">Back to Rouse</span>
+    </a>
+    <a href="https://jaminzhou.com/rouse/changelog/" style="color:color-mix(in srgb,var(--color-text) 75%,transparent);text-decoration:none" style-hover="color:var(--accent-deep)">Changelog</a>
+    <a href="https://jaminzhou.com/rouse/privacy/" style="color:color-mix(in srgb,var(--color-text) 75%,transparent);text-decoration:none" style-hover="color:var(--accent-deep)">Privacy Policy</a>
+    <a href="mailto:me@jaminzhou.com" style="color:color-mix(in srgb,var(--color-text) 75%,transparent);text-decoration:none" style-hover="color:var(--accent-deep)">me@jaminzhou.com</a>
+    <span style="color:color-mix(in srgb,var(--color-text) 52%,transparent);font-size:12px">© 2026 JaminZhou.</span>
+  </footer>
   </main>
+  <script type="module" src="/assets/site.js?v=20260902"></script>
 </body>
 </html>

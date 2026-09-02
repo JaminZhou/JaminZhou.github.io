@@ -2,30 +2,139 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+import {
+  decorateProductContent,
+  escapeHtml,
+  productBodyClass,
+  renderDesignLocaleSwitcher,
+  renderProductMasthead,
+  validateHtmlStructure as validateSharedHtmlStructure,
+} from "./lib/static-product-site.mjs";
+
 const REPOSITORY_ROOT = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const SOURCE_ROOT = path.join(REPOSITORY_ROOT, "_site-src", "rouse");
 const SITE_ORIGIN = "https://jaminzhou.com";
 
 export const LOCALES = Object.freeze([
   { id: "en", hreflang: "en", segment: "", label: "English", menuLabel: "Language" },
-  { id: "de", hreflang: "de", segment: "de", label: "Deutsch", menuLabel: "Sprache" },
-  { id: "fr", hreflang: "fr", segment: "fr", label: "Français", menuLabel: "Langue" },
-  { id: "es", hreflang: "es", segment: "es", label: "Español", menuLabel: "Idioma" },
+  {
+    id: "de",
+    hreflang: "de",
+    segment: "de",
+    label: "Deutsch",
+    menuLabel: "Sprache",
+    ui: {
+      breadcrumbLabel: "Brotkrümelnavigation",
+      products: "Produkte",
+      support: "Support",
+      privacy: "Datenschutz",
+      changelog: "Versionsverlauf",
+      clamshell: "Geschlossener Deckel",
+      emailSupport: "Support per E-Mail",
+      backToProduct: "Zurück zu Rouse",
+    },
+  },
+  {
+    id: "fr",
+    hreflang: "fr",
+    segment: "fr",
+    label: "Français",
+    menuLabel: "Langue",
+    ui: {
+      breadcrumbLabel: "Fil d’Ariane",
+      products: "Produits",
+      support: "Assistance",
+      privacy: "Confidentialité",
+      changelog: "Notes de version",
+      clamshell: "Écran fermé",
+      emailSupport: "Assistance par e-mail",
+      backToProduct: "Retour à Rouse",
+    },
+  },
+  {
+    id: "es",
+    hreflang: "es",
+    segment: "es",
+    label: "Español",
+    menuLabel: "Idioma",
+    ui: {
+      breadcrumbLabel: "Ruta de navegación",
+      products: "Productos",
+      support: "Soporte",
+      privacy: "Privacidad",
+      changelog: "Registro de cambios",
+      clamshell: "Tapa cerrada",
+      emailSupport: "Soporte por correo",
+      backToProduct: "Volver a Rouse",
+    },
+  },
   {
     id: "pt-BR",
     hreflang: "pt-BR",
     segment: "pt-br",
     label: "Português (Brasil)",
     menuLabel: "Idioma",
+    ui: {
+      breadcrumbLabel: "Navegação estrutural",
+      products: "Produtos",
+      support: "Suporte",
+      privacy: "Privacidade",
+      changelog: "Notas de versão",
+      clamshell: "Tampa fechada",
+      emailSupport: "Suporte por e-mail",
+      backToProduct: "Voltar ao Rouse",
+    },
   },
-  { id: "ko", hreflang: "ko", segment: "ko", label: "한국어", menuLabel: "언어" },
-  { id: "ja", hreflang: "ja", segment: "ja", label: "日本語", menuLabel: "言語" },
+  {
+    id: "ko",
+    hreflang: "ko",
+    segment: "ko",
+    label: "한국어",
+    menuLabel: "언어",
+    ui: {
+      breadcrumbLabel: "이동 경로",
+      products: "제품",
+      support: "지원",
+      privacy: "개인정보",
+      changelog: "변경 내역",
+      clamshell: "덮개 닫힘",
+      emailSupport: "이메일 지원",
+      backToProduct: "Rouse로 돌아가기",
+    },
+  },
+  {
+    id: "ja",
+    hreflang: "ja",
+    segment: "ja",
+    label: "日本語",
+    menuLabel: "言語",
+    ui: {
+      breadcrumbLabel: "パンくずリスト",
+      products: "製品",
+      support: "サポート",
+      privacy: "プライバシー",
+      changelog: "更新履歴",
+      clamshell: "合蓋",
+      emailSupport: "メールサポート",
+      backToProduct: "Rouse に戻る",
+    },
+  },
   {
     id: "zh-Hans",
     hreflang: "zh-Hans",
     segment: "zh-hans",
     label: "简体中文",
     menuLabel: "语言",
+    ui: {
+      breadcrumbLabel: "面包屑导航",
+      products: "产品",
+      support: "支持",
+      privacy: "隐私",
+      changelog: "更新日志",
+      clamshell: "合盖",
+      emailSupport: "邮件支持",
+      backToProduct: "返回 Rouse",
+    },
   },
   {
     id: "zh-Hant",
@@ -33,6 +142,16 @@ export const LOCALES = Object.freeze([
     segment: "zh-hant",
     label: "繁體中文",
     menuLabel: "語言",
+    ui: {
+      breadcrumbLabel: "麵包屑導覽",
+      products: "產品",
+      support: "支援",
+      privacy: "隱私",
+      changelog: "更新日誌",
+      clamshell: "闔蓋",
+      emailSupport: "電子郵件支援",
+      backToProduct: "返回 Rouse",
+    },
   },
 ]);
 
@@ -80,67 +199,14 @@ export function renderAlternateLinks(_localeId, surfaceId) {
 
 export function renderLocaleSwitcher(localeId, surfaceId) {
   const current = localeFor(localeId);
-  const links = LOCALES.map((locale) => {
-    const currentAttribute = locale.id === localeId ? ' aria-current="page"' : "";
-    return `          <a class="locale-link" href="${routePath(locale.id, surfaceId)}" hreflang="${locale.hreflang}" lang="${locale.id}"${currentAttribute}>${locale.label}</a>`;
-  }).join("\n");
-
-  return `    <nav class="locale-switch" aria-label="${current.menuLabel}">
-      <details class="language-menu">
-        <summary>
-          <span class="language-label">${current.menuLabel}</span>
-          <span class="language-current" lang="${current.id}">${current.label}</span>
-        </summary>
-        <div class="language-options">
-${links}
-        </div>
-      </details>
-    </nav>`;
+  return renderDesignLocaleSwitcher({
+    locales: LOCALES,
+    currentLocale: current,
+    routeFor: (targetLocaleId) => routePath(targetLocaleId, surfaceId),
+  });
 }
 
-export function validateHtmlStructure(html) {
-  const trackedTags = new Set([
-    "html",
-    "head",
-    "body",
-    "main",
-    "nav",
-    "details",
-    "summary",
-    "div",
-    "section",
-    "article",
-    "footer",
-    "ul",
-    "ol",
-    "dl",
-    "pre",
-    "code",
-  ]);
-  const stack = [];
-  const errors = [];
-
-  for (const match of html.matchAll(/<(\/)?([a-z][a-z0-9-]*)\b[^>]*>/gi)) {
-    const [, closing, rawTag] = match;
-    const tag = rawTag.toLowerCase();
-    if (!trackedTags.has(tag)) continue;
-
-    if (!closing) {
-      stack.push(tag);
-      continue;
-    }
-
-    const openTag = stack.pop();
-    if (openTag !== tag) {
-      errors.push(`Expected </${openTag ?? "none"}> before </${tag}>`);
-    }
-  }
-
-  for (const tag of stack.reverse()) {
-    errors.push(`Missing </${tag}>`);
-  }
-  return errors;
-}
+export const validateHtmlStructure = validateSharedHtmlStructure;
 
 export function validateReleaseVersionConsistency({ manifest, pages, homepage }) {
   const errors = [];
@@ -192,14 +258,16 @@ export function validateReleaseVersionConsistency({ manifest, pages, homepage })
     }
   }
 
-  const homepageMetric = homepage.match(
-    /<div class="metric">\s*<strong>\s*([^<]+?)\s*<\/strong>\s*<span>\s*Rouse for macOS\s*<\/span>\s*<\/div>/,
-  );
-  if (!homepageMetric) {
-    errors.push("index.html is missing the Rouse for macOS version metric");
-  } else if (homepageMetric[1] !== expectedVersion) {
+  const homepageVersion =
+    homepage.match(/data-rouse-version="([^"]+)"/)?.[1] ??
+    homepage.match(
+      /<div class="metric">\s*<strong>\s*([^<]+?)\s*<\/strong>\s*<span>\s*Rouse for macOS\s*<\/span>\s*<\/div>/,
+    )?.[1];
+  if (!homepageVersion) {
+    errors.push("index.html is missing the canonical Rouse version");
+  } else if (homepageVersion !== expectedVersion) {
     errors.push(
-      `index.html Rouse metric version is ${JSON.stringify(homepageMetric[1])}; expected ${JSON.stringify(expectedVersion)}`,
+      `index.html Rouse version is ${JSON.stringify(homepageVersion)}; expected ${JSON.stringify(expectedVersion)}`,
     );
   }
 
@@ -210,6 +278,9 @@ function renderStructuredData(structuredData) {
   if (!structuredData) return "";
 
   const json = JSON.stringify(structuredData, null, 2)
+    .replaceAll("<", "\\u003c")
+    .replaceAll("\u2028", "\\u2028")
+    .replaceAll("\u2029", "\\u2029")
     .split("\n")
     .map((line) => `    ${line}`)
     .join("\n");
@@ -219,22 +290,38 @@ function renderStructuredData(structuredData) {
 function renderPage({ localeId, surfaceId, metadata, content, template }) {
   const locale = localeFor(localeId);
   const canonical = `${SITE_ORIGIN}${routePath(localeId, surfaceId)}`;
-  const homeLink =
-    surfaceId === "landing" ? '    <a class="toplink" href="/">JaminZhou home</a>\n' : "";
+  const bodyHeader = renderProductMasthead({
+    locales: LOCALES,
+    currentLocale: locale,
+    routeFor: (targetLocaleId) => routePath(targetLocaleId, surfaceId),
+    productName: "Rouse",
+    surfaceId,
+    storeUrl: "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12",
+    storeLabel: "Mac App Store",
+    routeForSurface: (targetSurfaceId) => routePath(localeId, targetSurfaceId),
+  });
   const values = {
     "{{LANG}}": locale.id,
-    "{{TITLE}}": metadata.title,
-    "{{DESCRIPTION}}": metadata.description,
-    "{{CANONICAL}}": canonical,
+    "{{TITLE}}": escapeHtml(metadata.title),
+    "{{DESCRIPTION}}": escapeHtml(metadata.description),
+    "{{CANONICAL}}": escapeHtml(canonical),
     "{{ALTERNATE_LINKS}}": renderAlternateLinks(localeId, surfaceId),
-    "{{OG_TITLE}}": metadata.ogTitle,
-    "{{OG_DESCRIPTION}}": metadata.ogDescription,
-    "{{TWITTER_TITLE}}": metadata.twitterTitle,
-    "{{TWITTER_DESCRIPTION}}": metadata.twitterDescription,
+    "{{OG_TITLE}}": escapeHtml(metadata.ogTitle),
+    "{{OG_DESCRIPTION}}": escapeHtml(metadata.ogDescription),
+    "{{TWITTER_TITLE}}": escapeHtml(metadata.twitterTitle ?? metadata.ogTitle),
+    "{{TWITTER_DESCRIPTION}}": escapeHtml(
+      metadata.twitterDescription ?? metadata.ogDescription,
+    ),
     "{{STRUCTURED_DATA}}": renderStructuredData(metadata.structuredData),
-    "{{HOME_LINK}}": homeLink,
-    "{{LOCALE_SWITCHER}}": renderLocaleSwitcher(localeId, surfaceId),
-    "{{CONTENT}}": content.trimEnd(),
+    "{{BODY_CLASS}}": productBodyClass({ productSegment: "rouse", surfaceId }),
+    "{{BODY_HEADER}}": `${bodyHeader}\n`,
+    "{{CONTENT}}": decorateProductContent({
+      content: content.trimEnd(),
+      productName: "Rouse",
+      productSegment: "rouse",
+      surfaceId,
+      currentLocale: locale,
+    }),
   };
   let rendered = template;
   for (const [token, value] of Object.entries(values)) {
