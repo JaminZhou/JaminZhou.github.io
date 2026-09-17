@@ -5,7 +5,7 @@
     <link>https://jaminzhou.com/</link>
     <description>Updates from JaminZhou, including the personal homepage, Hushtrail and Rouse for macOS, and CalcBird for iOS.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 07 Aug 2026 08:02:58 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 10:00:00 +0800</lastBuildDate>
     <atom:link href="https://jaminzhou.com/index.xml" rel="self" type="application/rss+xml" />
 
     <item>
@@ -68,16 +68,16 @@
       <title>Rouse for macOS</title>
       <link>https://jaminzhou.com/rouse/</link>
       <guid isPermaLink="true">https://jaminzhou.com/rouse/</guid>
-      <pubDate>Fri, 07 Aug 2026 08:02:58 +0800</pubDate>
-      <description>Rouse 1.12.0 is live with custom wake durations from 5 minutes to 24 hours, one saved duration across Dashboard and Quick Panel, and more reliable Launch at Login recovery.</description>
+      <pubDate>Thu, 17 Sep 2026 10:00:00 +0800</pubDate>
+      <description>Rouse 1.12.1 is live after a macOS 27 compatibility rebuild with the latest macOS SDK, while keeping the same menu-bar controls, timed sessions, display sleep control, and battery protection.</description>
     </item>
 
     <item>
       <title>Rouse Changelog</title>
       <link>https://jaminzhou.com/rouse/changelog/</link>
       <guid isPermaLink="true">https://jaminzhou.com/rouse/changelog/</guid>
-      <pubDate>Fri, 07 Aug 2026 08:02:58 +0800</pubDate>
-      <description>Release notes and version history for Rouse, now updated for Rouse 1.12.0.</description>
+      <pubDate>Thu, 17 Sep 2026 10:00:00 +0800</pubDate>
+      <description>Release notes and version history for Rouse, now updated for Rouse 1.12.1.</description>
     </item>
 
     <item>
