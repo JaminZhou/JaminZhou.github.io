@@ -21,4 +21,6 @@ test('Trailglass support and privacy are public English documents with valid loc
   assert.ok(support.includes('email optional'));
   const privacy = await readFile(new URL('../trailglass/privacy/index.html', import.meta.url), 'utf8');
   for (const word of ['StoreKit', 'Tally', 'LiteLLM', 'TestFlight', 'me@jaminzhou.com']) assert.ok(privacy.includes(word));
+  assert.ok(privacy.includes('does not bundle a separate offline copy'));
+  assert.ok(!privacy.includes('without a network connection'));
 });
