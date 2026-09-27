@@ -5,20 +5,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hushtrail Privacy Policy</title>
-  <meta name="description" content="Privacy Policy for Hushtrail, including authorized folders, local rollback archives, security-scoped bookmarks, support requests, and Mac App Store data handling.">
+  <meta name="description" content="How Hushtrail handles local metadata, temporary operation records, permissions and optional support requests.">
   <link rel="canonical" href="https://jaminzhou.com/hushtrail/privacy/">
   <link rel="icon" type="image/png" sizes="16x16" href="/hushtrail/favicon-16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/hushtrail/favicon-32.png">
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/hushtrail/apple-touch-icon.png">
   <meta property="og:site_name" content="Hushtrail">
   <meta property="og:title" content="Hushtrail Privacy Policy">
-  <meta property="og:description" content="Read how Hushtrail handles authorized folders, local rollback archives, security-scoped bookmarks, support requests, and Mac App Store data handling.">
+  <meta property="og:description" content="How Hushtrail handles local metadata, temporary operation records, permissions and optional support requests.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jaminzhou.com/hushtrail/privacy/">
   <meta property="og:image" content="https://jaminzhou.com/hushtrail/app-icon.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Hushtrail Privacy Policy">
-  <meta name="twitter:description" content="Read how Hushtrail handles authorized folders, local rollback archives, security-scoped bookmarks, support requests, and Mac App Store data handling.">
+  <meta name="twitter:description" content="How Hushtrail handles local metadata, temporary operation records, permissions and optional support requests.">
   <meta name="twitter:image" content="https://jaminzhou.com/hushtrail/app-icon.png">
   <link rel="stylesheet" href="/assets/classical/styles.css?v=20260902">
   <link rel="stylesheet" href="/assets/site.css?v=20260902">
@@ -44,66 +44,16 @@
     <img src="/hushtrail/app-icon.png" alt="" width="52" height="52">
     <span>Hushtrail · Privacy</span>
   </div>
-    <section class="panel">
-      <div class="kicker">Privacy Policy</div>
-      <h1>Hushtrail Privacy Policy</h1>
-      <p class="meta">Effective date: May 24, 2026</p>
-
-      <p>This Privacy Policy applies to Hushtrail for macOS, including the Mac App Store and TestFlight versions.</p>
-
-      <h2>Summary</h2>
-      <p>Hushtrail works locally on your Mac. The app does not require an account, advertising identifiers, analytics SDKs, tracking SDKs, or a developer-run backend for its core cleanup flow.</p>
-
-      <h2>Information Hushtrail does not collect</h2>
-      <ul>
-        <li>No account information</li>
-        <li>No advertising identifiers</li>
-        <li>No third-party analytics data</li>
-        <li>No location data</li>
-        <li>No contact list, photo library, microphone, or camera data</li>
-        <li>No browser passwords, saved payment information, or browser database contents sent to the developer by the app</li>
-      </ul>
-
-      <h2>Information stored locally on your device</h2>
-      <p>Hushtrail stores information locally so the app can scan only folders you authorize and keep cleanup reversible. Depending on the features you use, this may include:</p>
-      <ul>
-        <li>Security-scoped bookmarks for folders you selected through the macOS file picker</li>
-        <li>App preferences and workflow state</li>
-        <li>Preview scan summaries and explanations displayed in the app</li>
-        <li>Rollback archive files, manifests, original paths, restore status, and discard status</li>
-      </ul>
-      <p>This information stays on your device and is not sent to the developer by Hushtrail.</p>
-
-      <h2>Authorized folder access</h2>
-      <p>Hushtrail is sandboxed. It can inspect only folders you choose or folders macOS otherwise allows the app to access. The app uses those selected locations to enumerate files, match cleanup rules, explain candidates, and archive eligible user-level items into rollback storage.</p>
-
-      <h2>Browser and privacy trace handling</h2>
-      <p>Hushtrail may show browser-related privacy traces only when they are inside folders you authorized. Browser-owned data is blocked while the related browser is running or when the running state is unknown. Some mixed-purpose files, such as Firefox <code>places.sqlite</code>, remain scan-only in the current beta because they can contain bookmarks as well as history.</p>
-
-      <h2>Network activity</h2>
-      <p>The core Hushtrail app does not require sign-in, a remote account, or a developer-run network service. TestFlight and Mac App Store distribution are provided by Apple and may involve Apple services outside Hushtrail's local cleanup flow.</p>
-
-      <h2>Support requests</h2>
-      <p>If you contact support by email, the information you choose to send, such as your email address, app version, macOS version, screenshots, and message contents, will be used only to respond to your request and improve support quality.</p>
-      <p>Please do not send private browser database contents, passwords, cookies, or full unredacted sensitive file paths.</p>
-
-      <h2>Third-party services</h2>
-      <p>If you use a third-party email provider or another external service to contact support, your information may also be subject to that service's own terms and privacy practices. The Mac App Store and TestFlight are operated by Apple.</p>
-
-      <h2>Children's privacy</h2>
-      <p>Hushtrail is not directed to children, and the app does not knowingly collect personal information from children.</p>
-
-      <h2>Changes to this policy</h2>
-      <p>This Privacy Policy may be updated from time to time. Any updates will be posted on this page with a revised effective date.</p>
-
-      <h2>Contact</h2>
-      <p>If you have questions about this Privacy Policy, contact <a href="mailto:me@jaminzhou.com">me@jaminzhou.com</a>.</p>
-
-      <p style="margin-top: 28px;">
-        <a href="/hushtrail/">Back to Hushtrail</a>
-        / <a href="/hushtrail/support/">Support</a>
-      </p>
+    <section class="panel" aria-labelledby="privacy-title">
+      <p class="kicker">Updated September 27, 2026 · Hushtrail 0.1.0</p><h1 id="privacy-title">Privacy and your data</h1>
+      <h2>Local checks and cleanup</h2><p>Hushtrail processes checks and cleanup on your Mac. No account, analytics SDK, advertising or automatic history upload is used. It does not read document, media or chat contents. It parses required history structure locally without opening referenced documents, displaying history names or logging history values. Leftovers uses app/component identities and file metadata; selected preference validation uses system tools with their output discarded.</p>
+      <h2>What stays on your Mac</h2><p>Hushtrail remembers chosen app identities, folder choices, access bookmarks and appearance preferences. Discovered cleanup lists are not saved. Temporary operation journals may contain exact paths and file identities until verification completes. Experimental Recents also temporarily records use-time attributes to recover from interrupted work. Unresolved operations can retain these records until addressed. These records are not file-content backups.</p>
+      <h2>What cleanup changes</h2><p>Selected leftovers move to macOS Trash. Hushtrail does not empty Trash or provide a private backup/restore archive. Recent lists and playback history may be irreversibly cleared; original documents and media are kept. Experimental chosen-folder Recents temporarily moves eligible local files, then returns and verifies them.</p>
+      <h2>Support you choose to contact</h2><p>Opening the support sheet sends nothing. Opening its Tally form sends the visible Hushtrail version/build, macOS version, product and entry-point markers and, for an app-specific request, that selected app’s name and Bundle ID in the URL. This happens when the page opens, before submitting a message. The message and optional reply email are supplied by you. No history, document paths, logs or full app inventory are attached automatically.</p><p>Email opens an editable draft; Hushtrail does not send it. GitHub Issues are public. Use email for private questions and avoid including private files, paths or credentials. Contact <a href="mailto:me@jaminzhou.com">me@jaminzhou.com</a> about information you have submitted.</p>
+      <h2>External services</h2><p>GitHub hosts downloads, release notes and this website; Tally hosts the feedback form. These providers may receive ordinary connection information when you visit, under their respective <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub</a> and <a href="https://tally.so/help/privacy-policy">Tally</a> privacy policies. Links open after user action. macOS can independently contact Apple for signing/notarization checks or diagnostics according to your system settings.</p>
+      <h2>Permissions</h2><p>Full Disk Access can be needed for selected app histories. Administrator authorization may be requested for a specific system-list reset or read-only component check. These permissions are handled by macOS, are not treated as permanent, and do not trigger a startup or whole-disk scan.</p>
     </section>
+    <footer><a href="/hushtrail/">Hushtrail</a> / <a href="/hushtrail/support/">Support</a> / <a href="/">JaminZhou</a></footer>
   </main>
   <script type="module" src="/assets/site.js?v=20260902"></script>
 </body>

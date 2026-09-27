@@ -4,23 +4,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hushtrail | Careful Cleanup for Mac</title>
-  <meta name="description" content="Hushtrail is a local-first macOS cleanup utility for reviewing app leftovers and privacy traces inside folders you choose, with preview scans and rollback-backed archive.">
+  <title>Hushtrail | App History and Leftovers for Mac</title>
+  <meta name="description" content="Clear selected app history and review possible uninstall leftovers. Hushtrail 0.1.0 is a native Mac utility for macOS 27.0 or later.">
   <link rel="canonical" href="https://jaminzhou.com/hushtrail/">
   <link rel="icon" type="image/png" sizes="16x16" href="/hushtrail/favicon-16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/hushtrail/favicon-32.png">
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/hushtrail/apple-touch-icon.png">
   <meta property="og:site_name" content="Hushtrail">
-  <meta property="og:title" content="Hushtrail | Careful Cleanup for Mac">
-  <meta property="og:description" content="Review app leftovers and privacy traces inside folders you choose, then archive eligible items with rollback instead of deleting blindly.">
+  <meta property="og:title" content="Hushtrail | App History and Leftovers for Mac">
+  <meta property="og:description" content="Clear selected app history and review possible uninstall leftovers. Hushtrail 0.1.0 is a native Mac utility for macOS 27.0 or later.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jaminzhou.com/hushtrail/">
   <meta property="og:image" content="https://jaminzhou.com/hushtrail/app-icon.png">
   <meta property="og:image:width" content="1024">
   <meta property="og:image:height" content="1024">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Hushtrail | Careful Cleanup for Mac">
-  <meta name="twitter:description" content="Review app leftovers and privacy traces inside folders you choose, then archive eligible items with rollback instead of deleting blindly.">
+  <meta name="twitter:title" content="Hushtrail | App History and Leftovers for Mac">
+  <meta name="twitter:description" content="Clear selected app history and review possible uninstall leftovers. Hushtrail 0.1.0 is a native Mac utility for macOS 27.0 or later.">
   <meta name="twitter:image" content="https://jaminzhou.com/hushtrail/app-icon.png">
   <script type="application/ld+json">
     {
@@ -28,9 +28,9 @@
       "@type": "SoftwareApplication",
       "name": "Hushtrail",
       "url": "https://jaminzhou.com/hushtrail/",
-      "description": "A local-first macOS cleanup utility for reviewing app leftovers and privacy traces inside folders you choose, with preview scans and rollback-backed archive.",
+      "description": "Clear selected app history and review possible uninstall leftovers. Hushtrail 0.1.0 is a native Mac utility for macOS 27.0 or later.",
       "inLanguage": "en",
-      "operatingSystem": "macOS 13+",
+      "operatingSystem": "macOS 27.0 or later",
       "applicationCategory": "UtilitiesApplication",
       "image": "https://jaminzhou.com/hushtrail/app-icon.png",
       "softwareHelp": "https://jaminzhou.com/hushtrail/support/",
@@ -38,7 +38,9 @@
         "@type": "CreativeWork",
         "name": "Hushtrail Privacy Policy",
         "url": "https://jaminzhou.com/hushtrail/privacy/"
-      }
+      },
+      "softwareVersion": "0.1.0",
+      "downloadUrl": "https://github.com/JaminZhou/hushtrail-releases/releases/download/v0.1.0/Hushtrail-0.1.0.zip"
     }
   </script>
   <link rel="stylesheet" href="/assets/classical/styles.css?v=20260902">
@@ -57,75 +59,45 @@
       <span aria-hidden="true">/</span>
       <span aria-current="page">Hushtrail</span>
     </nav>
-    <a class="header-action" href="/hushtrail/support/"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="3.6"></circle><path d="m14.6 9.4 3.3-3.3"></path><path d="m6.1 17.9 3.3-3.3"></path><path d="m14.6 14.6 3.3 3.3"></path><path d="m6.1 6.1 3.3 3.3"></path></svg><span class="header-action-label">Support</span></a>
+    <a class="header-action" href="https://github.com/JaminZhou/hushtrail-releases/releases/tag/v0.1.0"><span class="header-action-label">Download</span></a>
   </div>
 </header>
   <main class="site-main">
-    <section class="hero">
+    <section class="hero" aria-labelledby="product-title">
       <div class="hero-copy">
-        <div class="kicker">macOS Utility</div>
-        <h1>Hushtrail</h1>
-        <p class="lead">A careful Mac cleanup utility for reviewing app leftovers and privacy traces inside folders you choose.</p>
-        <p class="status">Hushtrail is an Internal TestFlight candidate. It scans only authorized folders, explains matched items, and moves eligible cleanup into rollback history before anything can be discarded.</p>
+        <p class="kicker">Hushtrail · macOS utility</p>
+        <h1 id="product-title">Clear app history.<br>Review what remains.</h1>
+        <p class="lead">Choose the apps whose history you want to clear, or scan for possible leftovers from apps you no longer use. Review the scope, then decide what to remove.</p>
         <dl class="release-meta" aria-label="Release details">
-          <div>
-            <dt>Status</dt>
-            <dd>Internal TestFlight</dd>
-          </div>
-          <div>
-            <dt>Safety model</dt>
-            <dd>Rollback-backed</dd>
-          </div>
-          <div>
-            <dt>Platform</dt>
-            <dd>macOS 13+</dd>
-          </div>
+          <div><dt>Version</dt><dd>0.1.0</dd></div>
+          <div><dt>Platform</dt><dd>macOS 27.0 or later</dd></div>
+          <div><dt>Languages</dt><dd>English · 简体中文</dd></div>
         </dl>
         <div class="actions">
-          <a class="button" href="/hushtrail/support/">Get support</a>
-          <a class="button secondary" href="/hushtrail/privacy/">Privacy policy</a>
+          <a class="button" href="https://github.com/JaminZhou/hushtrail-releases/releases/download/v0.1.0/Hushtrail-0.1.0.zip">Download for Mac</a>
+          <a class="button secondary" href="https://github.com/JaminZhou/hushtrail-releases/releases/tag/v0.1.0">Release notes</a>
         </div>
+        <p class="status" style="margin-top: 14px">Developer ID signed and notarized by Apple. Download the ZIP, unzip it, then drag Hushtrail into Applications. No account required.</p>
       </div>
-
-      <div class="icon-stage" aria-label="Hushtrail app icon">
-        <img class="app-icon" src="/hushtrail/app-icon.png" alt="Hushtrail app icon" width="512" height="512">
-      </div>
+      <div class="icon-stage" aria-label="Hushtrail app icon"><img class="app-icon" src="/hushtrail/app-icon.png" alt="Hushtrail app icon" width="512" height="512"></div>
     </section>
-
-    <section class="grid" aria-label="Hushtrail highlights">
-      <article class="card">
-        <h2>Choose the boundary</h2>
-        <p>Add folders through the macOS file picker. Hushtrail keeps cleanup inside locations you explicitly authorize.</p>
-      </article>
-      <article class="card">
-        <h2>Preview first</h2>
-        <p>Scan results are reviewable before archive. Each candidate shows why it was matched and whether it is eligible.</p>
-      </article>
-      <article class="card">
-        <h2>Archive with rollback</h2>
-        <p>Eligible user-level items move into app-owned rollback storage so you can restore them later.</p>
-      </article>
-      <article class="card">
-        <h2>Privacy trace guardrails</h2>
-        <p>Browser-owned traces are blocked while the source browser is running, and mixed-purpose databases stay scan-only.</p>
-      </article>
-      <article class="card">
-        <h2>Clear history</h2>
-        <p>Rollback History shows archive runs, restore status, and the point where discarding an archive becomes permanent.</p>
-      </article>
-      <article class="card">
-        <h2>Local-first</h2>
-        <p>No account, analytics, tracking SDK, or developer-run backend is required for the app's core cleanup flow.</p>
-      </article>
+    <section class="grid" aria-label="Hushtrail features">
+      <article class="card"><h2>Your selected apps</h2><p>Add apps once and remember your choices. Check only the apps you select for standard system recent documents and supported app history.</p></article>
+      <article class="card"><h2>Review leftovers</h2><p>Scan standard locations for possible leftover caches, logs, preferences and app data. Current apps and components are checked before cleanup becomes available.</p></article>
+      <article class="card"><h2>Choose, then clean</h2><p>Leftovers start unselected. Select by app or category; app data has an extra confirmation because it may contain personal files. Selected leftovers move to macOS Trash.</p></article>
+      <article class="card"><h2>Clear reasons</h2><p>See what can be cleaned and why other items are kept. Unknown ownership, unsupported structures and incomplete checks remain visible.</p></article>
+      <article class="card"><h2>Native to your Mac</h2><p>AppKit controls, system language preferences, and a choice of system, light or dark appearance. No startup scan or cleaner dashboard.</p></article>
+      <article class="card"><h2>Local processing</h2><p>No document or chat content is read. No analytics SDK or automatic history upload. Contact support only when you choose to.</p></article>
     </section>
-
-    <footer>
-      <a href="/hushtrail/support/">Support</a>
-      /
-      <a href="/hushtrail/privacy/">Privacy Policy</a>
-      /
-      <a href="/">JaminZhou</a>
-    </footer>
+    <section class="panel" aria-labelledby="scope-title">
+      <h2 id="scope-title">A focused first release</h2>
+      <p>Initial testing used macOS 27.0 on Apple silicon. Finder Recent Folders and the separate experimental Recents-in-chosen-folders feature are currently enabled only on macOS 27.0.0. Other system versions may show those capabilities as unavailable.</p>
+      <p>System recent-document cleanup recognizes .sfl4 archives; it does not promise to erase every app’s own history or every Dock menu. IINA playback history has a separate format-checked adapter. Full Disk Access and a macOS administrator prompt may be needed.</p>
+      <p>Experimental Recents temporarily moves eligible local files while verifying the search index. It excludes cloud/sync folders, packages, links and other disks. Leftovers does not remove drivers, services, whole containers or unidentified vendor folders.</p>
+      <p>Hushtrail does not make backup copies, provide app-managed restore, empty Trash, or clean browser history and cookies. History removal can be irreversible; documents and media are kept.</p>
+      <p><a href="/hushtrail/support/">Read installation, permissions and scope details</a></p>
+    </section>
+    <footer><a href="/hushtrail/support/">Support</a> / <a href="/hushtrail/privacy/">Privacy</a> / <a href="https://github.com/JaminZhou/hushtrail-releases">Downloads &amp; feedback</a> / <a href="/">JaminZhou</a></footer>
   </main>
   <script type="module" src="/assets/site.js?v=20260902"></script>
 </body>
