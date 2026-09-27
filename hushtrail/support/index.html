@@ -5,20 +5,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hushtrail Support</title>
-  <meta name="description" content="Support and troubleshooting for Hushtrail, including authorized folders, preview scans, rollback history, browser safety, restore, and discard behavior.">
+  <meta name="description" content="Installation, permissions, app history, leftover cleanup and support for Hushtrail 0.1.0.">
   <link rel="canonical" href="https://jaminzhou.com/hushtrail/support/">
   <link rel="icon" type="image/png" sizes="16x16" href="/hushtrail/favicon-16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/hushtrail/favicon-32.png">
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/hushtrail/apple-touch-icon.png">
   <meta property="og:site_name" content="Hushtrail">
   <meta property="og:title" content="Hushtrail Support">
-  <meta property="og:description" content="Support and troubleshooting for Hushtrail authorized folders, preview scans, rollback history, browser safety, restore, and discard behavior.">
+  <meta property="og:description" content="Installation, permissions, app history, leftover cleanup and support for Hushtrail 0.1.0.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jaminzhou.com/hushtrail/support/">
   <meta property="og:image" content="https://jaminzhou.com/hushtrail/app-icon.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Hushtrail Support">
-  <meta name="twitter:description" content="Support and troubleshooting for Hushtrail authorized folders, preview scans, rollback history, browser safety, restore, and discard behavior.">
+  <meta name="twitter:description" content="Installation, permissions, app history, leftover cleanup and support for Hushtrail 0.1.0.">
   <meta name="twitter:image" content="https://jaminzhou.com/hushtrail/app-icon.png">
   <link rel="stylesheet" href="/assets/classical/styles.css?v=20260902">
   <link rel="stylesheet" href="/assets/site.css?v=20260902">
@@ -44,67 +44,18 @@
     <img src="/hushtrail/app-icon.png" alt="" width="52" height="52">
     <span>Hushtrail · Support</span>
   </div>
-    <section class="panel">
-      <div class="kicker">Support</div>
-      <h1>Hushtrail Support</h1>
-      <p class="meta">Last updated: May 24, 2026</p>
-      <p>Hushtrail helps you review cleanup candidates inside folders you authorize, then archive eligible items into rollback history.</p>
-
-      <p>
-        Need help? Email
-        <a href="mailto:me@jaminzhou.com">me@jaminzhou.com</a>.
-      </p>
-
-      <div class="cta-row">
-        <a class="cta" href="mailto:me@jaminzhou.com?subject=Hushtrail%20Support">Email support</a>
-        <a class="cta secondary" href="/hushtrail/privacy/">Privacy policy</a>
-      </div>
-
-      <h2>Before you contact support</h2>
-      <ul>
-        <li>Hushtrail supports macOS 13 Ventura or later.</li>
-        <li>Confirm which folders you authorized from the Scan Locations screen.</li>
-        <li>If the issue involves browser privacy traces, quit the related browser before testing cleanup.</li>
-        <li>Do not send private browser database contents, passwords, cookies, or unredacted sensitive paths.</li>
-      </ul>
-
-      <h2>What to include</h2>
-      <ul>
-        <li>Your Hushtrail version and build number</li>
-        <li>Your macOS version</li>
-        <li>The folder category you selected, such as Caches, Logs, Preferences, Saved Application State, Application Support, or a browser profile folder</li>
-        <li>The scan explanation shown by Hushtrail, if it helps</li>
-        <li>A screenshot with sensitive file paths hidden, if useful</li>
-      </ul>
-
-      <h2>Common topics</h2>
-      <ul>
-        <li>Adding, removing, and reauthorizing scan locations</li>
-        <li>Preview scan results and why an item is eligible or scan-only</li>
-        <li>Rollback History, restore, and permanent discard behavior</li>
-        <li>Running browser detection and blocked browser cleanup</li>
-        <li>Firefox <code>places.sqlite</code> remaining scan-only to protect bookmarks</li>
-        <li>Chrome, Chromium-family, and Firefox profile folders inside authorized roots</li>
-      </ul>
-
-      <h2>Frequently asked questions</h2>
-      <ul>
-        <li>Why does Hushtrail ask me to choose folders? The Mac App Store build is sandboxed, so it needs you to pick the folders it is allowed to inspect.</li>
-        <li>Does Hushtrail delete immediately? No. Eligible cleanup moves into rollback history first. Discarding a rollback archive later is permanent.</li>
-        <li>Why is a browser item blocked? Browser-owned data is blocked while that browser is running or when the running state is unknown.</li>
-        <li>Why is Firefox history scan-only? Firefox history shares <code>places.sqlite</code> with bookmarks, so Hushtrail does not archive that database in the current beta.</li>
-        <li>Where can I read the privacy policy? Visit <a href="/hushtrail/privacy/">the Hushtrail Privacy Policy</a>.</li>
-      </ul>
-
-      <div class="note">
-        Support requests are answered in English. Please avoid sending secrets, private database contents, or full browser profile exports.
-      </div>
-
-      <p style="margin-top: 28px;">
-        <a href="/hushtrail/">Back to Hushtrail</a>
-        / <a href="/hushtrail/privacy/">Privacy Policy</a>
-      </p>
+    <section class="panel" aria-labelledby="support-title">
+      <p class="kicker">Hushtrail support</p><h1 id="support-title">Get started. Know the scope.</h1>
+      <h2>Install or update</h2><p>Download Hushtrail 0.1.0 from the <a href="https://github.com/JaminZhou/hushtrail-releases/releases">official release page</a>. Unzip and drag Hushtrail.app into Applications. The app is Developer ID signed and notarized. For updates, quit Hushtrail and replace the app with the new download. There is no automatic updater.</p>
+      <p>Requires macOS 27.0 or later. The download includes Apple silicon and Intel code; initial real-machine acceptance was on Apple silicon. Finder capabilities remain limited to macOS 27.0.0. Do not bypass a macOS security warning; download a fresh official copy or contact support.</p>
+      <h2>App Cleanup</h2><p>Add apps, choose which to check, then review the detected history types. Hushtrail remembers the selection but does not scan on launch. Apps must quit normally and stay closed for their history cleanup. Standard system recent lists and app-owned histories are separate; some apps can recreate their own recent lists.</p>
+      <h2>Permissions</h2><p>If App History Access is needed, use the in-app guide to open System Settings → Privacy &amp; Security → Full Disk Access. Add the installed Hushtrail app and enable it yourself, then quit and reopen if macOS asks. Existing development-build permission may not transfer to this signed release.</p><p>System recent-document cleanup may separately request an administrator password through macOS. The optional Complete Component Checks action can request read-only access to specific service metadata. No privileged helper is installed. Cancelling leaves the affected check or cleanup unconfirmed; check again before retrying.</p>
+      <h2>Finder</h2><p>Recent Folders cleans Finder’s Go → Recent Folders list and normally reopens Finder. Close all windows and tabs and finish file operations first; windows are not restored. It is different from the Recents sidebar.</p><p>Recents in Chosen Folders is a separate experimental feature, with at most eight remembered local folders and bounded checks. It temporarily moves eligible files to update Spotlight, then verifies and returns them. Save and close files first. Cloud/sync folders, packages, links and other disks are excluded. Follow the recovery prompt if an operation is interrupted.</p>
+      <h2>Leftovers</h2><p>Click Scan to inspect standard app locations. Candidates are not proof that an app was uninstalled or that its data is no longer useful. Review the identity and type. Bulk actions separately select caches/logs or data/settings; Application Support can contain personal data and needs exact-directory confirmation.</p><p>Selected items go to system Trash. Hushtrail does not make backups, restore items itself or empty Trash. You can inspect Trash in Finder. Changed identities, uncertain ownership, protected files and unsupported structures are kept with a reason. Drivers, services, full containers, shared groups and unidentified folders are not removed.</p>
+      <h2>Language and appearance</h2><p>English and Simplified Chinese are available. The Language menu guides you to macOS per-app language settings; reopen afterward. Appearance offers Follow System, Light and Dark without rescanning.</p>
+      <h2>Contact</h2><p><a href="mailto:me@jaminzhou.com?subject=Hushtrail%20Support">Email me@jaminzhou.com</a> or use the <a href="https://tally.so/r/rj7WXL">English feedback form</a>. Public bugs can be reported in <a href="https://github.com/JaminZhou/hushtrail-releases/issues">GitHub Issues</a>. Do not post private paths, documents, history or credentials.</p><p>The in-app contact sheet shows which version/app metadata accompanies a form or editable email draft. Sending is your choice. See the <a href="/hushtrail/privacy/">privacy policy</a>.</p>
     </section>
+    <footer><a href="/hushtrail/">Hushtrail</a> / <a href="/hushtrail/privacy/">Privacy</a> / <a href="/">JaminZhou</a></footer>
   </main>
   <script type="module" src="/assets/site.js?v=20260902"></script>
 </body>
