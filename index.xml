@@ -3,9 +3,9 @@
   <channel>
     <title>JaminZhou Updates</title>
     <link>https://jaminzhou.com/</link>
-    <description>Updates from JaminZhou, including the personal homepage, Hushtrail and Rouse for macOS, and PriceBird for iOS.</description>
+    <description>Updates from JaminZhou, including the personal homepage, Trailglass, Hushtrail and Rouse for macOS, and PriceBird for iOS.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 17 Sep 2026 10:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 23:01:00 +0800</lastBuildDate>
     <atom:link href="https://jaminzhou.com/index.xml" rel="self" type="application/rss+xml" />
 
     <item>
@@ -14,6 +14,14 @@
       <guid isPermaLink="true">https://jaminzhou.com/</guid>
       <pubDate>Sun, 26 Apr 2026 10:00:04 +0800</pubDate>
       <description>Independent developer building thoughtful apps for Apple platforms including Hushtrail and Rouse for macOS, plus PriceBird for iOS.</description>
+    </item>
+
+    <item>
+      <title>Trailglass 1.0.0 for macOS</title>
+      <link>https://jaminzhou.com/trailglass/</link>
+      <guid isPermaLink="true">https://jaminzhou.com/trailglass/</guid>
+      <pubDate>Mon, 28 Sep 2026 23:01:00 +0800</pubDate>
+      <description>Trailglass 1.0.0 is available on the Mac App Store. Explore local AI-agent conversations, tool activity, and original JSON in a native macOS app.</description>
     </item>
 
     <item>
