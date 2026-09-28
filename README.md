@@ -5,12 +5,12 @@ Pages from the repository root.
 
 ## Generated product pages
 
-Rouse, CalcBird, and Hushtrail keep their deployed pages as plain HTML so every
+Rouse, PriceBird, and Hushtrail keep their deployed pages as plain HTML so every
 route remains directly publishable by GitHub Pages. Do not edit generated HTML
-under `rouse/`, `calcbird/`, or `hushtrail/` directly.
+under `rouse/`, `pricebird/`, or `hushtrail/` directly.
 
 Each product owns its template, page metadata, and content fragments under
-`_site-src/<product>/`. CalcBird and Hushtrail share the reusable renderer in
+`_site-src/<product>/`. PriceBird and Hushtrail share the reusable renderer in
 `scripts/lib/static-product-site.mjs`; their visual templates remain separate.
 
 Commands:
@@ -40,6 +40,9 @@ The production visual system is derived directly from the Claude Design export
 The generated product routes intentionally do not ship Claude Design's preview
 runtime or its React CDN dependency.
 
+The legacy /calcbird/ routes remain as generated noindex redirects to the
+canonical PriceBird pages and are intentionally omitted from sitemap.xml.
+
 ## Rouse source layout
 
 Rouse keeps its deployed pages as plain HTML so every locale has a stable URL,
@@ -66,10 +69,10 @@ npm run check:rouse
 surface matrix, URLs, canonical alternates, language switcher, balanced
 structural HTML, sitemap coverage, and that generated output is current.
 
-## CalcBird and Hushtrail source layout
+## PriceBird and Hushtrail source layout
 
-- `_site-src/calcbird/` — four locales across landing, support, and privacy
+- `_site-src/pricebird/` — four locales across landing, support, and privacy
 - `_site-src/hushtrail/` — the existing English landing, support, and privacy
-- `scripts/build-calcbird-site.mjs` — CalcBird site definition and routes
+- `scripts/build-pricebird-site.mjs` — PriceBird site definition and routes
 - `scripts/build-hushtrail-site.mjs` — Hushtrail site definition and routes
 - `scripts/lib/static-product-site.mjs` — shared build-time renderer

@@ -5,13 +5,16 @@ import path from "node:path";
 import test from "node:test";
 
 import {
-  LOCALES as CALCBIRD_LOCALES,
-  SURFACES as CALCBIRD_SURFACES,
-  buildSite as buildCalcBirdSite,
-  pageOutputPath as calcBirdOutputPath,
-  renderAlternateLinks as renderCalcBirdAlternates,
-  renderLocaleSwitcher as renderCalcBirdLocaleSwitcher,
-} from "../scripts/build-calcbird-site.mjs";
+  LOCALES as PRICEBIRD_LOCALES,
+  SURFACES as PRICEBIRD_SURFACES,
+  buildLegacySite as buildPriceBirdLegacySite,
+  buildSite as buildPriceBirdSite,
+  legacyPageOutputPath as priceBirdLegacyOutputPath,
+  pageOutputPath as priceBirdOutputPath,
+  renderAlternateLinks as renderPriceBirdAlternates,
+  renderLegacyRedirectPage as renderPriceBirdLegacyRedirect,
+  renderLocaleSwitcher as renderPriceBirdLocaleSwitcher,
+} from "../scripts/build-pricebird-site.mjs";
 import {
   LOCALES as HUSHTRAIL_LOCALES,
   SURFACES as HUSHTRAIL_SURFACES,
@@ -27,11 +30,11 @@ import {
 
 const PRODUCT_SITES = [
   {
-    name: "CalcBird",
-    locales: CALCBIRD_LOCALES,
-    surfaces: CALCBIRD_SURFACES,
-    buildSite: buildCalcBirdSite,
-    pageOutputPath: calcBirdOutputPath,
+    name: "PriceBird",
+    locales: PRICEBIRD_LOCALES,
+    surfaces: PRICEBIRD_SURFACES,
+    buildSite: buildPriceBirdSite,
+    pageOutputPath: priceBirdOutputPath,
   },
   {
     name: "Hushtrail",
@@ -42,54 +45,74 @@ const PRODUCT_SITES = [
   },
 ];
 
-test("CalcBird covers four locales and three surfaces", () => {
-  assert.equal(CALCBIRD_LOCALES.length, 4);
-  assert.equal(CALCBIRD_SURFACES.length, 3);
-  assert.equal(new Set(CALCBIRD_LOCALES.map((locale) => locale.id)).size, 4);
-  assert.equal(calcBirdOutputPath("en", "landing"), "calcbird/index.html");
-  assert.equal(calcBirdOutputPath("ja", "support"), "calcbird/ja/support/index.html");
+test("PriceBird covers four locales and three surfaces", () => {
+  assert.equal(PRICEBIRD_LOCALES.length, 4);
+  assert.equal(PRICEBIRD_SURFACES.length, 3);
+  assert.equal(new Set(PRICEBIRD_LOCALES.map((locale) => locale.id)).size, 4);
+  assert.equal(priceBirdOutputPath("en", "landing"), "pricebird/index.html");
+  assert.equal(priceBirdOutputPath("ja", "support"), "pricebird/ja/support/index.html");
   assert.equal(
-    calcBirdOutputPath("zh-Hant", "privacy"),
-    "calcbird/zh-hant/privacy/index.html",
+    priceBirdOutputPath("zh-Hant", "privacy"),
+    "pricebird/zh-hant/privacy/index.html",
   );
 });
 
-test("CalcBird alternates and language switcher preserve the current surface", () => {
-  const alternates = renderCalcBirdAlternates("support");
-  for (const locale of CALCBIRD_LOCALES) {
+test("PriceBird alternates and language switcher preserve the current surface", () => {
+  const alternates = renderPriceBirdAlternates("support");
+  for (const locale of PRICEBIRD_LOCALES) {
     assert.match(alternates, new RegExp(`hreflang="${locale.hreflang}"`));
   }
   assert.match(
     alternates,
-    /hreflang="x-default" href="https:\/\/jaminzhou\.com\/calcbird\/support\/"/,
+    /hreflang="x-default" href="https:\/\/jaminzhou\.com\/pricebird\/support\/"/,
   );
 
-  const switcher = renderCalcBirdLocaleSwitcher("zh-Hans", "privacy");
+  const switcher = renderPriceBirdLocaleSwitcher("zh-Hans", "privacy");
   assert.match(switcher, /aria-label="语言"/);
   assert.match(
     switcher,
-    /href="\/calcbird\/zh-hans\/privacy\/"[^>]+aria-current="page"[^>]*>简体中文/,
+    /href="\/pricebird\/zh-hans\/privacy\/"[^>]+aria-current="page"[^>]*>简体中文/,
   );
-  assert.match(switcher, /href="\/calcbird\/ja\/privacy\/"/);
+  assert.match(switcher, /href="\/pricebird\/ja\/privacy\/"/);
 });
 
-test("CalcBird masthead copy and actions preserve the selected locale", async () => {
-  const pages = await buildCalcBirdSite({ write: false });
+test("PriceBird masthead copy and actions preserve the selected locale", async () => {
+  const pages = await buildPriceBirdSite({ write: false });
 
-  for (const locale of CALCBIRD_LOCALES.filter((candidate) => candidate.id !== "en")) {
-    const landing = pages.get(calcBirdOutputPath(locale.id, "landing"));
-    const support = pages.get(calcBirdOutputPath(locale.id, "support"));
-    const privacy = pages.get(calcBirdOutputPath(locale.id, "privacy"));
-    const landingRoute = `/${calcBirdOutputPath(locale.id, "landing").replace(/index\.html$/, "")}`;
+  for (const locale of PRICEBIRD_LOCALES.filter((candidate) => candidate.id !== "en")) {
+    const landing = pages.get(priceBirdOutputPath(locale.id, "landing"));
+    const support = pages.get(priceBirdOutputPath(locale.id, "support"));
+    const privacy = pages.get(priceBirdOutputPath(locale.id, "privacy"));
+    const landingRoute = `/${priceBirdOutputPath(locale.id, "landing").replace(/index\.html$/, "")}`;
 
     assert.ok(landing.includes(`aria-label="${locale.ui.breadcrumbLabel}"`), locale.id);
     assert.ok(landing.includes(`href="/#products">${locale.ui.products}</a>`), locale.id);
     assert.ok(support.includes(`aria-label="${locale.ui.emailSupport}"`), locale.id);
-    assert.ok(support.includes(`<span>CalcBird · ${locale.ui.support}</span>`), locale.id);
+    assert.ok(support.includes(`<span>PriceBird · ${locale.ui.support}</span>`), locale.id);
     assert.ok(privacy.includes(`href="${landingRoute}"`), locale.id);
     assert.ok(privacy.includes(`aria-label="${locale.ui.backToProduct}"`), locale.id);
     assert.ok(privacy.includes(`<span aria-current="page">${locale.ui.privacy}</span>`), locale.id);
   }
+});
+
+test("CalcBird routes redirect to the canonical PriceBird pages", async () => {
+  const pages = await buildPriceBirdLegacySite({ write: false });
+
+  assert.equal(pages.size, PRICEBIRD_LOCALES.length * PRICEBIRD_SURFACES.length);
+  assert.equal(priceBirdLegacyOutputPath("en", "landing"), "calcbird/index.html");
+  assert.equal(
+    priceBirdLegacyOutputPath("zh-Hant", "privacy"),
+    "calcbird/zh-hant/privacy/index.html",
+  );
+
+  const redirect = renderPriceBirdLegacyRedirect("ja", "support");
+  assert.match(redirect, /<meta name="robots" content="noindex">/);
+  assert.match(
+    redirect,
+    /<link rel="canonical" href="https:\/\/jaminzhou\.com\/pricebird\/ja\/support\/">/,
+  );
+  assert.match(redirect, /http-equiv="refresh" content="0;url=\/pricebird\/ja\/support\/"/);
+  assert.equal(redirect, pages.get("calcbird/ja/support/index.html"));
 });
 
 test("Hushtrail remains English-only without localization controls", () => {

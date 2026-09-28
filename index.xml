@@ -3,7 +3,7 @@
   <channel>
     <title>JaminZhou Updates</title>
     <link>https://jaminzhou.com/</link>
-    <description>Updates from JaminZhou, including the personal homepage, Hushtrail and Rouse for macOS, and CalcBird for iOS.</description>
+    <description>Updates from JaminZhou, including the personal homepage, Hushtrail and Rouse for macOS, and PriceBird for iOS.</description>
     <language>en</language>
     <lastBuildDate>Thu, 17 Sep 2026 10:00:00 +0800</lastBuildDate>
     <atom:link href="https://jaminzhou.com/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>https://jaminzhou.com/</link>
       <guid isPermaLink="true">https://jaminzhou.com/</guid>
       <pubDate>Sun, 26 Apr 2026 10:00:04 +0800</pubDate>
-      <description>Independent developer building thoughtful apps for Apple platforms including Hushtrail and Rouse for macOS, plus CalcBird for iOS.</description>
+      <description>Independent developer building thoughtful apps for Apple platforms including Hushtrail and Rouse for macOS, plus PriceBird for iOS.</description>
     </item>
 
     <item>
@@ -41,27 +41,27 @@
     </item>
 
     <item>
-      <title>CalcBird for iOS</title>
-      <link>https://jaminzhou.com/calcbird/</link>
-      <guid isPermaLink="true">https://jaminzhou.com/calcbird/</guid>
+      <title>PriceBird for iOS</title>
+      <link>https://jaminzhou.com/pricebird/</link>
+      <guid isPermaLink="true">https://jaminzhou.com/pricebird/</guid>
       <pubDate>Fri, 18 Sep 2026 21:36:00 +0800</pubDate>
-      <description>CalcBird 1.4.0 updates the app for iOS 27 with more adaptive layouts, improved keyboard handling, and better support for larger system text.</description>
+      <description>PriceBird 1.4.0 updates the app for iOS 27 with more adaptive layouts, improved keyboard handling, and better support for larger system text.</description>
     </item>
 
     <item>
-      <title>CalcBird Support</title>
-      <link>https://jaminzhou.com/calcbird/support/</link>
-      <guid isPermaLink="true">https://jaminzhou.com/calcbird/support/</guid>
+      <title>PriceBird Support</title>
+      <link>https://jaminzhou.com/pricebird/support/</link>
+      <guid isPermaLink="true">https://jaminzhou.com/pricebird/support/</guid>
       <pubDate>Fri, 18 Sep 2026 21:36:00 +0800</pubDate>
-      <description>Support resources and FAQs for CalcBird 1.4.0 on iOS 27, including adaptive layouts, anonymous feedback, optional purchases, and compatible Apple silicon Mac use.</description>
+      <description>Support resources and FAQs for PriceBird 1.4.0 on iOS 27, including adaptive layouts, anonymous feedback, optional purchases, and compatible Apple silicon Mac use.</description>
     </item>
 
     <item>
-      <title>CalcBird Privacy Policy</title>
-      <link>https://jaminzhou.com/calcbird/privacy/</link>
-      <guid isPermaLink="true">https://jaminzhou.com/calcbird/privacy/</guid>
+      <title>PriceBird Privacy Policy</title>
+      <link>https://jaminzhou.com/pricebird/privacy/</link>
+      <guid isPermaLink="true">https://jaminzhou.com/pricebird/privacy/</guid>
       <pubDate>Fri, 18 Sep 2026 21:36:00 +0800</pubDate>
-      <description>Privacy details for CalcBird 1.4.0, including local data, exchange-rate requests, anonymous feedback, and StoreKit purchases.</description>
+      <description>Privacy details for PriceBird 1.4.0, including local data, exchange-rate requests, anonymous feedback, and StoreKit purchases.</description>
     </item>
 
     <item>
