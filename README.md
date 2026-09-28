@@ -9,6 +9,11 @@ Rouse, PriceBird, and Hushtrail keep their deployed pages as plain HTML so every
 route remains directly publishable by GitHub Pages. Do not edit generated HTML
 under `rouse/`, `pricebird/`, or `hushtrail/` directly.
 
+Trailglass currently has a hand-maintained English product page in
+`trailglass/index.html` with page-specific styles in `trailglass/product.css`.
+Its three screenshot assets are copies of the synthetic example-session images
+from the Trailglass app repository's `docs/store/screenshots/en-US/` directory.
+
 Each product owns its template, page metadata, and content fragments under
 `_site-src/<product>/`. PriceBird and Hushtrail share the reusable renderer in
 `scripts/lib/static-product-site.mjs`; their visual templates remain separate.
