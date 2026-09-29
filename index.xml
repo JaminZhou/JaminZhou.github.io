@@ -5,7 +5,7 @@
     <link>https://jaminzhou.com/</link>
     <description>Updates from JaminZhou, including the personal homepage, Trailglass, Hushtrail and Rouse for macOS, and PriceBird for iOS.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 28 Sep 2026 23:01:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 11:23:46 +0800</lastBuildDate>
     <atom:link href="https://jaminzhou.com/index.xml" rel="self" type="application/rss+xml" />
 
     <item>
@@ -52,24 +52,24 @@
       <title>PriceBird for iOS</title>
       <link>https://jaminzhou.com/pricebird/</link>
       <guid isPermaLink="true">https://jaminzhou.com/pricebird/</guid>
-      <pubDate>Fri, 18 Sep 2026 21:36:00 +0800</pubDate>
-      <description>PriceBird 1.4.0 updates the app for iOS 27 with more adaptive layouts, improved keyboard handling, and better support for larger system text.</description>
+      <pubDate>Tue, 29 Sep 2026 11:23:46 +0800</pubDate>
+      <description>PriceBird 1.4.2 is the new English brand for the unit-price and price-comparison app, while saved calculations, custom units, currency preferences, and existing support purchases remain available.</description>
     </item>
 
     <item>
       <title>PriceBird Support</title>
       <link>https://jaminzhou.com/pricebird/support/</link>
       <guid isPermaLink="true">https://jaminzhou.com/pricebird/support/</guid>
-      <pubDate>Fri, 18 Sep 2026 21:36:00 +0800</pubDate>
-      <description>Support resources and FAQs for PriceBird 1.4.0 on iOS 27, including adaptive layouts, anonymous feedback, optional purchases, and compatible Apple silicon Mac use.</description>
+      <pubDate>Tue, 29 Sep 2026 11:23:46 +0800</pubDate>
+      <description>Support resources and FAQs for PriceBird 1.4.2, including unit price calculation, product comparison, anonymous feedback, optional purchases, and compatible Apple silicon Mac use.</description>
     </item>
 
     <item>
       <title>PriceBird Privacy Policy</title>
       <link>https://jaminzhou.com/pricebird/privacy/</link>
       <guid isPermaLink="true">https://jaminzhou.com/pricebird/privacy/</guid>
-      <pubDate>Fri, 18 Sep 2026 21:36:00 +0800</pubDate>
-      <description>Privacy details for PriceBird 1.4.0, including local data, exchange-rate requests, anonymous feedback, and StoreKit purchases.</description>
+      <pubDate>Tue, 29 Sep 2026 11:23:46 +0800</pubDate>
+      <description>Privacy details for PriceBird 1.4.2, including local data, exchange-rate requests, anonymous feedback, and StoreKit purchases.</description>
     </item>
 
     <item>
