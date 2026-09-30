@@ -2,11 +2,11 @@
   "pages": {
     "en.landing": {
       "title": "Hushtrail | App History and Leftovers for Mac",
-      "description": "Clear selected app history and review possible uninstall leftovers. Hushtrail 0.1.1 is a native Mac utility for macOS 27.0 or later.",
+      "description": "Clear selected app history and review possible uninstall leftovers. Hushtrail 0.1.2 is a native Mac utility for macOS 27.0 or later.",
       "ogTitle": "Hushtrail | App History and Leftovers for Mac",
-      "ogDescription": "Clear selected app history and review possible uninstall leftovers. Hushtrail 0.1.1 is a native Mac utility for macOS 27.0 or later.",
+      "ogDescription": "Clear selected app history and review possible uninstall leftovers. Hushtrail 0.1.2 is a native Mac utility for macOS 27.0 or later.",
       "twitterTitle": "Hushtrail | App History and Leftovers for Mac",
-      "twitterDescription": "Clear selected app history and review possible uninstall leftovers. Hushtrail 0.1.1 is a native Mac utility for macOS 27.0 or later.",
+      "twitterDescription": "Clear selected app history and review possible uninstall leftovers. Hushtrail 0.1.2 is a native Mac utility for macOS 27.0 or later.",
       "ogImageWidth": "1024",
       "ogImageHeight": "1024",
       "structuredData": {
@@ -14,7 +14,7 @@
         "@type": "SoftwareApplication",
         "name": "Hushtrail",
         "url": "https://jaminzhou.com/hushtrail/",
-        "description": "Clear selected app history and review possible uninstall leftovers. Hushtrail 0.1.1 is a native Mac utility for macOS 27.0 or later.",
+        "description": "Clear selected app history and review possible uninstall leftovers. Hushtrail 0.1.2 is a native Mac utility for macOS 27.0 or later.",
         "inLanguage": "en",
         "operatingSystem": "macOS 27.0 or later",
         "applicationCategory": "UtilitiesApplication",
@@ -25,8 +25,8 @@
           "name": "Hushtrail Privacy Policy",
           "url": "https://jaminzhou.com/hushtrail/privacy/"
         },
-        "softwareVersion": "0.1.1",
-        "downloadUrl": "https://github.com/JaminZhou/hushtrail-releases/releases/download/v0.1.1/Hushtrail-0.1.1.zip"
+        "softwareVersion": "0.1.2",
+        "downloadUrl": "https://github.com/JaminZhou/hushtrail-releases/releases/download/v0.1.2/Hushtrail-0.1.2.zip"
       },
       "topLink": {
         "href": "/",
@@ -35,11 +35,11 @@
     },
     "en.support": {
       "title": "Hushtrail Support",
-      "description": "Installation, permissions, app history, leftover cleanup and support for Hushtrail 0.1.1.",
+      "description": "Installation, permissions, app history, leftover cleanup and support for Hushtrail 0.1.2.",
       "ogTitle": "Hushtrail Support",
-      "ogDescription": "Installation, permissions, app history, leftover cleanup and support for Hushtrail 0.1.1.",
+      "ogDescription": "Installation, permissions, app history, leftover cleanup and support for Hushtrail 0.1.2.",
       "twitterTitle": "Hushtrail Support",
-      "twitterDescription": "Installation, permissions, app history, leftover cleanup and support for Hushtrail 0.1.1."
+      "twitterDescription": "Installation, permissions, app history, leftover cleanup and support for Hushtrail 0.1.2."
     },
     "en.privacy": {
       "title": "Hushtrail Privacy Policy",

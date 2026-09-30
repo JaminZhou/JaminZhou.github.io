@@ -24,7 +24,7 @@ const site = createStaticProductSite({
   productSegment: "hushtrail",
   productName: "Hushtrail",
   defaultLocaleId: "en",
-  storeUrl: "https://github.com/JaminZhou/hushtrail-releases/releases/tag/v0.1.1",
+  storeUrl: "https://github.com/JaminZhou/hushtrail-releases/releases/tag/v0.1.2",
   storeLabel: "Download",
   locales: LOCALES,
   surfaces: SURFACES,
