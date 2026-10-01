@@ -5,7 +5,7 @@
     <link>https://jaminzhou.com/</link>
     <description>Updates from JaminZhou, including the personal homepage, Trailglass, Hushtrail and Rouse for macOS, and PriceBird for iOS.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Sep 2026 07:57:25 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 09:43:50 +0800</lastBuildDate>
     <atom:link href="https://jaminzhou.com/index.xml" rel="self" type="application/rss+xml" />
 
     <item>
@@ -17,11 +17,11 @@
     </item>
 
     <item>
-      <title>Trailglass 1.0.1 for macOS</title>
+      <title>Trailglass 1.0.2 for macOS</title>
       <link>https://jaminzhou.com/trailglass/</link>
       <guid isPermaLink="true">https://jaminzhou.com/trailglass/</guid>
-      <pubDate>Wed, 30 Sep 2026 07:57:25 +0800</pubDate>
-      <description>Trailglass 1.0.1 is available on the Mac App Store. See local storage usage in Settings, reclaim unused database space automatically, and repair a damaged search index when needed.</description>
+      <pubDate>Thu, 01 Oct 2026 09:43:50 +0800</pubDate>
+      <description>Trailglass 1.0.2 is available on the Mac App Store. Appearance, storage information, and help share one compact Settings window, with clearer spacing and stable window size as information updates.</description>
     </item>
 
     <item>
