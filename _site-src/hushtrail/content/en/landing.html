@@ -4,13 +4,13 @@
         <h1 id="product-title">Clear app history.<br>Review what remains.</h1>
         <p class="lead">Choose the apps whose history you want to clear, or scan for possible leftovers from apps you no longer use. Review the scope, then decide what to remove.</p>
         <dl class="release-meta" aria-label="Release details">
-          <div><dt>Version</dt><dd>0.1.2</dd></div>
+          <div><dt>Version</dt><dd>0.1.3</dd></div>
           <div><dt>Platform</dt><dd>macOS 27.0 or later</dd></div>
           <div><dt>Languages</dt><dd>English · 简体中文</dd></div>
         </dl>
         <div class="actions">
-          <a class="button" href="https://github.com/JaminZhou/hushtrail-releases/releases/download/v0.1.2/Hushtrail-0.1.2.zip">Download for Mac</a>
-          <a class="button secondary" href="https://github.com/JaminZhou/hushtrail-releases/releases/tag/v0.1.2">Release notes</a>
+          <a class="button" href="https://github.com/JaminZhou/hushtrail-releases/releases/download/v0.1.3/Hushtrail-0.1.3.zip">Download for Mac</a>
+          <a class="button secondary" href="https://github.com/JaminZhou/hushtrail-releases/releases/tag/v0.1.3">Release notes</a>
         </div>
         <p class="status" style="margin-top: 14px">Developer ID signed and notarized by Apple. Download the ZIP, unzip it, then drag Hushtrail into Applications. No account required.</p>
       </div>
@@ -26,7 +26,7 @@
     </section>
     <section class="panel" aria-labelledby="scope-title">
       <h2 id="scope-title">A focused first release</h2>
-      <p>Initial testing used macOS 27.0 on Apple silicon. Finder Recent Folders and the separate experimental Recents-in-chosen-folders feature are currently enabled only on macOS 27.0.0. Other system versions may show those capabilities as unavailable.</p>
+      <p>Initial real-machine testing used macOS 27.0 on Apple silicon. Hushtrail 0.1.3 removes the exact OS-version gate for Finder Recent Folders and experimental Recents in Chosen Folders. The app requires macOS 27.0 or later; current format, file identity and safety checks still determine whether cleanup is available. Not every newer system has been individually tested.</p>
       <p>System recent-document cleanup recognizes .sfl4 archives; it does not promise to erase every app’s own history or every Dock menu. IINA playback history has a separate format-checked adapter. Full Disk Access and a macOS administrator prompt may be needed.</p>
       <p>Experimental Recents temporarily moves eligible local files while verifying the search index. It excludes cloud/sync folders, packages, links and other disks. Leftovers does not remove drivers, services, whole containers or unidentified vendor folders.</p>
       <p>Hushtrail does not make backup copies, provide app-managed restore, empty Trash, or clean browser history and cookies. History removal can be irreversible; documents and media are kept.</p>
