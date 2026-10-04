@@ -7,3 +7,7 @@
 .aperlo-preview { margin: 20px 0 54px; }
 .aperlo-preview img { display: block; width: 100%; height: auto; border-radius: 18px; }
 .aperlo-preview figcaption { margin-top: 12px; text-align: center; color: #667470; font: 13px/1.6 system-ui; }
+.aperlo-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-bottom: 48px; }
+.aperlo-gallery .aperlo-preview { margin: 0; }
+.aperlo-gallery .aperlo-preview img { border-radius: 12px; }
+@media (max-width: 680px) { .aperlo-gallery { grid-template-columns: 1fr; } }
