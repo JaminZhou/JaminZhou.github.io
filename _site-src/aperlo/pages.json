@@ -1,0 +1,76 @@
+{
+  "pages": {
+    "en.landing": {
+      "title": "Aperlo — Your pictures. Room to breathe.",
+      "description": "Aperlo is a native Mac image viewer for browsing pictures where you keep them. Open one image, choose several, or explore a folder without importing a photo library.",
+      "ogTitle": "Aperlo — Your pictures. Room to breathe.",
+      "ogDescription": "Aperlo is a native Mac image viewer for browsing pictures where you keep them. Open one image, choose several, or explore a folder without importing a photo library."
+    },
+    "en.support": {
+      "title": "Aperlo Support",
+      "description": "Use File → Open, drag images or a folder into the viewer, or use Finder’s Open With. If a single image has no folder permission, use Browse Folder to choose its parent folder.",
+      "ogTitle": "Aperlo Support",
+      "ogDescription": "Use File → Open, drag images or a folder into the viewer, or use Finder’s Open With. If a single image has no folder permission, use Browse Folder to choose its parent folder."
+    },
+    "en.privacy": {
+      "title": "Aperlo Privacy Policy",
+      "description": "This policy applies to Aperlo for macOS and its optional support paths. The developer is Jamin Zhou.",
+      "ogTitle": "Aperlo Privacy Policy",
+      "ogDescription": "This policy applies to Aperlo for macOS and its optional support paths. The developer is Jamin Zhou."
+    },
+    "zh-Hans.landing": {
+      "title": "映窗 — 打开图片，静享画面。",
+      "description": "映窗是一款原生 Mac 图片浏览器。打开单张图片、选择多张图片，或浏览整个文件夹，无需先导入图库。",
+      "ogTitle": "映窗 — 打开图片，静享画面。",
+      "ogDescription": "映窗是一款原生 Mac 图片浏览器。打开单张图片、选择多张图片，或浏览整个文件夹，无需先导入图库。"
+    },
+    "zh-Hans.support": {
+      "title": "映窗 支持",
+      "description": "使用“文件 → 打开”，把图片或文件夹拖入查看窗口，或在 Finder 中选择打开方式。单张图片没有文件夹权限时，可通过“浏览文件夹”选择其所在目录。",
+      "ogTitle": "映窗 支持",
+      "ogDescription": "使用“文件 → 打开”，把图片或文件夹拖入查看窗口，或在 Finder 中选择打开方式。单张图片没有文件夹权限时，可通过“浏览文件夹”选择其所在目录。"
+    },
+    "zh-Hans.privacy": {
+      "title": "映窗隐私政策",
+      "description": "本政策适用于 macOS 版映窗及其可选支持渠道。开发者为 Jamin Zhou。",
+      "ogTitle": "映窗隐私政策",
+      "ogDescription": "本政策适用于 macOS 版映窗及其可选支持渠道。开发者为 Jamin Zhou。"
+    },
+    "zh-Hant.landing": {
+      "title": "映窗 — 打開圖片，靜享畫面。",
+      "description": "映窗是一款原生 Mac 圖片瀏覽器。開啟單張圖片、選取多張圖片，或瀏覽整個檔案夾，無需先匯入圖庫。",
+      "ogTitle": "映窗 — 打開圖片，靜享畫面。",
+      "ogDescription": "映窗是一款原生 Mac 圖片瀏覽器。開啟單張圖片、選取多張圖片，或瀏覽整個檔案夾，無需先匯入圖庫。"
+    },
+    "zh-Hant.support": {
+      "title": "映窗 支援",
+      "description": "使用「檔案 → 打開」，把圖片或檔案夾拖入檢視視窗，或在 Finder 中選擇開啟方式。單張圖片沒有檔案夾權限時，可透過「瀏覽檔案夾」選擇所在目錄。",
+      "ogTitle": "映窗 支援",
+      "ogDescription": "使用「檔案 → 打開」，把圖片或檔案夾拖入檢視視窗，或在 Finder 中選擇開啟方式。單張圖片沒有檔案夾權限時，可透過「瀏覽檔案夾」選擇所在目錄。"
+    },
+    "zh-Hant.privacy": {
+      "title": "映窗隱私權政策",
+      "description": "本政策適用於 macOS 版映窗及其選用的支援管道。開發者為 Jamin Zhou。",
+      "ogTitle": "映窗隱私權政策",
+      "ogDescription": "本政策適用於 macOS 版映窗及其選用的支援管道。開發者為 Jamin Zhou。"
+    },
+    "ja.landing": {
+      "title": "Aperlo — 画像を開いて、じっくり楽しむ。",
+      "description": "Aperlo は、Mac のためのネイティブ画像ビューアです。1枚の画像、選択した複数の画像、フォルダ内の画像を、ライブラリに読み込まずに閲覧できます。",
+      "ogTitle": "Aperlo — 画像を開いて、じっくり楽しむ。",
+      "ogDescription": "Aperlo は、Mac のためのネイティブ画像ビューアです。1枚の画像、選択した複数の画像、フォルダ内の画像を、ライブラリに読み込まずに閲覧できます。"
+    },
+    "ja.support": {
+      "title": "Aperlo サポート",
+      "description": "「ファイル」メニューから開くか、画像やフォルダをウインドウへドラッグするか、Finder の「このアプリケーションで開く」を使います。1枚の画像だけを開き、フォルダへのアクセス権がない場合は、フォルダを参照する操作で親フォルダを選択してください。",
+      "ogTitle": "Aperlo サポート",
+      "ogDescription": "「ファイル」メニューから開くか、画像やフォルダをウインドウへドラッグするか、Finder の「このアプリケーションで開く」を使います。1枚の画像だけを開き、フォルダへのアクセス権がない場合は、フォルダを参照する操作で親フォルダを選択してください。"
+    },
+    "ja.privacy": {
+      "title": "Aperlo プライバシーポリシー",
+      "description": "このポリシーは macOS 用 Aperlo と任意のサポート窓口に適用されます。開発者は Jamin Zhou です。",
+      "ogTitle": "Aperlo プライバシーポリシー",
+      "ogDescription": "このポリシーは macOS 用 Aperlo と任意のサポート窓口に適用されます。開発者は Jamin Zhou です。"
+    }
+  }
+}

@@ -5,9 +5,9 @@ Pages from the repository root.
 
 ## Generated product pages
 
-Rouse, PriceBird, and Hushtrail keep their deployed pages as plain HTML so every
+Rouse, PriceBird, Hushtrail, and Aperlo keep their deployed pages as plain HTML so every
 route remains directly publishable by GitHub Pages. Do not edit generated HTML
-under `rouse/`, `pricebird/`, or `hushtrail/` directly.
+under `rouse/`, `pricebird/`, `hushtrail/`, or `aperlo/` directly.
 
 Trailglass currently has a hand-maintained English product page in
 `trailglass/index.html` with page-specific styles in `trailglass/product.css`.
@@ -17,6 +17,13 @@ from the Trailglass app repository's `docs/store/screenshots/en-US/` directory.
 Each product owns its template, page metadata, and content fragments under
 `_site-src/<product>/`. PriceBird and Hushtrail share the reusable renderer in
 `scripts/lib/static-product-site.mjs`; their visual templates remain separate.
+
+Aperlo has English, Simplified Chinese, Traditional Chinese, and Japanese
+landing, support, and privacy pages under `_site-src/aperlo/`. The site is marked
+as preparing for the Mac App Store, with no download link before availability.
+`aperlo/screenshots/` contains copies of original mock-only AppKit screenshots
+from the Aperlo repository's `docs/store/screenshots/`. No customer files or
+local browsing data are used. The icon is the approved Aperlo app icon.
 
 Commands:
 
