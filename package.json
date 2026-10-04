@@ -9,8 +9,10 @@
     "check:pricebird": "node scripts/build-pricebird-site.mjs --check",
     "build:hushtrail": "node scripts/build-hushtrail-site.mjs --write",
     "check:hushtrail": "node scripts/build-hushtrail-site.mjs --check",
-    "build:site": "npm run build:rouse && npm run build:pricebird && npm run build:hushtrail",
-    "check:site": "npm run check:rouse && npm run check:pricebird && npm run check:hushtrail",
-    "test": "node --test"
+    "build:site": "npm run build:rouse && npm run build:pricebird && npm run build:hushtrail && npm run build:aperlo",
+    "check:site": "npm run check:rouse && npm run check:pricebird && npm run check:hushtrail && npm run check:aperlo",
+    "test": "node --test",
+    "build:aperlo": "node scripts/build-aperlo-site.mjs --write",
+    "check:aperlo": "node scripts/build-aperlo-site.mjs --check"
   }
 }

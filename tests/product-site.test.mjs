@@ -27,8 +27,21 @@ import {
   createStaticProductSite,
   validateHtmlStructure,
 } from "../scripts/lib/static-product-site.mjs";
+import {
+  LOCALES as APERLO_LOCALES,
+  SURFACES as APERLO_SURFACES,
+  buildSite as buildAperloSite,
+  pageOutputPath as aperloOutputPath,
+} from "../scripts/build-aperlo-site.mjs";
 
 const PRODUCT_SITES = [
+  {
+    name: "Aperlo",
+    locales: APERLO_LOCALES,
+    surfaces: APERLO_SURFACES,
+    buildSite: buildAperloSite,
+    pageOutputPath: aperloOutputPath,
+  },
   {
     name: "PriceBird",
     locales: PRICEBIRD_LOCALES,
