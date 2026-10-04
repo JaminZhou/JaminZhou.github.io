@@ -1,6 +1,7 @@
 .theme-aperlo { --accent: #226c79; }
 .aperlo-hero { padding-block: clamp(32px, 6vw, 80px); text-align: center; }
 .aperlo-icon { display: block; margin: 0 auto 22px; }
+.aperlo-hero .kicker { margin-inline: auto; }
 .aperlo-hero h1 { max-width: 940px; margin-inline: auto; }
 .aperlo-hero .lead { max-width: 680px; margin-inline: auto; font-size: clamp(18px, 2vw, 23px); }
 .aperlo-status { display: inline-block; color: #286571; background: #e7f1ef; border-radius: 100px; padding: 8px 18px; font: 500 14px/1.5 system-ui; }
