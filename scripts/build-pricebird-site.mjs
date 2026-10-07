@@ -117,7 +117,6 @@ export function renderLegacyRedirectPage(localeId, surfaceId) {
     "<head>",
     '  <meta charset="utf-8">',
     '  <meta name="viewport" content="width=device-width, initial-scale=1">',
-    '  <meta name="robots" content="noindex">',
     `  <link rel="canonical" href="${targetUrl}">`,
     `  <meta http-equiv="refresh" content="0;url=${targetPath}">`,
     "  <title>PriceBird</title>",

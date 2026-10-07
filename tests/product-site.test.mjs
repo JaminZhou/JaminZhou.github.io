@@ -118,8 +118,11 @@ test("CalcBird routes redirect to the canonical PriceBird pages", async () => {
     "calcbird/zh-hant/privacy/index.html",
   );
 
+  for (const [route, html] of pages) {
+    assert.doesNotMatch(html, /noindex/i, route);
+  }
+
   const redirect = renderPriceBirdLegacyRedirect("ja", "support");
-  assert.match(redirect, /<meta name="robots" content="noindex">/);
   assert.match(
     redirect,
     /<link rel="canonical" href="https:\/\/jaminzhou\.com\/pricebird\/ja\/support\/">/,
