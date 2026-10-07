@@ -52,8 +52,10 @@ The production visual system is derived directly from the Claude Design export
 The generated product routes intentionally do not ship Claude Design's preview
 runtime or its React CDN dependency.
 
-The legacy /calcbird/ routes remain as generated noindex redirects to the
-canonical PriceBird pages and are intentionally omitted from sitemap.xml.
+The legacy /calcbird/ routes remain as generated instant meta-refresh redirects
+with canonical links to the corresponding PriceBird pages. They intentionally
+omit `noindex` so migration relies on the redirect and canonical signals, and
+remain excluded from sitemap.xml.
 
 ## Rouse source layout
 
