@@ -65,7 +65,7 @@ export const LOCALES = Object.freeze([
   }
 ]);
 export const SURFACES = Object.freeze([{id:"landing",segment:""},{id:"support",segment:"support"},{id:"privacy",segment:"privacy"}]);
-const site = createStaticProductSite({repositoryRoot, sourceDirectory:"aperlo", productSegment:"aperlo", productName:"Aperlo", defaultLocaleId:"en", locales:LOCALES, surfaces:SURFACES});
+const site = createStaticProductSite({repositoryRoot, sourceDirectory:"aperlo", productSegment:"aperlo", productName:"Aperlo", defaultLocaleId:"en", storeUrl:"https://apps.apple.com/app/id6818555323?mt=12", storeLabel:"Mac App Store", locales:LOCALES, surfaces:SURFACES});
 export const pageOutputPath = site.pageOutputPath;
 export const buildSite = site.buildSite;
 export const checkSite = site.checkSite;
