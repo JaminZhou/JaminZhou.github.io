@@ -5,8 +5,16 @@
     <link>https://jaminzhou.com/</link>
     <description>Updates from JaminZhou, including the personal homepage, Aperlo, Trailglass, Hushtrail and Rouse for macOS, and PriceBird for iOS.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 09 Oct 2026 07:16:48 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 23:04:00 +0800</lastBuildDate>
     <atom:link href="https://jaminzhou.com/index.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Aperlo 1.0.1 for macOS</title>
+      <link>https://jaminzhou.com/aperlo/</link>
+      <guid isPermaLink="false">https://jaminzhou.com/aperlo/#release-1.0.1</guid>
+      <pubDate>Mon, 12 Oct 2026 23:04:00 +0800</pubDate>
+      <description>Aperlo 1.0.1 updates the App Store name and feature information to describe image browsing, folder viewing, and slideshows more clearly. Available free on the Mac App Store for macOS 14 or later.</description>
+    </item>
 
     <item>
       <title>Aperlo 1.0.0 for macOS</title>
