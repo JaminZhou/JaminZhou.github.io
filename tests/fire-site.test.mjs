@@ -54,10 +54,16 @@ test("FIRE copy describes system privacy and user-initiated StoreKit", async () 
 test("FIRE Watch updates require opt-in and do not promise immediate delivery", async () => {
   const pages = await buildSite();
   const terms = {
-    en: ["off by default", "queued snapshot may still arrive"],
-    "zh-Hans": ["默认关闭", "已入队的快照仍可能到达"],
-    "zh-Hant": ["預設關閉", "已排入佇列的快照仍可能到達"],
-    ja: ["初期状態はオフ", "送信待ちのデータは届く"],
+    en: ["queued snapshot may still arrive"],
+    "zh-Hans": ["已入队的快照仍可能到达"],
+    "zh-Hant": ["已排入佇列的快照仍可能到達"],
+    ja: ["送信待ちのデータは届く"],
+  };
+  const optIn = {
+    en: { support: "enable automatic updates (off by default)", privacy: "opt in to automatic updates on iPhone (off by default)" },
+    "zh-Hans": { support: "开启默认关闭的自动更新", privacy: "主动开启默认关闭的自动更新" },
+    "zh-Hant": { support: "開啟預設關閉的自動更新", privacy: "主動開啟預設關閉的自動更新" },
+    ja: { support: "自動更新（初期状態はオフ）を有効にできます", privacy: "自動更新（初期状態はオフ）を有効にできます" },
   };
   const delivery = {
     en: { support: "Delivery may be delayed", privacy: "not a direct Watch iCloud connection or a real-time delivery promise" },
@@ -69,6 +75,7 @@ test("FIRE Watch updates require opt-in and do not promise immediate delivery", 
     for (const surface of ["support", "privacy"]) {
       const html = pages.get(pageOutputPath(locale.id, surface));
       for (const term of terms[locale.id]) assert.ok(html.includes(term), `${locale.id}/${surface}: ${term}`);
+      assert.ok(html.includes(optIn[locale.id][surface]), `${locale.id}/${surface}: Watch opt-in`);
       assert.ok(html.includes(delivery[locale.id][surface]), `${locale.id}/${surface}: delivery disclaimer`);
     }
     assert.ok(pages.get(pageOutputPath(locale.id, "privacy")).includes("WatchConnectivity"));
