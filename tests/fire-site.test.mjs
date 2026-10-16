@@ -50,3 +50,20 @@ test("FIRE copy describes system privacy and user-initiated StoreKit", async () 
     assert.doesNotMatch(support, /<h2>(Hide details|隐藏详情|隱藏詳細資訊|詳細を隠す)<\/h2>/);
   }
 });
+
+test("FIRE Watch updates require opt-in and do not promise immediate delivery", async () => {
+  const pages = await buildSite();
+  const terms = {
+    en: ["off by default", "queued snapshot may still arrive"],
+    "zh-Hans": ["默认关闭", "已入队的快照仍可能到达"],
+    "zh-Hant": ["預設關閉", "已排入佇列的快照仍可能到達"],
+    ja: ["初期状態はオフ", "届く"],
+  };
+  for (const locale of LOCALES) {
+    for (const surface of ["support", "privacy"]) {
+      const html = pages.get(pageOutputPath(locale.id, surface));
+      for (const term of terms[locale.id]) assert.ok(html.includes(term), `${locale.id}/${surface}: ${term}`);
+    }
+    assert.ok(pages.get(pageOutputPath(locale.id, "privacy")).includes("WatchConnectivity"));
+  }
+});
