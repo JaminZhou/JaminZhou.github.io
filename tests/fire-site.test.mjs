@@ -33,3 +33,20 @@ test("FIRE support is localized and privacy does not promise zero networking", a
     assert.ok(privacy.includes("https://tally.so/help/privacy-policy"));
   }
 });
+
+test("FIRE copy describes system privacy and user-initiated StoreKit", async () => {
+  const pages = await buildSite();
+  const copy = {
+    en: ["Privacy on screen", "not at app startup"],
+    "zh-Hans": ["屏幕上的隐私", "不在启动时发起这些操作"],
+    "zh-Hant": ["畫面上的隱私", "不在啟動時執行這些操作"],
+    ja: ["画面上のプライバシー", "アプリ起動時には行いません"],
+  };
+  for (const locale of LOCALES) {
+    const support = pages.get(pageOutputPath(locale.id, "support"));
+    const privacy = pages.get(pageOutputPath(locale.id, "privacy"));
+    assert.ok(support.includes(`<h2>${copy[locale.id][0]}</h2>`), locale.id);
+    assert.ok(privacy.includes(copy[locale.id][1]), locale.id);
+    assert.doesNotMatch(support, /<h2>(Hide details|隐藏详情|隱藏詳細資訊|詳細を隠す)<\/h2>/);
+  }
+});
