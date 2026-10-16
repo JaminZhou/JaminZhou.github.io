@@ -57,12 +57,19 @@ test("FIRE Watch updates require opt-in and do not promise immediate delivery", 
     en: ["off by default", "queued snapshot may still arrive"],
     "zh-Hans": ["默认关闭", "已入队的快照仍可能到达"],
     "zh-Hant": ["預設關閉", "已排入佇列的快照仍可能到達"],
-    ja: ["初期状態はオフ", "届く"],
+    ja: ["初期状態はオフ", "送信待ちのデータは届く"],
+  };
+  const delivery = {
+    en: { support: "Delivery may be delayed", privacy: "not a direct Watch iCloud connection or a real-time delivery promise" },
+    "zh-Hans": { support: "送达可能延迟", privacy: "不承诺实时送达" },
+    "zh-Hant": { support: "送達可能延遲", privacy: "不承諾即時送達" },
+    ja: { support: "到着には時間がかかる場合", privacy: "即時の到着も保証されません" },
   };
   for (const locale of LOCALES) {
     for (const surface of ["support", "privacy"]) {
       const html = pages.get(pageOutputPath(locale.id, surface));
       for (const term of terms[locale.id]) assert.ok(html.includes(term), `${locale.id}/${surface}: ${term}`);
+      assert.ok(html.includes(delivery[locale.id][surface]), `${locale.id}/${surface}: delivery disclaimer`);
     }
     assert.ok(pages.get(pageOutputPath(locale.id, "privacy")).includes("WatchConnectivity"));
   }
