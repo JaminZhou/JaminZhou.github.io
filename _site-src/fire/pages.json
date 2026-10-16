@@ -1,0 +1,76 @@
+{
+  "pages": {
+    "en.landing": {
+      "title": "FIRE — A little closer. A little freer.",
+      "description": "Your financial independence goal, in view. An occasional record. A daily reminder of the life you want.",
+      "ogTitle": "FIRE — A little closer. A little freer.",
+      "ogDescription": "Your financial independence goal, in view. An occasional record. A daily reminder of the life you want."
+    },
+    "en.support": {
+      "title": "FIRE Support",
+      "description": "Start small. Keep the number honest. Let the widget do the reminding.",
+      "ogTitle": "FIRE Support",
+      "ogDescription": "Start small. Keep the number honest. Let the widget do the reminding."
+    },
+    "en.privacy": {
+      "title": "FIRE Privacy Policy",
+      "description": "This policy covers FIRE on iPhone, iPad, Mac and Apple Watch and its optional feedback channels. The developer is Jamin Zhou.",
+      "ogTitle": "FIRE Privacy Policy",
+      "ogDescription": "This policy covers FIRE on iPhone, iPad, Mac and Apple Watch and its optional feedback channels. The developer is Jamin Zhou."
+    },
+    "zh-Hans.landing": {
+      "title": "FIRE — 离自由近一点。 离生活近一点。",
+      "description": "让财务独立的目标，常在眼前。偶尔记录，提醒自己正走向怎样的生活。",
+      "ogTitle": "FIRE — 离自由近一点。 离生活近一点。",
+      "ogDescription": "让财务独立的目标，常在眼前。偶尔记录，提醒自己正走向怎样的生活。"
+    },
+    "zh-Hans.support": {
+      "title": "FIRE 支持",
+      "description": "从一个简单目标开始。认真记录，让组件轻轻提醒。",
+      "ogTitle": "FIRE 支持",
+      "ogDescription": "从一个简单目标开始。认真记录，让组件轻轻提醒。"
+    },
+    "zh-Hans.privacy": {
+      "title": "FIRE 隐私政策",
+      "description": "本政策适用于 iPhone、iPad、Mac 和 Apple Watch 上的 FIRE，以及可选反馈渠道。开发者为 Jamin Zhou。",
+      "ogTitle": "FIRE 隐私政策",
+      "ogDescription": "本政策适用于 iPhone、iPad、Mac 和 Apple Watch 上的 FIRE，以及可选反馈渠道。开发者为 Jamin Zhou。"
+    },
+    "zh-Hant.landing": {
+      "title": "FIRE — 離自由近一點。 離生活近一點。",
+      "description": "讓財務獨立的目標，常在眼前。偶爾記錄，提醒自己正走向怎樣的生活。",
+      "ogTitle": "FIRE — 離自由近一點。 離生活近一點。",
+      "ogDescription": "讓財務獨立的目標，常在眼前。偶爾記錄，提醒自己正走向怎樣的生活。"
+    },
+    "zh-Hant.support": {
+      "title": "FIRE 支援",
+      "description": "從一個簡單目標開始。認真記錄，讓小工具輕輕提醒。",
+      "ogTitle": "FIRE 支援",
+      "ogDescription": "從一個簡單目標開始。認真記錄，讓小工具輕輕提醒。"
+    },
+    "zh-Hant.privacy": {
+      "title": "FIRE 隱私政策",
+      "description": "本政策適用於 iPhone、iPad、Mac 和 Apple Watch 上的 FIRE，以及可選回饋管道。開發者為 Jamin Zhou。",
+      "ogTitle": "FIRE 隱私政策",
+      "ogDescription": "本政策適用於 iPhone、iPad、Mac 和 Apple Watch 上的 FIRE，以及可選回饋管道。開發者為 Jamin Zhou。"
+    },
+    "ja.landing": {
+      "title": "FIRE — 自由に、少し近づく。 暮らしを、もっと身近に。",
+      "description": "経済的自立の目標を、いつも見える場所に。ときどき記録し、目指す暮らしを思い出す。",
+      "ogTitle": "FIRE — 自由に、少し近づく。 暮らしを、もっと身近に。",
+      "ogDescription": "経済的自立の目標を、いつも見える場所に。ときどき記録し、目指す暮らしを思い出す。"
+    },
+    "ja.support": {
+      "title": "FIRE サポート",
+      "description": "小さな目標から。確かな記録と、そっと寄り添うウィジェット。",
+      "ogTitle": "FIRE サポート",
+      "ogDescription": "小さな目標から。確かな記録と、そっと寄り添うウィジェット。"
+    },
+    "ja.privacy": {
+      "title": "FIRE プライバシーポリシー",
+      "description": "本ポリシーは iPhone、iPad、Mac、Apple Watch の FIRE と任意のフィードバック経路に適用されます。開発者は Jamin Zhou です。",
+      "ogTitle": "FIRE プライバシーポリシー",
+      "ogDescription": "本ポリシーは iPhone、iPad、Mac、Apple Watch の FIRE と任意のフィードバック経路に適用されます。開発者は Jamin Zhou です。"
+    }
+  }
+}
