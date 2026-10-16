@@ -34,7 +34,21 @@ import {
   pageOutputPath as aperloOutputPath,
 } from "../scripts/build-aperlo-site.mjs";
 
+import {
+  LOCALES as FIRE_LOCALES,
+  SURFACES as FIRE_SURFACES,
+  buildSite as buildFireSite,
+  pageOutputPath as fireOutputPath,
+} from "../scripts/build-fire-site.mjs";
+
 const PRODUCT_SITES = [
+  {
+    name: "FIRE",
+    locales: FIRE_LOCALES,
+    surfaces: FIRE_SURFACES,
+    buildSite: buildFireSite,
+    pageOutputPath: fireOutputPath,
+  },
   {
     name: "Aperlo",
     locales: APERLO_LOCALES,
