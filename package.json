@@ -9,12 +9,18 @@
     "check:pricebird": "node scripts/build-pricebird-site.mjs --check",
     "build:hushtrail": "node scripts/build-hushtrail-site.mjs --write",
     "check:hushtrail": "node scripts/build-hushtrail-site.mjs --check",
-    "build:site": "npm run build:rouse && npm run build:pricebird && npm run build:hushtrail && npm run build:aperlo && npm run build:fire",
-    "check:site": "npm run check:rouse && npm run check:pricebird && npm run check:hushtrail && npm run check:aperlo && npm run check:fire",
+    "build:site": "npm run build:shared && npm run build:rouse && npm run build:pricebird && npm run build:hushtrail && npm run build:aperlo && npm run build:fire && npm run build:trailglass",
+    "check:site": "npm run check:shared && npm run check:rouse && npm run check:pricebird && npm run check:hushtrail && npm run check:aperlo && npm run check:fire && npm run check:trailglass",
     "test": "node --test",
     "build:aperlo": "node scripts/build-aperlo-site.mjs --write",
     "check:aperlo": "node scripts/build-aperlo-site.mjs --check",
     "build:fire": "node scripts/build-fire-site.mjs --write",
-    "check:fire": "node scripts/build-fire-site.mjs --check"
+    "check:fire": "node scripts/build-fire-site.mjs --check",
+    "build:trailglass": "node scripts/build-trailglass-site.mjs --write",
+    "check:trailglass": "node scripts/build-trailglass-site.mjs --check",
+    "build:shared": "node scripts/build-shared-site.mjs --write",
+    "check:shared": "node scripts/build-shared-site.mjs --check",
+    "build:preview": "npm run build:site && node scripts/build-preview.mjs",
+    "preview": "npm run build:preview && python3 _design/serve.py"
   }
 }

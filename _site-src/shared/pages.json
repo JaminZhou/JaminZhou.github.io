@@ -1,0 +1,22 @@
+{
+  "en.home": {
+    "route": "/",
+    "title": "JaminZhou — Useful apps for everyday life",
+    "description": "Independent developer in Shanghai. Explore Aperlo, Rouse, PriceBird, Trailglass, Hushtrail and FIRE — focused apps for your Mac, iPhone and everyday life."
+  },
+  "zh-Hans.home": {
+    "route": "/zh-hans/",
+    "title": "JaminZhou — 用心做软件，让日常更从容",
+    "description": "我是 Jamin，上海的独立开发者。探索映窗、Rouse、算鸟、Trailglass、Hushtrail 和 FIRE，为 Mac、iPhone 和生活里的小事制作专注、好用的软件。"
+  },
+  "en.support": {
+    "route": "/support/",
+    "title": "Support — JaminZhou",
+    "description": "Find setup guides, common questions, privacy information and contact options for Jamin Zhou’s apps."
+  },
+  "en.404": {
+    "route": "/404.html",
+    "title": "Page not found — JaminZhou",
+    "description": "Find every app on the homepage, or head to support for a hand."
+  }
+}

@@ -1,0 +1,25 @@
+/* Generated from product presentation metadata in _site-src. */
+[data-product="aperlo"]{--accent:#27616b;--accent-soft:#eaf1ef}
+[data-app-icon="aperlo"]{--icon-scale:1.242718;--icon-radius:0}
+:root[data-theme="dark"] [data-product="aperlo"]{--accent:#a9d4d7;--accent-soft:#253738}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-product="aperlo"]{--accent:#a9d4d7;--accent-soft:#253738}}
+[data-product="rouse"]{--accent:#515538;--accent-soft:#eeefdf}
+[data-app-icon="rouse"]{--icon-scale:1;--icon-radius:22%}
+:root[data-theme="dark"] [data-product="rouse"]{--accent:#d2d8aa;--accent-soft:#323525}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-product="rouse"]{--accent:#d2d8aa;--accent-soft:#323525}}
+[data-product="pricebird"]{--accent:#904b31;--accent-soft:#f6ece4}
+[data-app-icon="pricebird"]{--icon-scale:1;--icon-radius:22%}
+:root[data-theme="dark"] [data-product="pricebird"]{--accent:#efbc9f;--accent-soft:#3a2d26}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-product="pricebird"]{--accent:#efbc9f;--accent-soft:#3a2d26}}
+[data-product="trailglass"]{--accent:#3b607c;--accent-soft:#e9eff6}
+[data-app-icon="trailglass"]{--icon-scale:1.242718;--icon-radius:0}
+:root[data-theme="dark"] [data-product="trailglass"]{--accent:#a7cce9;--accent-soft:#28343e}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-product="trailglass"]{--accent:#a7cce9;--accent-soft:#28343e}}
+[data-product="hushtrail"]{--accent:#785a23;--accent-soft:#f3eedf}
+[data-app-icon="hushtrail"]{--icon-scale:1;--icon-radius:22%}
+:root[data-theme="dark"] [data-product="hushtrail"]{--accent:#e3cc95;--accent-soft:#383224}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-product="hushtrail"]{--accent:#e3cc95;--accent-soft:#383224}}
+[data-product="fire"]{--accent:#994c2c;--accent-soft:#f5eade}
+[data-app-icon="fire"]{--icon-scale:1;--icon-radius:22%}
+:root[data-theme="dark"] [data-product="fire"]{--accent:#efbc9a;--accent-soft:#3c3027}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) [data-product="fire"]{--accent:#efbc9a;--accent-soft:#3c3027}}
