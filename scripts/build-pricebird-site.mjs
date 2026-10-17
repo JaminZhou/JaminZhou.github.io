@@ -72,8 +72,6 @@ const site = createStaticProductSite({
   defaultLocaleId: "en",
   locales: LOCALES,
   surfaces: SURFACES,
-  storeUrl: "https://apps.apple.com/app/id6762044720",
-  storeLabel: "App Store",
 });
 
 export const pageOutputPath = site.pageOutputPath;

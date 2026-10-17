@@ -1,0 +1,21 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "JaminZhou",
+  "url": "https://jaminzhou.com/",
+  "image": "https://jaminzhou.com/images/jamin-zhou-avatar.png",
+  "email": "mailto:me@jaminzhou.com",
+  "jobTitle": "Independent Developer",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Shanghai",
+    "addressCountry": "CN"
+  },
+  "sameAs": [
+    "https://github.com/JaminZhou",
+    "https://dribbble.com/JaminZhou",
+    "https://linkedin.com/in/jaminzhou",
+    "https://medium.com/@jaminzhou/",
+    "https://www.instagram.com/JaminZhou/"
+  ]
+}

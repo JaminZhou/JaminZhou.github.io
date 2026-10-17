@@ -1,3 +1,4 @@
+import { ui, displayName, resolveProduct } from '../scripts/lib/design-system.mjs';
 import assert from "node:assert/strict";
 import { access, mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import os from "node:os";
@@ -103,22 +104,20 @@ test("PriceBird alternates and language switcher preserve the current surface", 
   assert.match(switcher, /href="\/pricebird\/ja\/privacy\/"/);
 });
 
-test("PriceBird masthead copy and actions preserve the selected locale", async () => {
-  const pages = await buildPriceBirdSite({ write: false });
-
-  for (const locale of PRICEBIRD_LOCALES.filter((candidate) => candidate.id !== "en")) {
-    const landing = pages.get(priceBirdOutputPath(locale.id, "landing"));
-    const support = pages.get(priceBirdOutputPath(locale.id, "support"));
-    const privacy = pages.get(priceBirdOutputPath(locale.id, "privacy"));
-    const landingRoute = `/${priceBirdOutputPath(locale.id, "landing").replace(/index\.html$/, "")}`;
-
-    assert.ok(landing.includes(`aria-label="${locale.ui.breadcrumbLabel}"`), locale.id);
-    assert.ok(landing.includes(`href="/#products">${locale.ui.products}</a>`), locale.id);
-    assert.ok(support.includes(`aria-label="${locale.ui.emailSupport}"`), locale.id);
-    assert.ok(support.includes(`<span>PriceBird · ${locale.ui.support}</span>`), locale.id);
-    assert.ok(privacy.includes(`href="${landingRoute}"`), locale.id);
-    assert.ok(privacy.includes(`aria-label="${locale.ui.backToProduct}"`), locale.id);
-    assert.ok(privacy.includes(`<span aria-current="page">${locale.ui.privacy}</span>`), locale.id);
+test("PriceBird navigation and theme controls preserve the selected locale", async () => {
+  const pages = await buildPriceBirdSite();
+  const product = resolveProduct(JSON.parse(await readFile(new URL('../_site-src/pricebird/pages.json', import.meta.url), 'utf8')));
+  for (const locale of PRICEBIRD_LOCALES) {
+    const t = ui(locale.id);
+    for (const surface of PRICEBIRD_SURFACES) {
+      const page = pages.get(priceBirdOutputPath(locale.id, surface.id));
+      const route = '/' + priceBirdOutputPath(locale.id, surface.id).replace(/index\.html$/, '');
+      assert.ok(page.includes(`href="${route}" aria-current="page">${surface.id === 'landing' ? t.overview : t[surface.id]}</a>`));
+      assert.ok(page.includes(`>${displayName(product, locale.id)}</a>`));
+      assert.ok(page.includes(`aria-label="${t.theme}"`));
+      assert.ok(page.includes(`>${t.system}</option>`));
+      assert.ok(page.includes('href="mailto:me@jaminzhou.com"'));
+    }
   }
 });
 
@@ -240,44 +239,27 @@ test("sitemap includes every generated product route exactly once", async () => 
   }
 });
 
-test("homepage and sitemap expose the Codex UI Kit showcase", async () => {
+test("homepage omits the paused Codex UI Kit promotion and preserves its independent sitemap route", async () => {
   const [homepage, sitemap] = await Promise.all([
     readFile(new URL("../index.html", import.meta.url), "utf8"),
     readFile(new URL("../sitemap.xml", import.meta.url), "utf8"),
   ]);
 
-  assert.equal(homepage.split('href="/codex-ui-kit/"').length - 1, 1);
+  assert.equal(homepage.split('href="/codex-ui-kit/"').length - 1, 0);
   assert.equal(
     sitemap.split("<loc>https://jaminzhou.com/codex-ui-kit/</loc>").length - 1,
     1,
   );
 });
 
-test("production pages use the vendored Classical system without the design preview runtime", async () => {
-  const [homepage, siteCss, cormorantLicense, loraLicense] = await Promise.all([
-    readFile(new URL("../index.html", import.meta.url), "utf8"),
-    readFile(new URL("../assets/site.css", import.meta.url), "utf8"),
-    readFile(
-      new URL("../assets/classical/fonts/OFL-CormorantGaramond.txt", import.meta.url),
-      "utf8",
-    ),
-    readFile(new URL("../assets/classical/fonts/OFL-Lora.txt", import.meta.url), "utf8"),
-  ]);
-
-  assert.match(homepage, /href="\/assets\/classical\/styles\.css\?v=20260902"/);
-  assert.match(homepage, /href="\/assets\/site\.css\?v=20260902"/);
-  assert.doesNotMatch(homepage, /support\.js|<x-dc\b|data-dc-script/);
-  assert.match(siteCss, /\.language-menu > summary,\s*\.locale-link \{\s*min-height: 44px;/);
-  assert.match(siteCss, /max-height: min\(calc\(100vh - 88px\), 468px\);/);
-  assert.match(siteCss, /\.header-action \{[\s\S]*?min-height: 36px;/);
-  assert.match(
-    siteCss,
-    /@media \(max-width: 340px\) \{[\s\S]*?\.breadcrumbs \{\s*display: none;/,
-  );
-  assert.match(cormorantLicense, /Copyright 2015 the Cormorant Project Authors/);
-  assert.match(loraLicense, /Copyright 2011 The Lora Project Authors/);
-  assert.match(cormorantLicense, /SIL OPEN FONT LICENSE Version 1\.1/);
-  assert.match(loraLicense, /SIL OPEN FONT LICENSE Version 1\.1/);
+test("production uses the shared system without prototype controls or web fonts", async () => {
+  const homepage = await readFile(new URL('../index.html', import.meta.url), 'utf8');
+  const tokens = await readFile(new URL('../assets/design/tokens.css', import.meta.url), 'utf8');
+  assert.match(homepage, /href="\/assets\/design\/tokens\.css/);
+  assert.match(homepage, /href="\/assets\/design\/components\.css/);
+  assert.doesNotMatch(homepage, /Design preview|data-preview-|support\.js|<x-dc\b|data-dc-script|classical\/|noindex/);
+  assert.match(tokens, /ui-sans-serif/);
+  assert.doesNotMatch(tokens, /@font-face|fonts.googleapis/);
 });
 
 test("legacy iCube privacy pages keep complete static document metadata", async () => {

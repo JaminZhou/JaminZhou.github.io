@@ -45,9 +45,9 @@ test("FIRE copy describes system privacy and user-initiated StoreKit", async () 
   for (const locale of LOCALES) {
     const support = pages.get(pageOutputPath(locale.id, "support"));
     const privacy = pages.get(pageOutputPath(locale.id, "privacy"));
-    assert.ok(support.includes(`<h2>${copy[locale.id][0]}</h2>`), locale.id);
+    assert.ok(new RegExp(`<h2[^>]*>${copy[locale.id][0]}</h2>`).test(support), locale.id);
     assert.ok(privacy.includes(copy[locale.id][1]), locale.id);
-    assert.doesNotMatch(support, /<h2>(Hide details|隐藏详情|隱藏詳細資訊|詳細を隠す)<\/h2>/);
+    assert.doesNotMatch(support, /<h2[^>]*>(Hide details|隐藏详情|隱藏詳細資訊|詳細を隠す)<\/h2>/);
   }
 });
 

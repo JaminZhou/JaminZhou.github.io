@@ -1,3 +1,4 @@
+import { ui } from '../scripts/lib/design-system.mjs';
 import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import path from "node:path";
@@ -63,33 +64,19 @@ test("language switcher keeps the current locale and surface", () => {
   assert.match(switcher, /href="\/rouse\/ja\/privacy\/"/);
 });
 
-test("masthead copy and actions preserve every selected Rouse locale", async () => {
-  const pages = await buildSite({ write: false });
-
-  for (const locale of LOCALES.filter((candidate) => candidate.id !== "en")) {
-    const landing = pages.get(pageOutputPath(locale.id, "landing"));
-    const support = pages.get(pageOutputPath(locale.id, "support"));
-    const privacy = pages.get(pageOutputPath(locale.id, "privacy"));
-    const changelog = pages.get(pageOutputPath(locale.id, "changelog"));
-    const clamshell = pages.get(pageOutputPath(locale.id, "clamshell"));
-    const landingRoute = `/${pageOutputPath(locale.id, "landing").replace(/index\.html$/, "")}`;
-    const supportRoute = `/${pageOutputPath(locale.id, "support").replace(/index\.html$/, "")}`;
-
-    assert.ok(landing.includes(`aria-label="${locale.ui.breadcrumbLabel}"`), locale.id);
-    assert.ok(landing.includes(`href="/#products">${locale.ui.products}</a>`), locale.id);
-    assert.ok(support.includes(`aria-label="${locale.ui.emailSupport}"`), locale.id);
-    assert.ok(support.includes(`<span>Rouse · ${locale.ui.support}</span>`), locale.id);
-    assert.ok(privacy.includes(`href="${landingRoute}"`), locale.id);
-    assert.ok(privacy.includes(`aria-label="${locale.ui.backToProduct}"`), locale.id);
-    assert.ok(privacy.includes(`<span aria-current="page">${locale.ui.privacy}</span>`), locale.id);
-
-    for (const [page, label] of [
-      [changelog, locale.ui.changelog],
-      [clamshell, locale.ui.clamshell],
-    ]) {
-      assert.ok(page.includes(`href="${supportRoute}"`), locale.id);
-      assert.ok(page.includes(`aria-label="${locale.ui.support}"`), locale.id);
-      assert.ok(page.includes(`<span aria-current="page">${label}</span>`), locale.id);
+test("navigation and appearance labels preserve all nine Rouse locales", async () => {
+  const pages = await buildSite();
+  for (const locale of LOCALES) {
+    const t = ui(locale.id);
+    for (const surface of SURFACES) {
+      const page = pages.get(pageOutputPath(locale.id, surface.id));
+      const active = surface.id === 'clamshell' ? 'support' : surface.id;
+      const route = '/' + pageOutputPath(locale.id, active).replace(/index\.html$/, '');
+      assert.ok(page.includes(`href="${route}" aria-current="page">${active === 'landing' ? t.overview : t[active]}</a>`), `${locale.id}/${surface.id}`);
+      assert.ok(page.includes(`aria-label="${t.theme}"`));
+      assert.ok(page.includes(`>${t.system}</option>`));
+      assert.ok(page.includes('href="mailto:me@jaminzhou.com"'));
+      if (surface.id !== 'landing') assert.ok(page.includes(`aria-label="${t.toc}"`));
     }
   }
 });

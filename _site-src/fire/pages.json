@@ -1,10 +1,47 @@
 {
+  "product": {
+    "id": "fire",
+    "name": "FIRE",
+    "category": "everyday",
+    "platforms": [
+      "mac",
+      "iphone",
+      "ipad",
+      "watch"
+    ],
+    "platformLabel": "iPhone · iPad · Mac · Apple Watch",
+    "availability": "preparing",
+    "accent": "#994c2c",
+    "tint": "#f5eade",
+    "darkAccent": "#efbc9a",
+    "darkTint": "#3c3027",
+    "media": "widgets",
+    "screenshot": "/fire/images/en-daybreak-medium.png",
+    "widgetImages": [
+      "/{id}/images/{locale}-daybreak-medium.png",
+      "/{id}/images/{locale}-trail-small.png",
+      "/{id}/images/{locale}-signal-small.png"
+    ],
+    "catalogSummary": "Track your financial independence goal with widgets.",
+    "catalogSummaryZh": "记录财务独立目标，用小组件查看进展。",
+    "mediaWidth": 1720,
+    "mediaHeight": 820,
+    "iconScale": 1,
+    "iconRadius": "22%",
+    "release": {
+      "version": "1.0.0"
+    }
+  },
   "pages": {
     "en.landing": {
       "title": "FIRE — A little closer. A little freer.",
       "description": "Your financial independence goal, in view. An occasional record. A daily reminder of the life you want.",
       "ogTitle": "FIRE — A little closer. A little freer.",
-      "ogDescription": "Your financial independence goal, in view. An occasional record. A daily reminder of the life you want."
+      "ogDescription": "Your financial independence goal, in view. An occasional record. A daily reminder of the life you want.",
+      "hero": {
+        "title": "A little closer.\nA little freer.",
+        "introduction": "A financial independence goal, occasional records, and widgets that make it yours."
+      }
     },
     "en.support": {
       "title": "FIRE Support",
@@ -22,7 +59,11 @@
       "title": "FIRE — 离自由近一点。 离生活近一点。",
       "description": "让财务独立的目标，常在眼前。偶尔记录，提醒自己正走向怎样的生活。",
       "ogTitle": "FIRE — 离自由近一点。 离生活近一点。",
-      "ogDescription": "让财务独立的目标，常在眼前。偶尔记录，提醒自己正走向怎样的生活。"
+      "ogDescription": "让财务独立的目标，常在眼前。偶尔记录，提醒自己正走向怎样的生活。",
+      "hero": {
+        "title": "离自由近一点。\n离生活近一点。",
+        "introduction": "让财务独立的目标，常在眼前。偶尔记录，提醒自己正走向怎样的生活。"
+      }
     },
     "zh-Hans.support": {
       "title": "FIRE 支持",
@@ -40,7 +81,11 @@
       "title": "FIRE — 離自由近一點。 離生活近一點。",
       "description": "讓財務獨立的目標，常在眼前。偶爾記錄，提醒自己正走向怎樣的生活。",
       "ogTitle": "FIRE — 離自由近一點。 離生活近一點。",
-      "ogDescription": "讓財務獨立的目標，常在眼前。偶爾記錄，提醒自己正走向怎樣的生活。"
+      "ogDescription": "讓財務獨立的目標，常在眼前。偶爾記錄，提醒自己正走向怎樣的生活。",
+      "hero": {
+        "title": "離自由近一點。\n離生活近一點。",
+        "introduction": "讓財務獨立的目標，常在眼前。偶爾記錄，提醒自己正走向怎樣的生活。"
+      }
     },
     "zh-Hant.support": {
       "title": "FIRE 支援",
@@ -58,7 +103,11 @@
       "title": "FIRE — 自由に、少し近づく。 暮らしを、もっと身近に。",
       "description": "経済的自立の目標を、いつも見える場所に。ときどき記録し、目指す暮らしを思い出す。",
       "ogTitle": "FIRE — 自由に、少し近づく。 暮らしを、もっと身近に。",
-      "ogDescription": "経済的自立の目標を、いつも見える場所に。ときどき記録し、目指す暮らしを思い出す。"
+      "ogDescription": "経済的自立の目標を、いつも見える場所に。ときどき記録し、目指す暮らしを思い出す。",
+      "hero": {
+        "title": "自由に、少し近づく。\n暮らしを、もっと身近に。",
+        "introduction": "経済的自立の目標を、いつも見える場所に。ときどき記録し、目指す暮らしを思い出す。"
+      }
     },
     "ja.support": {
       "title": "FIRE サポート",

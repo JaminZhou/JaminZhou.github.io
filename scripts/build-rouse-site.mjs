@@ -1,20 +1,9 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
-import {
-  decorateProductContent,
-  escapeHtml,
-  productBodyClass,
-  renderDesignLocaleSwitcher,
-  renderProductMasthead,
-  validateHtmlStructure as validateSharedHtmlStructure,
-} from "./lib/static-product-site.mjs";
-
-const REPOSITORY_ROOT = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
-const SOURCE_ROOT = path.join(REPOSITORY_ROOT, "_site-src", "rouse");
-const SITE_ORIGIN = "https://jaminzhou.com";
-
+import { readFile } from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { createStaticProductSite, validateHtmlStructure, runStaticProductSiteCli } from './lib/static-product-site.mjs';
+export { validateHtmlStructure } from './lib/static-product-site.mjs';
+const REPOSITORY_ROOT = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 export const LOCALES = Object.freeze([
   { id: "en", hreflang: "en", segment: "", label: "English", menuLabel: "Language" },
   {
@@ -163,51 +152,10 @@ export const SURFACES = Object.freeze([
   { id: "clamshell", segment: "support/clamshell" },
 ]);
 
-function localeFor(id) {
-  const locale = LOCALES.find((candidate) => candidate.id === id);
-  if (!locale) throw new Error(`Unknown locale: ${id}`);
-  return locale;
-}
 
-function surfaceFor(id) {
-  const surface = SURFACES.find((candidate) => candidate.id === id);
-  if (!surface) throw new Error(`Unknown surface: ${id}`);
-  return surface;
-}
-
-function routePath(localeId, surfaceId) {
-  const locale = localeFor(localeId);
-  const surface = surfaceFor(surfaceId);
-  const segments = ["rouse", locale.segment, surface.segment].filter(Boolean);
-  return `/${segments.join("/")}/`;
-}
-
-export function pageOutputPath(localeId, surfaceId) {
-  return path.posix.join(routePath(localeId, surfaceId), "index.html").slice(1);
-}
-
-export function renderAlternateLinks(_localeId, surfaceId) {
-  const lines = LOCALES.map(
-    (locale) =>
-      `  <link rel="alternate" hreflang="${locale.hreflang}" href="${SITE_ORIGIN}${routePath(locale.id, surfaceId)}">`,
-  );
-  lines.push(
-    `  <link rel="alternate" hreflang="x-default" href="${SITE_ORIGIN}${routePath("en", surfaceId)}">`,
-  );
-  return lines.join("\n");
-}
-
-export function renderLocaleSwitcher(localeId, surfaceId) {
-  const current = localeFor(localeId);
-  return renderDesignLocaleSwitcher({
-    locales: LOCALES,
-    currentLocale: current,
-    routeFor: (targetLocaleId) => routePath(targetLocaleId, surfaceId),
-  });
-}
-
-export const validateHtmlStructure = validateSharedHtmlStructure;
-
+const site = createStaticProductSite({ repositoryRoot: REPOSITORY_ROOT, sourceDirectory: 'rouse', productSegment: 'rouse', productName: 'Rouse', defaultLocaleId: 'en', locales: LOCALES, surfaces: SURFACES });
+export const { buildSite, pageOutputPath, renderLocaleSwitcher } = site;
+export const renderAlternateLinks = (_locale, surface) => site.renderAlternateLinks(surface);
 export function validateReleaseVersionConsistency({ manifest, pages, homepage }) {
   const errors = [];
   const expectedVersion = manifest.pages?.["en.landing"]?.structuredData?.softwareVersion;
@@ -274,135 +222,15 @@ export function validateReleaseVersionConsistency({ manifest, pages, homepage })
   return errors;
 }
 
-function renderStructuredData(structuredData) {
-  if (!structuredData) return "";
 
-  const json = JSON.stringify(structuredData, null, 2)
-    .replaceAll("<", "\\u003c")
-    .replaceAll("\u2028", "\\u2028")
-    .replaceAll("\u2029", "\\u2029")
-    .split("\n")
-    .map((line) => `    ${line}`)
-    .join("\n");
-  return `\n  <script type="application/ld+json">\n${json}\n  </script>`;
+export async function checkSite() {
+  await site.checkSite();
+  const [manifest, homepage, pages] = await Promise.all([
+    readFile(path.join(REPOSITORY_ROOT, '_site-src/rouse/pages.json'), 'utf8').then(JSON.parse),
+    readFile(path.join(REPOSITORY_ROOT, 'index.html'), 'utf8'),
+    buildSite(),
+  ]);
+  const errors = validateReleaseVersionConsistency({ manifest, pages, homepage });
+  if (errors.length) throw new Error(errors.join('\n'));
 }
-
-function renderPage({ localeId, surfaceId, metadata, content, template }) {
-  const locale = localeFor(localeId);
-  const canonical = `${SITE_ORIGIN}${routePath(localeId, surfaceId)}`;
-  const bodyHeader = renderProductMasthead({
-    locales: LOCALES,
-    currentLocale: locale,
-    routeFor: (targetLocaleId) => routePath(targetLocaleId, surfaceId),
-    productName: "Rouse",
-    surfaceId,
-    storeUrl: "https://apps.apple.com/us/app/rouse-stay-awake/id6760773101?mt=12",
-    storeLabel: "Mac App Store",
-    routeForSurface: (targetSurfaceId) => routePath(localeId, targetSurfaceId),
-  });
-  const values = {
-    "{{LANG}}": locale.id,
-    "{{TITLE}}": escapeHtml(metadata.title),
-    "{{DESCRIPTION}}": escapeHtml(metadata.description),
-    "{{CANONICAL}}": escapeHtml(canonical),
-    "{{ALTERNATE_LINKS}}": renderAlternateLinks(localeId, surfaceId),
-    "{{OG_TITLE}}": escapeHtml(metadata.ogTitle),
-    "{{OG_DESCRIPTION}}": escapeHtml(metadata.ogDescription),
-    "{{TWITTER_TITLE}}": escapeHtml(metadata.twitterTitle ?? metadata.ogTitle),
-    "{{TWITTER_DESCRIPTION}}": escapeHtml(
-      metadata.twitterDescription ?? metadata.ogDescription,
-    ),
-    "{{STRUCTURED_DATA}}": renderStructuredData(metadata.structuredData),
-    "{{BODY_CLASS}}": productBodyClass({ productSegment: "rouse", surfaceId }),
-    "{{BODY_HEADER}}": `${bodyHeader}\n`,
-    "{{CONTENT}}": decorateProductContent({
-      content: content.trimEnd(),
-      productName: "Rouse",
-      productSegment: "rouse",
-      surfaceId,
-      currentLocale: locale,
-    }),
-  };
-  let rendered = template;
-  for (const [token, value] of Object.entries(values)) {
-    rendered = rendered.replaceAll(token, value);
-  }
-  const unresolvedTokens = rendered.match(/\{\{[A-Z_]+\}\}/g);
-  if (unresolvedTokens) {
-    throw new Error(`Unresolved template tokens: ${unresolvedTokens.join(", ")}`);
-  }
-  return rendered;
-}
-
-async function loadManifest() {
-  return JSON.parse(await readFile(path.join(SOURCE_ROOT, "pages.json"), "utf8"));
-}
-
-async function loadPage(manifest, localeId, surfaceId) {
-  const key = `${localeId}.${surfaceId}`;
-  const metadata = manifest.pages[key];
-  if (!metadata) throw new Error(`Missing page metadata: ${key}`);
-
-  const contentPath = path.join(SOURCE_ROOT, "content", localeId, `${surfaceId}.html`);
-  const content = await readFile(contentPath, "utf8");
-  return { localeId, surfaceId, metadata, content };
-}
-
-export async function buildSite({ write = false } = {}) {
-  const manifest = await loadManifest();
-  const template = await readFile(path.join(SOURCE_ROOT, "template.html"), "utf8");
-  const pages = new Map();
-
-  for (const locale of LOCALES) {
-    for (const surface of SURFACES) {
-      const page = await loadPage(manifest, locale.id, surface.id);
-      const relativePath = pageOutputPath(locale.id, surface.id);
-      const rendered = renderPage({ ...page, template });
-      pages.set(relativePath, rendered);
-
-      if (write) {
-        const outputPath = path.join(REPOSITORY_ROOT, relativePath);
-        await mkdir(path.dirname(outputPath), { recursive: true });
-        await writeFile(outputPath, rendered);
-      }
-    }
-  }
-
-  return pages;
-}
-
-async function checkSite() {
-  const pages = await buildSite({ write: false });
-  const stale = [];
-
-  for (const [relativePath, rendered] of pages) {
-    const current = await readFile(path.join(REPOSITORY_ROOT, relativePath), "utf8");
-    if (current !== rendered) stale.push(relativePath);
-    const structureErrors = validateHtmlStructure(rendered);
-    if (structureErrors.length > 0) {
-      throw new Error(`${relativePath}:\n${structureErrors.join("\n")}`);
-    }
-  }
-
-  const manifest = await loadManifest();
-  const homepage = await readFile(path.join(REPOSITORY_ROOT, "index.html"), "utf8");
-  const versionErrors = validateReleaseVersionConsistency({ manifest, pages, homepage });
-  if (versionErrors.length > 0) {
-    throw new Error(`Rouse release versions are inconsistent:\n${versionErrors.join("\n")}`);
-  }
-
-  if (stale.length > 0) {
-    throw new Error(`Generated Rouse pages are stale:\n${stale.map((item) => `- ${item}`).join("\n")}`);
-  }
-}
-
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  const command = process.argv[2] ?? "--check";
-  if (command === "--write") {
-    await buildSite({ write: true });
-  } else if (command === "--check") {
-    await checkSite();
-  } else {
-    throw new Error(`Unknown command: ${command}`);
-  }
-}
+if (process.argv[1] === fileURLToPath(import.meta.url)) await runStaticProductSiteCli({ buildSite, checkSite }, process.argv[2]);

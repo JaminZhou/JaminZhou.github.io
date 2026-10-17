@@ -1,0 +1,114 @@
+/* Shared foundation. Product accents live in product manifests, never in page layouts. */
+:root {
+  color-scheme:light;
+  --font-sans:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --font-mono:ui-monospace,"SFMono-Regular",Consolas,monospace;
+  --canvas:#f8f9f5;
+  --surface:#fff;
+  --surface-soft:#eef0e9;
+  --ink:#222b25;
+  --muted:#59655c;
+  --quiet:#647067;
+  --line:#d7ddd4;
+  --line-strong:#7b8b7f;
+  --brand:#345b43;
+  --brand-soft:#e7eee4;
+  --on-brand:#fff;
+  --focus:#376bca;
+  --warning:#76501c;
+  --warning-bg:#faf0d9;
+  --accent:var(--brand);
+  --accent-soft:var(--brand-soft);
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:24px;
+  --space-6:32px;
+  --space-7:48px;
+  --space-8:64px;
+  --space-9:96px;
+  --space-10:128px;
+  --radius-small:8px;
+  --radius-control:12px;
+  --radius-card:20px;
+  --radius-stage:28px;
+  --page-width:1200px;
+  --reading-width:700px;
+  --gutter:clamp(20px,5vw,64px);
+  --text-small:.8125rem;
+  --text-ui:.9375rem;
+  --text-body:1rem;
+  --text-lead:1.125rem;
+  --text-display:clamp(2.6rem,5.1vw,4.25rem);
+  --text-title:clamp(2.2rem,4.7vw,3.75rem);
+  --text-section:clamp(1.75rem,3vw,2.5rem);
+  --shadow-small:0 2px 8px rgb(25 42 29 / .04);
+  --shadow-stage:0 20px 60px -24px rgb(25 42 29 / .2);
+  --duration:160ms;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+:root[data-theme="dark"] {
+  color-scheme:dark;
+  --canvas:#1b211d;
+  --surface:#242c26;
+  --surface-soft:#2b342d;
+  --ink:#eef2e9;
+  --muted:#b8c4b8;
+  --quiet:#aab8ab;
+  --line:#435047;
+  --line-strong:#7a8c7b;
+  --brand:#b8d1ad;
+  --brand-soft:#304633;
+  --on-brand:#1d2b20;
+  --focus:#a5c5ff;
+  --warning:#ebca87;
+  --warning-bg:#3d3422;
+  --shadow-small:none;
+  --shadow-stage:0 20px 60px -24px rgb(0 0 0 / .45)
+}
+@media(prefers-color-scheme:dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme:dark;
+    --canvas:#1b211d;
+    --surface:#242c26;
+    --surface-soft:#2b342d;
+    --ink:#eef2e9;
+    --muted:#b8c4b8;
+    --quiet:#aab8ab;
+    --line:#435047;
+    --line-strong:#7a8c7b;
+    --brand:#b8d1ad;
+    --brand-soft:#304633;
+    --on-brand:#1d2b20;
+    --focus:#a5c5ff;
+    --warning:#ebca87;
+    --warning-bg:#3d3422;
+    --shadow-small:none;
+    --shadow-stage:0 20px 60px -24px rgb(0 0 0 / .45)
+  }
+}
+html:lang(zh-Hans) {
+  --font-sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif
+}
+html:lang(zh-Hant) {
+  --font-sans:-apple-system,BlinkMacSystemFont,"PingFang TC","Microsoft JhengHei",sans-serif
+}
+html:lang(ja) {
+  --font-sans:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif
+}
+html:lang(ko) {
+  --font-sans:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif
+}
+@media(prefers-reduced-motion:reduce) {
+  :root {
+    --duration:0ms
+  }
+  html {
+    scroll-behavior:auto!important
+  }
+  *,*::before,*::after {
+    animation:none!important;
+    transition:none!important
+  }
+}

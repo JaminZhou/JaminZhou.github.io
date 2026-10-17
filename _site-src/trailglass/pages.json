@@ -1,0 +1,62 @@
+{
+  "product": {
+    "id": "trailglass",
+    "name": "Trailglass",
+    "category": "developer",
+    "platforms": [
+      "mac"
+    ],
+    "platformLabel": "macOS 14+",
+    "availability": "app-store",
+    "accent": "#3b607c",
+    "tint": "#e9eff6",
+    "darkAccent": "#a7cce9",
+    "darkTint": "#28343e",
+    "media": "screenshot",
+    "screenshot": "/trailglass/screenshots/session-library.png",
+    "catalogSummary": "Browse local AI-agent sessions and tool activity.",
+    "catalogSummaryZh": "浏览本地 AI 会话与工具活动。",
+    "mediaWidth": 2880,
+    "mediaHeight": 1800,
+    "iconScale": 1.242718,
+    "iconRadius": "0"
+  },
+  "pages": {
+    "en.landing": {
+      "title": "Trailglass | AI Session Viewer for Mac",
+      "description": "Explore local Codex, Claude Code, Pi, and JSON sessions. Read conversations, inspect tool activity and events, and view original records in a native Mac app.",
+      "ogTitle": "Trailglass | AI Session Viewer for Mac",
+      "ogDescription": "A native Mac workspace for reading local AI-agent conversations and investigating the full execution record.",
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Trailglass: AI Session Viewer",
+        "url": "https://jaminzhou.com/trailglass/",
+        "description": "Explore local AI-agent sessions, conversations, tool activity, and original records in a native Mac app.",
+        "inLanguage": "en",
+        "operatingSystem": "macOS 14 or later",
+        "applicationCategory": "DeveloperApplication",
+        "image": "https://jaminzhou.com/trailglass/app-icon.png",
+        "softwareVersion": "1.0.2",
+        "downloadUrl": "https://apps.apple.com/app/id6792468194?mt=12",
+        "softwareHelp": "https://jaminzhou.com/trailglass/support/"
+      },
+      "hero": {
+        "title": "Follow the conversation.\nSee the full record.",
+        "introduction": "Read local agent conversations, inspect tool activity, and find the original record."
+      }
+    },
+    "en.support": {
+      "title": "Trailglass Support",
+      "description": "Trailglass Support for the native macOS session-log inspector.",
+      "ogTitle": "Trailglass Support",
+      "ogDescription": "Trailglass Support for the native macOS session-log inspector."
+    },
+    "en.privacy": {
+      "title": "Trailglass Privacy Policy",
+      "description": "Trailglass Privacy Policy for the native macOS session-log inspector.",
+      "ogTitle": "Trailglass Privacy Policy",
+      "ogDescription": "Trailglass Privacy Policy for the native macOS session-log inspector."
+    }
+  }
+}

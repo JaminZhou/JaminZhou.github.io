@@ -1,4 +1,28 @@
 {
+  "product": {
+    "id": "pricebird",
+    "name": "PriceBird",
+    "category": "everyday",
+    "platforms": [
+      "iphone",
+      "ipad"
+    ],
+    "platformLabel": "iOS · iPadOS 18+",
+    "availability": "app-store",
+    "accent": "#904b31",
+    "tint": "#f6ece4",
+    "darkAccent": "#efbc9f",
+    "darkTint": "#3a2d26",
+    "media": "icon",
+    "names": {
+      "zh-Hans": "算鸟",
+      "zh-Hant": "算鳥"
+    },
+    "catalogSummary": "Compare unit prices, quantities, and discounts.",
+    "catalogSummaryZh": "比较不同规格、数量与优惠下的单价。",
+    "iconScale": 1,
+    "iconRadius": "22%"
+  },
   "pages": {
     "en.landing": {
       "title": "PriceBird | Unit Price Shopping Helper",
@@ -37,6 +61,10 @@
       "topLink": {
         "href": "/",
         "label": "JaminZhou home"
+      },
+      "hero": {
+        "title": "A clearer price. A better comparison.",
+        "introduction": "Compare unit prices across package sizes, quantities, coupons and discounts."
       }
     },
     "en.support": {
@@ -100,6 +128,10 @@
       "topLink": {
         "href": "/",
         "label": "JaminZhou home"
+      },
+      "hero": {
+        "title": "算鳥",
+        "introduction": "容量、個数、通貨、クーポン、前払い、まとめ買い割引をそろえて、本当の単価を比べるための買い物計算ツールです。"
       }
     },
     "ja.support": {
@@ -163,6 +195,10 @@
       "topLink": {
         "href": "/",
         "label": "JaminZhou home"
+      },
+      "hero": {
+        "title": "算鸟",
+        "introduction": "把规格、币种、优惠券、定金膨胀和满减条件统一到同一口径，买之前先看真实单价。"
       }
     },
     "zh-Hans.support": {
@@ -226,6 +262,10 @@
       "topLink": {
         "href": "/",
         "label": "JaminZhou home"
+      },
+      "hero": {
+        "title": "算鳥",
+        "introduction": "把規格、幣別、優惠券、訂金膨脹和滿減條件統一到同一口徑，購買前先看真實單價。"
       }
     },
     "zh-Hant.support": {

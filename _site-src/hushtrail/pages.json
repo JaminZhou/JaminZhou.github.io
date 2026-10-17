@@ -1,4 +1,25 @@
 {
+  "product": {
+    "id": "hushtrail",
+    "name": "Hushtrail",
+    "category": "utility",
+    "platforms": [
+      "mac"
+    ],
+    "platformLabel": "macOS 27+",
+    "availability": "direct",
+    "accent": "#785a23",
+    "tint": "#f3eedf",
+    "darkAccent": "#e3cc95",
+    "darkTint": "#383224",
+    "media": "icon",
+    "releaseUrl": "https://github.com/JaminZhou/hushtrail-releases/releases/tag/v{version}",
+    "repositoryUrl": "https://github.com/JaminZhou/hushtrail-releases",
+    "catalogSummary": "Review and clear selected app history and leftovers.",
+    "catalogSummaryZh": "审核并清理选定应用的历史与残留。",
+    "iconScale": 1,
+    "iconRadius": "22%"
+  },
   "pages": {
     "en.landing": {
       "title": "Hushtrail | App History and Leftovers for Mac",
@@ -31,6 +52,10 @@
       "topLink": {
         "href": "/",
         "label": "JaminZhou home"
+      },
+      "hero": {
+        "title": "Choose what goes. Know what stays.",
+        "introduction": "Clear selected app history and review possible leftovers before choosing what to remove."
       }
     },
     "en.support": {
