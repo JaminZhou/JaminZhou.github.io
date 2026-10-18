@@ -14,7 +14,7 @@ npm run check:site
 ```
 
 The build generates 87 existing product/document routes, English and Simplified
-Chinese homepages, the support directory, and a 404 page. The 12 CalcBird redirects
+Chinese homepages, the existing `/support/` directory, and a 404 page. The 12 CalcBird redirects
 remain unchanged. iCube's two independent privacy pages are excluded from the redesign.
 Do not edit generated HTML directly.
 
@@ -52,7 +52,14 @@ Release paragraphs can use `{{RELEASE_VERSION}}` instead of repeating a version 
 Rouse retains its additional version-consistency validation.
 
 All six products use the same components. Homepage entries appear once; Mac and
-iPhone/iPad filters enhance the static directory. Light/dark defaults to the system;
+iPhone/iPad filters enhance the static directory. Global navigation contains Apps,
+About and a Support disclosure linking directly to each app's help page. Mobile
+navigation groups the same links under Support. Both use product manifests to
+choose the current locale or explicitly label an English fallback. The existing
+`/support/` directory remains available for incoming links. The avatar appears only
+in About. The footer contains copyright, GitHub, the email address and the theme
+control; the homepage has one mail link and no separate support or contact block.
+Light/dark defaults to the system;
 a manual preference persists locally. The footer keeps copyright left and appearance
 right on desktop, then stacks on narrow screens. Fine-pointer selectors are 32px tall;
 coarse-pointer selectors retain a 44px touch target.

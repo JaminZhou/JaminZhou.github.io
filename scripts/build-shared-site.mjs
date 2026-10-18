@@ -24,7 +24,7 @@ export async function buildSite({ write = false } = {}) {
       '{{FEED_LINK}}': surface === 'home' ? '<link rel="alternate" type="application/rss+xml" title="JaminZhou Updates" href="https://jaminzhou.com/index.xml">\n' : '', '{{ALTERNATE_LINKS}}': alternates, '{{ICON}}': '/images/jamin-zhou-avatar.png', '{{SITE_NAME}}': 'JaminZhou',
       '{{OG_TITLE}}': e(metadata.title), '{{OG_DESCRIPTION}}': e(metadata.description), '{{OG_IMAGE_DIMENSIONS}}': '',
       '{{TWITTER_TITLE}}': e(metadata.title), '{{TWITTER_DESCRIPTION}}': e(metadata.description), '{{STRUCTURED_DATA}}': renderStructuredData(data),
-      '{{BODY_CLASS}}': `${surface}-page`, '{{PRODUCT_ATTRIBUTE}}': '', '{{BODY_HEADER}}': header(lang, null, surface === 'home'), '{{CONTENT}}': content, '{{FOOTER}}': footer(lang),
+      '{{BODY_CLASS}}': `${surface}-page`, '{{PRODUCT_ATTRIBUTE}}': '', '{{BODY_HEADER}}': header(lang, { products, showLocale: surface === 'home' }), '{{CONTENT}}': content, '{{FOOTER}}': footer(lang),
     });
     if (surface === '404') html = html.replace('</head>', '  <meta name="robots" content="noindex">\n</head>');
     output.set(metadata.route === '/404.html' ? '404.html' : path.posix.join(metadata.route, 'index.html').slice(1), html);

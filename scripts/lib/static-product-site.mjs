@@ -1,7 +1,7 @@
 import webImages from '../../_site-src/shared/images.json' with { type: 'json' };
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { escapeHtml, localeMenu, header, productNav, footer, resolveProduct, landing, documentContent } from './design-system.mjs';
+import { escapeHtml, localeMenu, header, productNav, footer, resolveProduct, loadProducts, landing, documentContent } from './design-system.mjs';
 export { escapeHtml } from './design-system.mjs';
 export const renderDesignLocaleSwitcher = localeMenu;
 const SITE_ORIGIN = 'https://jaminzhou.com';
@@ -131,7 +131,7 @@ export function createStaticProductSite({
     });
   }
 
-  function renderPage({ localeId, surfaceId, metadata, content, template, product }) {
+  function renderPage({ localeId, surfaceId, metadata, content, template, product, products }) {
     const locale = localeFor(localeId);
     const values = {
       "{{LANG}}": escapeHtml(locale.id),
@@ -149,7 +149,7 @@ export function createStaticProductSite({
       "{{ICON}}": `/${productSegment}/app-icon.png`,
       "{{SITE_NAME}}": escapeHtml(productName),
       "{{PRODUCT_ATTRIBUTE}}": product ? ` data-product="${escapeHtml(product.id)}"` : '',
-      "{{BODY_HEADER}}": product ? header(localeId, product) + productNav(product, locale, surfaceId, locales) : '',
+      "{{BODY_HEADER}}": product ? header(localeId, { products, product }) + productNav(product, locale, surfaceId, locales) : '',
       "{{BODY_CLASS}}": surfaceId === 'landing' ? 'product-page' : 'document-page',
       "{{CONTENT}}": product ? (surfaceId === 'landing' ? landing(product, metadata, content, localeId) : documentContent(product, content, localeId, surfaceId)) : content,
       "{{FOOTER}}": footer(localeId),
@@ -174,6 +174,7 @@ export function createStaticProductSite({
   async function buildSite({ write = false } = {}) {
     const manifest = await loadManifest();
     const product = manifest.product ? resolveProduct(manifest) : null;
+    const products = product ? await loadProducts(repositoryRoot) : [];
     const template = await readFile(product ? path.join(repositoryRoot, '_site-src/shared/template.html') : path.join(sourceRoot, 'template.html'), 'utf8');
     const pages = new Map();
 
@@ -181,7 +182,7 @@ export function createStaticProductSite({
       for (const surface of surfaces) {
         const page = await loadPage(manifest, locale.id, surface.id);
         const relativePath = pageOutputPath(locale.id, surface.id);
-        const rendered = renderPage({ ...page, template, product });
+        const rendered = renderPage({ ...page, template, product, products });
         pages.set(relativePath, rendered);
 
         if (write) {

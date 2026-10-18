@@ -207,3 +207,21 @@ Jamin 的七处标注均已落实到共享结构：
 本地`evidence/implementation-layout-matrix.json`、`production-migration-audit.json`、`implementation-asset-budgets.json`、`implementation-home.png`、`implementation-support.png`。证据目录Git忽略。
 
 未执行线上发布、外部购买/下载/反馈提交；未新增App Store状态核验。没有宣称已完成真机Safari、触摸设备、屏幕阅读器完整验收或WCAG认证。三款缺少当前界面截图的产品继续采用已审定的紧凑开场。
+
+## 2026-10-18 · 精简品牌、导航与联系入口
+
+- 头像仅保留在 About；顶栏保留文字站点标识；页脚移除第二套品牌与全站导航。
+- 中英主页不设支持汇总，每个应用只在目录展示一次。全站导航保留 Apps / About，各产品导航保留自己的帮助入口。
+- 移除顶部邮件图标与 Get in touch 区块；主页仅在页脚显示一处 `me@jaminzhou.com` 邮件链接。原 `/support/` 及其 canonical、sitemap 记录保留，兼容已有外部链接。
+- `npm test` 35 项通过，`npm run check:site` 与 `git diff --check` 通过；iCube 和 CalcBird 历史链接检查仍通过。
+- 最终版浏览器检查：320 / 1280px × 中英主页 × 深浅色，共8种组合，未见横向溢出；每页6张产品卡、1个邮箱链接，无支持汇总区。默认810px预览确认页脚邮箱和外观控件排列正常。
+- 本地证据：`evidence/home-minimal-layout-matrix.json`、`home-minimal-refined.png`。只验证本地预览，未发布本轮调整。
+
+## 2026-10-18 · Support 直接帮助菜单
+
+- 顶部增加 Support 点击下拉，仅列六个产品名称，直接进入各自帮助页；手机端在主菜单内展示支持分组。主页正文仍只有一份产品目录。
+- 桌面和手机链接共用产品 manifest；91 个生成页面逐一核对六个直达目标，优先当前语言，回退英文时显示 English。原 `/support/` 不再作为必经中转。
+- `npm test` 35 项、`npm run check:site`、`git diff --check` 通过；iCube、CalcBird 无变更。
+- 浏览器检查 320 / 760 / 768 / 1280px × 深浅色，共8种组合：页面不横向溢出，菜单边界在视口内。320×480短屏菜单可滚动，已点击末项 FIRE 到达帮助页。
+- 桌面 Enter 展开、Tab 进入首项、Enter 到达 Aperlo Support；Escape 收起并返回触发器焦点，Tab 离开收起，点击外部收起，语言菜单和 Support 互斥。手机端中文“映窗”直达中文帮助页；英文回退标记核对正确。
+- 本地证据：`evidence/support-dropdown-layout-matrix.json`、`support-dropdown-mobile-zh.png`、`support-dropdown-desktop.png`。本轮仅更新本地预览，未发布。
