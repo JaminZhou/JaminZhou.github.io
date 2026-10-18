@@ -27,14 +27,23 @@ export function localeMenu({ locales, currentLocale, routeFor: localeRoute }) {
 
 function siteLinks(lang) {
   const t = ui(lang), home = homeFor(lang), fallback = !['en', 'zh-Hans'].includes(lang) ? ' (English)' : '';
-  return `<a href="${home}#apps">${t.apps}${fallback}</a><a href="${home}#about">${t.about}${fallback}</a><a href="/support/">${t.support}${lang !== 'en' ? ' (English)' : ''}</a>`;
+  return `<a href="${home}#apps">${t.apps}${fallback}</a><a href="${home}#about">${t.about}${fallback}</a>`;
 }
 
-export function header(lang, product = null, showLocale = false) {
+function supportLinks(products, lang) {
+  return products.filter(product => product.surfaces.includes('support')).map(product => {
+    const targetLang = product.locales.includes(lang) ? lang : 'en';
+    const fallback = targetLang !== lang ? '<span class="support-language" lang="en">English</span>' : '';
+    return `<li><a href="${routeFor(product.id, targetLang, 'support')}" hreflang="${e(targetLang)}"><span>${e(displayName(product, targetLang))}</span>${fallback}</a></li>`;
+  }).join('');
+}
+
+export function header(lang, { products, product = null, showLocale = false }) {
   const t = ui(lang), links = siteLinks(lang);
+  const support = supportLinks(products, lang);
   const language = showLocale && !product && homeLocales.some(l => l.id === lang) ? localeMenu({ locales: homeLocales, currentLocale: homeLocales.find(l => l.id === lang), routeFor: id => routeFor('', id) }) : '';
   return `<a class="skip-link" href="#main">${t.skip}</a>
-<header class="site-header"><div class="container header-inner"><a class="brand" href="${homeFor(lang)}"><img src="/images/jamin-zhou-avatar.png" alt="" width="30" height="30">JaminZhou</a><nav class="header-nav" aria-label="${t.menu}">${links}</nav><div class="header-actions">${language}<a class="icon-button" href="mailto:me@jaminzhou.com" aria-label="${t.contact}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3 7 9 6 9-6"/></svg></a><details class="mobile-menu"><summary class="icon-button" aria-label="${t.menu}"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></summary><nav aria-label="${t.menu}">${links}</nav></details></div></div></header>`;
+<header class="site-header"><div class="container header-inner"><a class="brand" href="${homeFor(lang)}">JaminZhou</a><nav class="header-nav" aria-label="${t.menu}">${links}<details class="support-menu"><summary>${t.support}${chevron}</summary><ul class="support-links" aria-label="${t.support}">${support}</ul></details></nav><div class="header-actions">${language}<details class="mobile-menu"><summary class="icon-button" aria-label="${t.menu}"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></summary><nav aria-label="${t.menu}">${links}<section class="mobile-support" aria-labelledby="mobile-support-label"><p id="mobile-support-label">${t.support}</p><ul class="support-links">${support}</ul></section></nav></details></div></div></header>`;
 }
 
 export function productNav(product, locale, surface, locales) {
@@ -45,10 +54,8 @@ export function productNav(product, locale, surface, locales) {
 
 export function footer(lang) {
   const t = ui(lang);
-  const taglines = { 'zh-Hans': '用心制作，独立开发。', 'zh-Hant': '用心製作，獨立開發。', ja: '丁寧につくる、個人開発。', de: 'Unabhängig entwickelt. Mit Sorgfalt gestaltet.', fr: 'Créé indépendamment, avec soin.', es: 'Desarrollo independiente, con cuidado.', ko: '세심하게 만드는 독립 개발.', 'pt-BR': 'Criação independente, feita com cuidado.' };
   return `<footer class="site-footer"><div class="container">
-<div class="footer-row"><a href="${homeFor(lang)}" class="brand">JaminZhou</a><nav class="footer-links" aria-label="${t.menu} · JaminZhou">${siteLinks(lang)}<a href="https://github.com/JaminZhou">GitHub ↗</a><a href="mailto:me@jaminzhou.com">Email ↗</a></nav></div>
-<div class="footer-meta"><span>© 2026 Jamin Zhou · ${taglines[lang] ?? 'Independently made. Thoughtfully built.'}</span><label class="theme-control">${t.theme} <span class="select-control"><select class="theme-select" data-theme-select aria-label="${t.theme}"><option value="system">${t.system}</option><option value="light">${t.light}</option><option value="dark">${t.dark}</option></select>${chevron}</span></label></div>
+<div class="footer-meta"><div class="footer-credits"><span>© 2026 Jamin Zhou</span><nav class="footer-links" aria-label="${t.contact}"><a href="https://github.com/JaminZhou">GitHub ↗</a><a href="mailto:me@jaminzhou.com">me@jaminzhou.com ↗</a></nav></div><label class="theme-control">${t.theme} <span class="select-control"><select class="theme-select" data-theme-select aria-label="${t.theme}"><option value="system">${t.system}</option><option value="light">${t.light}</option><option value="dark">${t.dark}</option></select>${chevron}</span></label></div>
 </div></footer>`;
 }
 

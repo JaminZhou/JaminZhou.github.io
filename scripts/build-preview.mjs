@@ -2,13 +2,14 @@
 import { cp, mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { PRODUCT_IDS } from './lib/design-system.mjs';
+import { PRODUCT_IDS, loadProducts, header, footer } from './lib/design-system.mjs';
 import { buildSite as buildShared } from './build-shared-site.mjs';
 import { buildLegacySite } from './build-pricebird-site.mjs';
 const root = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 const out = path.join(root, '_design/preview');
 await mkdir(out, { recursive: true });
 const pages = new Map(await buildShared());
+const products = await loadProducts(root);
 for (const id of PRODUCT_IDS) {
   const builder = await import(`./build-${id}-site.mjs`);
   for (const entry of await builder.buildSite()) pages.set(...entry);
@@ -22,7 +23,11 @@ for (const id of PRODUCT_IDS) {
 }
 for (const entry of await buildLegacySite()) pages.set(...entry);
 for (const [name, route] of [['index', 'design/index.html'], ['system', 'design/system/index.html'], ['responsive', 'design/responsive/index.html']]) {
-  pages.set(route, await readFile(path.join(root, '_design/pages', `${name}.html`), 'utf8'));
+  const board = await readFile(path.join(root, '_design/pages', `${name}.html`), 'utf8');
+  pages.set(route, board.replace(/<a class="skip-link"[\s\S]*?<\/header>/, header('zh-Hans', { products }))
+    .replace(/<footer class="site-footer">[\s\S]*?<\/footer>/, footer('zh-Hans'))
+    .replace('/system/components.css', '/assets/design/components.css?v=20261018')
+    .replace('/system/interactions.js', '/assets/design/interactions.js?v=20261018'));
 }
 for (const [route, source] of pages) {
   const target = path.join(out, route); await mkdir(path.dirname(target), { recursive: true });

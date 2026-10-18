@@ -139,13 +139,9 @@ button:disabled {
   text-decoration:none;
   white-space:nowrap
 }
-.brand img {
-  width:30px;
-  height:30px;
-  border-radius:50%
-}
 .header-nav {
   display:flex;
+  align-items:center;
   gap:28px;
   margin-left:auto
 }
@@ -190,7 +186,10 @@ button:disabled {
   position:absolute;
   right:0;
   top:54px;
-  width:230px;
+  width:min(280px,calc(100vw - var(--gutter)*2));
+  max-height:calc(100dvh - 90px);
+  overflow:auto;
+  overscroll-behavior:contain;
   background:var(--surface);
   padding:12px;
   border:1px solid var(--line);
@@ -205,6 +204,35 @@ button:disabled {
 }
 .mobile-menu nav a:hover {
   background:var(--surface-soft)
+}
+.mobile-support {
+  margin-top:8px;
+  padding-top:12px;
+  border-top:1px solid var(--line)
+}
+.mobile-support>p {
+  padding:0 12px 6px;
+  font-size:var(--text-small);
+  font-weight:550;
+  color:var(--muted)
+}
+.mobile-support ul {
+  list-style:none;
+  margin:0;
+  padding:0
+}
+.mobile-menu .support-links a,.support-menu .support-links a {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  min-height:44px;
+  padding:8px 12px;
+  color:var(--ink)
+}
+.support-language {
+  font-size:var(--text-small);
+  color:var(--muted)
 }
 .button {
   display:inline-flex;
@@ -444,11 +472,11 @@ button:disabled {
   border-top:1px solid var(--line);
   padding:24px 0
 }
-.footer-row {
+.footer-credits {
   display:flex;
-  justify-content:space-between;
-  align-items:start;
-  gap:32px
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px 28px
 }
 .footer-links {
   display:flex;
@@ -456,7 +484,10 @@ button:disabled {
   gap:14px 24px
 }
 .footer-links a {
-  font-size:var(--text-ui);
+  display:inline-flex;
+  align-items:center;
+  min-height:32px;
+  font-size:var(--text-small);
   text-decoration:none;
   color:var(--muted)
 }
@@ -464,7 +495,6 @@ button:disabled {
   text-decoration:underline
 }
 .footer-meta {
-  margin-top:20px;
   display:grid;
   grid-template-columns:minmax(0,1fr) auto;
   align-items:center;
@@ -525,11 +555,11 @@ button:disabled {
   text-decoration-color:var(--accent);
   text-underline-offset:8px
 }
-.locale-menu {
+.locale-menu,.support-menu {
   position:relative;
   flex:none
 }
-.locale-menu summary {
+.locale-menu summary,.support-menu summary {
   display:flex;
   align-items:center;
   gap:8px;
@@ -539,13 +569,20 @@ button:disabled {
   border-radius:8px;
   font-size:var(--text-ui)
 }
-.locale-menu summary::-webkit-details-marker {
+.locale-menu summary::-webkit-details-marker,.support-menu summary::-webkit-details-marker {
   display:none
 }
-.locale-menu summary:hover {
+.locale-menu summary:hover,.support-menu summary:hover {
   background:var(--surface-soft)
 }
-.locale-menu ul {
+.support-menu summary {
+  color:var(--muted);
+  margin-inline:-10px
+}
+.support-menu summary:hover,.support-menu[open]>summary {
+  color:var(--ink)
+}
+.locale-menu ul,.support-menu ul {
   position:absolute;
   z-index:25;
   right:0;
@@ -561,7 +598,7 @@ button:disabled {
   max-height:65vh;
   overflow:auto
 }
-.locale-menu li a {
+.locale-menu li a,.support-menu li a {
   display:block;
   min-height:42px;
   padding:8px 12px;
@@ -569,7 +606,7 @@ button:disabled {
   font-size:var(--text-ui);
   border-radius:6px
 }
-.locale-menu li a:hover,.locale-menu li a[aria-current] {
+.locale-menu li a:hover,.locale-menu li a[aria-current],.support-menu li a:hover {
   background:var(--surface-soft)
 }
 .product-hero {
@@ -1277,10 +1314,6 @@ html:lang(zh-Hans) p,html:lang(zh-Hant) p,html:lang(ja) p {
   .about-copy {
     font-size:1.0625rem
   }
-  .footer-row {
-    flex-direction:column;
-    gap:24px
-  }
   .site-footer {
     margin-top:32px
   }
@@ -1603,10 +1636,10 @@ main:focus {
 .locale-menu summary {
   gap:8px
 }
-.locale-menu[open]>summary>.chevron {
+.locale-menu[open]>summary>.chevron,.support-menu[open]>summary>.chevron {
   transform:rotate(180deg)
 }
-.locale-menu summary::marker {
+.locale-menu summary::marker,.support-menu summary::marker {
   content:""
 }
 .select-control {
@@ -1848,4 +1881,10 @@ main:focus {
 .preview-device[data-width="1534"]>.preview-frame {
   width:1534px;
   max-width:none
+}
+
+@media(min-width:761px) {
+  .header-actions:has(>.mobile-menu:only-child) {
+    display:none
+  }
 }

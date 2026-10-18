@@ -16,9 +16,12 @@
   window.addEventListener('storage', event => {
     if (event.key === 'jamin-theme') applyTheme(['light','dark'].includes(event.newValue) ? event.newValue : 'system');
   });
-  const menus = [...document.querySelectorAll('.locale-menu,.mobile-menu')];
+  const menus = [...document.querySelectorAll('.locale-menu,.mobile-menu,.support-menu')];
   menus.forEach(menu => menu.addEventListener('toggle', () => {
     if (menu.open) menus.filter(other => other !== menu).forEach(other => { other.open = false; });
+  }));
+  menus.forEach(menu => menu.addEventListener('focusout', event => {
+    if (event.relatedTarget && !menu.contains(event.relatedTarget)) menu.open = false;
   }));
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') menus.forEach(menu => { if (menu.open) { menu.open = false; menu.querySelector('summary').focus(); } });
