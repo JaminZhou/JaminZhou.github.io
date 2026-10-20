@@ -51,7 +51,7 @@ test('home catalog has one destination per app and platform data supports progre
     const cards = [...html.matchAll(/<a class="product-card"([^>]+)>/g)].map(m => m[1]);
     assert.equal(cards.length, PRODUCT_IDS.length);
     assert.equal(new Set(cards.map(c => c.match(/href="([^"]+)"/)[1])).size, PRODUCT_IDS.length);
-    assert.equal(cards.filter(c => /data-platforms="[^"]*\bmac\b/.test(c)).length, 5);
+    assert.equal(cards.filter(c => /data-platforms="[^"]*\bmac\b/.test(c)).length, 4);
     assert.equal(cards.filter(c => /data-platforms="[^"]*\biphone\b/.test(c)).length, 2);
     assert.match(html, /data-filter-controls hidden/); // All links remain available without JS.
     assert.match(html, /id="products"/); // Existing incoming fragment remains valid.
@@ -70,7 +70,6 @@ test('release metadata is the single version and download source for shared comp
     assert.deepEqual(new Set(product.surfaces), new Set(builder.SURFACES.map(s => s.id)), id);
     assert.equal(manifest.product.version, undefined, id);
     assert.equal(manifest.product.store, undefined, id);
-    if (id === 'fire') { assert.equal(product.store, undefined); continue; }
     const changed = structuredClone(manifest);
     changed.pages['en.landing'].structuredData.softwareVersion = '9.8.7';
     changed.pages['en.landing'].structuredData.downloadUrl = 'https://example.com/new-release';
