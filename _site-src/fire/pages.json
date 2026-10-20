@@ -4,13 +4,12 @@
     "name": "FIRE",
     "category": "everyday",
     "platforms": [
-      "mac",
       "iphone",
       "ipad",
       "watch"
     ],
-    "platformLabel": "iPhone · iPad · Mac · Apple Watch",
-    "availability": "preparing",
+    "platformLabel": "iPhone · iPad · Apple Watch",
+    "availability": "app-store",
     "accent": "#994c2c",
     "tint": "#f5eade",
     "darkAccent": "#efbc9a",
@@ -41,6 +40,23 @@
       "hero": {
         "title": "A little closer.\nA little freer.",
         "introduction": "A financial independence goal, occasional records, and widgets that make it yours."
+      },
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "FIRE: Freedom Widgets",
+        "operatingSystem": "iOS 17.0 or later; iPadOS 17.0 or later; watchOS 10.0 or later",
+        "applicationCategory": "FinanceApplication",
+        "softwareVersion": "1.0.0",
+        "url": "https://jaminzhou.com/fire/",
+        "downloadUrl": "https://apps.apple.com/app/id6820084110",
+        "image": "https://jaminzhou.com/fire/app-icon.png",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "url": "https://apps.apple.com/app/id6820084110"
+        }
       }
     },
     "en.support": {
@@ -63,6 +79,23 @@
       "hero": {
         "title": "离自由近一点。\n离生活近一点。",
         "introduction": "让财务独立的目标，常在眼前。偶尔记录，提醒自己正走向怎样的生活。"
+      },
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "FIRE: Freedom Widgets",
+        "operatingSystem": "iOS 17.0 or later; iPadOS 17.0 or later; watchOS 10.0 or later",
+        "applicationCategory": "FinanceApplication",
+        "softwareVersion": "1.0.0",
+        "url": "https://jaminzhou.com/fire/zh-hans/",
+        "downloadUrl": "https://apps.apple.com/app/id6820084110",
+        "image": "https://jaminzhou.com/fire/app-icon.png",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "url": "https://apps.apple.com/app/id6820084110"
+        }
       }
     },
     "zh-Hans.support": {
@@ -85,6 +118,23 @@
       "hero": {
         "title": "離自由近一點。\n離生活近一點。",
         "introduction": "讓財務獨立的目標，常在眼前。偶爾記錄，提醒自己正走向怎樣的生活。"
+      },
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "FIRE: Freedom Widgets",
+        "operatingSystem": "iOS 17.0 or later; iPadOS 17.0 or later; watchOS 10.0 or later",
+        "applicationCategory": "FinanceApplication",
+        "softwareVersion": "1.0.0",
+        "url": "https://jaminzhou.com/fire/zh-hant/",
+        "downloadUrl": "https://apps.apple.com/app/id6820084110",
+        "image": "https://jaminzhou.com/fire/app-icon.png",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "url": "https://apps.apple.com/app/id6820084110"
+        }
       }
     },
     "zh-Hant.support": {
@@ -107,6 +157,23 @@
       "hero": {
         "title": "自由に、少し近づく。\n暮らしを、もっと身近に。",
         "introduction": "経済的自立の目標を、いつも見える場所に。ときどき記録し、目指す暮らしを思い出す。"
+      },
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "FIRE: Freedom Widgets",
+        "operatingSystem": "iOS 17.0 or later; iPadOS 17.0 or later; watchOS 10.0 or later",
+        "applicationCategory": "FinanceApplication",
+        "softwareVersion": "1.0.0",
+        "url": "https://jaminzhou.com/fire/ja/",
+        "downloadUrl": "https://apps.apple.com/app/id6820084110",
+        "image": "https://jaminzhou.com/fire/app-icon.png",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "url": "https://apps.apple.com/app/id6820084110"
+        }
       }
     },
     "ja.support": {
