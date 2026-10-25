@@ -51,7 +51,7 @@ test('home catalog has one destination per app and platform data supports progre
     const cards = [...html.matchAll(/<a class="product-card"([^>]+)>/g)].map(m => m[1]);
     assert.equal(cards.length, PRODUCT_IDS.length);
     assert.equal(new Set(cards.map(c => c.match(/href="([^"]+)"/)[1])).size, PRODUCT_IDS.length);
-    assert.equal(cards.filter(c => /data-platforms="[^"]*\bmac\b/.test(c)).length, 4);
+    assert.equal(cards.filter(c => /data-platforms="[^"]*\bmac\b/.test(c)).length, 5);
     assert.equal(cards.filter(c => /data-platforms="[^"]*\biphone\b/.test(c)).length, 2);
     assert.match(html, /data-filter-controls hidden/); // All links remain available without JS.
     assert.match(html, /id="products"/); // Existing incoming fragment remains valid.

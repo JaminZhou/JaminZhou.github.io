@@ -3,7 +3,7 @@ import { access } from "node:fs/promises";
 import test from "node:test";
 import { LOCALES, buildSite, pageOutputPath } from "../scripts/build-fire-site.mjs";
 
-test("FIRE launch pages cover four languages and distinguish iOS release from Mac review", async () => {
+test("FIRE launch pages cover four languages and the released iOS and Mac apps", async () => {
   const pages = await buildSite();
   assert.equal(pages.size, 12);
   assert.deepEqual(LOCALES.map(x => x.id), ["en", "zh-Hans", "zh-Hant", "ja"]);
@@ -16,15 +16,15 @@ test("FIRE launch pages cover four languages and distinguish iOS release from Ma
       await access(new URL(`..${href}${href.endsWith("/") ? "index.html" : ""}`, import.meta.url));
     }
   }
-  const pendingMac = { en: "Mac is awaiting review", "zh-Hans": "Mac 版仍在等待审核", "zh-Hant": "Mac 版仍在等待審核", ja: "Mac 版は審査待ち" };
+  const releasedMac = { en: "for iPhone, iPad, Mac and Apple Watch", "zh-Hans": "iPhone、iPad、Mac 和 Apple Watch 版现已", "zh-Hant": "iPhone、iPad、Mac 和 Apple Watch 版現已", ja: "iPhone・iPad・Mac・Apple Watch 版を App Store で公開" };
   for (const locale of LOCALES) {
     const html = pages.get(pageOutputPath(locale.id, "landing"));
     assert.ok(html.includes('href="https://apps.apple.com/app/id6820084110"'), locale.id);
-    assert.ok(html.includes(pendingMac[locale.id]), locale.id);
+    assert.ok(html.includes(releasedMac[locale.id]), locale.id);
     const data = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
     assert.equal(data.softwareVersion, "1.0.0");
     assert.equal(data.downloadUrl, "https://apps.apple.com/app/id6820084110");
-    assert.doesNotMatch(data.operatingSystem, /macOS/i);
+    assert.match(data.operatingSystem, /macOS 14\.0 or later/);
   }
 });
 
