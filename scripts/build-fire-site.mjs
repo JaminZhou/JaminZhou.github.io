@@ -65,7 +65,7 @@ export const LOCALES = Object.freeze([
   }
 ]);
 export const SURFACES = Object.freeze([{id:"landing",segment:""},{id:"support",segment:"support"},{id:"privacy",segment:"privacy"}]);
-// Download metadata covers the released iOS app; Mac remains awaiting review.
+// Download metadata covers the released iOS and native Mac apps.
 const site = createStaticProductSite({repositoryRoot,sourceDirectory:"fire",productSegment:"fire",productName:"FIRE",defaultLocaleId:"en",locales:LOCALES,surfaces:SURFACES});
 export const pageOutputPath = site.pageOutputPath;
 export const buildSite = site.buildSite;
