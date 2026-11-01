@@ -46,10 +46,10 @@ test("FIRE support is localized and privacy does not promise zero networking", a
 test("FIRE copy describes system privacy and user-initiated StoreKit", async () => {
   const pages = await buildSite();
   const copy = {
-    en: ["Privacy on screen", "not at app startup"],
-    "zh-Hans": ["屏幕上的隐私", "不在启动时发起这些操作"],
-    "zh-Hant": ["畫面上的隱私", "不在啟動時執行這些操作"],
-    ja: ["画面上のプライバシー", "アプリ起動時には行いません"],
+    en: ["Privacy on screen", "rather than at app launch"],
+    "zh-Hans": ["屏幕上的隐私", "不在应用启动时发起"],
+    "zh-Hant": ["畫面上的隱私", "不在 App 啟動時發起"],
+    ja: ["画面上のプライバシー", "FIRE は起動時ではなく"],
   };
   for (const locale of LOCALES) {
     const support = pages.get(pageOutputPath(locale.id, "support"));
@@ -60,33 +60,24 @@ test("FIRE copy describes system privacy and user-initiated StoreKit", async () 
   }
 });
 
-test("FIRE Watch updates require opt-in and do not promise immediate delivery", async () => {
+test("FIRE 1.1 documentation keeps Watch defaults and unreleased availability explicit", async () => {
   const pages = await buildSite();
-  const terms = {
-    en: ["queued snapshot may still arrive"],
-    "zh-Hans": ["已入队的快照仍可能到达"],
-    "zh-Hant": ["已排入佇列的快照仍可能到達"],
-    ja: ["送信待ちのデータは届く"],
-  };
-  const optIn = {
-    en: { support: "enable automatic updates (off by default)", privacy: "opt in to automatic updates on iPhone (off by default)" },
-    "zh-Hans": { support: "开启默认关闭的自动更新", privacy: "主动开启默认关闭的自动更新" },
-    "zh-Hant": { support: "開啟預設關閉的自動更新", privacy: "主動開啟預設關閉的自動更新" },
-    ja: { support: "自動更新（初期状態はオフ）を有効にできます", privacy: "自動更新（初期状態はオフ）を有効にできます" },
-  };
-  const delivery = {
-    en: { support: "Delivery may be delayed", privacy: "not a direct Watch iCloud connection or a real-time delivery promise" },
-    "zh-Hans": { support: "送达可能延迟", privacy: "不承诺实时送达" },
-    "zh-Hant": { support: "送達可能延遲", privacy: "不承諾即時送達" },
-    ja: { support: "到着には時間がかかる場合", privacy: "即時の到着も保証されません" },
+  const boundaries = {
+    en: {support:["automatically receives", "queued update is not confirmation of delivery", "automatic Apple Watch updates are off by default"], privacy:["enabled by default", "already queued updates may still arrive", "Keychain"]},
+    "zh-Hans": {support:["自动向已配对", "入队不等于送达", "FIRE 1.0 的 Apple Watch 自动更新默认关闭"], privacy:["默认开启自动更新", "已入队的更新仍可能到达", "Keychain"]},
+    "zh-Hant": {support:["自動將已儲存目標", "排入佇列不等於送達", "FIRE 1.0 的 Apple Watch 自動更新預設關閉"], privacy:["預設開啟自動更新", "已排入佇列的更新仍可能送達", "Keychain"]},
+    ja: {support:["自動送信されます", "送信待ちは到着済みを意味しません", "FIRE 1.0 では Apple Watch の自動更新は初期状態でオフ"], privacy:["自動更新が初期状態で有効", "待機中の更新が届く場合", "Keychain"]},
   };
   for (const locale of LOCALES) {
     for (const surface of ["support", "privacy"]) {
       const html = pages.get(pageOutputPath(locale.id, surface));
-      for (const term of terms[locale.id]) assert.ok(html.includes(term), `${locale.id}/${surface}: ${term}`);
-      assert.ok(html.includes(optIn[locale.id][surface]), `${locale.id}/${surface}: Watch opt-in`);
-      assert.ok(html.includes(delivery[locale.id][surface]), `${locale.id}/${surface}: delivery disclaimer`);
+      for (const term of boundaries[locale.id][surface]) assert.ok(html.includes(term), `${locale.id}/${surface}: ${term}`);
+      assert.ok(html.includes("FIRE 1.1") && html.includes("FIRE 1.0"), locale.id);
     }
+    const landing = pages.get(pageOutputPath(locale.id, "landing"));
+    assert.match(landing, /iOS \/ iPadOS 18/);
+    assert.match(landing, /macOS 15/);
+    assert.match(landing, /watchOS 10/);
     assert.ok(pages.get(pageOutputPath(locale.id, "privacy")).includes("WatchConnectivity"));
   }
 });
