@@ -22,9 +22,9 @@ test("FIRE launch pages cover four languages and the released iOS and Mac apps",
     assert.ok(html.includes('href="https://apps.apple.com/app/id6820084110"'), locale.id);
     assert.ok(html.includes(releasedMac[locale.id]), locale.id);
     const data = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
-    assert.equal(data.softwareVersion, "1.0.0");
+    assert.equal(data.softwareVersion, "1.1.0");
     assert.equal(data.downloadUrl, "https://apps.apple.com/app/id6820084110");
-    assert.match(data.operatingSystem, /macOS 14\.0 or later/);
+    assert.match(data.operatingSystem, /macOS 15\.0 or later/);
   }
 });
 
@@ -60,7 +60,7 @@ test("FIRE copy describes system privacy and user-initiated StoreKit", async () 
   }
 });
 
-test("FIRE 1.1 documentation keeps Watch defaults and unreleased availability explicit", async () => {
+test("FIRE 1.1 documentation keeps current and legacy Watch defaults explicit", async () => {
   const pages = await buildSite();
   const boundaries = {
     en: {support:["automatically receives", "queued update is not confirmation of delivery", "automatic Apple Watch updates are off by default"], privacy:["enabled by default", "already queued updates may still arrive", "Keychain"]},

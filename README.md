@@ -47,7 +47,7 @@ noindex protection; production canonical/hreflang metadata remains separate.
 
 Version and download URL come from each product's existing `en.landing.structuredData`
 fields. The shared directory and hero read those fields; do not introduce a second
-release list. Unreleased FIRE has an explicit presentation version and no download CTA.
+release list. FIRE uses its released App Store version and download link.
 Release paragraphs can use `{{RELEASE_VERSION}}` instead of repeating a version number.
 Rouse retains its additional version-consistency validation.
 
