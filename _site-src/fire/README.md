@@ -12,7 +12,10 @@ add free on-device Favorites, Far Afield and Winter Retreat to the 22 free
 styles plus Sunday and Long Summer. Mac 1.1 retains its 24 styles.
 Requirements remain iOS / iPadOS 18, macOS 15 and watchOS 10.
 Release evidence is in OpenYears docs/store/release-ios-1.2.0-20261109.json.
-Public iOS storefront visibility must be verified before merging this update.
+On 2026-11-09 Jamin explicitly requested website deployment while public iOS
+storefronts were still showing 1.1.0. All four locales clearly state that the
+released 1.2.0 update is still propagating and may not yet appear in every store.
+This website deployment does not assert completed App Store propagation.
 
 Images are the approved FIRE icon and native widget renders exported by
 `OpenYears/Tests/WidgetRendering/StoreCreativeRenderingTests.swift` on 2026-10-16.
