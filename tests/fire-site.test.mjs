@@ -22,7 +22,7 @@ test("FIRE launch pages cover four languages and the released iOS and Mac apps",
     assert.ok(html.includes('href="https://apps.apple.com/app/id6820084110"'), locale.id);
     assert.ok(html.includes(releasedMac[locale.id]), locale.id);
     const data = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
-    assert.equal(data.softwareVersion, "1.1.0");
+    assert.equal(data.softwareVersion, "iOS 1.2.0 · macOS 1.1.0");
     assert.equal(data.downloadUrl, "https://apps.apple.com/app/id6820084110");
     assert.match(data.operatingSystem, /macOS 15\.0 or later/);
   }
