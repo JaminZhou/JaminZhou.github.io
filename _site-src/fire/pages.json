@@ -29,7 +29,7 @@
     "iconScale": 1,
     "iconRadius": "22%",
     "release": {
-      "version": "1.1.0"
+      "version": "iOS 1.2.0 · macOS 1.1.0"
     }
   },
   "pages": {
@@ -48,7 +48,7 @@
         "name": "FIRE: Freedom Widgets",
         "operatingSystem": "iOS 18.0 or later; iPadOS 18.0 or later; macOS 15.0 or later; watchOS 10.0 or later",
         "applicationCategory": "FinanceApplication",
-        "softwareVersion": "1.1.0",
+        "softwareVersion": "iOS 1.2.0 · macOS 1.1.0",
         "url": "https://jaminzhou.com/fire/",
         "downloadUrl": "https://apps.apple.com/app/id6820084110",
         "image": "https://jaminzhou.com/fire/app-icon.png",
@@ -87,7 +87,7 @@
         "name": "FIRE: Freedom Widgets",
         "operatingSystem": "iOS 18.0 or later; iPadOS 18.0 or later; macOS 15.0 or later; watchOS 10.0 or later",
         "applicationCategory": "FinanceApplication",
-        "softwareVersion": "1.1.0",
+        "softwareVersion": "iOS 1.2.0 · macOS 1.1.0",
         "url": "https://jaminzhou.com/fire/zh-hans/",
         "downloadUrl": "https://apps.apple.com/app/id6820084110",
         "image": "https://jaminzhou.com/fire/app-icon.png",
@@ -126,7 +126,7 @@
         "name": "FIRE: Freedom Widgets",
         "operatingSystem": "iOS 18.0 or later; iPadOS 18.0 or later; macOS 15.0 or later; watchOS 10.0 or later",
         "applicationCategory": "FinanceApplication",
-        "softwareVersion": "1.1.0",
+        "softwareVersion": "iOS 1.2.0 · macOS 1.1.0",
         "url": "https://jaminzhou.com/fire/zh-hant/",
         "downloadUrl": "https://apps.apple.com/app/id6820084110",
         "image": "https://jaminzhou.com/fire/app-icon.png",
@@ -165,7 +165,7 @@
         "name": "FIRE: Freedom Widgets",
         "operatingSystem": "iOS 18.0 or later; iPadOS 18.0 or later; macOS 15.0 or later; watchOS 10.0 or later",
         "applicationCategory": "FinanceApplication",
-        "softwareVersion": "1.1.0",
+        "softwareVersion": "iOS 1.2.0 · macOS 1.1.0",
         "url": "https://jaminzhou.com/fire/ja/",
         "downloadUrl": "https://apps.apple.com/app/id6820084110",
         "image": "https://jaminzhou.com/fire/app-icon.png",
