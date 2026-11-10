@@ -81,13 +81,13 @@ export function heroMedia(product, lang) {
   if (product.media === 'icon') return '';
   const captions = { 'zh-Hans': '真实应用截图，使用示例内容。', 'zh-Hant': '真實應用程式截圖，使用範例內容。', ja: '実際のアプリ画面。サンプルを使用。' };
   if (product.media === 'widgets') {
-    const caption = { 'zh-Hans': '真实 FIRE 小组件，使用示例数据。', 'zh-Hant': '真實 FIRE 小工具，使用範例資料。', ja: '実際の FIRE ウィジェット。サンプルデータを使用。' }[lang] ?? 'Actual FIRE widgets, shown with example data.';
+    const caption = product.widgetCaptions?.[lang] ?? { 'zh-Hans': '真实 FIRE 小组件，使用示例数据。', 'zh-Hant': '真實 FIRE 小工具，使用範例資料。', ja: '実際の FIRE ウィジェット。サンプルデータを使用。' }[lang] ?? 'Actual FIRE widgets, shown with example data.';
     const images = product.widgetImages.map(src => src.replaceAll('{id}', product.id).replaceAll('{locale}', lang));
-    return `<figure class="hero-media"><img src="${images[0]}" width="1720" height="820" alt="${caption}" fetchpriority="high"><div class="widget-pair"><img src="${images[1]}" width="820" height="820" alt="${e(product.name)} · Trail"><img src="${images[2]}" width="820" height="820" alt="${e(product.name)} · Signal"></div><figcaption>${caption}</figcaption></figure>`;
+    return `<figure class="hero-media"><img src="${images[0]}" width="1720" height="820" alt="${e(caption)}" fetchpriority="high"><div class="widget-pair"><img src="${images[1]}" width="820" height="820" alt="${e(product.name)} · Trail"><img src="${images[2]}" width="820" height="820" alt="${e(product.name)} · Signal"></div><figcaption>${e(caption)}</figcaption></figure>`;
   }
   const src = product.screenshot.replace('/en-US/', `/${lang === 'en' ? 'en-US' : lang}/`);
   const caption = captions[lang] ?? 'Actual app screenshot, shown with example content.';
-  return `<figure class="hero-media"><a href="${src}" aria-label="${caption}"><img src="${src}" width="${product.mediaWidth}" height="${product.mediaHeight}" alt="${caption}" fetchpriority="high" decoding="async"></a><figcaption>${caption}</figcaption></figure>`;
+  return `<figure class="hero-media"><a href="${src}" aria-label="${caption}"><img src="${src}" width="${product.mediaWidth}" height="${product.mediaHeight}" alt="${e(caption)}" fetchpriority="high" decoding="async"></a><figcaption>${e(caption)}</figcaption></figure>`;
 }
 
 export function landing(product, metadata, content, lang) {

@@ -30,6 +30,13 @@
     "iconRadius": "22%",
     "release": {
       "version": "1.2.0"
+    },
+    "widgetCaptions": {
+      "de": "Echte FIRE-Widgets mit Beispieldaten.",
+      "fr": "De vrais widgets FIRE, avec des données d’exemple.",
+      "es": "Widgets reales de FIRE con datos de ejemplo.",
+      "pt-BR": "Widgets reais do FIRE, com dados de exemplo.",
+      "ko": "예시 데이터를 표시한 실제 FIRE 위젯입니다."
     }
   },
   "pages": {
@@ -188,6 +195,201 @@
       "description": "本ポリシーは iPhone、iPad、Mac、Apple Watch の FIRE と任意のフィードバック経路に適用されます。開発者は Jamin Zhou です。",
       "ogTitle": "FIRE プライバシーポリシー",
       "ogDescription": "本ポリシーは iPhone、iPad、Mac、Apple Watch の FIRE と任意のフィードバック経路に適用されます。開発者は Jamin Zhou です。"
+    },
+    "de.landing": {
+      "title": "FIRE — Der Freiheit näher. Dem Leben näher.",
+      "description": "Behalte dein Ziel der finanziellen Unabhängigkeit im Blick. Halte gelegentlich deinen Stand fest und erinnere dich an das Leben, auf das du hinarbeitest.",
+      "ogTitle": "FIRE — Der Freiheit näher. Dem Leben näher.",
+      "ogDescription": "Behalte dein Ziel der finanziellen Unabhängigkeit im Blick. Halte gelegentlich deinen Stand fest und erinnere dich an das Leben, auf das du hinarbeitest.",
+      "hero": {
+        "title": "Der Freiheit näher.\nDem Leben näher.",
+        "introduction": "Behalte dein Ziel der finanziellen Unabhängigkeit im Blick. Halte gelegentlich deinen Stand fest und erinnere dich an das Leben, auf das du hinarbeitest."
+      },
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "FIRE: Early Retirement Widgets",
+        "operatingSystem": "iOS 18.0 or later; iPadOS 18.0 or later; macOS 15.0 or later; watchOS 10.0 or later",
+        "applicationCategory": "FinanceApplication",
+        "softwareVersion": "1.2.0",
+        "url": "https://jaminzhou.com/fire/de/",
+        "downloadUrl": "https://apps.apple.com/app/id6820084110",
+        "image": "https://jaminzhou.com/fire/app-icon.png",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "url": "https://apps.apple.com/app/id6820084110"
+        }
+      }
+    },
+    "de.support": {
+      "title": "FIRE Support",
+      "description": "Klein anfangen. Den Stand ehrlich festhalten. Das Widget erinnert dich.",
+      "ogTitle": "FIRE Support",
+      "ogDescription": "Klein anfangen. Den Stand ehrlich festhalten. Das Widget erinnert dich."
+    },
+    "de.privacy": {
+      "title": "FIRE-Datenschutzerklärung",
+      "description": "Diese Erklärung gilt für FIRE auf iPhone, iPad, Mac und Apple Watch sowie die optionalen Feedback-Kanäle. Entwickler ist Jamin Zhou.",
+      "ogTitle": "FIRE-Datenschutzerklärung",
+      "ogDescription": "Diese Erklärung gilt für FIRE auf iPhone, iPad, Mac und Apple Watch sowie die optionalen Feedback-Kanäle. Entwickler ist Jamin Zhou."
+    },
+    "fr.landing": {
+      "title": "FIRE — Plus près de la liberté. Plus près de la vie.",
+      "description": "Gardez votre objectif d’indépendance financière en vue. Notez vos progrès de temps en temps et retrouvez la vie vers laquelle vous avancez.",
+      "ogTitle": "FIRE — Plus près de la liberté. Plus près de la vie.",
+      "ogDescription": "Gardez votre objectif d’indépendance financière en vue. Notez vos progrès de temps en temps et retrouvez la vie vers laquelle vous avancez.",
+      "hero": {
+        "title": "Plus près de la liberté.\nPlus près de la vie.",
+        "introduction": "Gardez votre objectif d’indépendance financière en vue. Notez vos progrès de temps en temps et retrouvez la vie vers laquelle vous avancez."
+      },
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "FIRE: Early Retirement Widgets",
+        "operatingSystem": "iOS 18.0 or later; iPadOS 18.0 or later; macOS 15.0 or later; watchOS 10.0 or later",
+        "applicationCategory": "FinanceApplication",
+        "softwareVersion": "1.2.0",
+        "url": "https://jaminzhou.com/fire/fr/",
+        "downloadUrl": "https://apps.apple.com/app/id6820084110",
+        "image": "https://jaminzhou.com/fire/app-icon.png",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "url": "https://apps.apple.com/app/id6820084110"
+        }
+      }
+    },
+    "fr.support": {
+      "title": "Assistance FIRE",
+      "description": "Commencez simplement. Gardez un suivi fidèle. Le widget vous le rappellera.",
+      "ogTitle": "Assistance FIRE",
+      "ogDescription": "Commencez simplement. Gardez un suivi fidèle. Le widget vous le rappellera."
+    },
+    "fr.privacy": {
+      "title": "Politique de confidentialité de FIRE",
+      "description": "Cette politique couvre FIRE sur iPhone, iPad, Mac et Apple Watch ainsi que ses canaux de commentaires facultatifs. Le développeur est Jamin Zhou.",
+      "ogTitle": "Politique de confidentialité de FIRE",
+      "ogDescription": "Cette politique couvre FIRE sur iPhone, iPad, Mac et Apple Watch ainsi que ses canaux de commentaires facultatifs. Le développeur est Jamin Zhou."
+    },
+    "es.landing": {
+      "title": "FIRE — Más cerca de la libertad. Más cerca de la vida.",
+      "description": "Mantén a la vista tu objetivo de independencia financiera. Registra tus avances de vez en cuando y recuerda la vida hacia la que te diriges.",
+      "ogTitle": "FIRE — Más cerca de la libertad. Más cerca de la vida.",
+      "ogDescription": "Mantén a la vista tu objetivo de independencia financiera. Registra tus avances de vez en cuando y recuerda la vida hacia la que te diriges.",
+      "hero": {
+        "title": "Más cerca de la libertad.\nMás cerca de la vida.",
+        "introduction": "Mantén a la vista tu objetivo de independencia financiera. Registra tus avances de vez en cuando y recuerda la vida hacia la que te diriges."
+      },
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "FIRE: Early Retirement Widgets",
+        "operatingSystem": "iOS 18.0 or later; iPadOS 18.0 or later; macOS 15.0 or later; watchOS 10.0 or later",
+        "applicationCategory": "FinanceApplication",
+        "softwareVersion": "1.2.0",
+        "url": "https://jaminzhou.com/fire/es/",
+        "downloadUrl": "https://apps.apple.com/app/id6820084110",
+        "image": "https://jaminzhou.com/fire/app-icon.png",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "url": "https://apps.apple.com/app/id6820084110"
+        }
+      }
+    },
+    "es.support": {
+      "title": "Soporte de FIRE",
+      "description": "Empieza poco a poco. Registra cifras reales. Deja que el widget te lo recuerde.",
+      "ogTitle": "Soporte de FIRE",
+      "ogDescription": "Empieza poco a poco. Registra cifras reales. Deja que el widget te lo recuerde."
+    },
+    "es.privacy": {
+      "title": "Política de privacidad de FIRE",
+      "description": "Esta política cubre FIRE en iPhone, iPad, Mac y Apple Watch y sus canales opcionales de comentarios. El desarrollador es Jamin Zhou.",
+      "ogTitle": "Política de privacidad de FIRE",
+      "ogDescription": "Esta política cubre FIRE en iPhone, iPad, Mac y Apple Watch y sus canales opcionales de comentarios. El desarrollador es Jamin Zhou."
+    },
+    "pt-BR.landing": {
+      "title": "FIRE — Mais perto da liberdade. Mais perto da vida.",
+      "description": "Mantenha sua meta de independência financeira à vista. Registre seu progresso de vez em quando e lembre-se da vida que você está construindo.",
+      "ogTitle": "FIRE — Mais perto da liberdade. Mais perto da vida.",
+      "ogDescription": "Mantenha sua meta de independência financeira à vista. Registre seu progresso de vez em quando e lembre-se da vida que você está construindo.",
+      "hero": {
+        "title": "Mais perto da liberdade.\nMais perto da vida.",
+        "introduction": "Mantenha sua meta de independência financeira à vista. Registre seu progresso de vez em quando e lembre-se da vida que você está construindo."
+      },
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "FIRE: Early Retirement Widgets",
+        "operatingSystem": "iOS 18.0 or later; iPadOS 18.0 or later; macOS 15.0 or later; watchOS 10.0 or later",
+        "applicationCategory": "FinanceApplication",
+        "softwareVersion": "1.2.0",
+        "url": "https://jaminzhou.com/fire/pt-br/",
+        "downloadUrl": "https://apps.apple.com/app/id6820084110",
+        "image": "https://jaminzhou.com/fire/app-icon.png",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "url": "https://apps.apple.com/app/id6820084110"
+        }
+      }
+    },
+    "pt-BR.support": {
+      "title": "Suporte do FIRE",
+      "description": "Comece aos poucos. Registre valores reais. Deixe o widget lembrar você.",
+      "ogTitle": "Suporte do FIRE",
+      "ogDescription": "Comece aos poucos. Registre valores reais. Deixe o widget lembrar você."
+    },
+    "pt-BR.privacy": {
+      "title": "Política de Privacidade do FIRE",
+      "description": "Esta política abrange o FIRE no iPhone, iPad, Mac e Apple Watch e seus canais opcionais de comentários. O desenvolvedor é Jamin Zhou.",
+      "ogTitle": "Política de Privacidade do FIRE",
+      "ogDescription": "Esta política abrange o FIRE no iPhone, iPad, Mac e Apple Watch e seus canais opcionais de comentários. O desenvolvedor é Jamin Zhou."
+    },
+    "ko.landing": {
+      "title": "FIRE — 자유에 한 걸음 더. 바라는 삶에 한 걸음 더.",
+      "description": "경제적 독립이라는 목표를 늘 가까이 두세요. 가끔 현재 상태를 기록하며 어떤 삶을 향해 나아가는지 떠올려 보세요.",
+      "ogTitle": "FIRE — 자유에 한 걸음 더. 바라는 삶에 한 걸음 더.",
+      "ogDescription": "경제적 독립이라는 목표를 늘 가까이 두세요. 가끔 현재 상태를 기록하며 어떤 삶을 향해 나아가는지 떠올려 보세요.",
+      "hero": {
+        "title": "자유에 한 걸음 더.\n바라는 삶에 한 걸음 더.",
+        "introduction": "경제적 독립이라는 목표를 늘 가까이 두세요. 가끔 현재 상태를 기록하며 어떤 삶을 향해 나아가는지 떠올려 보세요."
+      },
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "FIRE: Early Retirement Widgets",
+        "operatingSystem": "iOS 18.0 or later; iPadOS 18.0 or later; macOS 15.0 or later; watchOS 10.0 or later",
+        "applicationCategory": "FinanceApplication",
+        "softwareVersion": "1.2.0",
+        "url": "https://jaminzhou.com/fire/ko/",
+        "downloadUrl": "https://apps.apple.com/app/id6820084110",
+        "image": "https://jaminzhou.com/fire/app-icon.png",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "url": "https://apps.apple.com/app/id6820084110"
+        }
+      }
+    },
+    "ko.support": {
+      "title": "FIRE 도움말",
+      "description": "작은 목표로 시작하세요. 현재 상태를 기록하고, 위젯으로 떠올려 보세요.",
+      "ogTitle": "FIRE 도움말",
+      "ogDescription": "작은 목표로 시작하세요. 현재 상태를 기록하고, 위젯으로 떠올려 보세요."
+    },
+    "ko.privacy": {
+      "title": "FIRE 개인정보 처리방침",
+      "description": "이 방침은 iPhone, iPad, Mac, Apple Watch의 FIRE와 선택적인 피드백 채널에 적용됩니다. 개발자는 Jamin Zhou입니다.",
+      "ogTitle": "FIRE 개인정보 처리방침",
+      "ogDescription": "이 방침은 iPhone, iPad, Mac, Apple Watch의 FIRE와 선택적인 피드백 채널에 적용됩니다. 개발자는 Jamin Zhou입니다."
     }
   }
 }
