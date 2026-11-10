@@ -62,6 +62,36 @@ export const LOCALES = Object.freeze([
       "backToProduct": "FIRE に戻る",
       "breadcrumbLabel": "パンくずリスト"
     }
+  },
+  {
+    "id": "de",
+    "hreflang": "de",
+    "segment": "de",
+    "label": "Deutsch"
+  },
+  {
+    "id": "fr",
+    "hreflang": "fr",
+    "segment": "fr",
+    "label": "Français"
+  },
+  {
+    "id": "es",
+    "hreflang": "es",
+    "segment": "es",
+    "label": "Español"
+  },
+  {
+    "id": "ko",
+    "hreflang": "ko",
+    "segment": "ko",
+    "label": "한국어"
+  },
+  {
+    "id": "pt-BR",
+    "hreflang": "pt-BR",
+    "segment": "pt-br",
+    "label": "Português (Brasil)"
   }
 ]);
 export const SURFACES = Object.freeze([{id:"landing",segment:""},{id:"support",segment:"support"},{id:"privacy",segment:"privacy"}]);

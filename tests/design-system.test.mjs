@@ -18,9 +18,9 @@ async function allPages() {
   return pages;
 }
 
-test('all 91 modern pages retain discoverable content, metadata and working local targets', async () => {
+test('all 106 modern pages retain discoverable content, metadata and working local targets', async () => {
   const pages = await allPages();
-  assert.equal(pages.size, 91);
+  assert.equal(pages.size, 106);
   for (const [file, html] of pages) {
     assert.equal((html.match(/<main\b/g) ?? []).length, 1, file);
     assert.equal((html.match(/<h1[ >]/g) ?? []).length, 1, file);

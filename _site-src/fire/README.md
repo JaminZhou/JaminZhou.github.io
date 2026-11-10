@@ -1,6 +1,7 @@
 # FIRE public pages
 
-Four locales × landing, support and privacy pages. Build with `npm run build:fire`;
+Nine locales × landing, support and privacy pages (27 pages):
+en, zh-Hans, zh-Hant, ja, de, fr, es, ko and pt-BR. Build with `npm run build:fire`;
 `npm run check:site` verifies checked-in output. Shared masthead and reciprocal
 language links use the existing static product-site builder.
 
@@ -15,7 +16,7 @@ The US, CN and JP pages all show iOS and native Mac 1.2.0 at the
 2026-11-10 09:41 +08 readback. Each Mac page has seven native screenshots,
 a Get download offer, and is not the iOS-on-Mac compatibility listing.
 The initial 09:36 readback still showed Mac 1.1.0 and is retained separately
-in the release evidence. All four locales now reflect the released 1.2.0
+in the release evidence. All nine locales now reflect the released 1.2.0
 status across iPhone, iPad, Mac and Apple Watch.
 
 Images are the approved FIRE icon and native widget renders exported by
@@ -24,6 +25,15 @@ They use fixed example records and the shipping `FirePalette` container fill;
 no user financial data is used. These are widget renders, not device screenshots.
 No analytics, ad scripts, embedded third-party form or additional backend is added.
 
-Release-copy verification: site tests, generated-page checks and links/assets.
-The layout retains its earlier four-language 390-point overflow and desktop/mobile
-visual checks; those checks are historical, not new release acceptance.
+The five additional locales were added on 2026-11-10. Support pages link to their
+existing localized Tally forms. Canonical and reciprocal hreflang links and the
+language menu preserve the current surface. The shared personal homepage remains
+English / Simplified Chinese; links that fall back to English are labeled.
+The additional widget images are the matching native nine-language renders from
+OpenYears `.build/nine-languages/widget-raw/`, preserved in its main checkout
+`output/website-nine-languages-20261110/run-01/widget-sources/` with SHA-256 records.
+No native screenshots were reconstructed. These translations preserve the
+November 2 policy's meaning; adding languages does not change data practices.
+
+Verification: site tests, generated-page consistency, local links, reciprocal
+language routes, localized feedback links, widget sources and live page readback.

@@ -1,0 +1,107 @@
+[
+  {
+    "locale": "de",
+    "file": "fire/images/de-daybreak-medium.png",
+    "sourceRepository": "OpenYears",
+    "sourcePath": "output/website-nine-languages-20261110/run-01/widget-sources/de-daybreak-medium.png",
+    "sha256": "965ba27cf0ef5cdfaf044f79599a7ee00502ddaf7866506271bdbea4fb915f4d"
+  },
+  {
+    "locale": "de",
+    "file": "fire/images/de-trail-small.png",
+    "sourceRepository": "OpenYears",
+    "sourcePath": "output/website-nine-languages-20261110/run-01/widget-sources/de-trail-small.png",
+    "sha256": "2f3dce2875329a03df9d860e1fc09f6802d928baac69210b9281b93f4f9a27fa"
+  },
+  {
+    "locale": "de",
+    "file": "fire/images/de-signal-small.png",
+    "sourceRepository": "OpenYears",
+    "sourcePath": "output/website-nine-languages-20261110/run-01/widget-sources/de-signal-small.png",
+    "sha256": "7d22424a2bd740f808477e99aeec519cb9171e15c8496800d972cfb1f6536a06"
+  },
+  {
+    "locale": "fr",
+    "file": "fire/images/fr-daybreak-medium.png",
+    "sourceRepository": "OpenYears",
+    "sourcePath": "output/website-nine-languages-20261110/run-01/widget-sources/fr-daybreak-medium.png",
+    "sha256": "247342481505843187ba38689275c42e0b9d3f96f2a98250bdc4fd2e01535074"
+  },
+  {
+    "locale": "fr",
+    "file": "fire/images/fr-trail-small.png",
+    "sourceRepository": "OpenYears",
+    "sourcePath": "output/website-nine-languages-20261110/run-01/widget-sources/fr-trail-small.png",
+    "sha256": "2f3dce2875329a03df9d860e1fc09f6802d928baac69210b9281b93f4f9a27fa"
+  },
+  {
+    "locale": "fr",
+    "file": "fire/images/fr-signal-small.png",
+    "sourceRepository": "OpenYears",
+    "sourcePath": "output/website-nine-languages-20261110/run-01/widget-sources/fr-signal-small.png",
+    "sha256": "7d22424a2bd740f808477e99aeec519cb9171e15c8496800d972cfb1f6536a06"
+  },
+  {
+    "locale": "es",
+    "file": "fire/images/es-daybreak-medium.png",
+    "sourceRepository": "OpenYears",
+    "sourcePath": "output/website-nine-languages-20261110/run-01/widget-sources/es-daybreak-medium.png",
+    "sha256": "d4761343e316e5c3796f64a9b14051122c495fd55c6e1526dd10c08007c69807"
+  },
+  {
+    "locale": "es",
+    "file": "fire/images/es-trail-small.png",
+    "sourceRepository": "OpenYears",
+    "sourcePath": "output/website-nine-languages-20261110/run-01/widget-sources/es-trail-small.png",
+    "sha256": "2f3dce2875329a03df9d860e1fc09f6802d928baac69210b9281b93f4f9a27fa"
+  },
+  {
+    "locale": "es",
+    "file": "fire/images/es-signal-small.png",
+    "sourceRepository": "OpenYears",
+    "sourcePath": "output/website-nine-languages-20261110/run-01/widget-sources/es-signal-small.png",
+    "sha256": "7d22424a2bd740f808477e99aeec519cb9171e15c8496800d972cfb1f6536a06"
+  },
+  {
+    "locale": "ko",
+    "file": "fire/images/ko-daybreak-medium.png",
+    "sourceRepository": "OpenYears",
+    "sourcePath": "output/website-nine-languages-20261110/run-01/widget-sources/ko-daybreak-medium.png",
+    "sha256": "0985402ca041450db8ff38c011d27c17e88603c3db537fb41b5b38df22a9ca75"
+  },
+  {
+    "locale": "ko",
+    "file": "fire/images/ko-trail-small.png",
+    "sourceRepository": "OpenYears",
+    "sourcePath": "output/website-nine-languages-20261110/run-01/widget-sources/ko-trail-small.png",
+    "sha256": "2f3dce2875329a03df9d860e1fc09f6802d928baac69210b9281b93f4f9a27fa"
+  },
+  {
+    "locale": "ko",
+    "file": "fire/images/ko-signal-small.png",
+    "sourceRepository": "OpenYears",
+    "sourcePath": "output/website-nine-languages-20261110/run-01/widget-sources/ko-signal-small.png",
+    "sha256": "7d22424a2bd740f808477e99aeec519cb9171e15c8496800d972cfb1f6536a06"
+  },
+  {
+    "locale": "pt-BR",
+    "file": "fire/images/pt-BR-daybreak-medium.png",
+    "sourceRepository": "OpenYears",
+    "sourcePath": "output/website-nine-languages-20261110/run-01/widget-sources/pt-BR-daybreak-medium.png",
+    "sha256": "a8a0683b05c2252cdcdfade09d18d9ef759df46dd44805ef1adec57cec919bc5"
+  },
+  {
+    "locale": "pt-BR",
+    "file": "fire/images/pt-BR-trail-small.png",
+    "sourceRepository": "OpenYears",
+    "sourcePath": "output/website-nine-languages-20261110/run-01/widget-sources/pt-BR-trail-small.png",
+    "sha256": "2f3dce2875329a03df9d860e1fc09f6802d928baac69210b9281b93f4f9a27fa"
+  },
+  {
+    "locale": "pt-BR",
+    "file": "fire/images/pt-BR-signal-small.png",
+    "sourceRepository": "OpenYears",
+    "sourcePath": "output/website-nine-languages-20261110/run-01/widget-sources/pt-BR-signal-small.png",
+    "sha256": "7d22424a2bd740f808477e99aeec519cb9171e15c8496800d972cfb1f6536a06"
+  }
+]
