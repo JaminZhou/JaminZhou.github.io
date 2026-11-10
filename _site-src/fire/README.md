@@ -11,12 +11,12 @@ App 6820084110. iPhone, iPad and Mac 1.2 add free on-device Favorites,
 Far Afield and Winter Retreat to the 22 free styles plus Sunday and Long Summer.
 Requirements remain iOS / iPadOS 18, macOS 15 and watchOS 10.
 Release evidence is in OpenYears docs/store/release-macos-1.2.0-20261110.json.
-The US, CN and JP iOS pages show 1.2.0; native Mac pages still showed 1.1.0
-at the 2026-11-10 09:36 +08 readback. Continuing Jamin's release SOP and
-previous explicit website-deployment authorization during propagation, all
-four locales state that Mac 1.2.0 has been released but may still appear as
-1.1.0 in some storefronts. This deployment does not assert completed Mac
-App Store propagation.
+The US, CN and JP pages all show iOS and native Mac 1.2.0 at the
+2026-11-10 09:41 +08 readback. Each Mac page has seven native screenshots,
+a Get download offer, and is not the iOS-on-Mac compatibility listing.
+The initial 09:36 readback still showed Mac 1.1.0 and is retained separately
+in the release evidence. All four locales now reflect the released 1.2.0
+status across iPhone, iPad, Mac and Apple Watch.
 
 Images are the approved FIRE icon and native widget renders exported by
 `OpenYears/Tests/WidgetRendering/StoreCreativeRenderingTests.swift` on 2026-10-16.
