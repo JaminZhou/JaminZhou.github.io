@@ -5,14 +5,14 @@ en, zh-Hans, zh-Hant, ja, de, fr, es, ko and pt-BR. Build with `npm run build:fi
 `npm run check:site` verifies checked-in output. Shared masthead and reciprocal
 language links use the existing static product-site builder.
 
-iOS 1.3.0 (20261114220022) was manually released on 2026-11-16 and reports
-READY_FOR_DISTRIBUTION in ASC. It includes the iPhone/iPad progress-sharing and
-monthly-review features. Native Mac 1.2.0 remains the public version; Mac 1.3.0
-is still WAITING_FOR_REVIEW and has not been released. The shared App Store link
-is App 6820084110. All nine locales distinguish these platform states, including
-landing-page structured data. Requirements remain iOS / iPadOS 18, macOS 15 and
-watchOS 10. Release evidence is in OpenYears docs/store/launch-1.3.0.md and
-docs/store/release-ios-1.3.0-20261116.json.
+iOS and native macOS 1.3.0 (20261114220022) were manually released on
+2026-11-16 and both report READY_FOR_DISTRIBUTION in ASC. Progress sharing,
+monthly review and localized help/privacy links are now available on iPhone,
+iPad and Mac. Mac also offers explicit Copy Image. The shared App Store link
+is App 6820084110. All nine locales and structured data reflect version 1.3.0
+across iPhone, iPad, Mac and Apple Watch. Requirements remain iOS / iPadOS 18,
+macOS 15 and watchOS 10. Release evidence is in OpenYears
+docs/store/launch-1.3.0.md and docs/store/release-macos-1.3.0-20261116.json.
 
 Progress images are rendered on-device from a saved snapshot. Amounts start
 hidden on each opening; the user chooses the style, optional content and sharing
