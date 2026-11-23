@@ -5,14 +5,13 @@ en, zh-Hans, zh-Hant, ja, de, fr, es, ko and pt-BR. Build with `npm run build:fi
 `npm run check:site` verifies checked-in output. Shared masthead and reciprocal
 language links use the existing static product-site builder.
 
-iOS and native macOS 1.3.0 (20261114220022) were manually released on
-2026-11-16 and both report READY_FOR_DISTRIBUTION in ASC. Progress sharing,
-monthly review and localized help/privacy links are now available on iPhone,
-iPad and Mac. Mac also offers explicit Copy Image. The shared App Store link
-is App 6820084110. All nine locales and structured data reflect version 1.3.0
-across iPhone, iPad, Mac and Apple Watch. Requirements remain iOS / iPadOS 18,
-macOS 15 and watchOS 10. Release evidence is in OpenYears
-docs/store/launch-1.3.0.md and docs/store/release-macos-1.3.0-20261116.json.
+FIRE 1.4.0 was released on 2026-11-23 for iOS (build 20261122121039)
+and native macOS (build 20261122003124). On iPhone, iPad and Mac, each
+widget can open the progress overview or a new balance entry. The form
+accepts either a total balance or an increase or decrease. The shared
+App Store link is App 6820084110. The nine localized listings and structured
+data cover iPhone, iPad, Mac and Apple Watch. The release record is in the
+OpenYears repository at docs/store/launch-1.4.0.md.
 
 Progress images are rendered on-device from a saved snapshot. Amounts start
 hidden on each opening; the user chooses the style, optional content and sharing
